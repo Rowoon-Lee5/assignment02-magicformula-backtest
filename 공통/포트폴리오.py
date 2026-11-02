@@ -50,9 +50,12 @@ def 재무가능일(how):
     f = 읽기.연간재무().dropna(subset=["CP10002200"])
     m = f["CP10002200"].astype(int)
     end = pd.to_datetime((f["회계연도"] + (m <= 5)).astype(int).astype(str) + m.astype(str).str.zfill(2), format="%Y%m") + pd.offsets.MonthEnd(0)
+    kind, k = how
+    if "FP56000900" not in f:  # 발표일 파일이 아직 없으면 발표일을 안 보는 '결산후개월'만 돈다(빈 발표일로 대신하지 않음)
+        assert kind == "결산후개월", "발표일 FP56000900 파일이 아직 없음 → 파일 오면 다시 실행"
+        return f.assign(결산일=end, 가능일=end + pd.DateOffset(months=k))
     pub = pd.to_datetime(f["FP56000900"].astype("Int64").astype(str), format="%Y%m%d", errors="coerce")
     pub = pub.where(pub > end)
-    kind, k = how
     ok = end + pd.DateOffset(months=k) if kind == "결산후개월" else (pub + pd.Timedelta(days=1)).fillna(end + pd.Timedelta(days=k))
     return f.assign(결산일=end, 발표일=pub, 가능일=ok)
 
