@@ -1,0 +1,6 @@
+# 데이터와 큰 중간 파일은 기록하지 않음(원본은 data 폴더와 마이박스에 있음)
+*.parquet
+*.pkl
+*.xlsx
+__pycache__/
+*.pyc
