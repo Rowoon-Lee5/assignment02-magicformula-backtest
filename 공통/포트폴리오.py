@@ -214,23 +214,32 @@ def 보유(R, W, 비용, 전량=False, 회전=None):
 
 
 def 실행(cfg):
-    """설정대로 돌려 dict(수익률=월수익률 표(열=(비중, 그룹)), 기록=리밸런싱일별 종목 수, 보유=비중, 설정)."""
+    """설정대로 돌려 dict(수익률=월수익률 표(열=(비중, 그룹)), 기록=리밸런싱일별 종목 수, 보유=비중, 설정).
+    cfg["전략들"] = {이름: dict(지표=..., 합산=...)}을 주면 같은 거르기 결과로 여러 전략을 한 번에 고른다(열 = (이름, 비중, 그룹),
+    ('유니버스', '시총', '전체') = 거른 종목 전부 시가총액 가중 = 확장 연구 자체 벤치마크)."""
     cfg = {**기본설정, **cfg}
+    전략들 = cfg.get("전략들") or {None: dict(지표=cfg["지표"], 합산=cfg["합산"])}
     grid = 기준일(cfg)
     R = 기간수익률(읽기.상장가격(cfg["가격"]), grid)
     W, 기록 = defaultdict(dict), []
     for t in grid[:-1][::cfg["리밸런싱"]]:
         s, c, n = 거르기(t, cfg)
-        v = pd.DataFrame({m[0]: getattr(지표, m[0])(s).reindex(c) for m in cfg["지표"]})
-        sc = 점수(v, cfg["지표"], cfg["합산"])
-        groups = 고르기(sc, cfg["고르기"])
-        for b in cfg["비중"]:
-            for g, cc in groups.items():
-                W[(b, g)][t] = globals()[b](cc, s, cfg) if len(cc) else pd.Series(dtype=float)  # 0종목이면 그 구간 수익률 빈칸
-        기록.append({"기준일": t, **n, **{f"빈칸:{k}": x for k, x in v.isna().sum().items()},
-                   "빈칸으로 빠짐": len(c) - len(sc), **{f"편입:{g}": len(cc) for g, cc in groups.items()},
+        v = pd.DataFrame({m: getattr(지표, m)(s).reindex(c) for m in dict.fromkeys(m[0] for e in 전략들.values() for m in e["지표"])})
+        if None not in 전략들:
+            m = s["mcap"].reindex(c).dropna()
+            W[("유니버스", "시총", "전체")][t] = m / m.sum()
+        편입 = {}
+        for 이름, e in 전략들.items():
+            sc = 점수(v[[m[0] for m in e["지표"]]], e["지표"], e["합산"])
+            groups = 고르기(sc, cfg["고르기"])
+            for b in cfg["비중"]:
+                for g, cc in groups.items():
+                    W[(b, g) if 이름 is None else (이름, b, g)][t] = globals()[b](cc, s, cfg) if len(cc) else pd.Series(dtype=float)  # 0종목이면 그 구간 수익률 빈칸
+            편입 |= {"빈칸으로 빠짐" if 이름 is None else f"빈칸으로 빠짐:{이름}": len(c) - len(sc)}
+            편입 |= {f"편입:{g}" if 이름 is None else f"편입:{이름}:{g}": len(cc) for g, cc in groups.items()}
+        기록.append({"기준일": t, **n, **{f"빈칸:{k}": x for k, x in v.isna().sum().items()}, **편입,
                    "확인:업종빈칸": 종목거르기.그날(읽기.업종, t, c).isna().sum(),
-                   "확인:WICS금융": 종목거르기.그날(읽기.WICS, t, c).eq("금융").sum()})  # 금융업 판정은 거래소 업종, WICS는 확인용(2000년 이후만 있음)
+                   "확인:WICS금융": 종목거르기.그날(읽기.WICS, t, c).eq("금융").sum() if 읽기.있음(읽기.WICS) else pd.NA})  # 금융업 판정은 거래소 업종, WICS는 확인용(2000년 이후만 있음, 파일 없으면 빈칸 = 확인 안 함)
     회전 = defaultdict(dict)
     수익률 = pd.DataFrame({k: 보유(R, w, cfg["거래비용"], cfg["전량교체"], 회전[k]) for k, w in W.items()})
     return dict(수익률=수익률, 기록=pd.DataFrame(기록).set_index("기준일"), 보유=W, 설정=cfg, 종목수익률=R, 회전율=pd.DataFrame(회전))
