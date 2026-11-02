@@ -3,6 +3,7 @@
 from functools import cache
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
@@ -37,10 +38,10 @@ def 파일(item):
 
 @cache
 def 공통끝():
-    """통합_확인기록 F6: 항목마다 값이 끝나는 날이 다를 수 있다. 가격·시장 일간 파일(S·CP)에 값이 있는 마지막 날 중 가장 이른 날 하나로 자른다.
-    재무(M·FP) 일간은 아직 끝나지 않은 회계연도가 빈칸이라(예: 2026년 회계연도) 끝 날짜 판정에서 뺀다."""
-    ends = [(t := pq.read_table(f)).slice(max(t.num_rows - 260, 0)).to_pandas().dropna(how="all").index.max()
-            for p in ("S", "CP") for f in 목록(f"{p}*")]
+    """통합_확인기록 F6: 항목마다 값이 끝나는 날이 다를 수 있다. 가격·시가총액·시장구분 일간 파일에 값이 있는 마지막 날 중 가장 이른 날 하나로 자른다.
+    재무(M·FP)·결산월 일간은 아직 끝나지 않은 회계연도가 빈칸이라(예: 2026년 회계연도) 끝 날짜 판정에서 뺀다."""
+    ends = [(t := pq.read_table(파일(i))).slice(max(t.num_rows - 260, 0)).to_pandas().dropna(how="all").index.max()
+            for i in (TR, 수정주가, 종가, 시총, 시장구분) if 있음(i)]  # 결산월 등 회계연도 항목·드문드문한 항목은 안 봄(감사 M2)
     assert pd.notna(ends).all(), ends
     return min(ends)
 
@@ -78,25 +79,39 @@ def 재무항목():
     return sorted(f.name.split("_")[2] for p in ("M", "FP") for f in 목록(f"{p}*"))
 
 
+검사 = {}  # 연간재무(): 항목마다 '결산일 값 ≠ 그 회계연도 첫 영업일 값'이라 빈칸으로 둔 행 수
+
+
 @cache
 def 연간재무():
     """달력기준 일간 재무 → (코드, 회계연도) 행(예전 통합_연간재무와 같은 모양: 코드·회계연도·CP10002200·아이템코드 열, 천원).
     달력기준 일간 값은 그 회계연도 기간 내내 그 회계연도 값이다(발표 전부터 들어감 → 그대로 쓰면 미래 정보).
-    그래서 결산일 = 결산월 이력(CP10002200)이 그 달인 달의 말일, 그 당일 또는 그 전 마지막 영업일 값을 그 회계연도 값으로 뽑는다
-    (감독 확인 _검증/일간재무_대조.py: 자산총계 79,657/79,837행이 예전 연간 원본과 같음). 쓸 수 있는 날은 포트폴리오.재무가능일이 정한다.
-    회계연도 = 결산일 연도 − (결산월 ≤ 5)(예전 연간재무 표기와 같음: 1~5월 결산은 회계연도 다음 해에 끝남)."""
+    그래서 결산일 = 결산월 이력(CP10002200)이 그 달인 달의 마지막 영업일, 그날 값을 그 회계연도 값으로 뽑는다. 쓸 수 있는 날은 포트폴리오.재무가능일이 정한다.
+    회계연도 = 결산일 연도 − (결산월 ≤ 5)(예전 연간재무 표기와 같음: 1~5월 결산은 회계연도 다음 해에 끝남).
+    확인: 결산일 값이 그 회계연도 첫 영업일(직전 결산일 다음 달 첫 영업일, 첫 행은 11개월 전 달 첫 영업일) 값과 다르면
+    그 칸은 그 회계연도 값이라고 믿을 수 없어 빈칸으로 둔다(값이 결산월과 다른 날 바뀌는 종목 = 다음 회계연도 값이 들어갈 수 있음, 감사 H1).
+    둘 중 하나가 빈칸이면 확인 못 해 값 그대로 둔다. 빈칸으로 둔 수는 읽기.검사[아이템코드]."""
     m = 일간(결산월)
-    last = m.index.to_series().groupby(m.index.to_period("M")).max()  # 달마다 마지막 영업일
+    g = m.index.to_series().groupby(m.index.to_period("M"))
+    last, first = g.max(), g.min()  # 달마다 마지막·첫 영업일
     e = m.loc[last].apply(lambda x: pd.to_numeric(x.astype(object))).stack().rename("CP10002200").reset_index()
     e.columns = ["날짜", "코드", "CP10002200"]
-    e = e[e["CP10002200"] == e["날짜"].dt.month].reset_index(drop=True)  # 그날 결산월 = 그 달 → 결산일
+    e = e[e["CP10002200"] == e["날짜"].dt.month].sort_values(["코드", "날짜"]).reset_index(drop=True)  # 그날 결산월 = 그 달 → 결산일
     e["회계연도"] = e["날짜"].dt.year - (e["CP10002200"] <= 5)
-    for item in 재무항목():  # 일간 전체(항목당 약 500MB)를 들고 있지 않도록 달 마지막 영업일 줄만 읽는다
+    pm = e["날짜"].dt.to_period("M")
+    시작 = (pm.groupby(e["코드"]).shift(1).fillna(pm - 12) + 1).map(first)  # 그 회계연도 첫 영업일(데이터 전이면 빈칸)
+    need = pd.DatetimeIndex(sorted(set(last) | set(first)))
+    for item in 재무항목():  # 일간 전체(항목당 약 500MB)를 들고 있지 않도록 달 첫·마지막 영업일 줄만 읽는다
         t = pq.read_table(파일(item))
-        d = t.take(pd.Index(t.column("날짜").to_pandas()).get_indexer(last)).to_pandas().reindex(columns=m.columns)  # 6,293종목 파일의 없는 종목은 빈칸
-        i = d.index.get_indexer(e["날짜"])
-        assert (i >= 0).all(), f"{item}: 결산월 파일에 있는 날짜가 없음"
-        e[item] = d.to_numpy()[i, d.columns.get_indexer(e["코드"])]
+        d = t.take(pd.Index(t.column("날짜").to_pandas()).get_indexer(need)).to_pandas().reindex(columns=m.columns)  # 6,293종목 파일의 없는 종목은 빈칸
+        assert d.index.equals(need), f"{item}: 결산월 파일과 날짜가 다름"
+        c, x = d.columns.get_indexer(e["코드"]), d.to_numpy(float)
+        a = x[d.index.get_indexer(e["날짜"]), c]
+        ok = 시작.notna().to_numpy()
+        b = np.full(len(e), np.nan)
+        b[ok] = x[d.index.get_indexer(시작[ok]), c[ok]]
+        bad = ~np.isnan(a) & ~np.isnan(b) & (a != b)
+        e[item], 검사[item] = np.where(bad, np.nan, a), int(bad.sum())
     return e.drop(columns="날짜")
 
 

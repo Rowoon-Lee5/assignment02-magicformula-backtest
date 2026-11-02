@@ -71,4 +71,23 @@ assert list(평가.구간(pd.Series(1.0, pd.to_datetime(["2017-03-31", "2017-04-
 # 빈 비중(0종목) 구간은 수익률 빈칸
 assert 포.보유(R1, {d[0]: pd.Series(dtype=float)}, c0).isna().all()
 assert len(평가.구간(r, None, None)) == 3
+# 일간(달력기준) 재무 → 회계연도 값(읽기.연간재무): 작은 가짜 파일로. A = 12월 결산, B = 3월 결산, C = 3월 결산인데 값이 1월에 바뀜(믿을 수 없어 빈칸)
+import tempfile
+from pathlib import Path
+import 데이터읽기 as 읽기
+dd = pd.bdate_range("2009-01-01", "2011-12-31")
+y = lambda a, b, c: pd.Series(np.select([dd <= a, dd <= b], [1.0, 2.0], 3.0), dd)
+fin = pd.DataFrame({"A": y("2009-12-31", "2010-12-31", None), "B": y("2010-03-31", "2011-03-31", None), "C": y("2009-12-31", "2010-12-31", None)})
+ym = pd.DataFrame({"A": 12.0, "B": 3.0, "C": 3.0}, index=dd)
+옛 = 읽기.DATA, 읽기.공통끝
+with tempfile.TemporaryDirectory() as tmp:
+    읽기.DATA, 읽기.공통끝 = Path(tmp), lambda: dd[-1]
+    ym.rename_axis("날짜").to_parquet(Path(tmp) / "통합_일간_CP10002200_결산월.parquet")
+    fin.rename_axis("날짜").to_parquet(Path(tmp) / "통합_일간_M000901001_자산.parquet")
+    a = 읽기.연간재무().set_index(["코드", "회계연도"])["M000901001"]
+    읽기.DATA, 읽기.공통끝 = 옛
+    읽기.일간.cache_clear(); 읽기.연간재무.cache_clear()
+assert a[("A", 2009)] == 1 and a[("A", 2010)] == 2 and a[("A", 2011)] == 3, a
+assert a[("B", 2008)] == 1 and a[("B", 2009)] == 1 and a[("B", 2010)] == 2, a  # 3월 결산: 2009-03 결산 = FY2008(첫 행은 데이터 전이라 확인 못 하고 그대로), 2011-03 결산 = FY2010
+assert np.isnan(a[("C", 2009)]) and np.isnan(a[("C", 2010)]) and 읽기.검사["M000901001"] == 2, (a, 읽기.검사)
 print("ok")

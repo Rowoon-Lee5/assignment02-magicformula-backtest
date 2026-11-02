@@ -140,7 +140,8 @@ def 시총(c, s, cfg):
 
 def 시총상한(c, s, cfg):
     cap = cfg["비중상한"]
-    assert cap * len(c) >= 1, "종목 수 × 상한 < 1"
+    if cap * len(c) < 1:  # 종목 수 × 상한 < 1이면 상한을 지킬 수 없음 → 빈 비중(그 구간 수익률 빈칸)
+        return pd.Series(dtype=float)
     w = 시총(c, s, cfg)
     while w.max() > cap + 1e-12:
         over = w >= cap
@@ -225,6 +226,7 @@ def 실행(cfg):
     for t in grid[:-1][::cfg["리밸런싱"]]:
         s, c, n = 거르기(t, cfg)
         v = pd.DataFrame({m: getattr(지표, m)(s).reindex(c) for m in dict.fromkeys(m[0] for e in 전략들.values() for m in e["지표"])})
+        v = v.mask(np.isinf(v))  # 분모 0 → ±inf는 값이 없는 것과 같아 빈칸으로 본다(inf가 1등으로 줄 서는 것 막기)
         if None not in 전략들:
             m = s["mcap"].reindex(c).dropna()
             W[("유니버스", "시총", "전체")][t] = m / m.sum()
