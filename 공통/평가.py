@@ -1,5 +1,7 @@
 """성과 평가: 누적·연환산 수익률, 표준편차, 샤프, MDD(최대낙폭), 정보비율, CAPM·FF3·Carhart 알파(t는 OLS와 Newey-West).
-'초과평균'은 설명변수 없는 회귀 = 월평균 초과수익률과 그 t."""
+'초과평균'은 설명변수 없는 회귀 = 월평균 초과수익률과 그 t.
+타겟 페이퍼 성과표 지표(서브에이전트가 원문 PDF로 확인, 진행기록 2026-11-03 04:50): 우동호 외(2023) 표 2~7(p.514–516) = 누적·MDD·표준편차·샤프·정보비율·젠센·3요인·4요인 α(t)
+→ 위 칸들. Novy-Marx(2013, NBER w15940) 표 = 월평균 초과수익률·α·요인 적재값(β)·adj.-R² → '초과평균 α(월)'·'Carhart β:요인'·'Carhart adj R²' 칸."""
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -24,12 +26,12 @@ def 요인(grid, cfg):
 
 
 def 회귀(y, X):
-    """알파(월)와 t(OLS), t(Newey-West, 시차 = floor(4(T/100)^(2/9)))."""
+    """알파(월)와 t(OLS), t(Newey-West, 시차 = floor(4(T/100)^(2/9))), OLS 결과(β·adj R²용)."""
     d = X.assign(_y=y).dropna()
     Xc = sm.add_constant(d.drop(columns="_y"), has_constant="add")
     m = sm.OLS(d["_y"], Xc)
     ols, nw = m.fit(), m.fit(cov_type="HAC", cov_kwds={"maxlags": int(4 * (len(d) / 100) ** (2 / 9))})
-    return ols.params["const"], ols.tvalues["const"], nw.tvalues["const"]
+    return ols.params["const"], ols.tvalues["const"], nw.tvalues["const"], ols
 
 
 def 성과(r, F, 롱숏=False):
@@ -43,7 +45,8 @@ def 성과(r, F, 롱숏=False):
            "표준편차(연)": r.std() * np.sqrt(12), "샤프": ex.mean() / ex.std() * np.sqrt(12),
            "MDD": (w / w.cummax().clip(lower=1) - 1).min(), "정보비율": a.mean() / a.std() * np.sqrt(12) if a.std() else np.nan}  # 시장 자신은 a = 0
     for name, cols in 모형.items():
-        out[f"{name} α(월)"], out[f"{name} t(OLS)"], out[f"{name} t(NW)"] = 회귀(ex, F[cols])
+        out[f"{name} α(월)"], out[f"{name} t(OLS)"], out[f"{name} t(NW)"], ols = 회귀(ex, F[cols])
+    out |= {f"Carhart β:{c}": ols.params[c] for c in cols} | {"Carhart adj R²": ols.rsquared_adj}  # 마지막 모형(Carhart)의 적재값
     return out
 
 
