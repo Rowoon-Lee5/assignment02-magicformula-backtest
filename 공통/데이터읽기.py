@@ -11,6 +11,7 @@ XLSX = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_전체
 # 한 번에 받은 원본이라 그대로 씀(추가 지시 1 예외)
 RF_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_1990s_202610\무위험이자율후보_DataGuide_시장금리전체아이템35종_월간_19880101-20260930.xlsx")
 FACTOR_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_추가_202610\요인_팩터모델과시장지수_일간_1990-2026.xlsx")
+ADD10 = FACTOR_FILE.parent  # DataGuide_추가_202610: '쓰지 말 것' 목록 csv(README_데이터), 코드 재사용 16종목 csv
 KRX_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_추가_202611\R12_통합지수_KRXTMI_KRX300_KRX300TR_KRX100_코스닥TR_I31000040F_일별_19991228-20260930.xlsx")
 
 # 일간 아이템코드
@@ -38,7 +39,7 @@ def 파일(item):
 def 공통끝():
     """통합_확인기록 F6: 항목마다 값이 끝나는 날이 다를 수 있다. 가격·시장 일간 파일(S·CP)에 값이 있는 마지막 날 중 가장 이른 날 하나로 자른다.
     재무(M·FP) 일간은 아직 끝나지 않은 회계연도가 빈칸이라(예: 2026년 회계연도) 끝 날짜 판정에서 뺀다."""
-    ends = [(t := pq.read_table(f)).slice(t.num_rows - 260).to_pandas().dropna(how="all").index.max()
+    ends = [(t := pq.read_table(f)).slice(max(t.num_rows - 260, 0)).to_pandas().dropna(how="all").index.max()
             for p in ("S", "CP") for f in 목록(f"{p}*")]
     assert pd.notna(ends).all(), ends
     return min(ends)
@@ -63,7 +64,7 @@ def 상장가격(item):
 def 쓰지말것(item):
     """README_데이터.md '쓰지 말 것' 칸 → 표(코드, 시작, 끝). 값은 그대로 두고, 이 구간 가격을 쓰는 편입·수익률 계산만 피한다.
     A008080 2004-01~2013-09(D-05), 수정주가 병합·감자 미반영 7칸의 그 달(D27), 배당 포함 가격(TR)을 쓸 때 TR 이상칸의 앞날~그날(D-06·U3)."""
-    d = DATA.parent / "DataGuide_추가_202610"
+    d = ADD10
     m = pd.read_csv(d / "수정주가_병합미반영_7칸.csv", encoding="utf-8-sig", parse_dates=["날짜(월말)"])
     t = [("A008080", "2004-01-01", "2013-09-30", "D-05")] + [(c, x.replace(day=1), x, "D27") for c, x in zip(m["코드"], m["날짜(월말)"])]
     if item == TR:
