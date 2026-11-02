@@ -11,12 +11,16 @@ sys.path.insert(0, str(B / "공통"))
 import 데이터읽기 as 읽기
 
 OLD = Path(r"D:\26-2_데이터기반투자전략\과제02\data\통합_202611")
-A = pd.read_parquet(OLD / "통합_연간재무.parquet").rename(columns=lambda c: c.rsplit("_", 1)[-1]).set_index(["코드", "회계연도"])
+A = pd.read_parquet(OLD / "통합_연간재무.parquet").rename(columns=lambda c: c.rsplit("_", 1)[-1])
 N = 읽기.연간재무()
-print("새 행", len(N), "(코드, 회계연도) 중복", int(N.duplicated(["코드", "회계연도"]).sum()))
-N = N.drop_duplicates(["코드", "회계연도"], keep="last").set_index(["코드", "회계연도"])  # 중복 행 수는 위에 적음
+키 = ["코드", "회계연도", "CP10002200"]  # 같은 회계연도에 결산월이 둘인 행(결산월 바꾼 해, F9)이 있어 결산월까지 맞춘다
+print("새 행", len(N), "(코드, 회계연도) 중복", int(N.duplicated(키[:2]).sum()), "| 예전 행", len(A), "중복", int(A.duplicated(키[:2]).sum()))
+print("결산월까지 맞춘 키 중복: 새", int(N.duplicated(키).sum()), "예전", int(A.dropna(subset=["CP10002200"]).duplicated(키).sum()))
+A = A.dropna(subset=["CP10002200"]).set_index(키)
+N = N.set_index(키)
+print("예전 (코드, 회계연도, 결산월) 행 중 새에 없는 수", len(A.index.difference(N.index)))
 rows = {}
-for item in ["CP10002200"] + 읽기.재무항목():
+for item in 읽기.재무항목():
     if item not in A:
         rows[item] = {"예전에 없음": True}
         continue
