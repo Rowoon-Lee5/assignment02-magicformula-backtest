@@ -43,6 +43,8 @@ for item in (읽기.TR, 읽기.수정주가):
     ok = mk.reindex(index=x.index, columns=x.columns).isin(["KS", "KQ"]).to_numpy()
     v = x.notna().to_numpy()
     줄(f"{item} 값 있는 칸 / 그중 상장 구간 밖이라 계산에서 빼는 칸 / 그 종목 수", f"{int(v.sum())} / {int((v & ~ok).sum())} / {int((v & ~ok).any(axis=0).sum())}")
+    z = (x == 0).to_numpy() & ok
+    줄(f"{item} 상장 구간인데 가격 0이라 빈칸으로 보는 칸 / 종목 수", f"{int(z.sum())} / {int(z.any(axis=0).sum())}")
 
 print("\n## 쓰지 말 것")
 for item in (읽기.TR, 읽기.수정주가):
