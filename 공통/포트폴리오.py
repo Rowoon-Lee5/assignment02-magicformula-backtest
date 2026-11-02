@@ -89,7 +89,8 @@ def 다음리밸런싱(t, cfg):
 
 def 재료(t, cfg):
     """기준일 t의 자료: 그날 상장 가격(읽기.상장가격) 있는 종목, 재무, 시가총액, 직전 12개월 일간수익률(빈칸은 빈칸, '쓰지 말 것' 칸은 빈칸으로 봄).
-    다음 = 다음 리밸런싱일(종목거르기.쓰지말것이 보유 구간을 봄), 일년상장 = 직전 12개월 내내 시장구분 KS·KQ."""
+    다음 = 다음 리밸런싱일(종목거르기.쓰지말것이 보유 구간을 봄), 일년상장 = 직전 12개월 내내 시장구분 KS·KQ이고 그 창 첫날 상장 가격이 있음
+    (시장구분이 첫 가격보다 몇 년 먼저 KS로 들어 있는 우선주 등이 짧은 수익률로 통과하던 것 막기, 감사 2026-11-03 #3·#14)."""
     p = 읽기.상장가격(cfg["가격"]).loc[:t]
     codes = p.columns[p.iloc[-1].notna()]
     a = t - pd.DateOffset(years=1)
@@ -99,7 +100,7 @@ def 재료(t, cfg):
             p.loc[x:y, c] = np.nan
     return dict(t=t, 다음=다음리밸런싱(t, cfg), 가격=cfg["가격"], codes=codes, fin=재무(t, cfg["재무시점"]).reindex(codes),
                 mcap=읽기.일간(읽기.시총).loc[t, codes], ret=p.pct_change(fill_method=None).iloc[1:],
-                일년상장=읽기.일간(읽기.시장구분).loc[a:t].reindex(columns=codes).isin(["KS", "KQ"]).all())
+                일년상장=읽기.일간(읽기.시장구분).loc[a:t].reindex(columns=codes).isin(["KS", "KQ"]).all() & p.iloc[0].notna())
 
 
 def 거르기(t, cfg):
@@ -124,6 +125,8 @@ def 고르기(sc, how):
     kind, n = how
     if kind == "상위N":
         return {f"상위{n}": sc.nlargest(n).index}
+    if sc.empty:  # 0종목이면 빈 묶음(구간 수익률 빈칸, 감사 #11)
+        return {f"Q{i}": sc.index for i in range(1, n + 1)}
     q = pd.qcut(sc.rank(method="first", ascending=False), n, labels=[f"Q{i}" for i in range(1, n + 1)])
     return {g: sc.index[q == g] for g in q.cat.categories}
 
@@ -157,7 +160,8 @@ def 이력(c, s):
 
 
 def 위험균형(c, s, cfg):
-    iv = 1 / 이력(c, s).std()
+    sd = 이력(c, s).std()
+    iv = 1 / sd.where(sd > 0)  # 변동성 0(가격이 1년 내내 같음)은 역수가 없어 빈칸 → 비중에서 빠짐(감사 #10)
     return iv / iv.sum()
 
 
@@ -236,11 +240,13 @@ def 실행(cfg):
             groups = 고르기(sc, cfg["고르기"])
             for b in cfg["비중"]:
                 for g, cc in groups.items():
-                    W[(b, g) if 이름 is None else (이름, b, g)][t] = globals()[b](cc, s, cfg) if len(cc) else pd.Series(dtype=float)  # 0종목이면 그 구간 수익률 빈칸
-            편입 |= {"빈칸으로 빠짐" if 이름 is None else f"빈칸으로 빠짐:{이름}": len(c) - len(sc)}
+                    k = (b, g) if 이름 is None else (이름, b, g)
+                    W[k][t] = globals()[b](cc, s, cfg) if len(cc) else pd.Series(dtype=float)  # 0종목이면 그 구간 수익률 빈칸
+                    편입[":".join(["보유수", *map(str, k)])] = int((W[k][t] > 0).sum())  # 위험균형·최소분산은 과거 수익률이 모자란 종목이 빠져 편입 수보다 적을 수 있음(감사 #2)
+            편입 |= {"빈칸으로 빠짐" if 이름 is None else f"빈칸으로 빠짐:{이름}": len(c) - len(v[[m[0] for m in e["지표"]]].dropna())}  # 단계별에서 남길 비율로 잘린 수는 넣지 않음(감사 #12)
             편입 |= {f"편입:{g}" if 이름 is None else f"편입:{이름}:{g}": len(cc) for g, cc in groups.items()}
         기록.append({"기준일": t, **n, **{f"빈칸:{k}": x for k, x in v.isna().sum().items()}, **편입,
-                   "확인:업종빈칸": 종목거르기.그날(읽기.업종, t, c).isna().sum(),
+                   "확인:업종빈칸": 종목거르기.그날(읽기.업종, t, c).isna().sum() if 읽기.있음(읽기.업종) else pd.NA,  # 업종을 안 쓰는 02·03이 업종 파일 때문에 멈추지 않게(감사 #13)
                    "확인:WICS금융": 종목거르기.그날(읽기.WICS, t, c).eq("금융").sum() if 읽기.있음(읽기.WICS) else pd.NA})  # 금융업 판정은 거래소 업종, WICS는 확인용(2000년 이후만 있음, 파일 없으면 빈칸 = 확인 안 함)
     회전 = defaultdict(dict)
     수익률 = pd.DataFrame({k: 보유(R, w, cfg["거래비용"], cfg["전량교체"], 회전[k]) for k, w in W.items()})
