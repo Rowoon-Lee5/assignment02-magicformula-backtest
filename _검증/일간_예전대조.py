@@ -12,11 +12,13 @@ for item in sys.argv[1:]:
     (fn,), (fo,) = NEW.glob(f"통합_일간_{item}_*.parquet"), OLD.glob(f"통합_일간_{item}_*.parquet")
     n, o = pd.read_parquet(fn), pd.read_parquet(fo)
     d, c = n.index.intersection(o.index), n.columns.intersection(o.columns)
-    a, b = n.loc[d, c].to_numpy(float), o.loc[d, c].to_numpy(float)
-    both = ~np.isnan(a) & ~np.isnan(b)
-    eq = both & (np.abs(a - b) <= 1e-6 * np.maximum(np.abs(b), 1))
+    글자 = not all(map(pd.api.types.is_numeric_dtype, n.dtypes))  # 시장구분·업종 등 글자 값은 그대로 같은지만 본다
+    a, b = (n.loc[d, c].to_numpy(object), o.loc[d, c].to_numpy(object)) if 글자 else (n.loc[d, c].to_numpy(float), o.loc[d, c].to_numpy(float))
+    na, nb = pd.isna(a), pd.isna(b)
+    both = ~na & ~nb
+    eq = both & (np.where(both, a, "") == np.where(both, b, "")) if 글자 else both & (np.abs(a - b) <= 1e-6 * np.maximum(np.abs(b), 1))
     print(f"{item}: 새 {n.shape} 예전 {o.shape}, 겹침 날짜 {len(d)} 종목 {len(c)} | 둘 다 값 {both.sum()}, 같음 {eq.sum()}, 다름 {(both & ~eq).sum()}, "
-          f"새만 값 {(~np.isnan(a) & np.isnan(b)).sum()}, 예전만 값 {(np.isnan(a) & ~np.isnan(b)).sum()} | 새에만 있는 종목 {len(n.columns.difference(o.columns))}, 예전에만 {len(o.columns.difference(n.columns))}")
+          f"새만 값 {(~na & nb).sum()}, 예전만 값 {(na & ~nb).sum()} | 새에만 있는 종목 {len(n.columns.difference(o.columns))}, 예전에만 {len(o.columns.difference(n.columns))}")
     i, j = np.nonzero(both & ~eq)
     if len(i):
         k = np.unique(j, return_counts=True)
