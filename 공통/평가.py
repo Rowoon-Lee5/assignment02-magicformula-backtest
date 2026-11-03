@@ -61,7 +61,7 @@ def 누적그림(R, 제목):
     """누적수익률. 흑백으로도 구분되게 선 모양·표식을 다르게."""
     fig, ax = plt.subplots(figsize=(9, 4.5))
     styles = [(ls, mk) for mk in (None, "o", "s", "^", "x") for ls in ("-", "--", ":", "-.")]  # 20가지(선 9개 그림에서 둘이 겹치던 것, 결과 감사 LOW)
-    for (ls, mk), k in zip(styles * 2, R):
+    for (ls, mk), k in zip(styles * (len(R.columns) // len(styles) + 1), R):  # 20개 넘으면 모양 반복(열은 빠지지 않음)
         ax.plot((1 + R[k].dropna()).cumprod(), color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
     ax.set(title=제목, ylabel="누적 가치(시작=1)")
     ax.legend(fontsize=8, ncol=2)
