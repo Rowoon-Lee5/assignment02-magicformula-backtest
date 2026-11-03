@@ -7882,8 +7882,8 @@ a.anchor-link {
 2026-11-03 10:38  04_NovyMarx대조.csv
 2026-11-03 10:38  04_신마법공식.pkl
 2026-11-02 14:22  요약표.csv
-2026-11-03 15:19  확장연구_20261103.csv
-2026-11-03 15:19  확장연구_20261103.pkl
+2026-11-03 16:10  확장연구_20261103.csv
+2026-11-03 16:10  확장연구_20261103.pkl
 </pre>
 </div>
 </div>
@@ -10568,7 +10568,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-%ED%99%95%EC%9E%A5-%EC%97%B0%EA%B5%AC-%ED%95%B5%EC%8B%AC-%EA%B2%B0%EA%B3%BC">6. 확장 연구 핵심 결과<a class="anchor-link" href="#6.-%ED%99%95%EC%9E%A5-%EC%97%B0%EA%B5%AC-%ED%95%B5%EC%8B%AC-%EA%B2%B0%EA%B3%BC">¶</a></h2><p>우동호 유니버스, 배당 포함 가격, 1990-04~2026-09. 주 벤치마크 = 유니버스 시가총액 가중(비용 0). 자세한 표와 설정·근거는 <code>연구/확장연구_20261103.ipynb</code>.</p>
+<h2 id="6.-%ED%99%95%EC%9E%A5-%EC%97%B0%EA%B5%AC-%ED%95%B5%EC%8B%AC-%EA%B2%B0%EA%B3%BC">6. 확장 연구 핵심 결과<a class="anchor-link" href="#6.-%ED%99%95%EC%9E%A5-%EC%97%B0%EA%B5%AC-%ED%95%B5%EC%8B%AC-%EA%B2%B0%EA%B3%BC">¶</a></h2><p>우동호 유니버스, 배당 포함 가격, 1990-04~2026-09. 주 벤치마크 = 유니버스 시가총액 가중(비용 0). 무위험이자율 = 교수님 제공 엑셀(<code>08.[액셀실습]TSMom(K200).xlsx</code>)의 CD1m 한 계열(교수님 제공 파일의 값, 1990-01~1994-12는 14% 고정). 콜금리로 바꾼 결과는 7절 <code>7_무위험_민감도</code>. 자세한 표와 설정·근거는 <code>연구/확장연구_20261103.ipynb</code>.</p>
 <ul>
 <li><strong>α 읽을 때</strong>: 시장 요인은 코스피 가격지수(배당 없음)라 배당 포함 포트폴리오의 α에 배당만큼이 섞인다. 전략 없이 유니버스를 시총가중으로 들고만 있어도 Carhart α가 양수로 나온다(확장연구 4절 벤치마크 줄). α는 유니버스 벤치마크 줄과 견주어 본다.</li>
 <li><strong>여러 조합에서 고름(과최적화)</strong>: 수익률 열이 2,880개(전략 48 × 비중 5 × 주기 4 × 비용 3)다. 그중 '상위'를 고르면 우연히 좋은 것이 뽑힐 수 있고, 여러 번 검정한 것에 대한 t 보정은 하지 않았다. 단계별 순서 전략은 근거 없는 '남길 비율 0.5'에 달려 있다. 그래서 상위 목록보다 6-2(중앙값)·6-3(기간별 일관성)을 함께 본다.</li>
@@ -10612,34 +10612,34 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_9cb50">
+<table id="T_bc44e">
 <caption>벤치마크(전체 기간)</caption>
 <thead>
 <tr>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_9cb50_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_9cb50_level0_col1">누적</th>
-<th class="col_heading level0 col2" id="T_9cb50_level0_col2">연환산</th>
-<th class="col_heading level0 col3" id="T_9cb50_level0_col3">표준편차(연)</th>
-<th class="col_heading level0 col4" id="T_9cb50_level0_col4">벤치 대비 연환산</th>
-<th class="col_heading level0 col5" id="T_9cb50_level0_col5">샤프</th>
-<th class="col_heading level0 col6" id="T_9cb50_level0_col6">MDD</th>
-<th class="col_heading level0 col7" id="T_9cb50_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_9cb50_level0_col8">CAPM α(월)</th>
-<th class="col_heading level0 col9" id="T_9cb50_level0_col9">CAPM t(OLS)</th>
-<th class="col_heading level0 col10" id="T_9cb50_level0_col10">CAPM t(NW)</th>
-<th class="col_heading level0 col11" id="T_9cb50_level0_col11">FF3 α(월)</th>
-<th class="col_heading level0 col12" id="T_9cb50_level0_col12">FF3 t(OLS)</th>
-<th class="col_heading level0 col13" id="T_9cb50_level0_col13">FF3 t(NW)</th>
-<th class="col_heading level0 col14" id="T_9cb50_level0_col14">Carhart α(월)</th>
-<th class="col_heading level0 col15" id="T_9cb50_level0_col15">Carhart t(OLS)</th>
-<th class="col_heading level0 col16" id="T_9cb50_level0_col16">Carhart t(NW)</th>
-<th class="col_heading level0 col17" id="T_9cb50_level0_col17">Carhart β:MKT</th>
-<th class="col_heading level0 col18" id="T_9cb50_level0_col18">Carhart β:SMB</th>
-<th class="col_heading level0 col19" id="T_9cb50_level0_col19">Carhart β:HML</th>
-<th class="col_heading level0 col20" id="T_9cb50_level0_col20">Carhart β:MOM</th>
-<th class="col_heading level0 col21" id="T_9cb50_level0_col21">Carhart adj R²</th>
-<th class="col_heading level0 col22" id="T_9cb50_level0_col22">회전율(전 기간)</th>
+<th class="col_heading level0 col0" id="T_bc44e_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_bc44e_level0_col1">누적</th>
+<th class="col_heading level0 col2" id="T_bc44e_level0_col2">연환산</th>
+<th class="col_heading level0 col3" id="T_bc44e_level0_col3">표준편차(연)</th>
+<th class="col_heading level0 col4" id="T_bc44e_level0_col4">벤치 대비 연환산</th>
+<th class="col_heading level0 col5" id="T_bc44e_level0_col5">샤프</th>
+<th class="col_heading level0 col6" id="T_bc44e_level0_col6">MDD</th>
+<th class="col_heading level0 col7" id="T_bc44e_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_bc44e_level0_col8">CAPM α(월)</th>
+<th class="col_heading level0 col9" id="T_bc44e_level0_col9">CAPM t(OLS)</th>
+<th class="col_heading level0 col10" id="T_bc44e_level0_col10">CAPM t(NW)</th>
+<th class="col_heading level0 col11" id="T_bc44e_level0_col11">FF3 α(월)</th>
+<th class="col_heading level0 col12" id="T_bc44e_level0_col12">FF3 t(OLS)</th>
+<th class="col_heading level0 col13" id="T_bc44e_level0_col13">FF3 t(NW)</th>
+<th class="col_heading level0 col14" id="T_bc44e_level0_col14">Carhart α(월)</th>
+<th class="col_heading level0 col15" id="T_bc44e_level0_col15">Carhart t(OLS)</th>
+<th class="col_heading level0 col16" id="T_bc44e_level0_col16">Carhart t(NW)</th>
+<th class="col_heading level0 col17" id="T_bc44e_level0_col17">Carhart β:MKT</th>
+<th class="col_heading level0 col18" id="T_bc44e_level0_col18">Carhart β:SMB</th>
+<th class="col_heading level0 col19" id="T_bc44e_level0_col19">Carhart β:HML</th>
+<th class="col_heading level0 col20" id="T_bc44e_level0_col20">Carhart β:MOM</th>
+<th class="col_heading level0 col21" id="T_bc44e_level0_col21">Carhart adj R²</th>
+<th class="col_heading level0 col22" id="T_bc44e_level0_col22">회전율(전 기간)</th>
 </tr>
 <tr>
 <th class="index_name level0">전략</th>
@@ -10670,160 +10670,160 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_9cb50_level0_row0">벤치:유니버스(시총가중)</th>
-<td class="data row0 col0" id="T_9cb50_row0_col0">437.0000</td>
-<td class="data row0 col1" id="T_9cb50_row0_col1">18.6072</td>
-<td class="data row0 col2" id="T_9cb50_row0_col2">0.0851</td>
-<td class="data row0 col3" id="T_9cb50_row0_col3">0.2724</td>
-<td class="data row0 col4" id="T_9cb50_row0_col4">0.0000</td>
-<td class="data row0 col5" id="T_9cb50_row0_col5">0.2231</td>
-<td class="data row0 col6" id="T_9cb50_row0_col6">-0.6101</td>
-<td class="data row0 col7" id="T_9cb50_row0_col7">nan</td>
-<td class="data row0 col8" id="T_9cb50_row0_col8">0.0021</td>
-<td class="data row0 col9" id="T_9cb50_row0_col9">2.7314</td>
-<td class="data row0 col10" id="T_9cb50_row0_col10">2.7558</td>
-<td class="data row0 col11" id="T_9cb50_row0_col11">0.0035</td>
-<td class="data row0 col12" id="T_9cb50_row0_col12">5.4685</td>
-<td class="data row0 col13" id="T_9cb50_row0_col13">5.8939</td>
-<td class="data row0 col14" id="T_9cb50_row0_col14">0.0032</td>
-<td class="data row0 col15" id="T_9cb50_row0_col15">5.1343</td>
-<td class="data row0 col16" id="T_9cb50_row0_col16">5.1880</td>
-<td class="data row0 col17" id="T_9cb50_row0_col17">0.9972</td>
-<td class="data row0 col18" id="T_9cb50_row0_col18">0.0497</td>
-<td class="data row0 col19" id="T_9cb50_row0_col19">-0.1604</td>
-<td class="data row0 col20" id="T_9cb50_row0_col20">0.0611</td>
-<td class="data row0 col21" id="T_9cb50_row0_col21">0.9739</td>
-<td class="data row0 col22" id="T_9cb50_row0_col22">nan</td>
+<th class="row_heading level0 row0" id="T_bc44e_level0_row0">벤치:유니버스(시총가중)</th>
+<td class="data row0 col0" id="T_bc44e_row0_col0">437.0000</td>
+<td class="data row0 col1" id="T_bc44e_row0_col1">18.6072</td>
+<td class="data row0 col2" id="T_bc44e_row0_col2">0.0851</td>
+<td class="data row0 col3" id="T_bc44e_row0_col3">0.2724</td>
+<td class="data row0 col4" id="T_bc44e_row0_col4">0.0000</td>
+<td class="data row0 col5" id="T_bc44e_row0_col5">0.2213</td>
+<td class="data row0 col6" id="T_bc44e_row0_col6">-0.6101</td>
+<td class="data row0 col7" id="T_bc44e_row0_col7">nan</td>
+<td class="data row0 col8" id="T_bc44e_row0_col8">0.0021</td>
+<td class="data row0 col9" id="T_bc44e_row0_col9">2.7306</td>
+<td class="data row0 col10" id="T_bc44e_row0_col10">2.7539</td>
+<td class="data row0 col11" id="T_bc44e_row0_col11">0.0035</td>
+<td class="data row0 col12" id="T_bc44e_row0_col12">5.4675</td>
+<td class="data row0 col13" id="T_bc44e_row0_col13">5.8920</td>
+<td class="data row0 col14" id="T_bc44e_row0_col14">0.0032</td>
+<td class="data row0 col15" id="T_bc44e_row0_col15">5.1334</td>
+<td class="data row0 col16" id="T_bc44e_row0_col16">5.1868</td>
+<td class="data row0 col17" id="T_bc44e_row0_col17">0.9973</td>
+<td class="data row0 col18" id="T_bc44e_row0_col18">0.0497</td>
+<td class="data row0 col19" id="T_bc44e_row0_col19">-0.1604</td>
+<td class="data row0 col20" id="T_bc44e_row0_col20">0.0611</td>
+<td class="data row0 col21" id="T_bc44e_row0_col21">0.9739</td>
+<td class="data row0 col22" id="T_bc44e_row0_col22">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_9cb50_level0_row1">벤치:코스피</th>
-<td class="data row1 col0" id="T_9cb50_row1_col0">437.0000</td>
-<td class="data row1 col1" id="T_9cb50_row1_col1">7.1545</td>
-<td class="data row1 col2" id="T_9cb50_row1_col2">0.0593</td>
-<td class="data row1 col3" id="T_9cb50_row1_col3">0.2697</td>
-<td class="data row1 col4" id="T_9cb50_row1_col4">-0.0258</td>
-<td class="data row1 col5" id="T_9cb50_row1_col5">0.1327</td>
-<td class="data row1 col6" id="T_9cb50_row1_col6">-0.7243</td>
-<td class="data row1 col7" id="T_9cb50_row1_col7">-0.4442</td>
-<td class="data row1 col8" id="T_9cb50_row1_col8">0.0000</td>
-<td class="data row1 col9" id="T_9cb50_row1_col9">nan</td>
-<td class="data row1 col10" id="T_9cb50_row1_col10">nan</td>
-<td class="data row1 col11" id="T_9cb50_row1_col11">0.0000</td>
-<td class="data row1 col12" id="T_9cb50_row1_col12">nan</td>
-<td class="data row1 col13" id="T_9cb50_row1_col13">nan</td>
-<td class="data row1 col14" id="T_9cb50_row1_col14">0.0000</td>
-<td class="data row1 col15" id="T_9cb50_row1_col15">nan</td>
-<td class="data row1 col16" id="T_9cb50_row1_col16">nan</td>
-<td class="data row1 col17" id="T_9cb50_row1_col17">1.0000</td>
-<td class="data row1 col18" id="T_9cb50_row1_col18">-0.0000</td>
-<td class="data row1 col19" id="T_9cb50_row1_col19">-0.0000</td>
-<td class="data row1 col20" id="T_9cb50_row1_col20">-0.0000</td>
-<td class="data row1 col21" id="T_9cb50_row1_col21">1.0000</td>
-<td class="data row1 col22" id="T_9cb50_row1_col22">nan</td>
+<th class="row_heading level0 row1" id="T_bc44e_level0_row1">벤치:코스피</th>
+<td class="data row1 col0" id="T_bc44e_row1_col0">437.0000</td>
+<td class="data row1 col1" id="T_bc44e_row1_col1">7.1545</td>
+<td class="data row1 col2" id="T_bc44e_row1_col2">0.0593</td>
+<td class="data row1 col3" id="T_bc44e_row1_col3">0.2697</td>
+<td class="data row1 col4" id="T_bc44e_row1_col4">-0.0258</td>
+<td class="data row1 col5" id="T_bc44e_row1_col5">0.1309</td>
+<td class="data row1 col6" id="T_bc44e_row1_col6">-0.7243</td>
+<td class="data row1 col7" id="T_bc44e_row1_col7">-0.4442</td>
+<td class="data row1 col8" id="T_bc44e_row1_col8">0.0000</td>
+<td class="data row1 col9" id="T_bc44e_row1_col9">nan</td>
+<td class="data row1 col10" id="T_bc44e_row1_col10">nan</td>
+<td class="data row1 col11" id="T_bc44e_row1_col11">0.0000</td>
+<td class="data row1 col12" id="T_bc44e_row1_col12">nan</td>
+<td class="data row1 col13" id="T_bc44e_row1_col13">nan</td>
+<td class="data row1 col14" id="T_bc44e_row1_col14">0.0000</td>
+<td class="data row1 col15" id="T_bc44e_row1_col15">nan</td>
+<td class="data row1 col16" id="T_bc44e_row1_col16">nan</td>
+<td class="data row1 col17" id="T_bc44e_row1_col17">1.0000</td>
+<td class="data row1 col18" id="T_bc44e_row1_col18">-0.0000</td>
+<td class="data row1 col19" id="T_bc44e_row1_col19">-0.0000</td>
+<td class="data row1 col20" id="T_bc44e_row1_col20">0.0000</td>
+<td class="data row1 col21" id="T_bc44e_row1_col21">1.0000</td>
+<td class="data row1 col22" id="T_bc44e_row1_col22">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_9cb50_level0_row2">벤치:코스피TR</th>
-<td class="data row2 col0" id="T_9cb50_row2_col0">188.0000</td>
-<td class="data row2 col1" id="T_9cb50_row2_col1">3.3359</td>
-<td class="data row2 col2" id="T_9cb50_row2_col2">0.0982</td>
-<td class="data row2 col3" id="T_9cb50_row2_col3">0.2186</td>
-<td class="data row2 col4" id="T_9cb50_row2_col4">0.0030</td>
-<td class="data row2 col5" id="T_9cb50_row2_col5">0.4375</td>
-<td class="data row2 col6" id="T_9cb50_row2_col6">-0.3123</td>
-<td class="data row2 col7" id="T_9cb50_row2_col7">0.0729</td>
-<td class="data row2 col8" id="T_9cb50_row2_col8">0.0015</td>
-<td class="data row2 col9" id="T_9cb50_row2_col9">5.9605</td>
-<td class="data row2 col10" id="T_9cb50_row2_col10">7.3675</td>
-<td class="data row2 col11" id="T_9cb50_row2_col11">0.0015</td>
-<td class="data row2 col12" id="T_9cb50_row2_col12">5.9083</td>
-<td class="data row2 col13" id="T_9cb50_row2_col13">7.2739</td>
-<td class="data row2 col14" id="T_9cb50_row2_col14">0.0015</td>
-<td class="data row2 col15" id="T_9cb50_row2_col15">5.8631</td>
-<td class="data row2 col16" id="T_9cb50_row2_col16">7.4199</td>
-<td class="data row2 col17" id="T_9cb50_row2_col17">0.9990</td>
-<td class="data row2 col18" id="T_9cb50_row2_col18">0.0042</td>
-<td class="data row2 col19" id="T_9cb50_row2_col19">-0.0035</td>
-<td class="data row2 col20" id="T_9cb50_row2_col20">-0.0010</td>
-<td class="data row2 col21" id="T_9cb50_row2_col21">0.9971</td>
-<td class="data row2 col22" id="T_9cb50_row2_col22">nan</td>
+<th class="row_heading level0 row2" id="T_bc44e_level0_row2">벤치:코스피TR</th>
+<td class="data row2 col0" id="T_bc44e_row2_col0">188.0000</td>
+<td class="data row2 col1" id="T_bc44e_row2_col1">3.3359</td>
+<td class="data row2 col2" id="T_bc44e_row2_col2">0.0982</td>
+<td class="data row2 col3" id="T_bc44e_row2_col3">0.2186</td>
+<td class="data row2 col4" id="T_bc44e_row2_col4">0.0030</td>
+<td class="data row2 col5" id="T_bc44e_row2_col5">0.4339</td>
+<td class="data row2 col6" id="T_bc44e_row2_col6">-0.3123</td>
+<td class="data row2 col7" id="T_bc44e_row2_col7">0.0729</td>
+<td class="data row2 col8" id="T_bc44e_row2_col8">0.0015</td>
+<td class="data row2 col9" id="T_bc44e_row2_col9">5.9607</td>
+<td class="data row2 col10" id="T_bc44e_row2_col10">7.3691</td>
+<td class="data row2 col11" id="T_bc44e_row2_col11">0.0015</td>
+<td class="data row2 col12" id="T_bc44e_row2_col12">5.9090</td>
+<td class="data row2 col13" id="T_bc44e_row2_col13">7.2753</td>
+<td class="data row2 col14" id="T_bc44e_row2_col14">0.0015</td>
+<td class="data row2 col15" id="T_bc44e_row2_col15">5.8635</td>
+<td class="data row2 col16" id="T_bc44e_row2_col16">7.4212</td>
+<td class="data row2 col17" id="T_bc44e_row2_col17">0.9990</td>
+<td class="data row2 col18" id="T_bc44e_row2_col18">0.0042</td>
+<td class="data row2 col19" id="T_bc44e_row2_col19">-0.0035</td>
+<td class="data row2 col20" id="T_bc44e_row2_col20">-0.0010</td>
+<td class="data row2 col21" id="T_bc44e_row2_col21">0.9971</td>
+<td class="data row2 col22" id="T_bc44e_row2_col22">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_9cb50_level0_row3">벤치:코스닥</th>
-<td class="data row3 col0" id="T_9cb50_row3_col0">362.0000</td>
-<td class="data row3 col1" id="T_9cb50_row3_col1">-0.1788</td>
-<td class="data row3 col2" id="T_9cb50_row3_col2">-0.0065</td>
-<td class="data row3 col3" id="T_9cb50_row3_col3">0.3253</td>
-<td class="data row3 col4" id="T_9cb50_row3_col4">-0.0996</td>
-<td class="data row3 col5" id="T_9cb50_row3_col5">0.0151</td>
-<td class="data row3 col6" id="T_9cb50_row3_col6">-0.8904</td>
-<td class="data row3 col7" id="T_9cb50_row3_col7">-0.3721</td>
-<td class="data row3 col8" id="T_9cb50_row3_col8">-0.0040</td>
-<td class="data row3 col9" id="T_9cb50_row3_col9">-1.0988</td>
-<td class="data row3 col10" id="T_9cb50_row3_col10">-1.0963</td>
-<td class="data row3 col11" id="T_9cb50_row3_col11">0.0005</td>
-<td class="data row3 col12" id="T_9cb50_row3_col12">0.1755</td>
-<td class="data row3 col13" id="T_9cb50_row3_col13">0.2041</td>
-<td class="data row3 col14" id="T_9cb50_row3_col14">0.0005</td>
-<td class="data row3 col15" id="T_9cb50_row3_col15">0.1914</td>
-<td class="data row3 col16" id="T_9cb50_row3_col16">0.2081</td>
-<td class="data row3 col17" id="T_9cb50_row3_col17">0.9362</td>
-<td class="data row3 col18" id="T_9cb50_row3_col18">0.6686</td>
-<td class="data row3 col19" id="T_9cb50_row3_col19">-0.5241</td>
-<td class="data row3 col20" id="T_9cb50_row3_col20">-0.0053</td>
-<td class="data row3 col21" id="T_9cb50_row3_col21">0.7287</td>
-<td class="data row3 col22" id="T_9cb50_row3_col22">nan</td>
+<th class="row_heading level0 row3" id="T_bc44e_level0_row3">벤치:코스닥</th>
+<td class="data row3 col0" id="T_bc44e_row3_col0">362.0000</td>
+<td class="data row3 col1" id="T_bc44e_row3_col1">-0.1788</td>
+<td class="data row3 col2" id="T_bc44e_row3_col2">-0.0065</td>
+<td class="data row3 col3" id="T_bc44e_row3_col3">0.3253</td>
+<td class="data row3 col4" id="T_bc44e_row3_col4">-0.0996</td>
+<td class="data row3 col5" id="T_bc44e_row3_col5">0.0099</td>
+<td class="data row3 col6" id="T_bc44e_row3_col6">-0.8904</td>
+<td class="data row3 col7" id="T_bc44e_row3_col7">-0.3721</td>
+<td class="data row3 col8" id="T_bc44e_row3_col8">-0.0041</td>
+<td class="data row3 col9" id="T_bc44e_row3_col9">-1.1066</td>
+<td class="data row3 col10" id="T_bc44e_row3_col10">-1.1018</td>
+<td class="data row3 col11" id="T_bc44e_row3_col11">0.0005</td>
+<td class="data row3 col12" id="T_bc44e_row3_col12">0.1722</td>
+<td class="data row3 col13" id="T_bc44e_row3_col13">0.2002</td>
+<td class="data row3 col14" id="T_bc44e_row3_col14">0.0005</td>
+<td class="data row3 col15" id="T_bc44e_row3_col15">0.1881</td>
+<td class="data row3 col16" id="T_bc44e_row3_col16">0.2045</td>
+<td class="data row3 col17" id="T_bc44e_row3_col17">0.9361</td>
+<td class="data row3 col18" id="T_bc44e_row3_col18">0.6686</td>
+<td class="data row3 col19" id="T_bc44e_row3_col19">-0.5241</td>
+<td class="data row3 col20" id="T_bc44e_row3_col20">-0.0053</td>
+<td class="data row3 col21" id="T_bc44e_row3_col21">0.7289</td>
+<td class="data row3 col22" id="T_bc44e_row3_col22">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_9cb50_level0_row4">벤치:코스닥TR</th>
-<td class="data row4 col0" id="T_9cb50_row4_col0">188.0000</td>
-<td class="data row4 col1" id="T_9cb50_row4_col1">0.7567</td>
-<td class="data row4 col2" id="T_9cb50_row4_col2">0.0366</td>
-<td class="data row4 col3" id="T_9cb50_row4_col3">0.2229</td>
-<td class="data row4 col4" id="T_9cb50_row4_col4">-0.0585</td>
-<td class="data row4 col5" id="T_9cb50_row4_col5">0.1771</td>
-<td class="data row4 col6" id="T_9cb50_row4_col6">-0.3922</td>
-<td class="data row4 col7" id="T_9cb50_row4_col7">-0.3326</td>
-<td class="data row4 col8" id="T_9cb50_row4_col8">-0.0011</td>
-<td class="data row4 col9" id="T_9cb50_row4_col9">-0.3217</td>
-<td class="data row4 col10" id="T_9cb50_row4_col10">-0.3379</td>
-<td class="data row4 col11" id="T_9cb50_row4_col11">0.0014</td>
-<td class="data row4 col12" id="T_9cb50_row4_col12">0.6817</td>
-<td class="data row4 col13" id="T_9cb50_row4_col13">0.7366</td>
-<td class="data row4 col14" id="T_9cb50_row4_col14">0.0018</td>
-<td class="data row4 col15" id="T_9cb50_row4_col15">0.8869</td>
-<td class="data row4 col16" id="T_9cb50_row4_col16">0.9923</td>
-<td class="data row4 col17" id="T_9cb50_row4_col17">0.8687</td>
-<td class="data row4 col18" id="T_9cb50_row4_col18">0.7670</td>
-<td class="data row4 col19" id="T_9cb50_row4_col19">-0.5303</td>
-<td class="data row4 col20" id="T_9cb50_row4_col20">-0.0736</td>
-<td class="data row4 col21" id="T_9cb50_row4_col21">0.8275</td>
-<td class="data row4 col22" id="T_9cb50_row4_col22">nan</td>
+<th class="row_heading level0 row4" id="T_bc44e_level0_row4">벤치:코스닥TR</th>
+<td class="data row4 col0" id="T_bc44e_row4_col0">188.0000</td>
+<td class="data row4 col1" id="T_bc44e_row4_col1">0.7567</td>
+<td class="data row4 col2" id="T_bc44e_row4_col2">0.0366</td>
+<td class="data row4 col3" id="T_bc44e_row4_col3">0.2229</td>
+<td class="data row4 col4" id="T_bc44e_row4_col4">-0.0585</td>
+<td class="data row4 col5" id="T_bc44e_row4_col5">0.1737</td>
+<td class="data row4 col6" id="T_bc44e_row4_col6">-0.3922</td>
+<td class="data row4 col7" id="T_bc44e_row4_col7">-0.3326</td>
+<td class="data row4 col8" id="T_bc44e_row4_col8">-0.0012</td>
+<td class="data row4 col9" id="T_bc44e_row4_col9">-0.3276</td>
+<td class="data row4 col10" id="T_bc44e_row4_col10">-0.3436</td>
+<td class="data row4 col11" id="T_bc44e_row4_col11">0.0014</td>
+<td class="data row4 col12" id="T_bc44e_row4_col12">0.6769</td>
+<td class="data row4 col13" id="T_bc44e_row4_col13">0.7312</td>
+<td class="data row4 col14" id="T_bc44e_row4_col14">0.0018</td>
+<td class="data row4 col15" id="T_bc44e_row4_col15">0.8827</td>
+<td class="data row4 col16" id="T_bc44e_row4_col16">0.9878</td>
+<td class="data row4 col17" id="T_bc44e_row4_col17">0.8687</td>
+<td class="data row4 col18" id="T_bc44e_row4_col18">0.7670</td>
+<td class="data row4 col19" id="T_bc44e_row4_col19">-0.5303</td>
+<td class="data row4 col20" id="T_bc44e_row4_col20">-0.0737</td>
+<td class="data row4 col21" id="T_bc44e_row4_col21">0.8275</td>
+<td class="data row4 col22" id="T_bc44e_row4_col22">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_9cb50_level0_row5">벤치:KRX TMI</th>
-<td class="data row5 col0" id="T_9cb50_row5_col0">197.0000</td>
-<td class="data row5 col1" id="T_9cb50_row5_col1">3.2605</td>
-<td class="data row5 col2" id="T_9cb50_row5_col2">0.0923</td>
-<td class="data row5 col3" id="T_9cb50_row5_col3">0.2187</td>
-<td class="data row5 col4" id="T_9cb50_row5_col4">-0.0118</td>
-<td class="data row5 col5" id="T_9cb50_row5_col5">0.4132</td>
-<td class="data row5 col6" id="T_9cb50_row5_col6">-0.3349</td>
-<td class="data row5 col7" id="T_9cb50_row5_col7">-0.4177</td>
-<td class="data row5 col8" id="T_9cb50_row5_col8">0.0003</td>
-<td class="data row5 col9" id="T_9cb50_row5_col9">0.8871</td>
-<td class="data row5 col10" id="T_9cb50_row5_col10">0.7868</td>
-<td class="data row5 col11" id="T_9cb50_row5_col11">0.0006</td>
-<td class="data row5 col12" id="T_9cb50_row5_col12">1.7750</td>
-<td class="data row5 col13" id="T_9cb50_row5_col13">1.5683</td>
-<td class="data row5 col14" id="T_9cb50_row5_col14">0.0006</td>
-<td class="data row5 col15" id="T_9cb50_row5_col15">1.5891</td>
-<td class="data row5 col16" id="T_9cb50_row5_col16">1.4067</td>
-<td class="data row5 col17" id="T_9cb50_row5_col17">1.0142</td>
-<td class="data row5 col18" id="T_9cb50_row5_col18">0.0354</td>
-<td class="data row5 col19" id="T_9cb50_row5_col19">-0.0399</td>
-<td class="data row5 col20" id="T_9cb50_row5_col20">0.0107</td>
-<td class="data row5 col21" id="T_9cb50_row5_col21">0.9941</td>
-<td class="data row5 col22" id="T_9cb50_row5_col22">nan</td>
+<th class="row_heading level0 row5" id="T_bc44e_level0_row5">벤치:KRX TMI</th>
+<td class="data row5 col0" id="T_bc44e_row5_col0">197.0000</td>
+<td class="data row5 col1" id="T_bc44e_row5_col1">3.2605</td>
+<td class="data row5 col2" id="T_bc44e_row5_col2">0.0923</td>
+<td class="data row5 col3" id="T_bc44e_row5_col3">0.2187</td>
+<td class="data row5 col4" id="T_bc44e_row5_col4">-0.0118</td>
+<td class="data row5 col5" id="T_bc44e_row5_col5">0.4094</td>
+<td class="data row5 col6" id="T_bc44e_row5_col6">-0.3349</td>
+<td class="data row5 col7" id="T_bc44e_row5_col7">-0.4177</td>
+<td class="data row5 col8" id="T_bc44e_row5_col8">0.0003</td>
+<td class="data row5 col9" id="T_bc44e_row5_col9">0.8887</td>
+<td class="data row5 col10" id="T_bc44e_row5_col10">0.7884</td>
+<td class="data row5 col11" id="T_bc44e_row5_col11">0.0006</td>
+<td class="data row5 col12" id="T_bc44e_row5_col12">1.7781</td>
+<td class="data row5 col13" id="T_bc44e_row5_col13">1.5712</td>
+<td class="data row5 col14" id="T_bc44e_row5_col14">0.0006</td>
+<td class="data row5 col15" id="T_bc44e_row5_col15">1.5917</td>
+<td class="data row5 col16" id="T_bc44e_row5_col16">1.4093</td>
+<td class="data row5 col17" id="T_bc44e_row5_col17">1.0142</td>
+<td class="data row5 col18" id="T_bc44e_row5_col18">0.0354</td>
+<td class="data row5 col19" id="T_bc44e_row5_col19">-0.0399</td>
+<td class="data row5 col20" id="T_bc44e_row5_col20">0.0107</td>
+<td class="data row5 col21" id="T_bc44e_row5_col21">0.9941</td>
+<td class="data row5 col22" id="T_bc44e_row5_col22">nan</td>
 </tr>
 </tbody>
 </table>
@@ -10834,15 +10834,15 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_eaa5c">
+<table id="T_03f40">
 <caption>마법공식(EY+ROC 순위합산): 비중 × 주기 샤프, 전체 기간, 기본 비용</caption>
 <thead>
 <tr>
 <th class="index_name level0">주기</th>
-<th class="col_heading level0 col0" id="T_eaa5c_level0_col0">1</th>
-<th class="col_heading level0 col1" id="T_eaa5c_level0_col1">3</th>
-<th class="col_heading level0 col2" id="T_eaa5c_level0_col2">6</th>
-<th class="col_heading level0 col3" id="T_eaa5c_level0_col3">12</th>
+<th class="col_heading level0 col0" id="T_03f40_level0_col0">1</th>
+<th class="col_heading level0 col1" id="T_03f40_level0_col1">3</th>
+<th class="col_heading level0 col2" id="T_03f40_level0_col2">6</th>
+<th class="col_heading level0 col3" id="T_03f40_level0_col3">12</th>
 </tr>
 <tr>
 <th class="index_name level0">비중</th>
@@ -10854,39 +10854,39 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_eaa5c_level0_row0">동일</th>
-<td class="data row0 col0" id="T_eaa5c_row0_col0">0.416</td>
-<td class="data row0 col1" id="T_eaa5c_row0_col1">0.384</td>
-<td class="data row0 col2" id="T_eaa5c_row0_col2">0.317</td>
-<td class="data row0 col3" id="T_eaa5c_row0_col3">0.295</td>
+<th class="row_heading level0 row0" id="T_03f40_level0_row0">동일</th>
+<td class="data row0 col0" id="T_03f40_row0_col0">0.415</td>
+<td class="data row0 col1" id="T_03f40_row0_col1">0.383</td>
+<td class="data row0 col2" id="T_03f40_row0_col2">0.315</td>
+<td class="data row0 col3" id="T_03f40_row0_col3">0.293</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_eaa5c_level0_row1">시총</th>
-<td class="data row1 col0" id="T_eaa5c_row1_col0">0.282</td>
-<td class="data row1 col1" id="T_eaa5c_row1_col1">0.244</td>
-<td class="data row1 col2" id="T_eaa5c_row1_col2">0.185</td>
-<td class="data row1 col3" id="T_eaa5c_row1_col3">0.187</td>
+<th class="row_heading level0 row1" id="T_03f40_level0_row1">시총</th>
+<td class="data row1 col0" id="T_03f40_row1_col0">0.281</td>
+<td class="data row1 col1" id="T_03f40_row1_col1">0.243</td>
+<td class="data row1 col2" id="T_03f40_row1_col2">0.183</td>
+<td class="data row1 col3" id="T_03f40_row1_col3">0.185</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_eaa5c_level0_row2">시총상한</th>
-<td class="data row2 col0" id="T_eaa5c_row2_col0">0.183</td>
-<td class="data row2 col1" id="T_eaa5c_row2_col1">0.159</td>
-<td class="data row2 col2" id="T_eaa5c_row2_col2">0.145</td>
-<td class="data row2 col3" id="T_eaa5c_row2_col3">0.150</td>
+<th class="row_heading level0 row2" id="T_03f40_level0_row2">시총상한</th>
+<td class="data row2 col0" id="T_03f40_row2_col0">0.182</td>
+<td class="data row2 col1" id="T_03f40_row2_col1">0.157</td>
+<td class="data row2 col2" id="T_03f40_row2_col2">0.143</td>
+<td class="data row2 col3" id="T_03f40_row2_col3">0.148</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_eaa5c_level0_row3">위험균형</th>
-<td class="data row3 col0" id="T_eaa5c_row3_col0">0.401</td>
-<td class="data row3 col1" id="T_eaa5c_row3_col1">0.377</td>
-<td class="data row3 col2" id="T_eaa5c_row3_col2">0.397</td>
-<td class="data row3 col3" id="T_eaa5c_row3_col3">0.371</td>
+<th class="row_heading level0 row3" id="T_03f40_level0_row3">위험균형</th>
+<td class="data row3 col0" id="T_03f40_row3_col0">0.399</td>
+<td class="data row3 col1" id="T_03f40_row3_col1">0.375</td>
+<td class="data row3 col2" id="T_03f40_row3_col2">0.395</td>
+<td class="data row3 col3" id="T_03f40_row3_col3">0.370</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_eaa5c_level0_row4">최소분산</th>
-<td class="data row4 col0" id="T_eaa5c_row4_col0">0.311</td>
-<td class="data row4 col1" id="T_eaa5c_row4_col1">0.335</td>
-<td class="data row4 col2" id="T_eaa5c_row4_col2">0.401</td>
-<td class="data row4 col3" id="T_eaa5c_row4_col3">0.229</td>
+<th class="row_heading level0 row4" id="T_03f40_level0_row4">최소분산</th>
+<td class="data row4 col0" id="T_03f40_row4_col0">0.305</td>
+<td class="data row4 col1" id="T_03f40_row4_col1">0.329</td>
+<td class="data row4 col2" id="T_03f40_row4_col2">0.395</td>
+<td class="data row4 col3" id="T_03f40_row4_col3">0.223</td>
 </tr>
 </tbody>
 </table>
@@ -11007,23 +11007,23 @@ a.anchor-link {
 <td>0.2272</td>
 <td>0.4014</td>
 <td>0.1421</td>
-<td>0.5394</td>
+<td>0.5382</td>
 <td>-0.6574</td>
 <td>0.4483</td>
 <td>0.0159</td>
-<td>3.2680</td>
-<td>2.8446</td>
+<td>3.2659</td>
+<td>2.8423</td>
 <td>0.0168</td>
-<td>4.2382</td>
-<td>2.6239</td>
+<td>4.2369</td>
+<td>2.6222</td>
 <td>0.0169</td>
-<td>4.2393</td>
-<td>2.4220</td>
-<td>0.9403</td>
-<td>1.0001</td>
+<td>4.2378</td>
+<td>2.4205</td>
+<td>0.9409</td>
+<td>1.0003</td>
 <td>-0.2145</td>
 <td>-0.0152</td>
-<td>0.5095</td>
+<td>0.5094</td>
 <td>0.7960</td>
 <td>1</td>
 </tr>
@@ -11034,23 +11034,23 @@ a.anchor-link {
 <td>0.2046</td>
 <td>0.3353</td>
 <td>0.1194</td>
-<td>0.5345</td>
+<td>0.5332</td>
 <td>-0.5117</td>
 <td>0.4210</td>
 <td>0.0130</td>
-<td>3.2992</td>
-<td>3.0150</td>
+<td>3.2964</td>
+<td>3.0122</td>
 <td>0.0147</td>
-<td>4.7589</td>
-<td>3.1725</td>
-<td>0.0144</td>
-<td>4.6288</td>
-<td>2.8773</td>
-<td>0.8445</td>
+<td>4.7556</td>
+<td>3.1701</td>
+<td>0.0143</td>
+<td>4.6253</td>
+<td>2.8750</td>
+<td>0.8448</td>
 <td>0.8330</td>
-<td>-0.2765</td>
-<td>0.0625</td>
-<td>0.5743</td>
+<td>-0.2764</td>
+<td>0.0626</td>
+<td>0.5740</td>
 <td>0.6831</td>
 <td>2</td>
 </tr>
@@ -11061,23 +11061,23 @@ a.anchor-link {
 <td>0.2100</td>
 <td>0.3542</td>
 <td>0.1248</td>
-<td>0.5341</td>
+<td>0.5328</td>
 <td>-0.5757</td>
 <td>0.4479</td>
 <td>0.0136</td>
-<td>3.3245</td>
-<td>2.8447</td>
+<td>3.3220</td>
+<td>2.8420</td>
 <td>0.0156</td>
-<td>4.6899</td>
-<td>2.9176</td>
+<td>4.6876</td>
+<td>2.9155</td>
 <td>0.0151</td>
-<td>4.5289</td>
-<td>2.6714</td>
-<td>0.9019</td>
+<td>4.5265</td>
+<td>2.6695</td>
+<td>0.9024</td>
 <td>0.8149</td>
-<td>-0.3069</td>
-<td>0.0895</td>
-<td>0.5593</td>
+<td>-0.3068</td>
+<td>0.0896</td>
+<td>0.5591</td>
 <td>0.6954</td>
 <td>3</td>
 </tr>
@@ -11088,23 +11088,23 @@ a.anchor-link {
 <td>0.2112</td>
 <td>0.3788</td>
 <td>0.1260</td>
-<td>0.5292</td>
+<td>0.5280</td>
 <td>-0.6545</td>
 <td>0.4395</td>
 <td>0.0145</td>
-<td>3.2729</td>
-<td>2.8601</td>
+<td>3.2711</td>
+<td>2.8577</td>
 <td>0.0132</td>
-<td>3.8388</td>
-<td>2.8323</td>
+<td>3.8382</td>
+<td>2.8304</td>
 <td>0.0129</td>
-<td>3.7586</td>
-<td>2.6534</td>
-<td>0.9806</td>
-<td>1.0006</td>
+<td>3.7580</td>
+<td>2.6517</td>
+<td>0.9810</td>
+<td>1.0007</td>
 <td>0.0306</td>
 <td>0.0379</td>
-<td>0.5903</td>
+<td>0.5901</td>
 <td>0.8626</td>
 <td>4</td>
 </tr>
@@ -11115,23 +11115,23 @@ a.anchor-link {
 <td>0.2075</td>
 <td>0.3634</td>
 <td>0.1224</td>
-<td>0.5210</td>
+<td>0.5198</td>
 <td>-0.6007</td>
 <td>0.4249</td>
 <td>0.0137</td>
-<td>3.1888</td>
-<td>2.7976</td>
+<td>3.1865</td>
+<td>2.7951</td>
 <td>0.0157</td>
-<td>4.5213</td>
-<td>2.8423</td>
+<td>4.5193</td>
+<td>2.8404</td>
 <td>0.0152</td>
-<td>4.3690</td>
-<td>2.6111</td>
-<td>0.8933</td>
+<td>4.3670</td>
+<td>2.6094</td>
+<td>0.8936</td>
 <td>0.8646</td>
-<td>-0.3114</td>
-<td>0.0870</td>
-<td>0.5436</td>
+<td>-0.3113</td>
+<td>0.0871</td>
+<td>0.5434</td>
 <td>0.6917</td>
 <td>5</td>
 </tr>
@@ -11142,23 +11142,23 @@ a.anchor-link {
 <td>0.2072</td>
 <td>0.3660</td>
 <td>0.1220</td>
-<td>0.5157</td>
+<td>0.5145</td>
 <td>-0.4876</td>
 <td>0.4148</td>
 <td>0.0137</td>
-<td>3.1331</td>
-<td>2.7043</td>
+<td>3.1307</td>
+<td>2.7018</td>
 <td>0.0161</td>
-<td>4.5482</td>
-<td>2.7484</td>
+<td>4.5459</td>
+<td>2.7465</td>
 <td>0.0158</td>
-<td>4.4525</td>
-<td>2.5246</td>
-<td>0.8783</td>
+<td>4.4501</td>
+<td>2.5228</td>
+<td>0.8786</td>
 <td>0.8655</td>
-<td>-0.3543</td>
-<td>0.0476</td>
-<td>0.5312</td>
+<td>-0.3542</td>
+<td>0.0477</td>
+<td>0.5309</td>
 <td>0.6889</td>
 <td>6</td>
 </tr>
@@ -11169,23 +11169,23 @@ a.anchor-link {
 <td>0.2094</td>
 <td>0.3865</td>
 <td>0.1243</td>
-<td>0.5111</td>
+<td>0.5099</td>
 <td>-0.6707</td>
 <td>0.4045</td>
 <td>0.0144</td>
-<td>3.0712</td>
-<td>2.6336</td>
+<td>3.0687</td>
+<td>2.6308</td>
 <td>0.0151</td>
-<td>3.8423</td>
-<td>2.4218</td>
+<td>3.8402</td>
+<td>2.4197</td>
 <td>0.0148</td>
-<td>3.7384</td>
-<td>2.1508</td>
-<td>0.8904</td>
-<td>0.9198</td>
-<td>-0.1745</td>
+<td>3.7362</td>
+<td>2.1489</td>
+<td>0.8909</td>
+<td>0.9199</td>
+<td>-0.1744</td>
 <td>0.0614</td>
-<td>0.4801</td>
+<td>0.4799</td>
 <td>0.8312</td>
 <td>7</td>
 </tr>
@@ -11196,23 +11196,23 @@ a.anchor-link {
 <td>0.2111</td>
 <td>0.3905</td>
 <td>0.1259</td>
-<td>0.5044</td>
+<td>0.5033</td>
 <td>-0.5716</td>
 <td>0.4051</td>
 <td>0.0143</td>
-<td>3.0377</td>
-<td>2.6377</td>
+<td>3.0359</td>
+<td>2.6352</td>
 <td>0.0162</td>
-<td>4.0546</td>
-<td>2.4593</td>
+<td>4.0534</td>
+<td>2.4572</td>
 <td>0.0159</td>
-<td>3.9774</td>
-<td>2.1914</td>
+<td>3.9762</td>
+<td>2.1896</td>
 <td>0.9062</td>
-<td>0.8778</td>
+<td>0.8777</td>
 <td>-0.2990</td>
 <td>0.0411</td>
-<td>0.4782</td>
+<td>0.4778</td>
 <td>0.8500</td>
 <td>8</td>
 </tr>
@@ -11223,23 +11223,23 @@ a.anchor-link {
 <td>0.1917</td>
 <td>0.3617</td>
 <td>0.1065</td>
-<td>0.4866</td>
+<td>0.4854</td>
 <td>-0.6053</td>
 <td>0.3804</td>
 <td>0.0126</td>
-<td>2.9453</td>
-<td>2.4914</td>
+<td>2.9433</td>
+<td>2.4891</td>
 <td>0.0145</td>
-<td>4.3389</td>
-<td>2.6968</td>
+<td>4.3373</td>
+<td>2.6949</td>
 <td>0.0142</td>
-<td>4.2248</td>
-<td>2.4978</td>
-<td>0.9004</td>
-<td>0.9148</td>
-<td>-0.3012</td>
-<td>0.0576</td>
-<td>0.5727</td>
+<td>4.2231</td>
+<td>2.4960</td>
+<td>0.9005</td>
+<td>0.9147</td>
+<td>-0.3011</td>
+<td>0.0577</td>
+<td>0.5723</td>
 <td>0.6897</td>
 <td>9</td>
 </tr>
@@ -11250,23 +11250,23 @@ a.anchor-link {
 <td>0.1853</td>
 <td>0.3590</td>
 <td>0.1002</td>
-<td>0.4824</td>
+<td>0.4811</td>
 <td>-0.7593</td>
 <td>0.3674</td>
 <td>0.0124</td>
-<td>2.9240</td>
-<td>2.5887</td>
+<td>2.9213</td>
+<td>2.5866</td>
 <td>0.0114</td>
-<td>3.6870</td>
-<td>2.8462</td>
+<td>3.6849</td>
+<td>2.8444</td>
 <td>0.0110</td>
-<td>3.5500</td>
-<td>2.6249</td>
-<td>0.9310</td>
-<td>1.0263</td>
+<td>3.5479</td>
+<td>2.6233</td>
+<td>0.9316</td>
+<td>1.0264</td>
 <td>-0.0100</td>
-<td>0.0688</td>
-<td>0.6305</td>
+<td>0.0689</td>
+<td>0.6304</td>
 <td>0.8412</td>
 <td>10</td>
 </tr>
@@ -11277,23 +11277,23 @@ a.anchor-link {
 <td>0.1097</td>
 <td>0.3334</td>
 <td>0.0246</td>
-<td>0.2948</td>
+<td>0.2934</td>
 <td>-0.7191</td>
 <td>0.1337</td>
 <td>0.0062</td>
-<td>1.5977</td>
-<td>1.4525</td>
-<td>0.0076</td>
-<td>2.7473</td>
-<td>2.1087</td>
+<td>1.5945</td>
+<td>1.4493</td>
+<td>0.0075</td>
+<td>2.7439</td>
+<td>2.1063</td>
 <td>0.0072</td>
-<td>2.6055</td>
-<td>1.8668</td>
-<td>0.8787</td>
+<td>2.6021</td>
+<td>1.8646</td>
+<td>0.8792</td>
 <td>0.9419</td>
-<td>-0.2576</td>
-<td>0.0650</td>
-<td>0.6613</td>
+<td>-0.2575</td>
+<td>0.0651</td>
+<td>0.6611</td>
 <td>0.8131</td>
 <td>40</td>
 </tr>
@@ -11340,15 +11340,15 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_c27f1">
+<table id="T_d6782">
 <caption>샤프 중앙값('공통' 기간: 모든 비중 방식이 같은 달부터)</caption>
 <thead>
 <tr>
 <th class="index_name level0">주기</th>
-<th class="col_heading level0 col0" id="T_c27f1_level0_col0">1</th>
-<th class="col_heading level0 col1" id="T_c27f1_level0_col1">3</th>
-<th class="col_heading level0 col2" id="T_c27f1_level0_col2">6</th>
-<th class="col_heading level0 col3" id="T_c27f1_level0_col3">12</th>
+<th class="col_heading level0 col0" id="T_d6782_level0_col0">1</th>
+<th class="col_heading level0 col1" id="T_d6782_level0_col1">3</th>
+<th class="col_heading level0 col2" id="T_d6782_level0_col2">6</th>
+<th class="col_heading level0 col3" id="T_d6782_level0_col3">12</th>
 </tr>
 <tr>
 <th class="index_name level0">비중</th>
@@ -11360,39 +11360,39 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_c27f1_level0_row0">동일</th>
-<td class="data row0 col0" id="T_c27f1_row0_col0">0.604</td>
-<td class="data row0 col1" id="T_c27f1_row0_col1">0.572</td>
-<td class="data row0 col2" id="T_c27f1_row0_col2">0.446</td>
-<td class="data row0 col3" id="T_c27f1_row0_col3">0.414</td>
+<th class="row_heading level0 row0" id="T_d6782_level0_row0">동일</th>
+<td class="data row0 col0" id="T_d6782_row0_col0">0.599</td>
+<td class="data row0 col1" id="T_d6782_row0_col1">0.568</td>
+<td class="data row0 col2" id="T_d6782_row0_col2">0.441</td>
+<td class="data row0 col3" id="T_d6782_row0_col3">0.409</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_c27f1_level0_row1">시총</th>
-<td class="data row1 col0" id="T_c27f1_row1_col0">0.371</td>
-<td class="data row1 col1" id="T_c27f1_row1_col1">0.348</td>
-<td class="data row1 col2" id="T_c27f1_row1_col2">0.287</td>
-<td class="data row1 col3" id="T_c27f1_row1_col3">0.378</td>
+<th class="row_heading level0 row1" id="T_d6782_level0_row1">시총</th>
+<td class="data row1 col0" id="T_d6782_row1_col0">0.366</td>
+<td class="data row1 col1" id="T_d6782_row1_col1">0.343</td>
+<td class="data row1 col2" id="T_d6782_row1_col2">0.283</td>
+<td class="data row1 col3" id="T_d6782_row1_col3">0.373</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_c27f1_level0_row2">시총상한</th>
-<td class="data row2 col0" id="T_c27f1_row2_col0">0.376</td>
-<td class="data row2 col1" id="T_c27f1_row2_col1">0.368</td>
-<td class="data row2 col2" id="T_c27f1_row2_col2">0.283</td>
-<td class="data row2 col3" id="T_c27f1_row2_col3">0.335</td>
+<th class="row_heading level0 row2" id="T_d6782_level0_row2">시총상한</th>
+<td class="data row2 col0" id="T_d6782_row2_col0">0.370</td>
+<td class="data row2 col1" id="T_d6782_row2_col1">0.362</td>
+<td class="data row2 col2" id="T_d6782_row2_col2">0.278</td>
+<td class="data row2 col3" id="T_d6782_row2_col3">0.330</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_c27f1_level0_row3">위험균형</th>
-<td class="data row3 col0" id="T_c27f1_row3_col0">0.557</td>
-<td class="data row3 col1" id="T_c27f1_row3_col1">0.521</td>
-<td class="data row3 col2" id="T_c27f1_row3_col2">0.452</td>
-<td class="data row3 col3" id="T_c27f1_row3_col3">0.450</td>
+<th class="row_heading level0 row3" id="T_d6782_level0_row3">위험균형</th>
+<td class="data row3 col0" id="T_d6782_row3_col0">0.552</td>
+<td class="data row3 col1" id="T_d6782_row3_col1">0.516</td>
+<td class="data row3 col2" id="T_d6782_row3_col2">0.447</td>
+<td class="data row3 col3" id="T_d6782_row3_col3">0.445</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_c27f1_level0_row4">최소분산</th>
-<td class="data row4 col0" id="T_c27f1_row4_col0">0.463</td>
-<td class="data row4 col1" id="T_c27f1_row4_col1">0.413</td>
-<td class="data row4 col2" id="T_c27f1_row4_col2">0.423</td>
-<td class="data row4 col3" id="T_c27f1_row4_col3">0.384</td>
+<th class="row_heading level0 row4" id="T_d6782_level0_row4">최소분산</th>
+<td class="data row4 col0" id="T_d6782_row4_col0">0.457</td>
+<td class="data row4 col1" id="T_d6782_row4_col1">0.407</td>
+<td class="data row4 col2" id="T_d6782_row4_col2">0.418</td>
+<td class="data row4 col3" id="T_d6782_row4_col3">0.378</td>
 </tr>
 </tbody>
 </table>
@@ -11403,14 +11403,14 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_81dc3">
+<table id="T_67f56">
 <caption>연환산 수익률 중앙값</caption>
 <thead>
 <tr>
 <th class="index_name level0">비용</th>
-<th class="col_heading level0 col0" id="T_81dc3_level0_col0">비용0</th>
-<th class="col_heading level0 col1" id="T_81dc3_level0_col1">비용기본</th>
-<th class="col_heading level0 col2" id="T_81dc3_level0_col2">비용2배</th>
+<th class="col_heading level0 col0" id="T_67f56_level0_col0">비용0</th>
+<th class="col_heading level0 col1" id="T_67f56_level0_col1">비용기본</th>
+<th class="col_heading level0 col2" id="T_67f56_level0_col2">비용2배</th>
 </tr>
 <tr>
 <th class="index_name level0">주기</th>
@@ -11421,28 +11421,28 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_81dc3_level0_row0">1</th>
-<td class="data row0 col0" id="T_81dc3_row0_col0">0.1902</td>
-<td class="data row0 col1" id="T_81dc3_row0_col1">0.1558</td>
-<td class="data row0 col2" id="T_81dc3_row0_col2">0.1205</td>
+<th class="row_heading level0 row0" id="T_67f56_level0_row0">1</th>
+<td class="data row0 col0" id="T_67f56_row0_col0">0.1902</td>
+<td class="data row0 col1" id="T_67f56_row0_col1">0.1558</td>
+<td class="data row0 col2" id="T_67f56_row0_col2">0.1205</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_81dc3_level0_row1">3</th>
-<td class="data row1 col0" id="T_81dc3_row1_col0">0.1736</td>
-<td class="data row1 col1" id="T_81dc3_row1_col1">0.1509</td>
-<td class="data row1 col2" id="T_81dc3_row1_col2">0.1287</td>
+<th class="row_heading level0 row1" id="T_67f56_level0_row1">3</th>
+<td class="data row1 col0" id="T_67f56_row1_col0">0.1736</td>
+<td class="data row1 col1" id="T_67f56_row1_col1">0.1509</td>
+<td class="data row1 col2" id="T_67f56_row1_col2">0.1287</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_81dc3_level0_row2">6</th>
-<td class="data row2 col0" id="T_81dc3_row2_col0">0.1496</td>
-<td class="data row2 col1" id="T_81dc3_row2_col1">0.1329</td>
-<td class="data row2 col2" id="T_81dc3_row2_col2">0.1175</td>
+<th class="row_heading level0 row2" id="T_67f56_level0_row2">6</th>
+<td class="data row2 col0" id="T_67f56_row2_col0">0.1496</td>
+<td class="data row2 col1" id="T_67f56_row2_col1">0.1329</td>
+<td class="data row2 col2" id="T_67f56_row2_col2">0.1175</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_81dc3_level0_row3">12</th>
-<td class="data row3 col0" id="T_81dc3_row3_col0">0.1461</td>
-<td class="data row3 col1" id="T_81dc3_row3_col1">0.1341</td>
-<td class="data row3 col2" id="T_81dc3_row3_col2">0.1228</td>
+<th class="row_heading level0 row3" id="T_67f56_level0_row3">12</th>
+<td class="data row3 col0" id="T_67f56_row3_col0">0.1461</td>
+<td class="data row3 col1" id="T_67f56_row3_col1">0.1341</td>
+<td class="data row3 col2" id="T_67f56_row3_col2">0.1228</td>
 </tr>
 </tbody>
 </table>
@@ -11523,16 +11523,16 @@ a.anchor-link {
 <td>48.0000</td>
 <td>35.0000</td>
 <td>0.0000</td>
-<td>39.0000</td>
+<td>40.0000</td>
 <td>44.0000</td>
 </tr>
 <tr>
 <th>벤치마크 샤프</th>
-<td>-0.0296</td>
-<td>0.3951</td>
-<td>0.5587</td>
-<td>0.2967</td>
-<td>0.2231</td>
+<td>-0.0278</td>
+<td>0.3871</td>
+<td>0.5561</td>
+<td>0.2905</td>
+<td>0.2213</td>
 </tr>
 </tbody>
 </table>
@@ -11549,7 +11549,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="7.-%EB%A6%AC%ED%8F%AC%ED%8A%B8%EC%97%90-%EC%93%B8-%ED%95%B5%EC%8B%AC-%ED%91%9C%C2%B7%EA%B7%B8%EB%A6%BC-(%EA%B2%B0%EA%B3%BC_%EC%A0%84%EB%9E%B5%EC%88%98%EC%9D%B5%EB%A5%A0/,-%EC%97%B0%EA%B5%AC/%ED%99%95%EC%9E%A5%EC%97%B0%EA%B5%AC_20261103.ipynb-6%EC%A0%88%EC%9D%B4-%EB%A7%8C%EB%93%A6)">7. 리포트에 쓸 핵심 표·그림 (<code>결과_전략수익률/</code>, <code>연구/확장연구_20261103.ipynb</code> 6절이 만듦)<a class="anchor-link" href="#7.-%EB%A6%AC%ED%8F%AC%ED%8A%B8%EC%97%90-%EC%93%B8-%ED%95%B5%EC%8B%AC-%ED%91%9C%C2%B7%EA%B7%B8%EB%A6%BC-(%EA%B2%B0%EA%B3%BC_%EC%A0%84%EB%9E%B5%EC%88%98%EC%9D%B5%EB%A5%A0/,-%EC%97%B0%EA%B5%AC/%ED%99%95%EC%9E%A5%EC%97%B0%EA%B5%AC_20261103.ipynb-6%EC%A0%88%EC%9D%B4-%EB%A7%8C%EB%93%A6)">¶</a></h2><p>기준 = 마법공식(EY+ROC 순위합산), 동일가중, 12개월, 기본 비용. 비교마다 조건 하나만 바꿨다. 표 아래 문장은 그 표의 숫자에서 코드가 만든다(가장 높은·낮은 줄을 그대로 옮김, 해석 없음).
-칸: 연환산 = 기하 연환산 수익률, 표준편차(연) = 월 표준편차 × √12, 샤프 = 월 초과수익(콜금리 차감) 평균/표준편차 × √12, MDD = 최대 낙폭, 회전율 = 리밸런싱당 평균 한쪽 회전율(전 기간), 벤치 대비 연환산 = 같은 달들의 유니버스 시총가중 벤치마크와 연환산 차이, 정보비율 = 유니버스 벤치마크 대비. α·t는 코스피 가격지수(배당 없음) 기준이라 배당 포함 포트폴리오에서는 배당만큼 높게 나온다(6절).</p>
+칸: 연환산 = 기하 연환산 수익률, 표준편차(연) = 월 표준편차 × √12, 샤프 = 월 초과수익(교수님 제공 CD1m 차감, 연 %/1200, 지난달 말 값) 평균/표준편차 × √12, MDD = 최대 낙폭, 회전율 = 리밸런싱당 평균 한쪽 회전율(전 기간), 벤치 대비 연환산 = 같은 달들의 유니버스 시총가중 벤치마크와 연환산 차이, 정보비율 = 유니버스 벤치마크 대비. α·t는 코스피 가격지수(배당 없음) 기준이라 배당 포함 포트폴리오에서는 배당만큼 높게 나온다(6절).</p>
 </div>
 </div>
 </div>
@@ -11577,6 +11577,7 @@ a.anchor-link {
     <span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">칸</span><span class="p">]</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">리포트</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">.png"</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
         <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">리포트</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">.png"</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">리포트</span> <span class="o">/</span> <span class="s2">"7_무위험_민감도.csv"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"무위험이자율 민감도: CD1m(본문) vs 콜금리, 전체 기간"</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -11589,8 +11590,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[비중 방식 (공통 기간)] 줄 5개. 샤프 가장 높음: EY+ROC 순위합산 / 위험균형 / 12 (0.340), 가장 낮음: EY+ROC 순위합산 / 시총상한 / 12 (0.169). 연환산 가장 높음: EY+ROC 순위합산 / 위험균형 / 12 (11.62%). MDD 가장 얕음: EY+ROC 순위합산 / 동일 / 12 (-71.91%).
-  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 1/5개 (벤치 샤프 공통 0.297)
+<pre>[비중 방식 (공통 기간)] 줄 5개. 샤프 가장 높음: EY+ROC 순위합산 / 위험균형 / 12 (0.335), 가장 낮음: EY+ROC 순위합산 / 시총상한 / 12 (0.163). 연환산 가장 높음: EY+ROC 순위합산 / 위험균형 / 12 (11.62%). MDD 가장 얕음: EY+ROC 순위합산 / 동일 / 12 (-71.91%).
+  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 1/5개 (벤치 샤프 공통 0.291)
 </pre>
 </div>
 </div>
@@ -11599,7 +11600,7 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_73ca3">
+<table id="T_a0bbd">
 <caption>비중 방식 (공통 기간)</caption>
 <thead>
 <tr>
@@ -11608,16 +11609,16 @@ a.anchor-link {
 <th class="blank"> </th>
 <th class="blank"> </th>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_73ca3_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_73ca3_level0_col1">연환산</th>
-<th class="col_heading level0 col2" id="T_73ca3_level0_col2">표준편차(연)</th>
-<th class="col_heading level0 col3" id="T_73ca3_level0_col3">샤프</th>
-<th class="col_heading level0 col4" id="T_73ca3_level0_col4">MDD</th>
-<th class="col_heading level0 col5" id="T_73ca3_level0_col5">회전율(전 기간)</th>
-<th class="col_heading level0 col6" id="T_73ca3_level0_col6">벤치 대비 연환산</th>
-<th class="col_heading level0 col7" id="T_73ca3_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_73ca3_level0_col8">Carhart α(월)</th>
-<th class="col_heading level0 col9" id="T_73ca3_level0_col9">Carhart t(NW)</th>
+<th class="col_heading level0 col0" id="T_a0bbd_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_a0bbd_level0_col1">연환산</th>
+<th class="col_heading level0 col2" id="T_a0bbd_level0_col2">표준편차(연)</th>
+<th class="col_heading level0 col3" id="T_a0bbd_level0_col3">샤프</th>
+<th class="col_heading level0 col4" id="T_a0bbd_level0_col4">MDD</th>
+<th class="col_heading level0 col5" id="T_a0bbd_level0_col5">회전율(전 기간)</th>
+<th class="col_heading level0 col6" id="T_a0bbd_level0_col6">벤치 대비 연환산</th>
+<th class="col_heading level0 col7" id="T_a0bbd_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_a0bbd_level0_col8">Carhart α(월)</th>
+<th class="col_heading level0 col9" id="T_a0bbd_level0_col9">Carhart t(NW)</th>
 </tr>
 <tr>
 <th class="index_name level0">전략</th>
@@ -11639,119 +11640,119 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_73ca3_level0_row0" rowspan="5">EY+ROC 순위합산</th>
-<th class="row_heading level1 row0" id="T_73ca3_level1_row0">동일</th>
-<th class="row_heading level2 row0" id="T_73ca3_level2_row0">12</th>
-<th class="row_heading level3 row0" id="T_73ca3_level3_row0">비용기본</th>
-<th class="row_heading level4 row0" id="T_73ca3_level4_row0">공통</th>
-<td class="data row0 col0" id="T_73ca3_row0_col0">401.0000</td>
-<td class="data row0 col1" id="T_73ca3_row0_col1">0.1005</td>
-<td class="data row0 col2" id="T_73ca3_row0_col2">0.3323</td>
-<td class="data row0 col3" id="T_73ca3_row0_col3">0.2951</td>
-<td class="data row0 col4" id="T_73ca3_row0_col4">-0.7191</td>
-<td class="data row0 col5" id="T_73ca3_row0_col5">0.8131</td>
-<td class="data row0 col6" id="T_73ca3_row0_col6">0.0031</td>
-<td class="data row0 col7" id="T_73ca3_row0_col7">0.0647</td>
-<td class="data row0 col8" id="T_73ca3_row0_col8">0.0069</td>
-<td class="data row0 col9" id="T_73ca3_row0_col9">1.7334</td>
+<th class="row_heading level0 row0" id="T_a0bbd_level0_row0" rowspan="5">EY+ROC 순위합산</th>
+<th class="row_heading level1 row0" id="T_a0bbd_level1_row0">동일</th>
+<th class="row_heading level2 row0" id="T_a0bbd_level2_row0">12</th>
+<th class="row_heading level3 row0" id="T_a0bbd_level3_row0">비용기본</th>
+<th class="row_heading level4 row0" id="T_a0bbd_level4_row0">공통</th>
+<td class="data row0 col0" id="T_a0bbd_row0_col0">401.0000</td>
+<td class="data row0 col1" id="T_a0bbd_row0_col1">0.1005</td>
+<td class="data row0 col2" id="T_a0bbd_row0_col2">0.3323</td>
+<td class="data row0 col3" id="T_a0bbd_row0_col3">0.2903</td>
+<td class="data row0 col4" id="T_a0bbd_row0_col4">-0.7191</td>
+<td class="data row0 col5" id="T_a0bbd_row0_col5">0.8131</td>
+<td class="data row0 col6" id="T_a0bbd_row0_col6">0.0031</td>
+<td class="data row0 col7" id="T_a0bbd_row0_col7">0.0647</td>
+<td class="data row0 col8" id="T_a0bbd_row0_col8">0.0069</td>
+<td class="data row0 col9" id="T_a0bbd_row0_col9">1.7288</td>
 </tr>
 <tr>
-<th class="row_heading level1 row1" id="T_73ca3_level1_row1">시총</th>
-<th class="row_heading level2 row1" id="T_73ca3_level2_row1">12</th>
-<th class="row_heading level3 row1" id="T_73ca3_level3_row1">비용기본</th>
-<th class="row_heading level4 row1" id="T_73ca3_level4_row1">공통</th>
-<td class="data row1 col0" id="T_73ca3_row1_col0">401.0000</td>
-<td class="data row1 col1" id="T_73ca3_row1_col1">0.0638</td>
-<td class="data row1 col2" id="T_73ca3_row1_col2">0.3691</td>
-<td class="data row1 col3" id="T_73ca3_row1_col3">0.2091</td>
-<td class="data row1 col4" id="T_73ca3_row1_col4">-0.7309</td>
-<td class="data row1 col5" id="T_73ca3_row1_col5">0.7564</td>
-<td class="data row1 col6" id="T_73ca3_row1_col6">-0.0336</td>
-<td class="data row1 col7" id="T_73ca3_row1_col7">-0.0116</td>
-<td class="data row1 col8" id="T_73ca3_row1_col8">0.0030</td>
-<td class="data row1 col9" id="T_73ca3_row1_col9">0.8513</td>
+<th class="row_heading level1 row1" id="T_a0bbd_level1_row1">시총</th>
+<th class="row_heading level2 row1" id="T_a0bbd_level2_row1">12</th>
+<th class="row_heading level3 row1" id="T_a0bbd_level3_row1">비용기본</th>
+<th class="row_heading level4 row1" id="T_a0bbd_level4_row1">공통</th>
+<td class="data row1 col0" id="T_a0bbd_row1_col0">401.0000</td>
+<td class="data row1 col1" id="T_a0bbd_row1_col1">0.0638</td>
+<td class="data row1 col2" id="T_a0bbd_row1_col2">0.3691</td>
+<td class="data row1 col3" id="T_a0bbd_row1_col3">0.2045</td>
+<td class="data row1 col4" id="T_a0bbd_row1_col4">-0.7309</td>
+<td class="data row1 col5" id="T_a0bbd_row1_col5">0.7564</td>
+<td class="data row1 col6" id="T_a0bbd_row1_col6">-0.0336</td>
+<td class="data row1 col7" id="T_a0bbd_row1_col7">-0.0116</td>
+<td class="data row1 col8" id="T_a0bbd_row1_col8">0.0030</td>
+<td class="data row1 col9" id="T_a0bbd_row1_col9">0.8486</td>
 </tr>
 <tr>
-<th class="row_heading level1 row2" id="T_73ca3_level1_row2">시총상한</th>
-<th class="row_heading level2 row2" id="T_73ca3_level2_row2">12</th>
-<th class="row_heading level3 row2" id="T_73ca3_level3_row2">비용기본</th>
-<th class="row_heading level4 row2" id="T_73ca3_level4_row2">공통</th>
-<td class="data row2 col0" id="T_73ca3_row2_col0">401.0000</td>
-<td class="data row2 col1" id="T_73ca3_row2_col1">0.0573</td>
-<td class="data row2 col2" id="T_73ca3_row2_col2">0.2986</td>
-<td class="data row2 col3" id="T_73ca3_row2_col3">0.1685</td>
-<td class="data row2 col4" id="T_73ca3_row2_col4">-0.7380</td>
-<td class="data row2 col5" id="T_73ca3_row2_col5">0.7800</td>
-<td class="data row2 col6" id="T_73ca3_row2_col6">-0.0401</td>
-<td class="data row2 col7" id="T_73ca3_row2_col7">-0.1383</td>
-<td class="data row2 col8" id="T_73ca3_row2_col8">0.0009</td>
-<td class="data row2 col9" id="T_73ca3_row2_col9">0.3165</td>
+<th class="row_heading level1 row2" id="T_a0bbd_level1_row2">시총상한</th>
+<th class="row_heading level2 row2" id="T_a0bbd_level2_row2">12</th>
+<th class="row_heading level3 row2" id="T_a0bbd_level3_row2">비용기본</th>
+<th class="row_heading level4 row2" id="T_a0bbd_level4_row2">공통</th>
+<td class="data row2 col0" id="T_a0bbd_row2_col0">401.0000</td>
+<td class="data row2 col1" id="T_a0bbd_row2_col1">0.0573</td>
+<td class="data row2 col2" id="T_a0bbd_row2_col2">0.2986</td>
+<td class="data row2 col3" id="T_a0bbd_row2_col3">0.1630</td>
+<td class="data row2 col4" id="T_a0bbd_row2_col4">-0.7380</td>
+<td class="data row2 col5" id="T_a0bbd_row2_col5">0.7800</td>
+<td class="data row2 col6" id="T_a0bbd_row2_col6">-0.0401</td>
+<td class="data row2 col7" id="T_a0bbd_row2_col7">-0.1383</td>
+<td class="data row2 col8" id="T_a0bbd_row2_col8">0.0009</td>
+<td class="data row2 col9" id="T_a0bbd_row2_col9">0.3106</td>
 </tr>
 <tr>
-<th class="row_heading level1 row3" id="T_73ca3_level1_row3">위험균형</th>
-<th class="row_heading level2 row3" id="T_73ca3_level2_row3">12</th>
-<th class="row_heading level3 row3" id="T_73ca3_level3_row3">비용기본</th>
-<th class="row_heading level4 row3" id="T_73ca3_level4_row3">공통</th>
-<td class="data row3 col0" id="T_73ca3_row3_col0">401.0000</td>
-<td class="data row3 col1" id="T_73ca3_row3_col1">0.1162</td>
-<td class="data row3 col2" id="T_73ca3_row3_col2">0.3312</td>
-<td class="data row3 col3" id="T_73ca3_row3_col3">0.3404</td>
-<td class="data row3 col4" id="T_73ca3_row3_col4">-0.7194</td>
-<td class="data row3 col5" id="T_73ca3_row3_col5">0.8282</td>
-<td class="data row3 col6" id="T_73ca3_row3_col6">0.0188</td>
-<td class="data row3 col7" id="T_73ca3_row3_col7">0.1211</td>
-<td class="data row3 col8" id="T_73ca3_row3_col8">0.0070</td>
-<td class="data row3 col9" id="T_73ca3_row3_col9">1.9163</td>
+<th class="row_heading level1 row3" id="T_a0bbd_level1_row3">위험균형</th>
+<th class="row_heading level2 row3" id="T_a0bbd_level2_row3">12</th>
+<th class="row_heading level3 row3" id="T_a0bbd_level3_row3">비용기본</th>
+<th class="row_heading level4 row3" id="T_a0bbd_level4_row3">공통</th>
+<td class="data row3 col0" id="T_a0bbd_row3_col0">401.0000</td>
+<td class="data row3 col1" id="T_a0bbd_row3_col1">0.1162</td>
+<td class="data row3 col2" id="T_a0bbd_row3_col2">0.3312</td>
+<td class="data row3 col3" id="T_a0bbd_row3_col3">0.3354</td>
+<td class="data row3 col4" id="T_a0bbd_row3_col4">-0.7194</td>
+<td class="data row3 col5" id="T_a0bbd_row3_col5">0.8282</td>
+<td class="data row3 col6" id="T_a0bbd_row3_col6">0.0188</td>
+<td class="data row3 col7" id="T_a0bbd_row3_col7">0.1211</td>
+<td class="data row3 col8" id="T_a0bbd_row3_col8">0.0070</td>
+<td class="data row3 col9" id="T_a0bbd_row3_col9">1.9121</td>
 </tr>
 <tr>
-<th class="row_heading level1 row4" id="T_73ca3_level1_row4">최소분산</th>
-<th class="row_heading level2 row4" id="T_73ca3_level2_row4">12</th>
-<th class="row_heading level3 row4" id="T_73ca3_level3_row4">비용기본</th>
-<th class="row_heading level4 row4" id="T_73ca3_level4_row4">공통</th>
-<td class="data row4 col0" id="T_73ca3_row4_col0">401.0000</td>
-<td class="data row4 col1" id="T_73ca3_row4_col1">0.0752</td>
-<td class="data row4 col2" id="T_73ca3_row4_col2">0.3064</td>
-<td class="data row4 col3" id="T_73ca3_row4_col3">0.2285</td>
-<td class="data row4 col4" id="T_73ca3_row4_col4">-0.8005</td>
-<td class="data row4 col5" id="T_73ca3_row4_col5">0.8658</td>
-<td class="data row4 col6" id="T_73ca3_row4_col6">-0.0222</td>
-<td class="data row4 col7" id="T_73ca3_row4_col7">-0.0390</td>
-<td class="data row4 col8" id="T_73ca3_row4_col8">-0.0001</td>
-<td class="data row4 col9" id="T_73ca3_row4_col9">-0.0338</td>
+<th class="row_heading level1 row4" id="T_a0bbd_level1_row4">최소분산</th>
+<th class="row_heading level2 row4" id="T_a0bbd_level2_row4">12</th>
+<th class="row_heading level3 row4" id="T_a0bbd_level3_row4">비용기본</th>
+<th class="row_heading level4 row4" id="T_a0bbd_level4_row4">공통</th>
+<td class="data row4 col0" id="T_a0bbd_row4_col0">401.0000</td>
+<td class="data row4 col1" id="T_a0bbd_row4_col1">0.0752</td>
+<td class="data row4 col2" id="T_a0bbd_row4_col2">0.3064</td>
+<td class="data row4 col3" id="T_a0bbd_row4_col3">0.2230</td>
+<td class="data row4 col4" id="T_a0bbd_row4_col4">-0.8005</td>
+<td class="data row4 col5" id="T_a0bbd_row4_col5">0.8658</td>
+<td class="data row4 col6" id="T_a0bbd_row4_col6">-0.0222</td>
+<td class="data row4 col7" id="T_a0bbd_row4_col7">-0.0390</td>
+<td class="data row4 col8" id="T_a0bbd_row4_col8">-0.0001</td>
+<td class="data row4 col9" id="T_a0bbd_row4_col9">-0.0427</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_73ca3_level0_row5">벤치:유니버스(시총가중)</th>
-<th class="row_heading level1 row5" id="T_73ca3_level1_row5">-</th>
-<th class="row_heading level2 row5" id="T_73ca3_level2_row5">0</th>
-<th class="row_heading level3 row5" id="T_73ca3_level3_row5">비용0</th>
-<th class="row_heading level4 row5" id="T_73ca3_level4_row5">공통</th>
-<td class="data row5 col0" id="T_73ca3_row5_col0">401.0000</td>
-<td class="data row5 col1" id="T_73ca3_row5_col1">0.0974</td>
-<td class="data row5 col2" id="T_73ca3_row5_col2">0.2705</td>
-<td class="data row5 col3" id="T_73ca3_row5_col3">0.2967</td>
-<td class="data row5 col4" id="T_73ca3_row5_col4">-0.6101</td>
-<td class="data row5 col5" id="T_73ca3_row5_col5">nan</td>
-<td class="data row5 col6" id="T_73ca3_row5_col6">0.0000</td>
-<td class="data row5 col7" id="T_73ca3_row5_col7">nan</td>
-<td class="data row5 col8" id="T_73ca3_row5_col8">0.0031</td>
-<td class="data row5 col9" id="T_73ca3_row5_col9">5.1668</td>
+<th class="row_heading level0 row5" id="T_a0bbd_level0_row5">벤치:유니버스(시총가중)</th>
+<th class="row_heading level1 row5" id="T_a0bbd_level1_row5">-</th>
+<th class="row_heading level2 row5" id="T_a0bbd_level2_row5">0</th>
+<th class="row_heading level3 row5" id="T_a0bbd_level3_row5">비용0</th>
+<th class="row_heading level4 row5" id="T_a0bbd_level4_row5">공통</th>
+<td class="data row5 col0" id="T_a0bbd_row5_col0">401.0000</td>
+<td class="data row5 col1" id="T_a0bbd_row5_col1">0.0974</td>
+<td class="data row5 col2" id="T_a0bbd_row5_col2">0.2705</td>
+<td class="data row5 col3" id="T_a0bbd_row5_col3">0.2905</td>
+<td class="data row5 col4" id="T_a0bbd_row5_col4">-0.6101</td>
+<td class="data row5 col5" id="T_a0bbd_row5_col5">nan</td>
+<td class="data row5 col6" id="T_a0bbd_row5_col6">0.0000</td>
+<td class="data row5 col7" id="T_a0bbd_row5_col7">nan</td>
+<td class="data row5 col8" id="T_a0bbd_row5_col8">0.0031</td>
+<td class="data row5 col9" id="T_a0bbd_row5_col9">5.1668</td>
 </tr>
 <tr>
-<th class="row_heading level0 row6" id="T_73ca3_level0_row6">벤치:코스피</th>
-<th class="row_heading level1 row6" id="T_73ca3_level1_row6">-</th>
-<th class="row_heading level2 row6" id="T_73ca3_level2_row6">0</th>
-<th class="row_heading level3 row6" id="T_73ca3_level3_row6">비용0</th>
-<th class="row_heading level4 row6" id="T_73ca3_level4_row6">공통</th>
-<td class="data row6 col0" id="T_73ca3_row6_col0">401.0000</td>
-<td class="data row6 col1" id="T_73ca3_row6_col1">0.0722</td>
-<td class="data row6 col2" id="T_73ca3_row6_col2">0.2673</td>
-<td class="data row6 col3" id="T_73ca3_row6_col3">0.2088</td>
-<td class="data row6 col4" id="T_73ca3_row6_col4">-0.7243</td>
-<td class="data row6 col5" id="T_73ca3_row6_col5">nan</td>
-<td class="data row6 col6" id="T_73ca3_row6_col6">-0.0252</td>
-<td class="data row6 col7" id="T_73ca3_row6_col7">-0.4482</td>
-<td class="data row6 col8" id="T_73ca3_row6_col8">0.0000</td>
-<td class="data row6 col9" id="T_73ca3_row6_col9">nan</td>
+<th class="row_heading level0 row6" id="T_a0bbd_level0_row6">벤치:코스피</th>
+<th class="row_heading level1 row6" id="T_a0bbd_level1_row6">-</th>
+<th class="row_heading level2 row6" id="T_a0bbd_level2_row6">0</th>
+<th class="row_heading level3 row6" id="T_a0bbd_level3_row6">비용0</th>
+<th class="row_heading level4 row6" id="T_a0bbd_level4_row6">공통</th>
+<td class="data row6 col0" id="T_a0bbd_row6_col0">401.0000</td>
+<td class="data row6 col1" id="T_a0bbd_row6_col1">0.0722</td>
+<td class="data row6 col2" id="T_a0bbd_row6_col2">0.2673</td>
+<td class="data row6 col3" id="T_a0bbd_row6_col3">0.2026</td>
+<td class="data row6 col4" id="T_a0bbd_row6_col4">-0.7243</td>
+<td class="data row6 col5" id="T_a0bbd_row6_col5">nan</td>
+<td class="data row6 col6" id="T_a0bbd_row6_col6">-0.0252</td>
+<td class="data row6 col7" id="T_a0bbd_row6_col7">-0.4482</td>
+<td class="data row6 col8" id="T_a0bbd_row6_col8">0.0000</td>
+<td class="data row6 col9" id="T_a0bbd_row6_col9">nan</td>
 </tr>
 </tbody>
 </table>
@@ -11766,8 +11767,14 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[리밸런싱 주기] 줄 4개. 샤프 가장 높음: EY+ROC 순위합산 / 동일 / 1 (0.416), 가장 낮음: EY+ROC 순위합산 / 동일 / 12 (0.295). 연환산 가장 높음: EY+ROC 순위합산 / 동일 / 1 (15.33%). MDD 가장 얕음: EY+ROC 순위합산 / 동일 / 3 (-56.27%).
-  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 4/4개 (벤치 샤프 전체 0.223)
+<pre>[리밸런싱 주기] 줄 4개. 샤프 가장 높음: EY+ROC 순위합산 / 동일 / 1 (0.415), 가장 낮음: EY+ROC 순위합산 / 동일 / 12 (0.293). 연환산 가장 높음: EY+ROC 순위합산 / 동일 / 1 (15.33%). MDD 가장 얕음: EY+ROC 순위합산 / 동일 / 3 (-56.27%).</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 4/4개 (벤치 샤프 전체 0.221)
 </pre>
 </div>
 </div>
@@ -11776,7 +11783,7 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_d27b9">
+<table id="T_d1530">
 <caption>리밸런싱 주기</caption>
 <thead>
 <tr>
@@ -11785,16 +11792,16 @@ a.anchor-link {
 <th class="blank"> </th>
 <th class="blank"> </th>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_d27b9_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_d27b9_level0_col1">연환산</th>
-<th class="col_heading level0 col2" id="T_d27b9_level0_col2">표준편차(연)</th>
-<th class="col_heading level0 col3" id="T_d27b9_level0_col3">샤프</th>
-<th class="col_heading level0 col4" id="T_d27b9_level0_col4">MDD</th>
-<th class="col_heading level0 col5" id="T_d27b9_level0_col5">회전율(전 기간)</th>
-<th class="col_heading level0 col6" id="T_d27b9_level0_col6">벤치 대비 연환산</th>
-<th class="col_heading level0 col7" id="T_d27b9_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_d27b9_level0_col8">Carhart α(월)</th>
-<th class="col_heading level0 col9" id="T_d27b9_level0_col9">Carhart t(NW)</th>
+<th class="col_heading level0 col0" id="T_d1530_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_d1530_level0_col1">연환산</th>
+<th class="col_heading level0 col2" id="T_d1530_level0_col2">표준편차(연)</th>
+<th class="col_heading level0 col3" id="T_d1530_level0_col3">샤프</th>
+<th class="col_heading level0 col4" id="T_d1530_level0_col4">MDD</th>
+<th class="col_heading level0 col5" id="T_d1530_level0_col5">회전율(전 기간)</th>
+<th class="col_heading level0 col6" id="T_d1530_level0_col6">벤치 대비 연환산</th>
+<th class="col_heading level0 col7" id="T_d1530_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_d1530_level0_col8">Carhart α(월)</th>
+<th class="col_heading level0 col9" id="T_d1530_level0_col9">Carhart t(NW)</th>
 </tr>
 <tr>
 <th class="index_name level0">전략</th>
@@ -11816,100 +11823,100 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_d27b9_level0_row0" rowspan="4">EY+ROC 순위합산</th>
-<th class="row_heading level1 row0" id="T_d27b9_level1_row0" rowspan="4">동일</th>
-<th class="row_heading level2 row0" id="T_d27b9_level2_row0">1</th>
-<th class="row_heading level3 row0" id="T_d27b9_level3_row0">비용기본</th>
-<th class="row_heading level4 row0" id="T_d27b9_level4_row0">전체</th>
-<td class="data row0 col0" id="T_d27b9_row0_col0">437.0000</td>
-<td class="data row0 col1" id="T_d27b9_row0_col1">0.1533</td>
-<td class="data row0 col2" id="T_d27b9_row0_col2">0.3279</td>
-<td class="data row0 col3" id="T_d27b9_row0_col3">0.4164</td>
-<td class="data row0 col4" id="T_d27b9_row0_col4">-0.5736</td>
-<td class="data row0 col5" id="T_d27b9_row0_col5">0.1851</td>
-<td class="data row0 col6" id="T_d27b9_row0_col6">0.0681</td>
-<td class="data row0 col7" id="T_d27b9_row0_col7">0.2675</td>
-<td class="data row0 col8" id="T_d27b9_row0_col8">0.0099</td>
-<td class="data row0 col9" id="T_d27b9_row0_col9">2.4050</td>
+<th class="row_heading level0 row0" id="T_d1530_level0_row0" rowspan="4">EY+ROC 순위합산</th>
+<th class="row_heading level1 row0" id="T_d1530_level1_row0" rowspan="4">동일</th>
+<th class="row_heading level2 row0" id="T_d1530_level2_row0">1</th>
+<th class="row_heading level3 row0" id="T_d1530_level3_row0">비용기본</th>
+<th class="row_heading level4 row0" id="T_d1530_level4_row0">전체</th>
+<td class="data row0 col0" id="T_d1530_row0_col0">437.0000</td>
+<td class="data row0 col1" id="T_d1530_row0_col1">0.1533</td>
+<td class="data row0 col2" id="T_d1530_row0_col2">0.3279</td>
+<td class="data row0 col3" id="T_d1530_row0_col3">0.4148</td>
+<td class="data row0 col4" id="T_d1530_row0_col4">-0.5736</td>
+<td class="data row0 col5" id="T_d1530_row0_col5">0.1851</td>
+<td class="data row0 col6" id="T_d1530_row0_col6">0.0681</td>
+<td class="data row0 col7" id="T_d1530_row0_col7">0.2675</td>
+<td class="data row0 col8" id="T_d1530_row0_col8">0.0099</td>
+<td class="data row0 col9" id="T_d1530_row0_col9">2.4012</td>
 </tr>
 <tr>
-<th class="row_heading level2 row1" id="T_d27b9_level2_row1">3</th>
-<th class="row_heading level3 row1" id="T_d27b9_level3_row1">비용기본</th>
-<th class="row_heading level4 row1" id="T_d27b9_level4_row1">전체</th>
-<td class="data row1 col0" id="T_d27b9_row1_col0">437.0000</td>
-<td class="data row1 col1" id="T_d27b9_row1_col1">0.1412</td>
-<td class="data row1 col2" id="T_d27b9_row1_col2">0.3277</td>
-<td class="data row1 col3" id="T_d27b9_row1_col3">0.3842</td>
-<td class="data row1 col4" id="T_d27b9_row1_col4">-0.5627</td>
-<td class="data row1 col5" id="T_d27b9_row1_col5">0.3663</td>
-<td class="data row1 col6" id="T_d27b9_row1_col6">0.0561</td>
-<td class="data row1 col7" id="T_d27b9_row1_col7">0.2334</td>
-<td class="data row1 col8" id="T_d27b9_row1_col8">0.0092</td>
-<td class="data row1 col9" id="T_d27b9_row1_col9">2.1512</td>
+<th class="row_heading level2 row1" id="T_d1530_level2_row1">3</th>
+<th class="row_heading level3 row1" id="T_d1530_level3_row1">비용기본</th>
+<th class="row_heading level4 row1" id="T_d1530_level4_row1">전체</th>
+<td class="data row1 col0" id="T_d1530_row1_col0">437.0000</td>
+<td class="data row1 col1" id="T_d1530_row1_col1">0.1412</td>
+<td class="data row1 col2" id="T_d1530_row1_col2">0.3277</td>
+<td class="data row1 col3" id="T_d1530_row1_col3">0.3826</td>
+<td class="data row1 col4" id="T_d1530_row1_col4">-0.5627</td>
+<td class="data row1 col5" id="T_d1530_row1_col5">0.3663</td>
+<td class="data row1 col6" id="T_d1530_row1_col6">0.0561</td>
+<td class="data row1 col7" id="T_d1530_row1_col7">0.2334</td>
+<td class="data row1 col8" id="T_d1530_row1_col8">0.0092</td>
+<td class="data row1 col9" id="T_d1530_row1_col9">2.1479</td>
 </tr>
 <tr>
-<th class="row_heading level2 row2" id="T_d27b9_level2_row2">6</th>
-<th class="row_heading level3 row2" id="T_d27b9_level3_row2">비용기본</th>
-<th class="row_heading level4 row2" id="T_d27b9_level4_row2">전체</th>
-<td class="data row2 col0" id="T_d27b9_row2_col0">437.0000</td>
-<td class="data row2 col1" id="T_d27b9_row2_col1">0.1157</td>
-<td class="data row2 col2" id="T_d27b9_row2_col2">0.3148</td>
-<td class="data row2 col3" id="T_d27b9_row2_col3">0.3166</td>
-<td class="data row2 col4" id="T_d27b9_row2_col4">-0.6293</td>
-<td class="data row2 col5" id="T_d27b9_row2_col5">0.5736</td>
-<td class="data row2 col6" id="T_d27b9_row2_col6">0.0306</td>
-<td class="data row2 col7" id="T_d27b9_row2_col7">0.1488</td>
-<td class="data row2 col8" id="T_d27b9_row2_col8">0.0068</td>
-<td class="data row2 col9" id="T_d27b9_row2_col9">1.6795</td>
+<th class="row_heading level2 row2" id="T_d1530_level2_row2">6</th>
+<th class="row_heading level3 row2" id="T_d1530_level3_row2">비용기본</th>
+<th class="row_heading level4 row2" id="T_d1530_level4_row2">전체</th>
+<td class="data row2 col0" id="T_d1530_row2_col0">437.0000</td>
+<td class="data row2 col1" id="T_d1530_row2_col1">0.1157</td>
+<td class="data row2 col2" id="T_d1530_row2_col2">0.3148</td>
+<td class="data row2 col3" id="T_d1530_row2_col3">0.3150</td>
+<td class="data row2 col4" id="T_d1530_row2_col4">-0.6293</td>
+<td class="data row2 col5" id="T_d1530_row2_col5">0.5736</td>
+<td class="data row2 col6" id="T_d1530_row2_col6">0.0306</td>
+<td class="data row2 col7" id="T_d1530_row2_col7">0.1488</td>
+<td class="data row2 col8" id="T_d1530_row2_col8">0.0068</td>
+<td class="data row2 col9" id="T_d1530_row2_col9">1.6761</td>
 </tr>
 <tr>
-<th class="row_heading level2 row3" id="T_d27b9_level2_row3">12</th>
-<th class="row_heading level3 row3" id="T_d27b9_level3_row3">비용기본</th>
-<th class="row_heading level4 row3" id="T_d27b9_level4_row3">전체</th>
-<td class="data row3 col0" id="T_d27b9_row3_col0">437.0000</td>
-<td class="data row3 col1" id="T_d27b9_row3_col1">0.1097</td>
-<td class="data row3 col2" id="T_d27b9_row3_col2">0.3334</td>
-<td class="data row3 col3" id="T_d27b9_row3_col3">0.2948</td>
-<td class="data row3 col4" id="T_d27b9_row3_col4">-0.7191</td>
-<td class="data row3 col5" id="T_d27b9_row3_col5">0.8131</td>
-<td class="data row3 col6" id="T_d27b9_row3_col6">0.0246</td>
-<td class="data row3 col7" id="T_d27b9_row3_col7">0.1337</td>
-<td class="data row3 col8" id="T_d27b9_row3_col8">0.0072</td>
-<td class="data row3 col9" id="T_d27b9_row3_col9">1.8668</td>
+<th class="row_heading level2 row3" id="T_d1530_level2_row3">12</th>
+<th class="row_heading level3 row3" id="T_d1530_level3_row3">비용기본</th>
+<th class="row_heading level4 row3" id="T_d1530_level4_row3">전체</th>
+<td class="data row3 col0" id="T_d1530_row3_col0">437.0000</td>
+<td class="data row3 col1" id="T_d1530_row3_col1">0.1097</td>
+<td class="data row3 col2" id="T_d1530_row3_col2">0.3334</td>
+<td class="data row3 col3" id="T_d1530_row3_col3">0.2934</td>
+<td class="data row3 col4" id="T_d1530_row3_col4">-0.7191</td>
+<td class="data row3 col5" id="T_d1530_row3_col5">0.8131</td>
+<td class="data row3 col6" id="T_d1530_row3_col6">0.0246</td>
+<td class="data row3 col7" id="T_d1530_row3_col7">0.1337</td>
+<td class="data row3 col8" id="T_d1530_row3_col8">0.0072</td>
+<td class="data row3 col9" id="T_d1530_row3_col9">1.8646</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_d27b9_level0_row4">벤치:유니버스(시총가중)</th>
-<th class="row_heading level1 row4" id="T_d27b9_level1_row4">-</th>
-<th class="row_heading level2 row4" id="T_d27b9_level2_row4">0</th>
-<th class="row_heading level3 row4" id="T_d27b9_level3_row4">비용0</th>
-<th class="row_heading level4 row4" id="T_d27b9_level4_row4">전체</th>
-<td class="data row4 col0" id="T_d27b9_row4_col0">437.0000</td>
-<td class="data row4 col1" id="T_d27b9_row4_col1">0.0851</td>
-<td class="data row4 col2" id="T_d27b9_row4_col2">0.2724</td>
-<td class="data row4 col3" id="T_d27b9_row4_col3">0.2231</td>
-<td class="data row4 col4" id="T_d27b9_row4_col4">-0.6101</td>
-<td class="data row4 col5" id="T_d27b9_row4_col5">nan</td>
-<td class="data row4 col6" id="T_d27b9_row4_col6">0.0000</td>
-<td class="data row4 col7" id="T_d27b9_row4_col7">nan</td>
-<td class="data row4 col8" id="T_d27b9_row4_col8">0.0032</td>
-<td class="data row4 col9" id="T_d27b9_row4_col9">5.1880</td>
+<th class="row_heading level0 row4" id="T_d1530_level0_row4">벤치:유니버스(시총가중)</th>
+<th class="row_heading level1 row4" id="T_d1530_level1_row4">-</th>
+<th class="row_heading level2 row4" id="T_d1530_level2_row4">0</th>
+<th class="row_heading level3 row4" id="T_d1530_level3_row4">비용0</th>
+<th class="row_heading level4 row4" id="T_d1530_level4_row4">전체</th>
+<td class="data row4 col0" id="T_d1530_row4_col0">437.0000</td>
+<td class="data row4 col1" id="T_d1530_row4_col1">0.0851</td>
+<td class="data row4 col2" id="T_d1530_row4_col2">0.2724</td>
+<td class="data row4 col3" id="T_d1530_row4_col3">0.2213</td>
+<td class="data row4 col4" id="T_d1530_row4_col4">-0.6101</td>
+<td class="data row4 col5" id="T_d1530_row4_col5">nan</td>
+<td class="data row4 col6" id="T_d1530_row4_col6">0.0000</td>
+<td class="data row4 col7" id="T_d1530_row4_col7">nan</td>
+<td class="data row4 col8" id="T_d1530_row4_col8">0.0032</td>
+<td class="data row4 col9" id="T_d1530_row4_col9">5.1868</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_d27b9_level0_row5">벤치:코스피</th>
-<th class="row_heading level1 row5" id="T_d27b9_level1_row5">-</th>
-<th class="row_heading level2 row5" id="T_d27b9_level2_row5">0</th>
-<th class="row_heading level3 row5" id="T_d27b9_level3_row5">비용0</th>
-<th class="row_heading level4 row5" id="T_d27b9_level4_row5">전체</th>
-<td class="data row5 col0" id="T_d27b9_row5_col0">437.0000</td>
-<td class="data row5 col1" id="T_d27b9_row5_col1">0.0593</td>
-<td class="data row5 col2" id="T_d27b9_row5_col2">0.2697</td>
-<td class="data row5 col3" id="T_d27b9_row5_col3">0.1327</td>
-<td class="data row5 col4" id="T_d27b9_row5_col4">-0.7243</td>
-<td class="data row5 col5" id="T_d27b9_row5_col5">nan</td>
-<td class="data row5 col6" id="T_d27b9_row5_col6">-0.0258</td>
-<td class="data row5 col7" id="T_d27b9_row5_col7">-0.4442</td>
-<td class="data row5 col8" id="T_d27b9_row5_col8">0.0000</td>
-<td class="data row5 col9" id="T_d27b9_row5_col9">nan</td>
+<th class="row_heading level0 row5" id="T_d1530_level0_row5">벤치:코스피</th>
+<th class="row_heading level1 row5" id="T_d1530_level1_row5">-</th>
+<th class="row_heading level2 row5" id="T_d1530_level2_row5">0</th>
+<th class="row_heading level3 row5" id="T_d1530_level3_row5">비용0</th>
+<th class="row_heading level4 row5" id="T_d1530_level4_row5">전체</th>
+<td class="data row5 col0" id="T_d1530_row5_col0">437.0000</td>
+<td class="data row5 col1" id="T_d1530_row5_col1">0.0593</td>
+<td class="data row5 col2" id="T_d1530_row5_col2">0.2697</td>
+<td class="data row5 col3" id="T_d1530_row5_col3">0.1309</td>
+<td class="data row5 col4" id="T_d1530_row5_col4">-0.7243</td>
+<td class="data row5 col5" id="T_d1530_row5_col5">nan</td>
+<td class="data row5 col6" id="T_d1530_row5_col6">-0.0258</td>
+<td class="data row5 col7" id="T_d1530_row5_col7">-0.4442</td>
+<td class="data row5 col8" id="T_d1530_row5_col8">0.0000</td>
+<td class="data row5 col9" id="T_d1530_row5_col9">nan</td>
 </tr>
 </tbody>
 </table>
@@ -11924,8 +11931,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[지표 바꾸기 (순위합산)] 줄 16개. 샤프 가장 높음: EP+영업CF자산 순위합산 / 동일 / 12 (0.504), 가장 낮음: EY+ROC 순위합산 / 동일 / 12 (0.295). 연환산 가장 높음: EP+영업CF자산 순위합산 / 동일 / 12 (21.11%). MDD 가장 얕음: EBITDA_EV+영업CF자산 순위합산 / 동일 / 12 (-51.72%).
-  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 16/16개 (벤치 샤프 전체 0.223)
+<pre>[지표 바꾸기 (순위합산)] 줄 16개. 샤프 가장 높음: EP+영업CF자산 순위합산 / 동일 / 12 (0.503), 가장 낮음: EY+ROC 순위합산 / 동일 / 12 (0.293). 연환산 가장 높음: EP+영업CF자산 순위합산 / 동일 / 12 (21.11%). MDD 가장 얕음: EBITDA_EV+영업CF자산 순위합산 / 동일 / 12 (-51.72%).
+  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 16/16개 (벤치 샤프 전체 0.221)
 </pre>
 </div>
 </div>
@@ -11934,7 +11941,7 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_e84b6">
+<table id="T_0e3e0">
 <caption>지표 바꾸기 (순위합산)</caption>
 <thead>
 <tr>
@@ -11943,16 +11950,16 @@ a.anchor-link {
 <th class="blank"> </th>
 <th class="blank"> </th>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_e84b6_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_e84b6_level0_col1">연환산</th>
-<th class="col_heading level0 col2" id="T_e84b6_level0_col2">표준편차(연)</th>
-<th class="col_heading level0 col3" id="T_e84b6_level0_col3">샤프</th>
-<th class="col_heading level0 col4" id="T_e84b6_level0_col4">MDD</th>
-<th class="col_heading level0 col5" id="T_e84b6_level0_col5">회전율(전 기간)</th>
-<th class="col_heading level0 col6" id="T_e84b6_level0_col6">벤치 대비 연환산</th>
-<th class="col_heading level0 col7" id="T_e84b6_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_e84b6_level0_col8">Carhart α(월)</th>
-<th class="col_heading level0 col9" id="T_e84b6_level0_col9">Carhart t(NW)</th>
+<th class="col_heading level0 col0" id="T_0e3e0_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_0e3e0_level0_col1">연환산</th>
+<th class="col_heading level0 col2" id="T_0e3e0_level0_col2">표준편차(연)</th>
+<th class="col_heading level0 col3" id="T_0e3e0_level0_col3">샤프</th>
+<th class="col_heading level0 col4" id="T_0e3e0_level0_col4">MDD</th>
+<th class="col_heading level0 col5" id="T_0e3e0_level0_col5">회전율(전 기간)</th>
+<th class="col_heading level0 col6" id="T_0e3e0_level0_col6">벤치 대비 연환산</th>
+<th class="col_heading level0 col7" id="T_0e3e0_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_0e3e0_level0_col8">Carhart α(월)</th>
+<th class="col_heading level0 col9" id="T_0e3e0_level0_col9">Carhart t(NW)</th>
 </tr>
 <tr>
 <th class="index_name level0">전략</th>
@@ -11974,310 +11981,310 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_e84b6_level0_row0">EY+ROC 순위합산</th>
-<th class="row_heading level1 row0" id="T_e84b6_level1_row0">동일</th>
-<th class="row_heading level2 row0" id="T_e84b6_level2_row0">12</th>
-<th class="row_heading level3 row0" id="T_e84b6_level3_row0">비용기본</th>
-<th class="row_heading level4 row0" id="T_e84b6_level4_row0">전체</th>
-<td class="data row0 col0" id="T_e84b6_row0_col0">437.0000</td>
-<td class="data row0 col1" id="T_e84b6_row0_col1">0.1097</td>
-<td class="data row0 col2" id="T_e84b6_row0_col2">0.3334</td>
-<td class="data row0 col3" id="T_e84b6_row0_col3">0.2948</td>
-<td class="data row0 col4" id="T_e84b6_row0_col4">-0.7191</td>
-<td class="data row0 col5" id="T_e84b6_row0_col5">0.8131</td>
-<td class="data row0 col6" id="T_e84b6_row0_col6">0.0246</td>
-<td class="data row0 col7" id="T_e84b6_row0_col7">0.1337</td>
-<td class="data row0 col8" id="T_e84b6_row0_col8">0.0072</td>
-<td class="data row0 col9" id="T_e84b6_row0_col9">1.8668</td>
+<th class="row_heading level0 row0" id="T_0e3e0_level0_row0">EY+ROC 순위합산</th>
+<th class="row_heading level1 row0" id="T_0e3e0_level1_row0">동일</th>
+<th class="row_heading level2 row0" id="T_0e3e0_level2_row0">12</th>
+<th class="row_heading level3 row0" id="T_0e3e0_level3_row0">비용기본</th>
+<th class="row_heading level4 row0" id="T_0e3e0_level4_row0">전체</th>
+<td class="data row0 col0" id="T_0e3e0_row0_col0">437.0000</td>
+<td class="data row0 col1" id="T_0e3e0_row0_col1">0.1097</td>
+<td class="data row0 col2" id="T_0e3e0_row0_col2">0.3334</td>
+<td class="data row0 col3" id="T_0e3e0_row0_col3">0.2934</td>
+<td class="data row0 col4" id="T_0e3e0_row0_col4">-0.7191</td>
+<td class="data row0 col5" id="T_0e3e0_row0_col5">0.8131</td>
+<td class="data row0 col6" id="T_0e3e0_row0_col6">0.0246</td>
+<td class="data row0 col7" id="T_0e3e0_row0_col7">0.1337</td>
+<td class="data row0 col8" id="T_0e3e0_row0_col8">0.0072</td>
+<td class="data row0 col9" id="T_0e3e0_row0_col9">1.8646</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_e84b6_level0_row1">EY+GPA 순위합산</th>
-<th class="row_heading level1 row1" id="T_e84b6_level1_row1">동일</th>
-<th class="row_heading level2 row1" id="T_e84b6_level2_row1">12</th>
-<th class="row_heading level3 row1" id="T_e84b6_level3_row1">비용기본</th>
-<th class="row_heading level4 row1" id="T_e84b6_level4_row1">전체</th>
-<td class="data row1 col0" id="T_e84b6_row1_col0">437.0000</td>
-<td class="data row1 col1" id="T_e84b6_row1_col1">0.1576</td>
-<td class="data row1 col2" id="T_e84b6_row1_col2">0.3280</td>
-<td class="data row1 col3" id="T_e84b6_row1_col3">0.4211</td>
-<td class="data row1 col4" id="T_e84b6_row1_col4">-0.6517</td>
-<td class="data row1 col5" id="T_e84b6_row1_col5">0.6507</td>
-<td class="data row1 col6" id="T_e84b6_row1_col6">0.0725</td>
-<td class="data row1 col7" id="T_e84b6_row1_col7">0.2815</td>
-<td class="data row1 col8" id="T_e84b6_row1_col8">0.0103</td>
-<td class="data row1 col9" id="T_e84b6_row1_col9">2.7540</td>
+<th class="row_heading level0 row1" id="T_0e3e0_level0_row1">EY+GPA 순위합산</th>
+<th class="row_heading level1 row1" id="T_0e3e0_level1_row1">동일</th>
+<th class="row_heading level2 row1" id="T_0e3e0_level2_row1">12</th>
+<th class="row_heading level3 row1" id="T_0e3e0_level3_row1">비용기본</th>
+<th class="row_heading level4 row1" id="T_0e3e0_level4_row1">전체</th>
+<td class="data row1 col0" id="T_0e3e0_row1_col0">437.0000</td>
+<td class="data row1 col1" id="T_0e3e0_row1_col1">0.1576</td>
+<td class="data row1 col2" id="T_0e3e0_row1_col2">0.3280</td>
+<td class="data row1 col3" id="T_0e3e0_row1_col3">0.4197</td>
+<td class="data row1 col4" id="T_0e3e0_row1_col4">-0.6517</td>
+<td class="data row1 col5" id="T_0e3e0_row1_col5">0.6507</td>
+<td class="data row1 col6" id="T_0e3e0_row1_col6">0.0725</td>
+<td class="data row1 col7" id="T_0e3e0_row1_col7">0.2815</td>
+<td class="data row1 col8" id="T_0e3e0_row1_col8">0.0103</td>
+<td class="data row1 col9" id="T_0e3e0_row1_col9">2.7513</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_e84b6_level0_row2">EY+ROE 순위합산</th>
-<th class="row_heading level1 row2" id="T_e84b6_level1_row2">동일</th>
-<th class="row_heading level2 row2" id="T_e84b6_level2_row2">12</th>
-<th class="row_heading level3 row2" id="T_e84b6_level3_row2">비용기본</th>
-<th class="row_heading level4 row2" id="T_e84b6_level4_row2">전체</th>
-<td class="data row2 col0" id="T_e84b6_row2_col0">437.0000</td>
-<td class="data row2 col1" id="T_e84b6_row2_col1">0.1190</td>
-<td class="data row2 col2" id="T_e84b6_row2_col2">0.3544</td>
-<td class="data row2 col3" id="T_e84b6_row2_col3">0.3168</td>
-<td class="data row2 col4" id="T_e84b6_row2_col4">-0.5821</td>
-<td class="data row2 col5" id="T_e84b6_row2_col5">0.8467</td>
-<td class="data row2 col6" id="T_e84b6_row2_col6">0.0339</td>
-<td class="data row2 col7" id="T_e84b6_row2_col7">0.1708</td>
-<td class="data row2 col8" id="T_e84b6_row2_col8">0.0090</td>
-<td class="data row2 col9" id="T_e84b6_row2_col9">2.1981</td>
+<th class="row_heading level0 row2" id="T_0e3e0_level0_row2">EY+ROE 순위합산</th>
+<th class="row_heading level1 row2" id="T_0e3e0_level1_row2">동일</th>
+<th class="row_heading level2 row2" id="T_0e3e0_level2_row2">12</th>
+<th class="row_heading level3 row2" id="T_0e3e0_level3_row2">비용기본</th>
+<th class="row_heading level4 row2" id="T_0e3e0_level4_row2">전체</th>
+<td class="data row2 col0" id="T_0e3e0_row2_col0">437.0000</td>
+<td class="data row2 col1" id="T_0e3e0_row2_col1">0.1190</td>
+<td class="data row2 col2" id="T_0e3e0_row2_col2">0.3544</td>
+<td class="data row2 col3" id="T_0e3e0_row2_col3">0.3155</td>
+<td class="data row2 col4" id="T_0e3e0_row2_col4">-0.5821</td>
+<td class="data row2 col5" id="T_0e3e0_row2_col5">0.8467</td>
+<td class="data row2 col6" id="T_0e3e0_row2_col6">0.0339</td>
+<td class="data row2 col7" id="T_0e3e0_row2_col7">0.1708</td>
+<td class="data row2 col8" id="T_0e3e0_row2_col8">0.0090</td>
+<td class="data row2 col9" id="T_0e3e0_row2_col9">2.1963</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_e84b6_level0_row3">EY+영업CF자산 순위합산</th>
-<th class="row_heading level1 row3" id="T_e84b6_level1_row3">동일</th>
-<th class="row_heading level2 row3" id="T_e84b6_level2_row3">12</th>
-<th class="row_heading level3 row3" id="T_e84b6_level3_row3">비용기본</th>
-<th class="row_heading level4 row3" id="T_e84b6_level4_row3">전체</th>
-<td class="data row3 col0" id="T_e84b6_row3_col0">437.0000</td>
-<td class="data row3 col1" id="T_e84b6_row3_col1">0.1732</td>
-<td class="data row3 col2" id="T_e84b6_row3_col2">0.3429</td>
-<td class="data row3 col3" id="T_e84b6_row3_col3">0.4523</td>
-<td class="data row3 col4" id="T_e84b6_row3_col4">-0.5514</td>
-<td class="data row3 col5" id="T_e84b6_row3_col5">0.8161</td>
-<td class="data row3 col6" id="T_e84b6_row3_col6">0.0880</td>
-<td class="data row3 col7" id="T_e84b6_row3_col7">0.3329</td>
-<td class="data row3 col8" id="T_e84b6_row3_col8">0.0126</td>
-<td class="data row3 col9" id="T_e84b6_row3_col9">2.4998</td>
+<th class="row_heading level0 row3" id="T_0e3e0_level0_row3">EY+영업CF자산 순위합산</th>
+<th class="row_heading level1 row3" id="T_0e3e0_level1_row3">동일</th>
+<th class="row_heading level2 row3" id="T_0e3e0_level2_row3">12</th>
+<th class="row_heading level3 row3" id="T_0e3e0_level3_row3">비용기본</th>
+<th class="row_heading level4 row3" id="T_0e3e0_level4_row3">전체</th>
+<td class="data row3 col0" id="T_0e3e0_row3_col0">437.0000</td>
+<td class="data row3 col1" id="T_0e3e0_row3_col1">0.1732</td>
+<td class="data row3 col2" id="T_0e3e0_row3_col2">0.3429</td>
+<td class="data row3 col3" id="T_0e3e0_row3_col3">0.4510</td>
+<td class="data row3 col4" id="T_0e3e0_row3_col4">-0.5514</td>
+<td class="data row3 col5" id="T_0e3e0_row3_col5">0.8161</td>
+<td class="data row3 col6" id="T_0e3e0_row3_col6">0.0880</td>
+<td class="data row3 col7" id="T_0e3e0_row3_col7">0.3329</td>
+<td class="data row3 col8" id="T_0e3e0_row3_col8">0.0126</td>
+<td class="data row3 col9" id="T_0e3e0_row3_col9">2.4977</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_e84b6_level0_row4">EBITDA_EV+ROC 순위합산</th>
-<th class="row_heading level1 row4" id="T_e84b6_level1_row4">동일</th>
-<th class="row_heading level2 row4" id="T_e84b6_level2_row4">12</th>
-<th class="row_heading level3 row4" id="T_e84b6_level3_row4">비용기본</th>
-<th class="row_heading level4 row4" id="T_e84b6_level4_row4">전체</th>
-<td class="data row4 col0" id="T_e84b6_row4_col0">437.0000</td>
-<td class="data row4 col1" id="T_e84b6_row4_col1">0.1363</td>
-<td class="data row4 col2" id="T_e84b6_row4_col2">0.3371</td>
-<td class="data row4 col3" id="T_e84b6_row4_col3">0.3570</td>
-<td class="data row4 col4" id="T_e84b6_row4_col4">-0.5420</td>
-<td class="data row4 col5" id="T_e84b6_row4_col5">0.7055</td>
-<td class="data row4 col6" id="T_e84b6_row4_col6">0.0512</td>
-<td class="data row4 col7" id="T_e84b6_row4_col7">0.2098</td>
-<td class="data row4 col8" id="T_e84b6_row4_col8">0.0098</td>
-<td class="data row4 col9" id="T_e84b6_row4_col9">2.1747</td>
+<th class="row_heading level0 row4" id="T_0e3e0_level0_row4">EBITDA_EV+ROC 순위합산</th>
+<th class="row_heading level1 row4" id="T_0e3e0_level1_row4">동일</th>
+<th class="row_heading level2 row4" id="T_0e3e0_level2_row4">12</th>
+<th class="row_heading level3 row4" id="T_0e3e0_level3_row4">비용기본</th>
+<th class="row_heading level4 row4" id="T_0e3e0_level4_row4">전체</th>
+<td class="data row4 col0" id="T_0e3e0_row4_col0">437.0000</td>
+<td class="data row4 col1" id="T_0e3e0_row4_col1">0.1363</td>
+<td class="data row4 col2" id="T_0e3e0_row4_col2">0.3371</td>
+<td class="data row4 col3" id="T_0e3e0_row4_col3">0.3557</td>
+<td class="data row4 col4" id="T_0e3e0_row4_col4">-0.5420</td>
+<td class="data row4 col5" id="T_0e3e0_row4_col5">0.7055</td>
+<td class="data row4 col6" id="T_0e3e0_row4_col6">0.0512</td>
+<td class="data row4 col7" id="T_0e3e0_row4_col7">0.2098</td>
+<td class="data row4 col8" id="T_0e3e0_row4_col8">0.0098</td>
+<td class="data row4 col9" id="T_0e3e0_row4_col9">2.1724</td>
 </tr>
 <tr>
-<th class="row_heading level0 row5" id="T_e84b6_level0_row5">EBITDA_EV+GPA 순위합산</th>
-<th class="row_heading level1 row5" id="T_e84b6_level1_row5">동일</th>
-<th class="row_heading level2 row5" id="T_e84b6_level2_row5">12</th>
-<th class="row_heading level3 row5" id="T_e84b6_level3_row5">비용기본</th>
-<th class="row_heading level4 row5" id="T_e84b6_level4_row5">전체</th>
-<td class="data row5 col0" id="T_e84b6_row5_col0">437.0000</td>
-<td class="data row5 col1" id="T_e84b6_row5_col1">0.1736</td>
-<td class="data row5 col2" id="T_e84b6_row5_col2">0.3540</td>
-<td class="data row5 col3" id="T_e84b6_row5_col3">0.4448</td>
-<td class="data row5 col4" id="T_e84b6_row5_col4">-0.6113</td>
-<td class="data row5 col5" id="T_e84b6_row5_col5">0.5523</td>
-<td class="data row5 col6" id="T_e84b6_row5_col6">0.0885</td>
-<td class="data row5 col7" id="T_e84b6_row5_col7">0.3283</td>
-<td class="data row5 col8" id="T_e84b6_row5_col8">0.0134</td>
-<td class="data row5 col9" id="T_e84b6_row5_col9">2.5344</td>
+<th class="row_heading level0 row5" id="T_0e3e0_level0_row5">EBITDA_EV+GPA 순위합산</th>
+<th class="row_heading level1 row5" id="T_0e3e0_level1_row5">동일</th>
+<th class="row_heading level2 row5" id="T_0e3e0_level2_row5">12</th>
+<th class="row_heading level3 row5" id="T_0e3e0_level3_row5">비용기본</th>
+<th class="row_heading level4 row5" id="T_0e3e0_level4_row5">전체</th>
+<td class="data row5 col0" id="T_0e3e0_row5_col0">437.0000</td>
+<td class="data row5 col1" id="T_0e3e0_row5_col1">0.1736</td>
+<td class="data row5 col2" id="T_0e3e0_row5_col2">0.3540</td>
+<td class="data row5 col3" id="T_0e3e0_row5_col3">0.4436</td>
+<td class="data row5 col4" id="T_0e3e0_row5_col4">-0.6113</td>
+<td class="data row5 col5" id="T_0e3e0_row5_col5">0.5523</td>
+<td class="data row5 col6" id="T_0e3e0_row5_col6">0.0885</td>
+<td class="data row5 col7" id="T_0e3e0_row5_col7">0.3283</td>
+<td class="data row5 col8" id="T_0e3e0_row5_col8">0.0134</td>
+<td class="data row5 col9" id="T_0e3e0_row5_col9">2.5319</td>
 </tr>
 <tr>
-<th class="row_heading level0 row6" id="T_e84b6_level0_row6">EBITDA_EV+ROE 순위합산</th>
-<th class="row_heading level1 row6" id="T_e84b6_level1_row6">동일</th>
-<th class="row_heading level2 row6" id="T_e84b6_level2_row6">12</th>
-<th class="row_heading level3 row6" id="T_e84b6_level3_row6">비용기본</th>
-<th class="row_heading level4 row6" id="T_e84b6_level4_row6">전체</th>
-<td class="data row6 col0" id="T_e84b6_row6_col0">437.0000</td>
-<td class="data row6 col1" id="T_e84b6_row6_col1">0.1521</td>
-<td class="data row6 col2" id="T_e84b6_row6_col2">0.3709</td>
-<td class="data row6 col3" id="T_e84b6_row6_col3">0.3892</td>
-<td class="data row6 col4" id="T_e84b6_row6_col4">-0.5949</td>
-<td class="data row6 col5" id="T_e84b6_row6_col5">0.7439</td>
-<td class="data row6 col6" id="T_e84b6_row6_col6">0.0670</td>
-<td class="data row6 col7" id="T_e84b6_row6_col7">0.2746</td>
-<td class="data row6 col8" id="T_e84b6_row6_col8">0.0121</td>
-<td class="data row6 col9" id="T_e84b6_row6_col9">2.3217</td>
+<th class="row_heading level0 row6" id="T_0e3e0_level0_row6">EBITDA_EV+ROE 순위합산</th>
+<th class="row_heading level1 row6" id="T_0e3e0_level1_row6">동일</th>
+<th class="row_heading level2 row6" id="T_0e3e0_level2_row6">12</th>
+<th class="row_heading level3 row6" id="T_0e3e0_level3_row6">비용기본</th>
+<th class="row_heading level4 row6" id="T_0e3e0_level4_row6">전체</th>
+<td class="data row6 col0" id="T_0e3e0_row6_col0">437.0000</td>
+<td class="data row6 col1" id="T_0e3e0_row6_col1">0.1521</td>
+<td class="data row6 col2" id="T_0e3e0_row6_col2">0.3709</td>
+<td class="data row6 col3" id="T_0e3e0_row6_col3">0.3880</td>
+<td class="data row6 col4" id="T_0e3e0_row6_col4">-0.5949</td>
+<td class="data row6 col5" id="T_0e3e0_row6_col5">0.7439</td>
+<td class="data row6 col6" id="T_0e3e0_row6_col6">0.0670</td>
+<td class="data row6 col7" id="T_0e3e0_row6_col7">0.2746</td>
+<td class="data row6 col8" id="T_0e3e0_row6_col8">0.0121</td>
+<td class="data row6 col9" id="T_0e3e0_row6_col9">2.3202</td>
 </tr>
 <tr>
-<th class="row_heading level0 row7" id="T_e84b6_level0_row7">EBITDA_EV+영업CF자산 순위합산</th>
-<th class="row_heading level1 row7" id="T_e84b6_level1_row7">동일</th>
-<th class="row_heading level2 row7" id="T_e84b6_level2_row7">12</th>
-<th class="row_heading level3 row7" id="T_e84b6_level3_row7">비용기본</th>
-<th class="row_heading level4 row7" id="T_e84b6_level4_row7">전체</th>
-<td class="data row7 col0" id="T_e84b6_row7_col0">437.0000</td>
-<td class="data row7 col1" id="T_e84b6_row7_col1">0.1741</td>
-<td class="data row7 col2" id="T_e84b6_row7_col2">0.3661</td>
-<td class="data row7 col3" id="T_e84b6_row7_col3">0.4386</td>
-<td class="data row7 col4" id="T_e84b6_row7_col4">-0.5172</td>
-<td class="data row7 col5" id="T_e84b6_row7_col5">0.7646</td>
-<td class="data row7 col6" id="T_e84b6_row7_col6">0.0889</td>
-<td class="data row7 col7" id="T_e84b6_row7_col7">0.3321</td>
-<td class="data row7 col8" id="T_e84b6_row7_col8">0.0149</td>
-<td class="data row7 col9" id="T_e84b6_row7_col9">2.5248</td>
+<th class="row_heading level0 row7" id="T_0e3e0_level0_row7">EBITDA_EV+영업CF자산 순위합산</th>
+<th class="row_heading level1 row7" id="T_0e3e0_level1_row7">동일</th>
+<th class="row_heading level2 row7" id="T_0e3e0_level2_row7">12</th>
+<th class="row_heading level3 row7" id="T_0e3e0_level3_row7">비용기본</th>
+<th class="row_heading level4 row7" id="T_0e3e0_level4_row7">전체</th>
+<td class="data row7 col0" id="T_0e3e0_row7_col0">437.0000</td>
+<td class="data row7 col1" id="T_0e3e0_row7_col1">0.1741</td>
+<td class="data row7 col2" id="T_0e3e0_row7_col2">0.3661</td>
+<td class="data row7 col3" id="T_0e3e0_row7_col3">0.4374</td>
+<td class="data row7 col4" id="T_0e3e0_row7_col4">-0.5172</td>
+<td class="data row7 col5" id="T_0e3e0_row7_col5">0.7646</td>
+<td class="data row7 col6" id="T_0e3e0_row7_col6">0.0889</td>
+<td class="data row7 col7" id="T_0e3e0_row7_col7">0.3321</td>
+<td class="data row7 col8" id="T_0e3e0_row7_col8">0.0148</td>
+<td class="data row7 col9" id="T_0e3e0_row7_col9">2.5226</td>
 </tr>
 <tr>
-<th class="row_heading level0 row8" id="T_e84b6_level0_row8">EP+ROC 순위합산</th>
-<th class="row_heading level1 row8" id="T_e84b6_level1_row8">동일</th>
-<th class="row_heading level2 row8" id="T_e84b6_level2_row8">12</th>
-<th class="row_heading level3 row8" id="T_e84b6_level3_row8">비용기본</th>
-<th class="row_heading level4 row8" id="T_e84b6_level4_row8">전체</th>
-<td class="data row8 col0" id="T_e84b6_row8_col0">437.0000</td>
-<td class="data row8 col1" id="T_e84b6_row8_col1">0.1211</td>
-<td class="data row8 col2" id="T_e84b6_row8_col2">0.3490</td>
-<td class="data row8 col3" id="T_e84b6_row8_col3">0.3224</td>
-<td class="data row8 col4" id="T_e84b6_row8_col4">-0.6941</td>
-<td class="data row8 col5" id="T_e84b6_row8_col5">0.8380</td>
-<td class="data row8 col6" id="T_e84b6_row8_col6">0.0359</td>
-<td class="data row8 col7" id="T_e84b6_row8_col7">0.1713</td>
-<td class="data row8 col8" id="T_e84b6_row8_col8">0.0075</td>
-<td class="data row8 col9" id="T_e84b6_row8_col9">1.8298</td>
+<th class="row_heading level0 row8" id="T_0e3e0_level0_row8">EP+ROC 순위합산</th>
+<th class="row_heading level1 row8" id="T_0e3e0_level1_row8">동일</th>
+<th class="row_heading level2 row8" id="T_0e3e0_level2_row8">12</th>
+<th class="row_heading level3 row8" id="T_0e3e0_level3_row8">비용기본</th>
+<th class="row_heading level4 row8" id="T_0e3e0_level4_row8">전체</th>
+<td class="data row8 col0" id="T_0e3e0_row8_col0">437.0000</td>
+<td class="data row8 col1" id="T_0e3e0_row8_col1">0.1211</td>
+<td class="data row8 col2" id="T_0e3e0_row8_col2">0.3490</td>
+<td class="data row8 col3" id="T_0e3e0_row8_col3">0.3210</td>
+<td class="data row8 col4" id="T_0e3e0_row8_col4">-0.6941</td>
+<td class="data row8 col5" id="T_0e3e0_row8_col5">0.8380</td>
+<td class="data row8 col6" id="T_0e3e0_row8_col6">0.0359</td>
+<td class="data row8 col7" id="T_0e3e0_row8_col7">0.1713</td>
+<td class="data row8 col8" id="T_0e3e0_row8_col8">0.0074</td>
+<td class="data row8 col9" id="T_0e3e0_row8_col9">1.8276</td>
 </tr>
 <tr>
-<th class="row_heading level0 row9" id="T_e84b6_level0_row9">EP+GPA 순위합산</th>
-<th class="row_heading level1 row9" id="T_e84b6_level1_row9">동일</th>
-<th class="row_heading level2 row9" id="T_e84b6_level2_row9">12</th>
-<th class="row_heading level3 row9" id="T_e84b6_level3_row9">비용기본</th>
-<th class="row_heading level4 row9" id="T_e84b6_level4_row9">전체</th>
-<td class="data row9 col0" id="T_e84b6_row9_col0">437.0000</td>
-<td class="data row9 col1" id="T_e84b6_row9_col1">0.1819</td>
-<td class="data row9 col2" id="T_e84b6_row9_col2">0.3700</td>
-<td class="data row9 col3" id="T_e84b6_row9_col3">0.4548</td>
-<td class="data row9 col4" id="T_e84b6_row9_col4">-0.6817</td>
-<td class="data row9 col5" id="T_e84b6_row9_col5">0.6814</td>
-<td class="data row9 col6" id="T_e84b6_row9_col6">0.0967</td>
-<td class="data row9 col7" id="T_e84b6_row9_col7">0.3323</td>
-<td class="data row9 col8" id="T_e84b6_row9_col8">0.0142</td>
-<td class="data row9 col9" id="T_e84b6_row9_col9">2.3598</td>
+<th class="row_heading level0 row9" id="T_0e3e0_level0_row9">EP+GPA 순위합산</th>
+<th class="row_heading level1 row9" id="T_0e3e0_level1_row9">동일</th>
+<th class="row_heading level2 row9" id="T_0e3e0_level2_row9">12</th>
+<th class="row_heading level3 row9" id="T_0e3e0_level3_row9">비용기본</th>
+<th class="row_heading level4 row9" id="T_0e3e0_level4_row9">전체</th>
+<td class="data row9 col0" id="T_0e3e0_row9_col0">437.0000</td>
+<td class="data row9 col1" id="T_0e3e0_row9_col1">0.1819</td>
+<td class="data row9 col2" id="T_0e3e0_row9_col2">0.3700</td>
+<td class="data row9 col3" id="T_0e3e0_row9_col3">0.4537</td>
+<td class="data row9 col4" id="T_0e3e0_row9_col4">-0.6817</td>
+<td class="data row9 col5" id="T_0e3e0_row9_col5">0.6814</td>
+<td class="data row9 col6" id="T_0e3e0_row9_col6">0.0967</td>
+<td class="data row9 col7" id="T_0e3e0_row9_col7">0.3323</td>
+<td class="data row9 col8" id="T_0e3e0_row9_col8">0.0142</td>
+<td class="data row9 col9" id="T_0e3e0_row9_col9">2.3577</td>
 </tr>
 <tr>
-<th class="row_heading level0 row10" id="T_e84b6_level0_row10">EP+ROE 순위합산</th>
-<th class="row_heading level1 row10" id="T_e84b6_level1_row10">동일</th>
-<th class="row_heading level2 row10" id="T_e84b6_level2_row10">12</th>
-<th class="row_heading level3 row10" id="T_e84b6_level3_row10">비용기본</th>
-<th class="row_heading level4 row10" id="T_e84b6_level4_row10">전체</th>
-<td class="data row10 col0" id="T_e84b6_row10_col0">437.0000</td>
-<td class="data row10 col1" id="T_e84b6_row10_col1">0.1615</td>
-<td class="data row10 col2" id="T_e84b6_row10_col2">0.3641</td>
-<td class="data row10 col3" id="T_e84b6_row10_col3">0.4216</td>
-<td class="data row10 col4" id="T_e84b6_row10_col4">-0.6276</td>
-<td class="data row10 col5" id="T_e84b6_row10_col5">0.8510</td>
-<td class="data row10 col6" id="T_e84b6_row10_col6">0.0764</td>
-<td class="data row10 col7" id="T_e84b6_row10_col7">0.2993</td>
-<td class="data row10 col8" id="T_e84b6_row10_col8">0.0109</td>
-<td class="data row10 col9" id="T_e84b6_row10_col9">2.3834</td>
+<th class="row_heading level0 row10" id="T_0e3e0_level0_row10">EP+ROE 순위합산</th>
+<th class="row_heading level1 row10" id="T_0e3e0_level1_row10">동일</th>
+<th class="row_heading level2 row10" id="T_0e3e0_level2_row10">12</th>
+<th class="row_heading level3 row10" id="T_0e3e0_level3_row10">비용기본</th>
+<th class="row_heading level4 row10" id="T_0e3e0_level4_row10">전체</th>
+<td class="data row10 col0" id="T_0e3e0_row10_col0">437.0000</td>
+<td class="data row10 col1" id="T_0e3e0_row10_col1">0.1615</td>
+<td class="data row10 col2" id="T_0e3e0_row10_col2">0.3641</td>
+<td class="data row10 col3" id="T_0e3e0_row10_col3">0.4204</td>
+<td class="data row10 col4" id="T_0e3e0_row10_col4">-0.6276</td>
+<td class="data row10 col5" id="T_0e3e0_row10_col5">0.8510</td>
+<td class="data row10 col6" id="T_0e3e0_row10_col6">0.0764</td>
+<td class="data row10 col7" id="T_0e3e0_row10_col7">0.2993</td>
+<td class="data row10 col8" id="T_0e3e0_row10_col8">0.0109</td>
+<td class="data row10 col9" id="T_0e3e0_row10_col9">2.3816</td>
 </tr>
 <tr>
-<th class="row_heading level0 row11" id="T_e84b6_level0_row11">EP+영업CF자산 순위합산</th>
-<th class="row_heading level1 row11" id="T_e84b6_level1_row11">동일</th>
-<th class="row_heading level2 row11" id="T_e84b6_level2_row11">12</th>
-<th class="row_heading level3 row11" id="T_e84b6_level3_row11">비용기본</th>
-<th class="row_heading level4 row11" id="T_e84b6_level4_row11">전체</th>
-<td class="data row11 col0" id="T_e84b6_row11_col0">437.0000</td>
-<td class="data row11 col1" id="T_e84b6_row11_col1">0.2111</td>
-<td class="data row11 col2" id="T_e84b6_row11_col2">0.3905</td>
-<td class="data row11 col3" id="T_e84b6_row11_col3">0.5044</td>
-<td class="data row11 col4" id="T_e84b6_row11_col4">-0.5716</td>
-<td class="data row11 col5" id="T_e84b6_row11_col5">0.8500</td>
-<td class="data row11 col6" id="T_e84b6_row11_col6">0.1259</td>
-<td class="data row11 col7" id="T_e84b6_row11_col7">0.4051</td>
-<td class="data row11 col8" id="T_e84b6_row11_col8">0.0159</td>
-<td class="data row11 col9" id="T_e84b6_row11_col9">2.1914</td>
+<th class="row_heading level0 row11" id="T_0e3e0_level0_row11">EP+영업CF자산 순위합산</th>
+<th class="row_heading level1 row11" id="T_0e3e0_level1_row11">동일</th>
+<th class="row_heading level2 row11" id="T_0e3e0_level2_row11">12</th>
+<th class="row_heading level3 row11" id="T_0e3e0_level3_row11">비용기본</th>
+<th class="row_heading level4 row11" id="T_0e3e0_level4_row11">전체</th>
+<td class="data row11 col0" id="T_0e3e0_row11_col0">437.0000</td>
+<td class="data row11 col1" id="T_0e3e0_row11_col1">0.2111</td>
+<td class="data row11 col2" id="T_0e3e0_row11_col2">0.3905</td>
+<td class="data row11 col3" id="T_0e3e0_row11_col3">0.5033</td>
+<td class="data row11 col4" id="T_0e3e0_row11_col4">-0.5716</td>
+<td class="data row11 col5" id="T_0e3e0_row11_col5">0.8500</td>
+<td class="data row11 col6" id="T_0e3e0_row11_col6">0.1259</td>
+<td class="data row11 col7" id="T_0e3e0_row11_col7">0.4051</td>
+<td class="data row11 col8" id="T_0e3e0_row11_col8">0.0159</td>
+<td class="data row11 col9" id="T_0e3e0_row11_col9">2.1896</td>
 </tr>
 <tr>
-<th class="row_heading level0 row12" id="T_e84b6_level0_row12">영업이익_EV+ROC 순위합산</th>
-<th class="row_heading level1 row12" id="T_e84b6_level1_row12">동일</th>
-<th class="row_heading level2 row12" id="T_e84b6_level2_row12">12</th>
-<th class="row_heading level3 row12" id="T_e84b6_level3_row12">비용기본</th>
-<th class="row_heading level4 row12" id="T_e84b6_level4_row12">전체</th>
-<td class="data row12 col0" id="T_e84b6_row12_col0">437.0000</td>
-<td class="data row12 col1" id="T_e84b6_row12_col1">0.1231</td>
-<td class="data row12 col2" id="T_e84b6_row12_col2">0.3447</td>
-<td class="data row12 col3" id="T_e84b6_row12_col3">0.3225</td>
-<td class="data row12 col4" id="T_e84b6_row12_col4">-0.6513</td>
-<td class="data row12 col5" id="T_e84b6_row12_col5">0.7272</td>
-<td class="data row12 col6" id="T_e84b6_row12_col6">0.0379</td>
-<td class="data row12 col7" id="T_e84b6_row12_col7">0.1729</td>
-<td class="data row12 col8" id="T_e84b6_row12_col8">0.0091</td>
-<td class="data row12 col9" id="T_e84b6_row12_col9">2.0517</td>
+<th class="row_heading level0 row12" id="T_0e3e0_level0_row12">영업이익_EV+ROC 순위합산</th>
+<th class="row_heading level1 row12" id="T_0e3e0_level1_row12">동일</th>
+<th class="row_heading level2 row12" id="T_0e3e0_level2_row12">12</th>
+<th class="row_heading level3 row12" id="T_0e3e0_level3_row12">비용기본</th>
+<th class="row_heading level4 row12" id="T_0e3e0_level4_row12">전체</th>
+<td class="data row12 col0" id="T_0e3e0_row12_col0">437.0000</td>
+<td class="data row12 col1" id="T_0e3e0_row12_col1">0.1231</td>
+<td class="data row12 col2" id="T_0e3e0_row12_col2">0.3447</td>
+<td class="data row12 col3" id="T_0e3e0_row12_col3">0.3212</td>
+<td class="data row12 col4" id="T_0e3e0_row12_col4">-0.6513</td>
+<td class="data row12 col5" id="T_0e3e0_row12_col5">0.7272</td>
+<td class="data row12 col6" id="T_0e3e0_row12_col6">0.0379</td>
+<td class="data row12 col7" id="T_0e3e0_row12_col7">0.1729</td>
+<td class="data row12 col8" id="T_0e3e0_row12_col8">0.0091</td>
+<td class="data row12 col9" id="T_0e3e0_row12_col9">2.0496</td>
 </tr>
 <tr>
-<th class="row_heading level0 row13" id="T_e84b6_level0_row13">영업이익_EV+GPA 순위합산</th>
-<th class="row_heading level1 row13" id="T_e84b6_level1_row13">동일</th>
-<th class="row_heading level2 row13" id="T_e84b6_level2_row13">12</th>
-<th class="row_heading level3 row13" id="T_e84b6_level3_row13">비용기본</th>
-<th class="row_heading level4 row13" id="T_e84b6_level4_row13">전체</th>
-<td class="data row13 col0" id="T_e84b6_row13_col0">437.0000</td>
-<td class="data row13 col1" id="T_e84b6_row13_col1">0.1458</td>
-<td class="data row13 col2" id="T_e84b6_row13_col2">0.3576</td>
-<td class="data row13 col3" id="T_e84b6_row13_col3">0.3810</td>
-<td class="data row13 col4" id="T_e84b6_row13_col4">-0.6986</td>
-<td class="data row13 col5" id="T_e84b6_row13_col5">0.5840</td>
-<td class="data row13 col6" id="T_e84b6_row13_col6">0.0606</td>
-<td class="data row13 col7" id="T_e84b6_row13_col7">0.2573</td>
-<td class="data row13 col8" id="T_e84b6_row13_col8">0.0117</td>
-<td class="data row13 col9" id="T_e84b6_row13_col9">2.6701</td>
+<th class="row_heading level0 row13" id="T_0e3e0_level0_row13">영업이익_EV+GPA 순위합산</th>
+<th class="row_heading level1 row13" id="T_0e3e0_level1_row13">동일</th>
+<th class="row_heading level2 row13" id="T_0e3e0_level2_row13">12</th>
+<th class="row_heading level3 row13" id="T_0e3e0_level3_row13">비용기본</th>
+<th class="row_heading level4 row13" id="T_0e3e0_level4_row13">전체</th>
+<td class="data row13 col0" id="T_0e3e0_row13_col0">437.0000</td>
+<td class="data row13 col1" id="T_0e3e0_row13_col1">0.1458</td>
+<td class="data row13 col2" id="T_0e3e0_row13_col2">0.3576</td>
+<td class="data row13 col3" id="T_0e3e0_row13_col3">0.3798</td>
+<td class="data row13 col4" id="T_0e3e0_row13_col4">-0.6986</td>
+<td class="data row13 col5" id="T_0e3e0_row13_col5">0.5840</td>
+<td class="data row13 col6" id="T_0e3e0_row13_col6">0.0606</td>
+<td class="data row13 col7" id="T_0e3e0_row13_col7">0.2573</td>
+<td class="data row13 col8" id="T_0e3e0_row13_col8">0.0117</td>
+<td class="data row13 col9" id="T_0e3e0_row13_col9">2.6678</td>
 </tr>
 <tr>
-<th class="row_heading level0 row14" id="T_e84b6_level0_row14">영업이익_EV+ROE 순위합산</th>
-<th class="row_heading level1 row14" id="T_e84b6_level1_row14">동일</th>
-<th class="row_heading level2 row14" id="T_e84b6_level2_row14">12</th>
-<th class="row_heading level3 row14" id="T_e84b6_level3_row14">비용기본</th>
-<th class="row_heading level4 row14" id="T_e84b6_level4_row14">전체</th>
-<td class="data row14 col0" id="T_e84b6_row14_col0">437.0000</td>
-<td class="data row14 col1" id="T_e84b6_row14_col1">0.1366</td>
-<td class="data row14 col2" id="T_e84b6_row14_col2">0.3601</td>
-<td class="data row14 col3" id="T_e84b6_row14_col3">0.3565</td>
-<td class="data row14 col4" id="T_e84b6_row14_col4">-0.6130</td>
-<td class="data row14 col5" id="T_e84b6_row14_col5">0.7566</td>
-<td class="data row14 col6" id="T_e84b6_row14_col6">0.0514</td>
-<td class="data row14 col7" id="T_e84b6_row14_col7">0.2270</td>
-<td class="data row14 col8" id="T_e84b6_row14_col8">0.0108</td>
-<td class="data row14 col9" id="T_e84b6_row14_col9">2.2867</td>
+<th class="row_heading level0 row14" id="T_0e3e0_level0_row14">영업이익_EV+ROE 순위합산</th>
+<th class="row_heading level1 row14" id="T_0e3e0_level1_row14">동일</th>
+<th class="row_heading level2 row14" id="T_0e3e0_level2_row14">12</th>
+<th class="row_heading level3 row14" id="T_0e3e0_level3_row14">비용기본</th>
+<th class="row_heading level4 row14" id="T_0e3e0_level4_row14">전체</th>
+<td class="data row14 col0" id="T_0e3e0_row14_col0">437.0000</td>
+<td class="data row14 col1" id="T_0e3e0_row14_col1">0.1366</td>
+<td class="data row14 col2" id="T_0e3e0_row14_col2">0.3601</td>
+<td class="data row14 col3" id="T_0e3e0_row14_col3">0.3552</td>
+<td class="data row14 col4" id="T_0e3e0_row14_col4">-0.6130</td>
+<td class="data row14 col5" id="T_0e3e0_row14_col5">0.7566</td>
+<td class="data row14 col6" id="T_0e3e0_row14_col6">0.0514</td>
+<td class="data row14 col7" id="T_0e3e0_row14_col7">0.2270</td>
+<td class="data row14 col8" id="T_0e3e0_row14_col8">0.0108</td>
+<td class="data row14 col9" id="T_0e3e0_row14_col9">2.2852</td>
 </tr>
 <tr>
-<th class="row_heading level0 row15" id="T_e84b6_level0_row15">영업이익_EV+영업CF자산 순위합산</th>
-<th class="row_heading level1 row15" id="T_e84b6_level1_row15">동일</th>
-<th class="row_heading level2 row15" id="T_e84b6_level2_row15">12</th>
-<th class="row_heading level3 row15" id="T_e84b6_level3_row15">비용기본</th>
-<th class="row_heading level4 row15" id="T_e84b6_level4_row15">전체</th>
-<td class="data row15 col0" id="T_e84b6_row15_col0">437.0000</td>
-<td class="data row15 col1" id="T_e84b6_row15_col1">0.1706</td>
-<td class="data row15 col2" id="T_e84b6_row15_col2">0.3711</td>
-<td class="data row15 col3" id="T_e84b6_row15_col3">0.4292</td>
-<td class="data row15 col4" id="T_e84b6_row15_col4">-0.5297</td>
-<td class="data row15 col5" id="T_e84b6_row15_col5">0.8183</td>
-<td class="data row15 col6" id="T_e84b6_row15_col6">0.0855</td>
-<td class="data row15 col7" id="T_e84b6_row15_col7">0.3267</td>
-<td class="data row15 col8" id="T_e84b6_row15_col8">0.0144</td>
-<td class="data row15 col9" id="T_e84b6_row15_col9">2.4285</td>
+<th class="row_heading level0 row15" id="T_0e3e0_level0_row15">영업이익_EV+영업CF자산 순위합산</th>
+<th class="row_heading level1 row15" id="T_0e3e0_level1_row15">동일</th>
+<th class="row_heading level2 row15" id="T_0e3e0_level2_row15">12</th>
+<th class="row_heading level3 row15" id="T_0e3e0_level3_row15">비용기본</th>
+<th class="row_heading level4 row15" id="T_0e3e0_level4_row15">전체</th>
+<td class="data row15 col0" id="T_0e3e0_row15_col0">437.0000</td>
+<td class="data row15 col1" id="T_0e3e0_row15_col1">0.1706</td>
+<td class="data row15 col2" id="T_0e3e0_row15_col2">0.3711</td>
+<td class="data row15 col3" id="T_0e3e0_row15_col3">0.4280</td>
+<td class="data row15 col4" id="T_0e3e0_row15_col4">-0.5297</td>
+<td class="data row15 col5" id="T_0e3e0_row15_col5">0.8183</td>
+<td class="data row15 col6" id="T_0e3e0_row15_col6">0.0855</td>
+<td class="data row15 col7" id="T_0e3e0_row15_col7">0.3267</td>
+<td class="data row15 col8" id="T_0e3e0_row15_col8">0.0144</td>
+<td class="data row15 col9" id="T_0e3e0_row15_col9">2.4266</td>
 </tr>
 <tr>
-<th class="row_heading level0 row16" id="T_e84b6_level0_row16">벤치:유니버스(시총가중)</th>
-<th class="row_heading level1 row16" id="T_e84b6_level1_row16">-</th>
-<th class="row_heading level2 row16" id="T_e84b6_level2_row16">0</th>
-<th class="row_heading level3 row16" id="T_e84b6_level3_row16">비용0</th>
-<th class="row_heading level4 row16" id="T_e84b6_level4_row16">전체</th>
-<td class="data row16 col0" id="T_e84b6_row16_col0">437.0000</td>
-<td class="data row16 col1" id="T_e84b6_row16_col1">0.0851</td>
-<td class="data row16 col2" id="T_e84b6_row16_col2">0.2724</td>
-<td class="data row16 col3" id="T_e84b6_row16_col3">0.2231</td>
-<td class="data row16 col4" id="T_e84b6_row16_col4">-0.6101</td>
-<td class="data row16 col5" id="T_e84b6_row16_col5">nan</td>
-<td class="data row16 col6" id="T_e84b6_row16_col6">0.0000</td>
-<td class="data row16 col7" id="T_e84b6_row16_col7">nan</td>
-<td class="data row16 col8" id="T_e84b6_row16_col8">0.0032</td>
-<td class="data row16 col9" id="T_e84b6_row16_col9">5.1880</td>
+<th class="row_heading level0 row16" id="T_0e3e0_level0_row16">벤치:유니버스(시총가중)</th>
+<th class="row_heading level1 row16" id="T_0e3e0_level1_row16">-</th>
+<th class="row_heading level2 row16" id="T_0e3e0_level2_row16">0</th>
+<th class="row_heading level3 row16" id="T_0e3e0_level3_row16">비용0</th>
+<th class="row_heading level4 row16" id="T_0e3e0_level4_row16">전체</th>
+<td class="data row16 col0" id="T_0e3e0_row16_col0">437.0000</td>
+<td class="data row16 col1" id="T_0e3e0_row16_col1">0.0851</td>
+<td class="data row16 col2" id="T_0e3e0_row16_col2">0.2724</td>
+<td class="data row16 col3" id="T_0e3e0_row16_col3">0.2213</td>
+<td class="data row16 col4" id="T_0e3e0_row16_col4">-0.6101</td>
+<td class="data row16 col5" id="T_0e3e0_row16_col5">nan</td>
+<td class="data row16 col6" id="T_0e3e0_row16_col6">0.0000</td>
+<td class="data row16 col7" id="T_0e3e0_row16_col7">nan</td>
+<td class="data row16 col8" id="T_0e3e0_row16_col8">0.0032</td>
+<td class="data row16 col9" id="T_0e3e0_row16_col9">5.1868</td>
 </tr>
 <tr>
-<th class="row_heading level0 row17" id="T_e84b6_level0_row17">벤치:코스피</th>
-<th class="row_heading level1 row17" id="T_e84b6_level1_row17">-</th>
-<th class="row_heading level2 row17" id="T_e84b6_level2_row17">0</th>
-<th class="row_heading level3 row17" id="T_e84b6_level3_row17">비용0</th>
-<th class="row_heading level4 row17" id="T_e84b6_level4_row17">전체</th>
-<td class="data row17 col0" id="T_e84b6_row17_col0">437.0000</td>
-<td class="data row17 col1" id="T_e84b6_row17_col1">0.0593</td>
-<td class="data row17 col2" id="T_e84b6_row17_col2">0.2697</td>
-<td class="data row17 col3" id="T_e84b6_row17_col3">0.1327</td>
-<td class="data row17 col4" id="T_e84b6_row17_col4">-0.7243</td>
-<td class="data row17 col5" id="T_e84b6_row17_col5">nan</td>
-<td class="data row17 col6" id="T_e84b6_row17_col6">-0.0258</td>
-<td class="data row17 col7" id="T_e84b6_row17_col7">-0.4442</td>
-<td class="data row17 col8" id="T_e84b6_row17_col8">0.0000</td>
-<td class="data row17 col9" id="T_e84b6_row17_col9">nan</td>
+<th class="row_heading level0 row17" id="T_0e3e0_level0_row17">벤치:코스피</th>
+<th class="row_heading level1 row17" id="T_0e3e0_level1_row17">-</th>
+<th class="row_heading level2 row17" id="T_0e3e0_level2_row17">0</th>
+<th class="row_heading level3 row17" id="T_0e3e0_level3_row17">비용0</th>
+<th class="row_heading level4 row17" id="T_0e3e0_level4_row17">전체</th>
+<td class="data row17 col0" id="T_0e3e0_row17_col0">437.0000</td>
+<td class="data row17 col1" id="T_0e3e0_row17_col1">0.0593</td>
+<td class="data row17 col2" id="T_0e3e0_row17_col2">0.2697</td>
+<td class="data row17 col3" id="T_0e3e0_row17_col3">0.1309</td>
+<td class="data row17 col4" id="T_0e3e0_row17_col4">-0.7243</td>
+<td class="data row17 col5" id="T_0e3e0_row17_col5">nan</td>
+<td class="data row17 col6" id="T_0e3e0_row17_col6">-0.0258</td>
+<td class="data row17 col7" id="T_0e3e0_row17_col7">-0.4442</td>
+<td class="data row17 col8" id="T_0e3e0_row17_col8">0.0000</td>
+<td class="data row17 col9" id="T_0e3e0_row17_col9">nan</td>
 </tr>
 </tbody>
 </table>
@@ -12292,8 +12299,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[요인 순서] 줄 3개. 샤프 가장 높음: ROC→EY / 동일 / 12 (0.416), 가장 낮음: EY→ROC / 동일 / 12 (0.146). 연환산 가장 높음: ROC→EY / 동일 / 12 (15.29%). MDD 가장 얕음: ROC→EY / 동일 / 12 (-64.78%).
-  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 2/3개 (벤치 샤프 전체 0.223)
+<pre>[요인 순서] 줄 3개. 샤프 가장 높음: ROC→EY / 동일 / 12 (0.415), 가장 낮음: EY→ROC / 동일 / 12 (0.145). 연환산 가장 높음: ROC→EY / 동일 / 12 (15.29%). MDD 가장 얕음: ROC→EY / 동일 / 12 (-64.78%).
+  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 2/3개 (벤치 샤프 전체 0.221)
 </pre>
 </div>
 </div>
@@ -12302,7 +12309,7 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_57ef4">
+<table id="T_b720c">
 <caption>요인 순서</caption>
 <thead>
 <tr>
@@ -12311,16 +12318,16 @@ a.anchor-link {
 <th class="blank"> </th>
 <th class="blank"> </th>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_57ef4_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_57ef4_level0_col1">연환산</th>
-<th class="col_heading level0 col2" id="T_57ef4_level0_col2">표준편차(연)</th>
-<th class="col_heading level0 col3" id="T_57ef4_level0_col3">샤프</th>
-<th class="col_heading level0 col4" id="T_57ef4_level0_col4">MDD</th>
-<th class="col_heading level0 col5" id="T_57ef4_level0_col5">회전율(전 기간)</th>
-<th class="col_heading level0 col6" id="T_57ef4_level0_col6">벤치 대비 연환산</th>
-<th class="col_heading level0 col7" id="T_57ef4_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_57ef4_level0_col8">Carhart α(월)</th>
-<th class="col_heading level0 col9" id="T_57ef4_level0_col9">Carhart t(NW)</th>
+<th class="col_heading level0 col0" id="T_b720c_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_b720c_level0_col1">연환산</th>
+<th class="col_heading level0 col2" id="T_b720c_level0_col2">표준편차(연)</th>
+<th class="col_heading level0 col3" id="T_b720c_level0_col3">샤프</th>
+<th class="col_heading level0 col4" id="T_b720c_level0_col4">MDD</th>
+<th class="col_heading level0 col5" id="T_b720c_level0_col5">회전율(전 기간)</th>
+<th class="col_heading level0 col6" id="T_b720c_level0_col6">벤치 대비 연환산</th>
+<th class="col_heading level0 col7" id="T_b720c_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_b720c_level0_col8">Carhart α(월)</th>
+<th class="col_heading level0 col9" id="T_b720c_level0_col9">Carhart t(NW)</th>
 </tr>
 <tr>
 <th class="index_name level0">전략</th>
@@ -12342,89 +12349,89 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_57ef4_level0_row0">EY+ROC 순위합산</th>
-<th class="row_heading level1 row0" id="T_57ef4_level1_row0">동일</th>
-<th class="row_heading level2 row0" id="T_57ef4_level2_row0">12</th>
-<th class="row_heading level3 row0" id="T_57ef4_level3_row0">비용기본</th>
-<th class="row_heading level4 row0" id="T_57ef4_level4_row0">전체</th>
-<td class="data row0 col0" id="T_57ef4_row0_col0">437.0000</td>
-<td class="data row0 col1" id="T_57ef4_row0_col1">0.1097</td>
-<td class="data row0 col2" id="T_57ef4_row0_col2">0.3334</td>
-<td class="data row0 col3" id="T_57ef4_row0_col3">0.2948</td>
-<td class="data row0 col4" id="T_57ef4_row0_col4">-0.7191</td>
-<td class="data row0 col5" id="T_57ef4_row0_col5">0.8131</td>
-<td class="data row0 col6" id="T_57ef4_row0_col6">0.0246</td>
-<td class="data row0 col7" id="T_57ef4_row0_col7">0.1337</td>
-<td class="data row0 col8" id="T_57ef4_row0_col8">0.0072</td>
-<td class="data row0 col9" id="T_57ef4_row0_col9">1.8668</td>
+<th class="row_heading level0 row0" id="T_b720c_level0_row0">EY+ROC 순위합산</th>
+<th class="row_heading level1 row0" id="T_b720c_level1_row0">동일</th>
+<th class="row_heading level2 row0" id="T_b720c_level2_row0">12</th>
+<th class="row_heading level3 row0" id="T_b720c_level3_row0">비용기본</th>
+<th class="row_heading level4 row0" id="T_b720c_level4_row0">전체</th>
+<td class="data row0 col0" id="T_b720c_row0_col0">437.0000</td>
+<td class="data row0 col1" id="T_b720c_row0_col1">0.1097</td>
+<td class="data row0 col2" id="T_b720c_row0_col2">0.3334</td>
+<td class="data row0 col3" id="T_b720c_row0_col3">0.2934</td>
+<td class="data row0 col4" id="T_b720c_row0_col4">-0.7191</td>
+<td class="data row0 col5" id="T_b720c_row0_col5">0.8131</td>
+<td class="data row0 col6" id="T_b720c_row0_col6">0.0246</td>
+<td class="data row0 col7" id="T_b720c_row0_col7">0.1337</td>
+<td class="data row0 col8" id="T_b720c_row0_col8">0.0072</td>
+<td class="data row0 col9" id="T_b720c_row0_col9">1.8646</td>
 </tr>
 <tr>
-<th class="row_heading level0 row1" id="T_57ef4_level0_row1">EY→ROC</th>
-<th class="row_heading level1 row1" id="T_57ef4_level1_row1">동일</th>
-<th class="row_heading level2 row1" id="T_57ef4_level2_row1">12</th>
-<th class="row_heading level3 row1" id="T_57ef4_level3_row1">비용기본</th>
-<th class="row_heading level4 row1" id="T_57ef4_level4_row1">전체</th>
-<td class="data row1 col0" id="T_57ef4_row1_col0">437.0000</td>
-<td class="data row1 col1" id="T_57ef4_row1_col1">0.0576</td>
-<td class="data row1 col2" id="T_57ef4_row1_col2">0.3188</td>
-<td class="data row1 col3" id="T_57ef4_row1_col3">0.1463</td>
-<td class="data row1 col4" id="T_57ef4_row1_col4">-0.7501</td>
-<td class="data row1 col5" id="T_57ef4_row1_col5">0.7863</td>
-<td class="data row1 col6" id="T_57ef4_row1_col6">-0.0276</td>
-<td class="data row1 col7" id="T_57ef4_row1_col7">-0.0553</td>
-<td class="data row1 col8" id="T_57ef4_row1_col8">0.0028</td>
-<td class="data row1 col9" id="T_57ef4_row1_col9">0.9143</td>
+<th class="row_heading level0 row1" id="T_b720c_level0_row1">EY→ROC</th>
+<th class="row_heading level1 row1" id="T_b720c_level1_row1">동일</th>
+<th class="row_heading level2 row1" id="T_b720c_level2_row1">12</th>
+<th class="row_heading level3 row1" id="T_b720c_level3_row1">비용기본</th>
+<th class="row_heading level4 row1" id="T_b720c_level4_row1">전체</th>
+<td class="data row1 col0" id="T_b720c_row1_col0">437.0000</td>
+<td class="data row1 col1" id="T_b720c_row1_col1">0.0576</td>
+<td class="data row1 col2" id="T_b720c_row1_col2">0.3188</td>
+<td class="data row1 col3" id="T_b720c_row1_col3">0.1448</td>
+<td class="data row1 col4" id="T_b720c_row1_col4">-0.7501</td>
+<td class="data row1 col5" id="T_b720c_row1_col5">0.7863</td>
+<td class="data row1 col6" id="T_b720c_row1_col6">-0.0276</td>
+<td class="data row1 col7" id="T_b720c_row1_col7">-0.0553</td>
+<td class="data row1 col8" id="T_b720c_row1_col8">0.0028</td>
+<td class="data row1 col9" id="T_b720c_row1_col9">0.9116</td>
 </tr>
 <tr>
-<th class="row_heading level0 row2" id="T_57ef4_level0_row2">ROC→EY</th>
-<th class="row_heading level1 row2" id="T_57ef4_level1_row2">동일</th>
-<th class="row_heading level2 row2" id="T_57ef4_level2_row2">12</th>
-<th class="row_heading level3 row2" id="T_57ef4_level3_row2">비용기본</th>
-<th class="row_heading level4 row2" id="T_57ef4_level4_row2">전체</th>
-<td class="data row2 col0" id="T_57ef4_row2_col0">437.0000</td>
-<td class="data row2 col1" id="T_57ef4_row2_col1">0.1529</td>
-<td class="data row2 col2" id="T_57ef4_row2_col2">0.3220</td>
-<td class="data row2 col3" id="T_57ef4_row2_col3">0.4164</td>
-<td class="data row2 col4" id="T_57ef4_row2_col4">-0.6478</td>
-<td class="data row2 col5" id="T_57ef4_row2_col5">0.7785</td>
-<td class="data row2 col6" id="T_57ef4_row2_col6">0.0678</td>
-<td class="data row2 col7" id="T_57ef4_row2_col7">0.2681</td>
-<td class="data row2 col8" id="T_57ef4_row2_col8">0.0092</td>
-<td class="data row2 col9" id="T_57ef4_row2_col9">2.4684</td>
+<th class="row_heading level0 row2" id="T_b720c_level0_row2">ROC→EY</th>
+<th class="row_heading level1 row2" id="T_b720c_level1_row2">동일</th>
+<th class="row_heading level2 row2" id="T_b720c_level2_row2">12</th>
+<th class="row_heading level3 row2" id="T_b720c_level3_row2">비용기본</th>
+<th class="row_heading level4 row2" id="T_b720c_level4_row2">전체</th>
+<td class="data row2 col0" id="T_b720c_row2_col0">437.0000</td>
+<td class="data row2 col1" id="T_b720c_row2_col1">0.1529</td>
+<td class="data row2 col2" id="T_b720c_row2_col2">0.3220</td>
+<td class="data row2 col3" id="T_b720c_row2_col3">0.4149</td>
+<td class="data row2 col4" id="T_b720c_row2_col4">-0.6478</td>
+<td class="data row2 col5" id="T_b720c_row2_col5">0.7785</td>
+<td class="data row2 col6" id="T_b720c_row2_col6">0.0678</td>
+<td class="data row2 col7" id="T_b720c_row2_col7">0.2681</td>
+<td class="data row2 col8" id="T_b720c_row2_col8">0.0092</td>
+<td class="data row2 col9" id="T_b720c_row2_col9">2.4660</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_57ef4_level0_row3">벤치:유니버스(시총가중)</th>
-<th class="row_heading level1 row3" id="T_57ef4_level1_row3">-</th>
-<th class="row_heading level2 row3" id="T_57ef4_level2_row3">0</th>
-<th class="row_heading level3 row3" id="T_57ef4_level3_row3">비용0</th>
-<th class="row_heading level4 row3" id="T_57ef4_level4_row3">전체</th>
-<td class="data row3 col0" id="T_57ef4_row3_col0">437.0000</td>
-<td class="data row3 col1" id="T_57ef4_row3_col1">0.0851</td>
-<td class="data row3 col2" id="T_57ef4_row3_col2">0.2724</td>
-<td class="data row3 col3" id="T_57ef4_row3_col3">0.2231</td>
-<td class="data row3 col4" id="T_57ef4_row3_col4">-0.6101</td>
-<td class="data row3 col5" id="T_57ef4_row3_col5">nan</td>
-<td class="data row3 col6" id="T_57ef4_row3_col6">0.0000</td>
-<td class="data row3 col7" id="T_57ef4_row3_col7">nan</td>
-<td class="data row3 col8" id="T_57ef4_row3_col8">0.0032</td>
-<td class="data row3 col9" id="T_57ef4_row3_col9">5.1880</td>
+<th class="row_heading level0 row3" id="T_b720c_level0_row3">벤치:유니버스(시총가중)</th>
+<th class="row_heading level1 row3" id="T_b720c_level1_row3">-</th>
+<th class="row_heading level2 row3" id="T_b720c_level2_row3">0</th>
+<th class="row_heading level3 row3" id="T_b720c_level3_row3">비용0</th>
+<th class="row_heading level4 row3" id="T_b720c_level4_row3">전체</th>
+<td class="data row3 col0" id="T_b720c_row3_col0">437.0000</td>
+<td class="data row3 col1" id="T_b720c_row3_col1">0.0851</td>
+<td class="data row3 col2" id="T_b720c_row3_col2">0.2724</td>
+<td class="data row3 col3" id="T_b720c_row3_col3">0.2213</td>
+<td class="data row3 col4" id="T_b720c_row3_col4">-0.6101</td>
+<td class="data row3 col5" id="T_b720c_row3_col5">nan</td>
+<td class="data row3 col6" id="T_b720c_row3_col6">0.0000</td>
+<td class="data row3 col7" id="T_b720c_row3_col7">nan</td>
+<td class="data row3 col8" id="T_b720c_row3_col8">0.0032</td>
+<td class="data row3 col9" id="T_b720c_row3_col9">5.1868</td>
 </tr>
 <tr>
-<th class="row_heading level0 row4" id="T_57ef4_level0_row4">벤치:코스피</th>
-<th class="row_heading level1 row4" id="T_57ef4_level1_row4">-</th>
-<th class="row_heading level2 row4" id="T_57ef4_level2_row4">0</th>
-<th class="row_heading level3 row4" id="T_57ef4_level3_row4">비용0</th>
-<th class="row_heading level4 row4" id="T_57ef4_level4_row4">전체</th>
-<td class="data row4 col0" id="T_57ef4_row4_col0">437.0000</td>
-<td class="data row4 col1" id="T_57ef4_row4_col1">0.0593</td>
-<td class="data row4 col2" id="T_57ef4_row4_col2">0.2697</td>
-<td class="data row4 col3" id="T_57ef4_row4_col3">0.1327</td>
-<td class="data row4 col4" id="T_57ef4_row4_col4">-0.7243</td>
-<td class="data row4 col5" id="T_57ef4_row4_col5">nan</td>
-<td class="data row4 col6" id="T_57ef4_row4_col6">-0.0258</td>
-<td class="data row4 col7" id="T_57ef4_row4_col7">-0.4442</td>
-<td class="data row4 col8" id="T_57ef4_row4_col8">0.0000</td>
-<td class="data row4 col9" id="T_57ef4_row4_col9">nan</td>
+<th class="row_heading level0 row4" id="T_b720c_level0_row4">벤치:코스피</th>
+<th class="row_heading level1 row4" id="T_b720c_level1_row4">-</th>
+<th class="row_heading level2 row4" id="T_b720c_level2_row4">0</th>
+<th class="row_heading level3 row4" id="T_b720c_level3_row4">비용0</th>
+<th class="row_heading level4 row4" id="T_b720c_level4_row4">전체</th>
+<td class="data row4 col0" id="T_b720c_row4_col0">437.0000</td>
+<td class="data row4 col1" id="T_b720c_row4_col1">0.0593</td>
+<td class="data row4 col2" id="T_b720c_row4_col2">0.2697</td>
+<td class="data row4 col3" id="T_b720c_row4_col3">0.1309</td>
+<td class="data row4 col4" id="T_b720c_row4_col4">-0.7243</td>
+<td class="data row4 col5" id="T_b720c_row4_col5">nan</td>
+<td class="data row4 col6" id="T_b720c_row4_col6">-0.0258</td>
+<td class="data row4 col7" id="T_b720c_row4_col7">-0.4442</td>
+<td class="data row4 col8" id="T_b720c_row4_col8">0.0000</td>
+<td class="data row4 col9" id="T_b720c_row4_col9">nan</td>
 </tr>
 </tbody>
 </table>
@@ -12439,14 +12446,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[거래비용 민감도] 줄 6개. 샤프 가장 높음: EY+ROC 순위합산 / 동일 / 1 / 비용0 (0.503), 가장 낮음: EY+ROC 순위합산 / 동일 / 12 / 비용2배 (0.263). 연환산 가장 높음: EY+ROC 순위합산 / 동일 / 1 / 비용0 (18.67%). MDD 가장 얕음: EY+ROC 순위합산 / 동일 / 1 / 비용0 (-55.55%).
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 6/6개 (벤치 샤프 전체 0.223)
+<pre>[거래비용 민감도] 줄 6개. 샤프 가장 높음: EY+ROC 순위합산 / 동일 / 1 / 비용0 (0.502), 가장 낮음: EY+ROC 순위합산 / 동일 / 12 / 비용2배 (0.261). 연환산 가장 높음: EY+ROC 순위합산 / 동일 / 1 / 비용0 (18.67%). MDD 가장 얕음: EY+ROC 순위합산 / 동일 / 1 / 비용0 (-55.55%).
+  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 6/6개 (벤치 샤프 전체 0.221)
 </pre>
 </div>
 </div>
@@ -12455,7 +12456,7 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_523e8">
+<table id="T_d3a49">
 <caption>거래비용 민감도</caption>
 <thead>
 <tr>
@@ -12464,16 +12465,16 @@ a.anchor-link {
 <th class="blank"> </th>
 <th class="blank"> </th>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_523e8_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_523e8_level0_col1">연환산</th>
-<th class="col_heading level0 col2" id="T_523e8_level0_col2">표준편차(연)</th>
-<th class="col_heading level0 col3" id="T_523e8_level0_col3">샤프</th>
-<th class="col_heading level0 col4" id="T_523e8_level0_col4">MDD</th>
-<th class="col_heading level0 col5" id="T_523e8_level0_col5">회전율(전 기간)</th>
-<th class="col_heading level0 col6" id="T_523e8_level0_col6">벤치 대비 연환산</th>
-<th class="col_heading level0 col7" id="T_523e8_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_523e8_level0_col8">Carhart α(월)</th>
-<th class="col_heading level0 col9" id="T_523e8_level0_col9">Carhart t(NW)</th>
+<th class="col_heading level0 col0" id="T_d3a49_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_d3a49_level0_col1">연환산</th>
+<th class="col_heading level0 col2" id="T_d3a49_level0_col2">표준편차(연)</th>
+<th class="col_heading level0 col3" id="T_d3a49_level0_col3">샤프</th>
+<th class="col_heading level0 col4" id="T_d3a49_level0_col4">MDD</th>
+<th class="col_heading level0 col5" id="T_d3a49_level0_col5">회전율(전 기간)</th>
+<th class="col_heading level0 col6" id="T_d3a49_level0_col6">벤치 대비 연환산</th>
+<th class="col_heading level0 col7" id="T_d3a49_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_d3a49_level0_col8">Carhart α(월)</th>
+<th class="col_heading level0 col9" id="T_d3a49_level0_col9">Carhart t(NW)</th>
 </tr>
 <tr>
 <th class="index_name level0">전략</th>
@@ -12495,126 +12496,126 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_523e8_level0_row0" rowspan="6">EY+ROC 순위합산</th>
-<th class="row_heading level1 row0" id="T_523e8_level1_row0" rowspan="6">동일</th>
-<th class="row_heading level2 row0" id="T_523e8_level2_row0" rowspan="3">1</th>
-<th class="row_heading level3 row0" id="T_523e8_level3_row0">비용0</th>
-<th class="row_heading level4 row0" id="T_523e8_level4_row0">전체</th>
-<td class="data row0 col0" id="T_523e8_row0_col0">437.0000</td>
-<td class="data row0 col1" id="T_523e8_row0_col1">0.1867</td>
-<td class="data row0 col2" id="T_523e8_row0_col2">0.3297</td>
-<td class="data row0 col3" id="T_523e8_row0_col3">0.5032</td>
-<td class="data row0 col4" id="T_523e8_row0_col4">-0.5555</td>
-<td class="data row0 col5" id="T_523e8_row0_col5">0.1851</td>
-<td class="data row0 col6" id="T_523e8_row0_col6">0.1015</td>
-<td class="data row0 col7" id="T_523e8_row0_col7">0.3699</td>
-<td class="data row0 col8" id="T_523e8_row0_col8">0.0123</td>
-<td class="data row0 col9" id="T_523e8_row0_col9">2.9651</td>
+<th class="row_heading level0 row0" id="T_d3a49_level0_row0" rowspan="6">EY+ROC 순위합산</th>
+<th class="row_heading level1 row0" id="T_d3a49_level1_row0" rowspan="6">동일</th>
+<th class="row_heading level2 row0" id="T_d3a49_level2_row0" rowspan="3">1</th>
+<th class="row_heading level3 row0" id="T_d3a49_level3_row0">비용0</th>
+<th class="row_heading level4 row0" id="T_d3a49_level4_row0">전체</th>
+<td class="data row0 col0" id="T_d3a49_row0_col0">437.0000</td>
+<td class="data row0 col1" id="T_d3a49_row0_col1">0.1867</td>
+<td class="data row0 col2" id="T_d3a49_row0_col2">0.3297</td>
+<td class="data row0 col3" id="T_d3a49_row0_col3">0.5016</td>
+<td class="data row0 col4" id="T_d3a49_row0_col4">-0.5555</td>
+<td class="data row0 col5" id="T_d3a49_row0_col5">0.1851</td>
+<td class="data row0 col6" id="T_d3a49_row0_col6">0.1015</td>
+<td class="data row0 col7" id="T_d3a49_row0_col7">0.3699</td>
+<td class="data row0 col8" id="T_d3a49_row0_col8">0.0123</td>
+<td class="data row0 col9" id="T_d3a49_row0_col9">2.9613</td>
 </tr>
 <tr>
-<th class="row_heading level3 row1" id="T_523e8_level3_row1">비용기본</th>
-<th class="row_heading level4 row1" id="T_523e8_level4_row1">전체</th>
-<td class="data row1 col0" id="T_523e8_row1_col0">437.0000</td>
-<td class="data row1 col1" id="T_523e8_row1_col1">0.1533</td>
-<td class="data row1 col2" id="T_523e8_row1_col2">0.3279</td>
-<td class="data row1 col3" id="T_523e8_row1_col3">0.4164</td>
-<td class="data row1 col4" id="T_523e8_row1_col4">-0.5736</td>
-<td class="data row1 col5" id="T_523e8_row1_col5">0.1851</td>
-<td class="data row1 col6" id="T_523e8_row1_col6">0.0681</td>
-<td class="data row1 col7" id="T_523e8_row1_col7">0.2675</td>
-<td class="data row1 col8" id="T_523e8_row1_col8">0.0099</td>
-<td class="data row1 col9" id="T_523e8_row1_col9">2.4050</td>
+<th class="row_heading level3 row1" id="T_d3a49_level3_row1">비용기본</th>
+<th class="row_heading level4 row1" id="T_d3a49_level4_row1">전체</th>
+<td class="data row1 col0" id="T_d3a49_row1_col0">437.0000</td>
+<td class="data row1 col1" id="T_d3a49_row1_col1">0.1533</td>
+<td class="data row1 col2" id="T_d3a49_row1_col2">0.3279</td>
+<td class="data row1 col3" id="T_d3a49_row1_col3">0.4148</td>
+<td class="data row1 col4" id="T_d3a49_row1_col4">-0.5736</td>
+<td class="data row1 col5" id="T_d3a49_row1_col5">0.1851</td>
+<td class="data row1 col6" id="T_d3a49_row1_col6">0.0681</td>
+<td class="data row1 col7" id="T_d3a49_row1_col7">0.2675</td>
+<td class="data row1 col8" id="T_d3a49_row1_col8">0.0099</td>
+<td class="data row1 col9" id="T_d3a49_row1_col9">2.4012</td>
 </tr>
 <tr>
-<th class="row_heading level3 row2" id="T_523e8_level3_row2">비용2배</th>
-<th class="row_heading level4 row2" id="T_523e8_level4_row2">전체</th>
-<td class="data row2 col0" id="T_523e8_row2_col0">437.0000</td>
-<td class="data row2 col1" id="T_523e8_row2_col1">0.1206</td>
-<td class="data row2 col2" id="T_523e8_row2_col2">0.3264</td>
-<td class="data row2 col3" id="T_523e8_row2_col3">0.3285</td>
-<td class="data row2 col4" id="T_523e8_row2_col4">-0.5910</td>
-<td class="data row2 col5" id="T_523e8_row2_col5">0.1851</td>
-<td class="data row2 col6" id="T_523e8_row2_col6">0.0355</td>
-<td class="data row2 col7" id="T_523e8_row2_col7">0.1640</td>
-<td class="data row2 col8" id="T_523e8_row2_col8">0.0074</td>
-<td class="data row2 col9" id="T_523e8_row2_col9">1.8315</td>
+<th class="row_heading level3 row2" id="T_d3a49_level3_row2">비용2배</th>
+<th class="row_heading level4 row2" id="T_d3a49_level4_row2">전체</th>
+<td class="data row2 col0" id="T_d3a49_row2_col0">437.0000</td>
+<td class="data row2 col1" id="T_d3a49_row2_col1">0.1206</td>
+<td class="data row2 col2" id="T_d3a49_row2_col2">0.3264</td>
+<td class="data row2 col3" id="T_d3a49_row2_col3">0.3269</td>
+<td class="data row2 col4" id="T_d3a49_row2_col4">-0.5910</td>
+<td class="data row2 col5" id="T_d3a49_row2_col5">0.1851</td>
+<td class="data row2 col6" id="T_d3a49_row2_col6">0.0355</td>
+<td class="data row2 col7" id="T_d3a49_row2_col7">0.1640</td>
+<td class="data row2 col8" id="T_d3a49_row2_col8">0.0074</td>
+<td class="data row2 col9" id="T_d3a49_row2_col9">1.8278</td>
 </tr>
 <tr>
-<th class="row_heading level2 row3" id="T_523e8_level2_row3" rowspan="3">12</th>
-<th class="row_heading level3 row3" id="T_523e8_level3_row3">비용0</th>
-<th class="row_heading level4 row3" id="T_523e8_level4_row3">전체</th>
-<td class="data row3 col0" id="T_523e8_row3_col0">437.0000</td>
-<td class="data row3 col1" id="T_523e8_row3_col1">0.1214</td>
-<td class="data row3 col2" id="T_523e8_row3_col2">0.3346</td>
-<td class="data row3 col3" id="T_523e8_row3_col3">0.3263</td>
-<td class="data row3 col4" id="T_523e8_row3_col4">-0.7073</td>
-<td class="data row3 col5" id="T_523e8_row3_col5">0.8131</td>
-<td class="data row3 col6" id="T_523e8_row3_col6">0.0363</td>
-<td class="data row3 col7" id="T_523e8_row3_col7">0.1723</td>
-<td class="data row3 col8" id="T_523e8_row3_col8">0.0080</td>
-<td class="data row3 col9" id="T_523e8_row3_col9">2.0937</td>
+<th class="row_heading level2 row3" id="T_d3a49_level2_row3" rowspan="3">12</th>
+<th class="row_heading level3 row3" id="T_d3a49_level3_row3">비용0</th>
+<th class="row_heading level4 row3" id="T_d3a49_level4_row3">전체</th>
+<td class="data row3 col0" id="T_d3a49_row3_col0">437.0000</td>
+<td class="data row3 col1" id="T_d3a49_row3_col1">0.1214</td>
+<td class="data row3 col2" id="T_d3a49_row3_col2">0.3346</td>
+<td class="data row3 col3" id="T_d3a49_row3_col3">0.3249</td>
+<td class="data row3 col4" id="T_d3a49_row3_col4">-0.7073</td>
+<td class="data row3 col5" id="T_d3a49_row3_col5">0.8131</td>
+<td class="data row3 col6" id="T_d3a49_row3_col6">0.0363</td>
+<td class="data row3 col7" id="T_d3a49_row3_col7">0.1723</td>
+<td class="data row3 col8" id="T_d3a49_row3_col8">0.0080</td>
+<td class="data row3 col9" id="T_d3a49_row3_col9">2.0916</td>
 </tr>
 <tr>
-<th class="row_heading level3 row4" id="T_523e8_level3_row4">비용기본</th>
-<th class="row_heading level4 row4" id="T_523e8_level4_row4">전체</th>
-<td class="data row4 col0" id="T_523e8_row4_col0">437.0000</td>
-<td class="data row4 col1" id="T_523e8_row4_col1">0.1097</td>
-<td class="data row4 col2" id="T_523e8_row4_col2">0.3334</td>
-<td class="data row4 col3" id="T_523e8_row4_col3">0.2948</td>
-<td class="data row4 col4" id="T_523e8_row4_col4">-0.7191</td>
-<td class="data row4 col5" id="T_523e8_row4_col5">0.8131</td>
-<td class="data row4 col6" id="T_523e8_row4_col6">0.0246</td>
-<td class="data row4 col7" id="T_523e8_row4_col7">0.1337</td>
-<td class="data row4 col8" id="T_523e8_row4_col8">0.0072</td>
-<td class="data row4 col9" id="T_523e8_row4_col9">1.8668</td>
+<th class="row_heading level3 row4" id="T_d3a49_level3_row4">비용기본</th>
+<th class="row_heading level4 row4" id="T_d3a49_level4_row4">전체</th>
+<td class="data row4 col0" id="T_d3a49_row4_col0">437.0000</td>
+<td class="data row4 col1" id="T_d3a49_row4_col1">0.1097</td>
+<td class="data row4 col2" id="T_d3a49_row4_col2">0.3334</td>
+<td class="data row4 col3" id="T_d3a49_row4_col3">0.2934</td>
+<td class="data row4 col4" id="T_d3a49_row4_col4">-0.7191</td>
+<td class="data row4 col5" id="T_d3a49_row4_col5">0.8131</td>
+<td class="data row4 col6" id="T_d3a49_row4_col6">0.0246</td>
+<td class="data row4 col7" id="T_d3a49_row4_col7">0.1337</td>
+<td class="data row4 col8" id="T_d3a49_row4_col8">0.0072</td>
+<td class="data row4 col9" id="T_d3a49_row4_col9">1.8646</td>
 </tr>
 <tr>
-<th class="row_heading level3 row5" id="T_523e8_level3_row5">비용2배</th>
-<th class="row_heading level4 row5" id="T_523e8_level4_row5">전체</th>
-<td class="data row5 col0" id="T_523e8_row5_col0">437.0000</td>
-<td class="data row5 col1" id="T_523e8_row5_col1">0.0980</td>
-<td class="data row5 col2" id="T_523e8_row5_col2">0.3325</td>
-<td class="data row5 col3" id="T_523e8_row5_col3">0.2628</td>
-<td class="data row5 col4" id="T_523e8_row5_col4">-0.7305</td>
-<td class="data row5 col5" id="T_523e8_row5_col5">0.8131</td>
-<td class="data row5 col6" id="T_523e8_row5_col6">0.0129</td>
-<td class="data row5 col7" id="T_523e8_row5_col7">0.0948</td>
-<td class="data row5 col8" id="T_523e8_row5_col8">0.0063</td>
-<td class="data row5 col9" id="T_523e8_row5_col9">1.6388</td>
+<th class="row_heading level3 row5" id="T_d3a49_level3_row5">비용2배</th>
+<th class="row_heading level4 row5" id="T_d3a49_level4_row5">전체</th>
+<td class="data row5 col0" id="T_d3a49_row5_col0">437.0000</td>
+<td class="data row5 col1" id="T_d3a49_row5_col1">0.0980</td>
+<td class="data row5 col2" id="T_d3a49_row5_col2">0.3325</td>
+<td class="data row5 col3" id="T_d3a49_row5_col3">0.2614</td>
+<td class="data row5 col4" id="T_d3a49_row5_col4">-0.7305</td>
+<td class="data row5 col5" id="T_d3a49_row5_col5">0.8131</td>
+<td class="data row5 col6" id="T_d3a49_row5_col6">0.0129</td>
+<td class="data row5 col7" id="T_d3a49_row5_col7">0.0948</td>
+<td class="data row5 col8" id="T_d3a49_row5_col8">0.0063</td>
+<td class="data row5 col9" id="T_d3a49_row5_col9">1.6365</td>
 </tr>
 <tr>
-<th class="row_heading level0 row6" id="T_523e8_level0_row6">벤치:유니버스(시총가중)</th>
-<th class="row_heading level1 row6" id="T_523e8_level1_row6">-</th>
-<th class="row_heading level2 row6" id="T_523e8_level2_row6">0</th>
-<th class="row_heading level3 row6" id="T_523e8_level3_row6">비용0</th>
-<th class="row_heading level4 row6" id="T_523e8_level4_row6">전체</th>
-<td class="data row6 col0" id="T_523e8_row6_col0">437.0000</td>
-<td class="data row6 col1" id="T_523e8_row6_col1">0.0851</td>
-<td class="data row6 col2" id="T_523e8_row6_col2">0.2724</td>
-<td class="data row6 col3" id="T_523e8_row6_col3">0.2231</td>
-<td class="data row6 col4" id="T_523e8_row6_col4">-0.6101</td>
-<td class="data row6 col5" id="T_523e8_row6_col5">nan</td>
-<td class="data row6 col6" id="T_523e8_row6_col6">0.0000</td>
-<td class="data row6 col7" id="T_523e8_row6_col7">nan</td>
-<td class="data row6 col8" id="T_523e8_row6_col8">0.0032</td>
-<td class="data row6 col9" id="T_523e8_row6_col9">5.1880</td>
+<th class="row_heading level0 row6" id="T_d3a49_level0_row6">벤치:유니버스(시총가중)</th>
+<th class="row_heading level1 row6" id="T_d3a49_level1_row6">-</th>
+<th class="row_heading level2 row6" id="T_d3a49_level2_row6">0</th>
+<th class="row_heading level3 row6" id="T_d3a49_level3_row6">비용0</th>
+<th class="row_heading level4 row6" id="T_d3a49_level4_row6">전체</th>
+<td class="data row6 col0" id="T_d3a49_row6_col0">437.0000</td>
+<td class="data row6 col1" id="T_d3a49_row6_col1">0.0851</td>
+<td class="data row6 col2" id="T_d3a49_row6_col2">0.2724</td>
+<td class="data row6 col3" id="T_d3a49_row6_col3">0.2213</td>
+<td class="data row6 col4" id="T_d3a49_row6_col4">-0.6101</td>
+<td class="data row6 col5" id="T_d3a49_row6_col5">nan</td>
+<td class="data row6 col6" id="T_d3a49_row6_col6">0.0000</td>
+<td class="data row6 col7" id="T_d3a49_row6_col7">nan</td>
+<td class="data row6 col8" id="T_d3a49_row6_col8">0.0032</td>
+<td class="data row6 col9" id="T_d3a49_row6_col9">5.1868</td>
 </tr>
 <tr>
-<th class="row_heading level0 row7" id="T_523e8_level0_row7">벤치:코스피</th>
-<th class="row_heading level1 row7" id="T_523e8_level1_row7">-</th>
-<th class="row_heading level2 row7" id="T_523e8_level2_row7">0</th>
-<th class="row_heading level3 row7" id="T_523e8_level3_row7">비용0</th>
-<th class="row_heading level4 row7" id="T_523e8_level4_row7">전체</th>
-<td class="data row7 col0" id="T_523e8_row7_col0">437.0000</td>
-<td class="data row7 col1" id="T_523e8_row7_col1">0.0593</td>
-<td class="data row7 col2" id="T_523e8_row7_col2">0.2697</td>
-<td class="data row7 col3" id="T_523e8_row7_col3">0.1327</td>
-<td class="data row7 col4" id="T_523e8_row7_col4">-0.7243</td>
-<td class="data row7 col5" id="T_523e8_row7_col5">nan</td>
-<td class="data row7 col6" id="T_523e8_row7_col6">-0.0258</td>
-<td class="data row7 col7" id="T_523e8_row7_col7">-0.4442</td>
-<td class="data row7 col8" id="T_523e8_row7_col8">0.0000</td>
-<td class="data row7 col9" id="T_523e8_row7_col9">nan</td>
+<th class="row_heading level0 row7" id="T_d3a49_level0_row7">벤치:코스피</th>
+<th class="row_heading level1 row7" id="T_d3a49_level1_row7">-</th>
+<th class="row_heading level2 row7" id="T_d3a49_level2_row7">0</th>
+<th class="row_heading level3 row7" id="T_d3a49_level3_row7">비용0</th>
+<th class="row_heading level4 row7" id="T_d3a49_level4_row7">전체</th>
+<td class="data row7 col0" id="T_d3a49_row7_col0">437.0000</td>
+<td class="data row7 col1" id="T_d3a49_row7_col1">0.0593</td>
+<td class="data row7 col2" id="T_d3a49_row7_col2">0.2697</td>
+<td class="data row7 col3" id="T_d3a49_row7_col3">0.1309</td>
+<td class="data row7 col4" id="T_d3a49_row7_col4">-0.7243</td>
+<td class="data row7 col5" id="T_d3a49_row7_col5">nan</td>
+<td class="data row7 col6" id="T_d3a49_row7_col6">-0.0258</td>
+<td class="data row7 col7" id="T_d3a49_row7_col7">-0.4442</td>
+<td class="data row7 col8" id="T_d3a49_row7_col8">0.0000</td>
+<td class="data row7 col9" id="T_d3a49_row7_col9">nan</td>
 </tr>
 </tbody>
 </table>
@@ -12629,8 +12630,8 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[기간별 (기준 전략과 벤치마크)] 줄 3개. 샤프 가장 높음: 2004-04~2017-03 / EY+ROC 순위합산 / 동일 / 12 (0.555), 가장 낮음: 2017-04~ / EY+ROC 순위합산 / 동일 / 12 (0.087). 연환산 가장 높음: 2004-04~2017-03 / EY+ROC 순위합산 / 동일 / 12 (15.26%). MDD 가장 얕음: 2017-04~ / EY+ROC 순위합산 / 동일 / 12 (-55.10%).
-  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 2/3개 (벤치 샤프 1990-04~2004-03 -0.030, 2004-04~2017-03 0.395, 2017-04~ 0.559)
+<pre>[기간별 (기준 전략과 벤치마크)] 줄 3개. 샤프 가장 높음: 2004-04~2017-03 / EY+ROC 순위합산 / 동일 / 12 (0.550), 가장 낮음: 2017-04~ / EY+ROC 순위합산 / 동일 / 12 (0.084). 연환산 가장 높음: 2004-04~2017-03 / EY+ROC 순위합산 / 동일 / 12 (15.26%). MDD 가장 얕음: 2017-04~ / EY+ROC 순위합산 / 동일 / 12 (-55.10%).
+  같은 기간 유니버스 시총가중 벤치마크보다 샤프가 높은 줄: 2/3개 (벤치 샤프 1990-04~2004-03 -0.028, 2004-04~2017-03 0.387, 2017-04~ 0.556)
 </pre>
 </div>
 </div>
@@ -12639,7 +12640,7 @@ a.anchor-link {
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_8702b">
+<table id="T_05832">
 <caption>기간별 (기준 전략과 벤치마크)</caption>
 <thead>
 <tr>
@@ -12648,16 +12649,16 @@ a.anchor-link {
 <th class="blank"> </th>
 <th class="blank"> </th>
 <th class="blank level0"> </th>
-<th class="col_heading level0 col0" id="T_8702b_level0_col0">개월</th>
-<th class="col_heading level0 col1" id="T_8702b_level0_col1">연환산</th>
-<th class="col_heading level0 col2" id="T_8702b_level0_col2">표준편차(연)</th>
-<th class="col_heading level0 col3" id="T_8702b_level0_col3">샤프</th>
-<th class="col_heading level0 col4" id="T_8702b_level0_col4">MDD</th>
-<th class="col_heading level0 col5" id="T_8702b_level0_col5">회전율(전 기간)</th>
-<th class="col_heading level0 col6" id="T_8702b_level0_col6">벤치 대비 연환산</th>
-<th class="col_heading level0 col7" id="T_8702b_level0_col7">정보비율</th>
-<th class="col_heading level0 col8" id="T_8702b_level0_col8">Carhart α(월)</th>
-<th class="col_heading level0 col9" id="T_8702b_level0_col9">Carhart t(NW)</th>
+<th class="col_heading level0 col0" id="T_05832_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_05832_level0_col1">연환산</th>
+<th class="col_heading level0 col2" id="T_05832_level0_col2">표준편차(연)</th>
+<th class="col_heading level0 col3" id="T_05832_level0_col3">샤프</th>
+<th class="col_heading level0 col4" id="T_05832_level0_col4">MDD</th>
+<th class="col_heading level0 col5" id="T_05832_level0_col5">회전율(전 기간)</th>
+<th class="col_heading level0 col6" id="T_05832_level0_col6">벤치 대비 연환산</th>
+<th class="col_heading level0 col7" id="T_05832_level0_col7">정보비율</th>
+<th class="col_heading level0 col8" id="T_05832_level0_col8">Carhart α(월)</th>
+<th class="col_heading level0 col9" id="T_05832_level0_col9">Carhart t(NW)</th>
 </tr>
 <tr>
 <th class="index_name level0">기간칸</th>
@@ -12679,151 +12680,234 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<th class="row_heading level0 row0" id="T_8702b_level0_row0" rowspan="3">1990-04~2004-03</th>
-<th class="row_heading level1 row0" id="T_8702b_level1_row0">EY+ROC 순위합산</th>
-<th class="row_heading level2 row0" id="T_8702b_level2_row0">동일</th>
-<th class="row_heading level3 row0" id="T_8702b_level3_row0">12</th>
-<th class="row_heading level4 row0" id="T_8702b_level4_row0">비용기본</th>
-<td class="data row0 col0" id="T_8702b_row0_col0">168.0000</td>
-<td class="data row0 col1" id="T_8702b_row0_col1">0.1395</td>
-<td class="data row0 col2" id="T_8702b_row0_col2">0.4273</td>
-<td class="data row0 col3" id="T_8702b_row0_col3">0.2401</td>
-<td class="data row0 col4" id="T_8702b_row0_col4">-0.7191</td>
-<td class="data row0 col5" id="T_8702b_row0_col5">0.8131</td>
-<td class="data row0 col6" id="T_8702b_row0_col6">0.0958</td>
-<td class="data row0 col7" id="T_8702b_row0_col7">0.3061</td>
-<td class="data row0 col8" id="T_8702b_row0_col8">0.0123</td>
-<td class="data row0 col9" id="T_8702b_row0_col9">1.8252</td>
+<th class="row_heading level0 row0" id="T_05832_level0_row0" rowspan="3">1990-04~2004-03</th>
+<th class="row_heading level1 row0" id="T_05832_level1_row0">EY+ROC 순위합산</th>
+<th class="row_heading level2 row0" id="T_05832_level2_row0">동일</th>
+<th class="row_heading level3 row0" id="T_05832_level3_row0">12</th>
+<th class="row_heading level4 row0" id="T_05832_level4_row0">비용기본</th>
+<td class="data row0 col0" id="T_05832_row0_col0">168.0000</td>
+<td class="data row0 col1" id="T_05832_row0_col1">0.1395</td>
+<td class="data row0 col2" id="T_05832_row0_col2">0.4273</td>
+<td class="data row0 col3" id="T_05832_row0_col3">0.2415</td>
+<td class="data row0 col4" id="T_05832_row0_col4">-0.7191</td>
+<td class="data row0 col5" id="T_05832_row0_col5">0.8131</td>
+<td class="data row0 col6" id="T_05832_row0_col6">0.0958</td>
+<td class="data row0 col7" id="T_05832_row0_col7">0.3061</td>
+<td class="data row0 col8" id="T_05832_row0_col8">0.0123</td>
+<td class="data row0 col9" id="T_05832_row0_col9">1.8262</td>
 </tr>
 <tr>
-<th class="row_heading level1 row1" id="T_8702b_level1_row1">벤치:유니버스(시총가중)</th>
-<th class="row_heading level2 row1" id="T_8702b_level2_row1">-</th>
-<th class="row_heading level3 row1" id="T_8702b_level3_row1">0</th>
-<th class="row_heading level4 row1" id="T_8702b_level4_row1">비용0</th>
-<td class="data row1 col0" id="T_8702b_row1_col0">168.0000</td>
-<td class="data row1 col1" id="T_8702b_row1_col1">0.0437</td>
-<td class="data row1 col2" id="T_8702b_row1_col2">0.3370</td>
-<td class="data row1 col3" id="T_8702b_row1_col3">-0.0296</td>
-<td class="data row1 col4" id="T_8702b_row1_col4">-0.6101</td>
-<td class="data row1 col5" id="T_8702b_row1_col5">nan</td>
-<td class="data row1 col6" id="T_8702b_row1_col6">0.0000</td>
-<td class="data row1 col7" id="T_8702b_row1_col7">nan</td>
-<td class="data row1 col8" id="T_8702b_row1_col8">0.0042</td>
-<td class="data row1 col9" id="T_8702b_row1_col9">2.9319</td>
+<th class="row_heading level1 row1" id="T_05832_level1_row1">벤치:유니버스(시총가중)</th>
+<th class="row_heading level2 row1" id="T_05832_level2_row1">-</th>
+<th class="row_heading level3 row1" id="T_05832_level3_row1">0</th>
+<th class="row_heading level4 row1" id="T_05832_level4_row1">비용0</th>
+<td class="data row1 col0" id="T_05832_row1_col0">168.0000</td>
+<td class="data row1 col1" id="T_05832_row1_col1">0.0437</td>
+<td class="data row1 col2" id="T_05832_row1_col2">0.3370</td>
+<td class="data row1 col3" id="T_05832_row1_col3">-0.0278</td>
+<td class="data row1 col4" id="T_05832_row1_col4">-0.6101</td>
+<td class="data row1 col5" id="T_05832_row1_col5">nan</td>
+<td class="data row1 col6" id="T_05832_row1_col6">0.0000</td>
+<td class="data row1 col7" id="T_05832_row1_col7">nan</td>
+<td class="data row1 col8" id="T_05832_row1_col8">0.0042</td>
+<td class="data row1 col9" id="T_05832_row1_col9">2.9325</td>
 </tr>
 <tr>
-<th class="row_heading level1 row2" id="T_8702b_level1_row2">벤치:코스피</th>
-<th class="row_heading level2 row2" id="T_8702b_level2_row2">-</th>
-<th class="row_heading level3 row2" id="T_8702b_level3_row2">0</th>
-<th class="row_heading level4 row2" id="T_8702b_level4_row2">비용0</th>
-<td class="data row2 col0" id="T_8702b_row2_col0">168.0000</td>
-<td class="data row2 col1" id="T_8702b_row2_col1">0.0037</td>
-<td class="data row2 col2" id="T_8702b_row2_col2">0.3324</td>
-<td class="data row2 col3" id="T_8702b_row2_col3">-0.1521</td>
-<td class="data row2 col4" id="T_8702b_row2_col4">-0.7243</td>
-<td class="data row2 col5" id="T_8702b_row2_col5">nan</td>
-<td class="data row2 col6" id="T_8702b_row2_col6">-0.0400</td>
-<td class="data row2 col7" id="T_8702b_row2_col7">-0.5013</td>
-<td class="data row2 col8" id="T_8702b_row2_col8">-0.0000</td>
-<td class="data row2 col9" id="T_8702b_row2_col9">nan</td>
+<th class="row_heading level1 row2" id="T_05832_level1_row2">벤치:코스피</th>
+<th class="row_heading level2 row2" id="T_05832_level2_row2">-</th>
+<th class="row_heading level3 row2" id="T_05832_level3_row2">0</th>
+<th class="row_heading level4 row2" id="T_05832_level4_row2">비용0</th>
+<td class="data row2 col0" id="T_05832_row2_col0">168.0000</td>
+<td class="data row2 col1" id="T_05832_row2_col1">0.0037</td>
+<td class="data row2 col2" id="T_05832_row2_col2">0.3324</td>
+<td class="data row2 col3" id="T_05832_row2_col3">-0.1504</td>
+<td class="data row2 col4" id="T_05832_row2_col4">-0.7243</td>
+<td class="data row2 col5" id="T_05832_row2_col5">nan</td>
+<td class="data row2 col6" id="T_05832_row2_col6">-0.0400</td>
+<td class="data row2 col7" id="T_05832_row2_col7">-0.5013</td>
+<td class="data row2 col8" id="T_05832_row2_col8">-0.0000</td>
+<td class="data row2 col9" id="T_05832_row2_col9">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row3" id="T_8702b_level0_row3" rowspan="3">2004-04~2017-03</th>
-<th class="row_heading level1 row3" id="T_8702b_level1_row3">EY+ROC 순위합산</th>
-<th class="row_heading level2 row3" id="T_8702b_level2_row3">동일</th>
-<th class="row_heading level3 row3" id="T_8702b_level3_row3">12</th>
-<th class="row_heading level4 row3" id="T_8702b_level4_row3">비용기본</th>
-<td class="data row3 col0" id="T_8702b_row3_col0">156.0000</td>
-<td class="data row3 col1" id="T_8702b_row3_col1">0.1526</td>
-<td class="data row3 col2" id="T_8702b_row3_col2">0.2696</td>
-<td class="data row3 col3" id="T_8702b_row3_col3">0.5552</td>
-<td class="data row3 col4" id="T_8702b_row3_col4">-0.5779</td>
-<td class="data row3 col5" id="T_8702b_row3_col5">0.8131</td>
-<td class="data row3 col6" id="T_8702b_row3_col6">0.0619</td>
-<td class="data row3 col7" id="T_8702b_row3_col7">0.4050</td>
-<td class="data row3 col8" id="T_8702b_row3_col8">0.0032</td>
-<td class="data row3 col9" id="T_8702b_row3_col9">0.7545</td>
+<th class="row_heading level0 row3" id="T_05832_level0_row3" rowspan="3">2004-04~2017-03</th>
+<th class="row_heading level1 row3" id="T_05832_level1_row3">EY+ROC 순위합산</th>
+<th class="row_heading level2 row3" id="T_05832_level2_row3">동일</th>
+<th class="row_heading level3 row3" id="T_05832_level3_row3">12</th>
+<th class="row_heading level4 row3" id="T_05832_level4_row3">비용기본</th>
+<td class="data row3 col0" id="T_05832_row3_col0">156.0000</td>
+<td class="data row3 col1" id="T_05832_row3_col1">0.1526</td>
+<td class="data row3 col2" id="T_05832_row3_col2">0.2696</td>
+<td class="data row3 col3" id="T_05832_row3_col3">0.5496</td>
+<td class="data row3 col4" id="T_05832_row3_col4">-0.5779</td>
+<td class="data row3 col5" id="T_05832_row3_col5">0.8131</td>
+<td class="data row3 col6" id="T_05832_row3_col6">0.0619</td>
+<td class="data row3 col7" id="T_05832_row3_col7">0.4050</td>
+<td class="data row3 col8" id="T_05832_row3_col8">0.0032</td>
+<td class="data row3 col9" id="T_05832_row3_col9">0.7558</td>
 </tr>
 <tr>
-<th class="row_heading level1 row4" id="T_8702b_level1_row4">벤치:유니버스(시총가중)</th>
-<th class="row_heading level2 row4" id="T_8702b_level2_row4">-</th>
-<th class="row_heading level3 row4" id="T_8702b_level3_row4">0</th>
-<th class="row_heading level4 row4" id="T_8702b_level4_row4">비용0</th>
-<td class="data row4 col0" id="T_8702b_row4_col0">156.0000</td>
-<td class="data row4 col1" id="T_8702b_row4_col1">0.0907</td>
-<td class="data row4 col2" id="T_8702b_row4_col2">0.1916</td>
-<td class="data row4 col3" id="T_8702b_row4_col3">0.3951</td>
-<td class="data row4 col4" id="T_8702b_row4_col4">-0.4794</td>
-<td class="data row4 col5" id="T_8702b_row4_col5">nan</td>
-<td class="data row4 col6" id="T_8702b_row4_col6">0.0000</td>
-<td class="data row4 col7" id="T_8702b_row4_col7">nan</td>
-<td class="data row4 col8" id="T_8702b_row4_col8">0.0021</td>
-<td class="data row4 col9" id="T_8702b_row4_col9">3.5667</td>
+<th class="row_heading level1 row4" id="T_05832_level1_row4">벤치:유니버스(시총가중)</th>
+<th class="row_heading level2 row4" id="T_05832_level2_row4">-</th>
+<th class="row_heading level3 row4" id="T_05832_level3_row4">0</th>
+<th class="row_heading level4 row4" id="T_05832_level4_row4">비용0</th>
+<td class="data row4 col0" id="T_05832_row4_col0">156.0000</td>
+<td class="data row4 col1" id="T_05832_row4_col1">0.0907</td>
+<td class="data row4 col2" id="T_05832_row4_col2">0.1916</td>
+<td class="data row4 col3" id="T_05832_row4_col3">0.3871</td>
+<td class="data row4 col4" id="T_05832_row4_col4">-0.4794</td>
+<td class="data row4 col5" id="T_05832_row4_col5">nan</td>
+<td class="data row4 col6" id="T_05832_row4_col6">0.0000</td>
+<td class="data row4 col7" id="T_05832_row4_col7">nan</td>
+<td class="data row4 col8" id="T_05832_row4_col8">0.0021</td>
+<td class="data row4 col9" id="T_05832_row4_col9">3.5616</td>
 </tr>
 <tr>
-<th class="row_heading level1 row5" id="T_8702b_level1_row5">벤치:코스피</th>
-<th class="row_heading level2 row5" id="T_8702b_level2_row5">-</th>
-<th class="row_heading level3 row5" id="T_8702b_level3_row5">0</th>
-<th class="row_heading level4 row5" id="T_8702b_level4_row5">비용0</th>
-<td class="data row5 col0" id="T_8702b_row5_col0">156.0000</td>
-<td class="data row5 col1" id="T_8702b_row5_col1">0.0715</td>
-<td class="data row5 col2" id="T_8702b_row5_col2">0.1924</td>
-<td class="data row5 col3" id="T_8702b_row5_col3">0.3015</td>
-<td class="data row5 col4" id="T_8702b_row5_col4">-0.5062</td>
-<td class="data row5 col5" id="T_8702b_row5_col5">nan</td>
-<td class="data row5 col6" id="T_8702b_row5_col6">-0.0192</td>
-<td class="data row5 col7" id="T_8702b_row5_col7">-0.5983</td>
-<td class="data row5 col8" id="T_8702b_row5_col8">0.0000</td>
-<td class="data row5 col9" id="T_8702b_row5_col9">nan</td>
+<th class="row_heading level1 row5" id="T_05832_level1_row5">벤치:코스피</th>
+<th class="row_heading level2 row5" id="T_05832_level2_row5">-</th>
+<th class="row_heading level3 row5" id="T_05832_level3_row5">0</th>
+<th class="row_heading level4 row5" id="T_05832_level4_row5">비용0</th>
+<td class="data row5 col0" id="T_05832_row5_col0">156.0000</td>
+<td class="data row5 col1" id="T_05832_row5_col1">0.0715</td>
+<td class="data row5 col2" id="T_05832_row5_col2">0.1924</td>
+<td class="data row5 col3" id="T_05832_row5_col3">0.2936</td>
+<td class="data row5 col4" id="T_05832_row5_col4">-0.5062</td>
+<td class="data row5 col5" id="T_05832_row5_col5">nan</td>
+<td class="data row5 col6" id="T_05832_row5_col6">-0.0192</td>
+<td class="data row5 col7" id="T_05832_row5_col7">-0.5983</td>
+<td class="data row5 col8" id="T_05832_row5_col8">0.0000</td>
+<td class="data row5 col9" id="T_05832_row5_col9">nan</td>
 </tr>
 <tr>
-<th class="row_heading level0 row6" id="T_8702b_level0_row6" rowspan="3">2017-04~</th>
-<th class="row_heading level1 row6" id="T_8702b_level1_row6">EY+ROC 순위합산</th>
-<th class="row_heading level2 row6" id="T_8702b_level2_row6">동일</th>
-<th class="row_heading level3 row6" id="T_8702b_level3_row6">12</th>
-<th class="row_heading level4 row6" id="T_8702b_level4_row6">비용기본</th>
-<td class="data row6 col0" id="T_8702b_row6_col0">113.0000</td>
-<td class="data row6 col1" id="T_8702b_row6_col1">0.0125</td>
-<td class="data row6 col2" id="T_8702b_row6_col2">0.2416</td>
-<td class="data row6 col3" id="T_8702b_row6_col3">0.0868</td>
-<td class="data row6 col4" id="T_8702b_row6_col4">-0.5510</td>
-<td class="data row6 col5" id="T_8702b_row6_col5">0.8131</td>
-<td class="data row6 col6" id="T_8702b_row6_col6">-0.1291</td>
-<td class="data row6 col7" id="T_8702b_row6_col7">-0.5368</td>
-<td class="data row6 col8" id="T_8702b_row6_col8">0.0004</td>
-<td class="data row6 col9" id="T_8702b_row6_col9">0.1589</td>
+<th class="row_heading level0 row6" id="T_05832_level0_row6" rowspan="3">2017-04~</th>
+<th class="row_heading level1 row6" id="T_05832_level1_row6">EY+ROC 순위합산</th>
+<th class="row_heading level2 row6" id="T_05832_level2_row6">동일</th>
+<th class="row_heading level3 row6" id="T_05832_level3_row6">12</th>
+<th class="row_heading level4 row6" id="T_05832_level4_row6">비용기본</th>
+<td class="data row6 col0" id="T_05832_row6_col0">113.0000</td>
+<td class="data row6 col1" id="T_05832_row6_col1">0.0125</td>
+<td class="data row6 col2" id="T_05832_row6_col2">0.2416</td>
+<td class="data row6 col3" id="T_05832_row6_col3">0.0839</td>
+<td class="data row6 col4" id="T_05832_row6_col4">-0.5510</td>
+<td class="data row6 col5" id="T_05832_row6_col5">0.8131</td>
+<td class="data row6 col6" id="T_05832_row6_col6">-0.1291</td>
+<td class="data row6 col7" id="T_05832_row6_col7">-0.5368</td>
+<td class="data row6 col8" id="T_05832_row6_col8">0.0004</td>
+<td class="data row6 col9" id="T_05832_row6_col9">0.1557</td>
 </tr>
 <tr>
-<th class="row_heading level1 row7" id="T_8702b_level1_row7">벤치:유니버스(시총가중)</th>
-<th class="row_heading level2 row7" id="T_8702b_level2_row7">-</th>
-<th class="row_heading level3 row7" id="T_8702b_level3_row7">0</th>
-<th class="row_heading level4 row7" id="T_8702b_level4_row7">비용0</th>
-<td class="data row7 col0" id="T_8702b_row7_col0">113.0000</td>
-<td class="data row7 col1" id="T_8702b_row7_col1">0.1417</td>
-<td class="data row7 col2" id="T_8702b_row7_col2">0.2614</td>
-<td class="data row7 col3" id="T_8702b_row7_col3">0.5587</td>
-<td class="data row7 col4" id="T_8702b_row7_col4">-0.3147</td>
-<td class="data row7 col5" id="T_8702b_row7_col5">nan</td>
-<td class="data row7 col6" id="T_8702b_row7_col6">0.0000</td>
-<td class="data row7 col7" id="T_8702b_row7_col7">nan</td>
-<td class="data row7 col8" id="T_8702b_row7_col8">0.0023</td>
-<td class="data row7 col9" id="T_8702b_row7_col9">4.6664</td>
+<th class="row_heading level1 row7" id="T_05832_level1_row7">벤치:유니버스(시총가중)</th>
+<th class="row_heading level2 row7" id="T_05832_level2_row7">-</th>
+<th class="row_heading level3 row7" id="T_05832_level3_row7">0</th>
+<th class="row_heading level4 row7" id="T_05832_level4_row7">비용0</th>
+<td class="data row7 col0" id="T_05832_row7_col0">113.0000</td>
+<td class="data row7 col1" id="T_05832_row7_col1">0.1417</td>
+<td class="data row7 col2" id="T_05832_row7_col2">0.2614</td>
+<td class="data row7 col3" id="T_05832_row7_col3">0.5561</td>
+<td class="data row7 col4" id="T_05832_row7_col4">-0.3147</td>
+<td class="data row7 col5" id="T_05832_row7_col5">nan</td>
+<td class="data row7 col6" id="T_05832_row7_col6">0.0000</td>
+<td class="data row7 col7" id="T_05832_row7_col7">nan</td>
+<td class="data row7 col8" id="T_05832_row7_col8">0.0023</td>
+<td class="data row7 col9" id="T_05832_row7_col9">4.6675</td>
 </tr>
 <tr>
-<th class="row_heading level1 row8" id="T_8702b_level1_row8">벤치:코스피</th>
-<th class="row_heading level2 row8" id="T_8702b_level2_row8">-</th>
-<th class="row_heading level3 row8" id="T_8702b_level3_row8">0</th>
-<th class="row_heading level4 row8" id="T_8702b_level4_row8">비용0</th>
-<td class="data row8 col0" id="T_8702b_row8_col0">113.0000</td>
-<td class="data row8 col1" id="T_8702b_row8_col1">0.1297</td>
-<td class="data row8 col2" id="T_8702b_row8_col2">0.2583</td>
-<td class="data row8 col3" id="T_8702b_row8_col3">0.5203</td>
-<td class="data row8 col4" id="T_8702b_row8_col4">-0.3438</td>
-<td class="data row8 col5" id="T_8702b_row8_col5">nan</td>
-<td class="data row8 col6" id="T_8702b_row8_col6">-0.0119</td>
-<td class="data row8 col7" id="T_8702b_row8_col7">-0.3345</td>
-<td class="data row8 col8" id="T_8702b_row8_col8">0.0000</td>
-<td class="data row8 col9" id="T_8702b_row8_col9">nan</td>
+<th class="row_heading level1 row8" id="T_05832_level1_row8">벤치:코스피</th>
+<th class="row_heading level2 row8" id="T_05832_level2_row8">-</th>
+<th class="row_heading level3 row8" id="T_05832_level3_row8">0</th>
+<th class="row_heading level4 row8" id="T_05832_level4_row8">비용0</th>
+<td class="data row8 col0" id="T_05832_row8_col0">113.0000</td>
+<td class="data row8 col1" id="T_05832_row8_col1">0.1297</td>
+<td class="data row8 col2" id="T_05832_row8_col2">0.2583</td>
+<td class="data row8 col3" id="T_05832_row8_col3">0.5176</td>
+<td class="data row8 col4" id="T_05832_row8_col4">-0.3438</td>
+<td class="data row8 col5" id="T_05832_row8_col5">nan</td>
+<td class="data row8 col6" id="T_05832_row8_col6">-0.0119</td>
+<td class="data row8 col7" id="T_05832_row8_col7">-0.3345</td>
+<td class="data row8 col8" id="T_05832_row8_col8">0.0000</td>
+<td class="data row8 col9" id="T_05832_row8_col9">nan</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_a7d75">
+<caption>무위험이자율 민감도: CD1m(본문) vs 콜금리, 전체 기간</caption>
+<thead>
+<tr>
+<th class="blank"> </th>
+<th class="blank level0"> </th>
+<th class="col_heading level0 col0" id="T_a7d75_level0_col0">개월</th>
+<th class="col_heading level0 col1" id="T_a7d75_level0_col1">샤프</th>
+<th class="col_heading level0 col2" id="T_a7d75_level0_col2">CAPM α(월)</th>
+<th class="col_heading level0 col3" id="T_a7d75_level0_col3">Carhart α(월)</th>
+<th class="col_heading level0 col4" id="T_a7d75_level0_col4">Carhart t(NW)</th>
+</tr>
+<tr>
+<th class="index_name level0">줄</th>
+<th class="index_name level1">무위험</th>
+<th class="blank col0"> </th>
+<th class="blank col1"> </th>
+<th class="blank col2"> </th>
+<th class="blank col3"> </th>
+<th class="blank col4"> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="row_heading level0 row0" id="T_a7d75_level0_row0" rowspan="2">기준 전략</th>
+<th class="row_heading level1 row0" id="T_a7d75_level1_row0">CD1m(본문)</th>
+<td class="data row0 col0" id="T_a7d75_row0_col0">437.0000</td>
+<td class="data row0 col1" id="T_a7d75_row0_col1">0.2934</td>
+<td class="data row0 col2" id="T_a7d75_row0_col2">0.0062</td>
+<td class="data row0 col3" id="T_a7d75_row0_col3">0.0072</td>
+<td class="data row0 col4" id="T_a7d75_row0_col4">1.8646</td>
+</tr>
+<tr>
+<th class="row_heading level1 row1" id="T_a7d75_level1_row1">콜 E11.02.003.001</th>
+<td class="data row1 col0" id="T_a7d75_row1_col0">437.0000</td>
+<td class="data row1 col1" id="T_a7d75_row1_col1">0.2948</td>
+<td class="data row1 col2" id="T_a7d75_row1_col2">0.0062</td>
+<td class="data row1 col3" id="T_a7d75_row1_col3">0.0072</td>
+<td class="data row1 col4" id="T_a7d75_row1_col4">1.8668</td>
+</tr>
+<tr>
+<th class="row_heading level0 row2" id="T_a7d75_level0_row2" rowspan="2">벤치:유니버스(시총가중)</th>
+<th class="row_heading level1 row2" id="T_a7d75_level1_row2">CD1m(본문)</th>
+<td class="data row2 col0" id="T_a7d75_row2_col0">437.0000</td>
+<td class="data row2 col1" id="T_a7d75_row2_col1">0.2213</td>
+<td class="data row2 col2" id="T_a7d75_row2_col2">0.0021</td>
+<td class="data row2 col3" id="T_a7d75_row2_col3">0.0032</td>
+<td class="data row2 col4" id="T_a7d75_row2_col4">5.1868</td>
+</tr>
+<tr>
+<th class="row_heading level1 row3" id="T_a7d75_level1_row3">콜 E11.02.003.001</th>
+<td class="data row3 col0" id="T_a7d75_row3_col0">437.0000</td>
+<td class="data row3 col1" id="T_a7d75_row3_col1">0.2231</td>
+<td class="data row3 col2" id="T_a7d75_row3_col2">0.0021</td>
+<td class="data row3 col3" id="T_a7d75_row3_col3">0.0032</td>
+<td class="data row3 col4" id="T_a7d75_row3_col4">5.1880</td>
+</tr>
+<tr>
+<th class="row_heading level0 row4" id="T_a7d75_level0_row4" rowspan="2">벤치:코스피</th>
+<th class="row_heading level1 row4" id="T_a7d75_level1_row4">CD1m(본문)</th>
+<td class="data row4 col0" id="T_a7d75_row4_col0">437.0000</td>
+<td class="data row4 col1" id="T_a7d75_row4_col1">0.1309</td>
+<td class="data row4 col2" id="T_a7d75_row4_col2">0.0000</td>
+<td class="data row4 col3" id="T_a7d75_row4_col3">0.0000</td>
+<td class="data row4 col4" id="T_a7d75_row4_col4">nan</td>
+</tr>
+<tr>
+<th class="row_heading level1 row5" id="T_a7d75_level1_row5">콜 E11.02.003.001</th>
+<td class="data row5 col0" id="T_a7d75_row5_col0">437.0000</td>
+<td class="data row5 col1" id="T_a7d75_row5_col1">0.1327</td>
+<td class="data row5 col2" id="T_a7d75_row5_col2">0.0000</td>
+<td class="data row5 col3" id="T_a7d75_row5_col3">0.0000</td>
+<td class="data row5 col4" id="T_a7d75_row5_col4">nan</td>
 </tr>
 </tbody>
 </table>
