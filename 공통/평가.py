@@ -31,6 +31,8 @@ def 회귀(y, X):
     Xc = sm.add_constant(d.drop(columns="_y"), has_constant="add")
     m = sm.OLS(d["_y"], Xc)
     ols, nw = m.fit(), m.fit(cov_type="HAC", cov_kwds={"maxlags": int(4 * (len(d) / 100) ** (2 / 9))})
+    if ols.rsquared > 1 - 1e-10:  # 시장 자기 자신 회귀(잔차 ≈ 0): t는 계산 오차라 빈칸(결과 감사 LOW 2026-11-03)
+        return ols.params["const"], np.nan, np.nan, ols
     return ols.params["const"], ols.tvalues["const"], nw.tvalues["const"], ols
 
 
@@ -58,8 +60,8 @@ def 성과표(R, F, 롱숏열=()):
 def 누적그림(R, 제목):
     """누적수익률. 흑백으로도 구분되게 선 모양·표식을 다르게."""
     fig, ax = plt.subplots(figsize=(9, 4.5))
-    styles = [("-", None), ("--", None), (":", None), ("-.", None), ("-", "o"), ("--", "s"), (":", "^"), ("-.", "x")]
-    for (ls, mk), k in zip(styles * 4, R):
+    styles = [(ls, mk) for mk in (None, "o", "s", "^", "x") for ls in ("-", "--", ":", "-.")]  # 20가지(선 9개 그림에서 둘이 겹치던 것, 결과 감사 LOW)
+    for (ls, mk), k in zip(styles * 2, R):
         ax.plot((1 + R[k].dropna()).cumprod(), color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
     ax.set(title=제목, ylabel="누적 가치(시작=1)")
     ax.legend(fontsize=8, ncol=2)
