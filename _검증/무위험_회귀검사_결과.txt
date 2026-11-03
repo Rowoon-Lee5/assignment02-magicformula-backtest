@@ -1,0 +1,22 @@
+연구/결과/확장연구_20261103.csv: 14427줄, 바뀐 칸 216335/346248
+  열별 바뀐 칸: {'샤프': 14427, 'CAPM α(월)': 14422, 'CAPM t(OLS)': 14422, 'CAPM t(NW)': 14422, 'FF3 α(월)': 14422, 'FF3 t(OLS)': 14422, 'FF3 t(NW)': 14422, 'Carhart α(월)': 14422, 'Carhart t(OLS)': 14422, 'Carhart t(NW)': 14422, 'Carhart β:MKT': 14422, 'Carhart β:SMB': 14422, 'Carhart β:HML': 14422, 'Carhart β:MOM': 14422, 'Carhart adj R²': 14422}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+결과_전략수익률/1_비중.csv: 7줄, 바뀐 칸 91/168
+  열별 바뀐 칸: {'샤프': 7, 'CAPM α(월)': 6, 'CAPM t(OLS)': 6, 'CAPM t(NW)': 6, 'FF3 α(월)': 6, 'FF3 t(OLS)': 6, 'FF3 t(NW)': 6, 'Carhart α(월)': 6, 'Carhart t(OLS)': 6, 'Carhart t(NW)': 6, 'Carhart β:MKT': 6, 'Carhart β:SMB': 6, 'Carhart β:HML': 6, 'Carhart β:MOM': 6, 'Carhart adj R²': 6}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+결과_전략수익률/2_주기.csv: 6줄, 바뀐 칸 76/144
+  열별 바뀐 칸: {'샤프': 6, 'CAPM α(월)': 5, 'CAPM t(OLS)': 5, 'CAPM t(NW)': 5, 'FF3 α(월)': 5, 'FF3 t(OLS)': 5, 'FF3 t(NW)': 5, 'Carhart α(월)': 5, 'Carhart t(OLS)': 5, 'Carhart t(NW)': 5, 'Carhart β:MKT': 5, 'Carhart β:SMB': 5, 'Carhart β:HML': 5, 'Carhart β:MOM': 5, 'Carhart adj R²': 5}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+결과_전략수익률/3_지표.csv: 18줄, 바뀐 칸 256/432
+  열별 바뀐 칸: {'샤프': 18, 'CAPM α(월)': 17, 'CAPM t(OLS)': 17, 'CAPM t(NW)': 17, 'FF3 α(월)': 17, 'FF3 t(OLS)': 17, 'FF3 t(NW)': 17, 'Carhart α(월)': 17, 'Carhart t(OLS)': 17, 'Carhart t(NW)': 17, 'Carhart β:MKT': 17, 'Carhart β:SMB': 17, 'Carhart β:HML': 17, 'Carhart β:MOM': 17, 'Carhart adj R²': 17}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+결과_전략수익률/4_순서.csv: 5줄, 바뀐 칸 61/120
+  열별 바뀐 칸: {'샤프': 5, 'CAPM α(월)': 4, 'CAPM t(OLS)': 4, 'CAPM t(NW)': 4, 'FF3 α(월)': 4, 'FF3 t(OLS)': 4, 'FF3 t(NW)': 4, 'Carhart α(월)': 4, 'Carhart t(OLS)': 4, 'Carhart t(NW)': 4, 'Carhart β:MKT': 4, 'Carhart β:SMB': 4, 'Carhart β:HML': 4, 'Carhart β:MOM': 4, 'Carhart adj R²': 4}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+결과_전략수익률/5_비용.csv: 8줄, 바뀐 칸 106/192
+  열별 바뀐 칸: {'샤프': 8, 'CAPM α(월)': 7, 'CAPM t(OLS)': 7, 'CAPM t(NW)': 7, 'FF3 α(월)': 7, 'FF3 t(OLS)': 7, 'FF3 t(NW)': 7, 'Carhart α(월)': 7, 'Carhart t(OLS)': 7, 'Carhart t(NW)': 7, 'Carhart β:MKT': 7, 'Carhart β:SMB': 7, 'Carhart β:HML': 7, 'Carhart β:MOM': 7, 'Carhart adj R²': 7}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+결과_전략수익률/6_기간.csv: 9줄, 바뀐 칸 93/216
+  열별 바뀐 칸: {'샤프': 9, 'CAPM α(월)': 6, 'CAPM t(OLS)': 6, 'CAPM t(NW)': 6, 'FF3 α(월)': 6, 'FF3 t(OLS)': 6, 'FF3 t(NW)': 6, 'Carhart α(월)': 6, 'Carhart t(OLS)': 6, 'Carhart t(NW)': 6, 'Carhart β:MKT': 6, 'Carhart β:SMB': 6, 'Carhart β:HML': 6, 'Carhart β:MOM': 6, 'Carhart adj R²': 6}
+  무위험과 관계없는 열에서 바뀐 칸: 없음
+의도하지 않은 변화: 0 칸
