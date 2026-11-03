@@ -14,6 +14,7 @@ XLSX = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_전체
 RF_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_1990s_202610\무위험이자율후보_DataGuide_시장금리전체아이템35종_월간_19880101-20260930.xlsx")
 FACTOR_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_추가_202610\요인_팩터모델과시장지수_일간_1990-2026.xlsx")
 ADD10 = FACTOR_FILE.parent  # DataGuide_추가_202610: '쓰지 말 것' 목록 csv(README_데이터), 코드 재사용 16종목 csv
+CD_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\교수제공\08.[액셀실습]TSMom(K200).xlsx")  # 교수님 수업 자료, CD1m(추가 지시 10)
 KRX_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_추가_202611\R12_통합지수_KRXTMI_KRX300_KRX300TR_KRX100_코스닥TR_I31000040F_일별_19991228-20260930.xlsx")
 
 # 일간 아이템코드
@@ -128,8 +129,20 @@ def 종목정보():
 
 
 @cache
+def CD1m():
+    """교수님 제공 엑셀(시트 TS모멘텀_m) B열 날짜(월말)·D열 CD1m(연 %) → 월 수익률(소수) = 연 % / 1200.
+    엑셀 수식 =D6*(1/12)과 같은 월 단리. 값은 파일 그대로(1990-01~1994-12는 파일에 14로 들어 있음)."""
+    x = pd.read_excel(CD_FILE, sheet_name="TS모멘텀_m", header=None)
+    assert str(x.iloc[4, 3]).startswith("CD1m"), "D열 머리글이 CD1m이 아님"
+    s = x.iloc[5:, 3].astype(float)
+    s.index = pd.to_datetime(x.iloc[5:, 1])
+    return s[s.index.notna()].rename_axis(None) / 1200
+
+
 def 무위험(item):
-    """DataGuide 금리(연 %, 월말) → 월 수익률(소수). 행=월말 날짜."""
+    """DataGuide 금리(연 %, 월말) → 월 수익률(소수). 행=월말 날짜. item="CD1m"이면 교수님 제공 CD1m 한 계열(추가 지시 10)."""
+    if item == "CD1m":
+        return CD1m()
     x = pd.read_excel(RF_FILE, header=None)
     col = x.columns[x.iloc[14].eq(item).to_numpy()][0]  # 15행 = 아이템코드
     s = x.iloc[17:][col].astype(float)
