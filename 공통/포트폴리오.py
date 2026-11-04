@@ -91,7 +91,7 @@ def 다음리밸런싱(t, cfg):
 
 def 재료(t, cfg):
     """기준일 t의 자료: 그날 상장 가격(읽기.상장가격) 있는 종목, 재무, 시가총액, 직전 12개월 일간수익률(빈칸은 빈칸, '쓰지 말 것' 칸은 빈칸으로 봄).
-    다음 = 다음 리밸런싱일(종목거르기.쓰지말것이 보유 구간을 봄), 일년상장 = 직전 12개월 내내 시장구분 KS·KQ이고 그 창 첫날 상장 가격이 있음
+    다음 = 다음 리밸런싱일, 일년상장 = 직전 12개월 내내 시장구분 KS·KQ이고 그 창 첫날 상장 가격이 있음
     (시장구분이 첫 가격보다 몇 년 먼저 KS로 들어 있는 우선주 등이 짧은 수익률로 통과하던 것 막기, 감사 2026-11-03 #3·#14)."""
     p = 읽기.상장가격(cfg["가격"]).loc[:t]
     codes = p.columns[p.iloc[-1].notna()]
@@ -180,7 +180,7 @@ def 최소분산(c, s, cfg, 개월=36):
     36개월 수익률이 다 있는 종목만 쓴다(나머지는 빠짐 — 편입 수는 보유 비중 > 0 종목 수로 확인)."""
     g = 기준일({**cfg, "기간": (None, None)})
     g = g[g <= s["t"]][-(개월 + 1):]
-    r = 읽기.상장가격(cfg["가격"]).loc[g, c].pct_change(fill_method=None).iloc[1:].dropna(axis=1)
+    r = 쓰지말것칸(읽기.상장가격(cfg["가격"]).loc[g, c].pct_change(fill_method=None), cfg["가격"]).iloc[1:].dropna(axis=1)  # '쓰지 말 것' 칸은 R과 같게(README 한계 '최소분산 공분산')
     if len(g) <= 개월 or r.shape[1] < 2:
         return pd.Series(dtype=float)
     S, n = LedoitWolf().fit(r.to_numpy()).covariance_, r.shape[1]
@@ -199,6 +199,22 @@ def 거래비용(old, new, c):
 def 기간수익률(p, grid):
     """기준일 간 수익률. 구간 안에서 상장폐지되면 마지막 가격으로 판 것으로 본다(가격 값은 바꾸지 않고 마지막 값을 찾기만 함)."""
     return p.ffill().loc[grid] / p.loc[grid].shift(1) - 1
+
+
+def 쓰지말것칸(R, item):
+    """기준일 간 수익률 R(행 = 구간 끝)에서 '쓰지 말 것' 구간(시작, 끝]에 걸린 칸만 바꾼다(README_데이터 권고 D-06·U3·D27):
+    TR 이상칸은 그 구간 가격수익률(수정주가)로, 병합·감자 미반영(D27)·A008080(D-05)은 빈칸(그 종목·달을 뺌). 다른 칸은 그대로."""
+    R, g, P = R.copy(), R.index, None
+    prev = pd.DatetimeIndex([pd.NaT, *g[:-1]])
+    b = 읽기.쓰지말것(item)
+    for c, x, y, k in b[b["코드"].isin(R.columns)][["코드", "시작", "끝", "근거"]].itertuples(index=False):
+        hit = (g > x) & (prev < y)
+        if k.startswith("TR이상칸"):
+            P = 기간수익률(읽기.상장가격(읽기.수정주가), g) if P is None else P
+            R.loc[hit, c] = P.loc[hit, c]
+        else:
+            R.loc[hit, c] = np.nan
+    return R
 
 
 def 보유(R, W, 비용, 전량=False, 회전=None):
@@ -227,7 +243,7 @@ def 실행(cfg):
     cfg = {**기본설정, **cfg}
     전략들 = cfg.get("전략들") or {None: dict(지표=cfg["지표"], 합산=cfg["합산"])}
     grid = 기준일(cfg)
-    R = 기간수익률(읽기.상장가격(cfg["가격"]), grid)
+    R = 쓰지말것칸(기간수익률(읽기.상장가격(cfg["가격"]), grid), cfg["가격"])
     W, 기록 = defaultdict(dict), []
     for t in grid[:-1][::cfg["리밸런싱"]]:
         s, c, n = 거르기(t, cfg)
