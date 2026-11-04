@@ -240,14 +240,13 @@ def 기간수익률(p, grid):
 def 쓰지말것칸(R, item):
     """기준일 간 수익률 R(행 = 구간 끝)에서 '쓰지 말 것' 구간(시작, 끝]에 걸린 칸만 바꾼다(README_데이터 권고 D-06·U3·D27):
     TR 이상칸은 그 구간 가격수익률(수정주가)로, 병합·감자 미반영(D27)·A008080(D-05)은 빈칸(그 종목·달을 뺌). 다른 칸은 그대로."""
-    R, g, P = R.copy(), R.index, None
+    R, g = R.copy(), R.index
     prev = pd.DatetimeIndex([pd.NaT, *g[:-1]])
     b = 읽기.쓰지말것(item)
     for c, x, y, k in b[b["코드"].isin(R.columns)][["코드", "시작", "끝", "근거"]].itertuples(index=False):
         hit = (g > x) & (prev < y)
-        if k.startswith("TR이상칸"):
-            P = 기간수익률(읽기.상장가격(읽기.수정주가), g) if P is None else P
-            R.loc[hit, c] = P.loc[hit, c]
+        if k.startswith("TR이상칸"):  # 걸린 종목 한 열만 계산(전 종목 ffill을 최소분산마다 다시 해 느렸음, 지시 H 2026-11-04). 열마다 계산이라 값은 같음
+            R.loc[hit, c] = 기간수익률(읽기.상장가격(읽기.수정주가)[c], g).loc[hit]
         else:
             R.loc[hit, c] = np.nan
     return R
