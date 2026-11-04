@@ -1,0 +1,82 @@
+== 49276 02:32:40
+Process 49276: C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe -Xfrozen_modules=off -m ipykernel_launcher -f C:\Users\benef\AppData\Local\Temp\tmptqnjhxy6.json
+Python v3.11.9 (C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe)
+
+Thread 5820 (active+gil): "MainThread"
+    NDArrayBackedExtensionArray.__getitem__ (pandas\core\arrays\_mixins.py:284)
+    ExtensionBlock.iget (pandas\core\internals\blocks.py:2387)
+    BlockManager.fast_xs (pandas\core\internals\managers.py:1003)
+    DataFrame._ixs (pandas\core\frame.py:3984)
+    _iLocIndexer._getitem_axis (pandas\core\indexing.py:1755)
+    _LocationIndexer.__getitem__ (pandas\core\indexing.py:1192)
+    그날 (종목거르기.py:14)
+    거래정지 (종목거르기.py:71)
+    적용 (종목거르기.py:130)
+    거르기 (포트폴리오.py:143)
+    실행 (포트폴리오.py:291)
+    <dictcomp> (3625361552.py:1)
+    <module> (3625361552.py:1)
+    InteractiveShell.run_code (IPython\core\interactiveshell.py:3748)
+    InteractiveShell.run_ast_nodes (IPython\core\interactiveshell.py:3688)
+    InteractiveShell.run_cell_async (IPython\core\interactiveshell.py:3447)
+    _pseudo_sync_runner (IPython\core\async_helpers.py:128)
+    InteractiveShell._run_cell (IPython\core\interactiveshell.py:3225)
+    InteractiveShell.run_cell (IPython\core\interactiveshell.py:3170)
+    ZMQInteractiveShell.run_cell (ipykernel\zmqshell.py:686)
+    IPythonKernel.do_execute (ipykernel\ipkernel.py:460)
+== 22608 02:32:40
+Process 22608: C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe -Xfrozen_modules=off -m ipykernel_launcher -f C:\Users\benef\AppData\Local\Temp\tmpu5vcvaz_.json
+Python v3.11.9 (C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe)
+
+Thread 35488 (idle): "MainThread"
+    NDArrayBackedExtensionArray.__getitem__ (pandas\core\arrays\_mixins.py:284)
+    ExtensionBlock.iget (pandas\core\internals\blocks.py:2387)
+    BlockManager.fast_xs (pandas\core\internals\managers.py:1003)
+    DataFrame._ixs (pandas\core\frame.py:3984)
+    _iLocIndexer._getitem_axis (pandas\core\indexing.py:1755)
+    _LocationIndexer.__getitem__ (pandas\core\indexing.py:1192)
+    그날 (종목거르기.py:14)
+    관리종목 (종목거르기.py:75)
+    적용 (종목거르기.py:130)
+    거르기 (포트폴리오.py:143)
+    실행 (포트폴리오.py:291)
+    <dictcomp> (1175699488.py:1)
+    <module> (1175699488.py:1)
+    InteractiveShell.run_code (IPython\core\interactiveshell.py:3748)
+    InteractiveShell.run_ast_nodes (IPython\core\interactiveshell.py:3688)
+    InteractiveShell.run_cell_async (IPython\core\interactiveshell.py:3447)
+    _pseudo_sync_runner (IPython\core\async_helpers.py:128)
+    InteractiveShell._run_cell (IPython\core\interactiveshell.py:3225)
+    InteractiveShell.run_cell (IPython\core\interactiveshell.py:3170)
+    ZMQInteractiveShell.run_cell (ipykernel\zmqshell.py:686)
+    IPythonKernel.do_execute (ipykernel\ipkernel.py:460)
+03:03:46
+Process 45332: C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe ../_검증/2차_07_신마법.py
+Python v3.11.9 (C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe)
+
+Thread 39924 (active): "MainThread"
+    table_to_dataframe (pyarrow\pandas_compat.py:784)
+    일간 (데이터읽기.py:63)
+    그날 (종목거르기.py:12)
+    금융업 (종목거르기.py:52)
+    적용 (종목거르기.py:130)
+    거르기 (포트폴리오.py:143)
+    실행 (포트폴리오.py:291)
+    <module> (2차_07_신마법.py:48)
+03:03:46
+Process 49276: C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe -Xfrozen_modules=off -m ipykernel_launcher -f C:\Users\benef\AppData\Local\Temp\tmptqnjhxy6.json
+Python v3.11.9 (C:\Users\benef\AppData\Local\Python\pythoncore-3.11-64\python.exe)
+
+Thread 5820 (active+gil): "MainThread"
+    NDArrayBackedExtensionArray.__getitem__ (pandas\core\arrays\_mixins.py:284)
+    ExtensionBlock.iget (pandas\core\internals\blocks.py:2387)
+    BlockManager.fast_xs (pandas\core\internals\managers.py:1003)
+    DataFrame._ixs (pandas\core\frame.py:3984)
+    _iLocIndexer._getitem_axis (pandas\core\indexing.py:1755)
+    _LocationIndexer.__getitem__ (pandas\core\indexing.py:1192)
+    그날 (종목거르기.py:14)
+    관리종목 (종목거르기.py:75)
+    적용 (종목거르기.py:130)
+    거르기 (포트폴리오.py:143)
+    실행 (포트폴리오.py:291)
+    판돌리기.<locals>.<dictcomp> (1736743696.py:5)
