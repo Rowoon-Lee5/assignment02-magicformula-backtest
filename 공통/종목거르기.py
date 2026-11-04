@@ -9,7 +9,9 @@ import 지표
 
 def 그날(item, t, c):
     """그날 값. 월간 자료(관리종목 등)는 그날 이전 가장 최근 기준일 행을 그대로 쓴다."""
-    return 읽기.일간(item).reindex([t], method="ffill").iloc[0].reindex(c)
+    d = 읽기.일간(item)
+    i = d.index.searchsorted(t, side="right") - 1  # t 이전 마지막 행 위치(reindex(ffill)과 같음, 범주형 6천여 열 reindex가 느려 위치로 찾음 2026-11-04)
+    return (d.iloc[i] if i >= 0 else pd.Series(np.nan, d.columns)).reindex(c)
 
 
 def 시장(s, c, 시장들):
