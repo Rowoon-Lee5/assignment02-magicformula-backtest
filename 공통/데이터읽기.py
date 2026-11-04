@@ -13,6 +13,7 @@ XLSX = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_전체
 # 한 번에 받은 원본이라 그대로 씀(추가 지시 1 예외)
 RF_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_1990s_202610\무위험이자율후보_DataGuide_시장금리전체아이템35종_월간_19880101-20260930.xlsx")
 FACTOR_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_추가_202610\요인_팩터모델과시장지수_일간_1990-2026.xlsx")
+새목록 = Path(__file__).resolve().parent.parent / "_검증" / "새목록"  # B2(2026-11-04): 예전 데이터로 만든 목록을 새 데이터에서 같은 규칙으로 다시 만든 것(저장소 안)
 ADD10 = FACTOR_FILE.parent  # DataGuide_추가_202610: '쓰지 말 것' 목록 csv(README_데이터), 코드 재사용 16종목 csv
 CD_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\교수제공\08.[액셀실습]TSMom(K200).xlsx")  # 교수님 수업 자료, CD1m(추가 지시 10)
 KRX_FILE = Path(r"D:\26-2_데이터기반투자전략\과제02\data\DataGuide_추가_202611\R12_통합지수_KRXTMI_KRX300_KRX300TR_KRX100_코스닥TR_I31000040F_일별_19991228-20260930.xlsx")
@@ -68,12 +69,13 @@ def 상장가격(item):
 @cache
 def 쓰지말것(item):
     """README_데이터.md '쓰지 말 것' 칸 → 표(코드, 시작, 끝). 값은 그대로 두고, 이 구간 가격을 쓰는 편입·수익률 계산만 피한다.
-    A008080 2004-01~2013-09(D-05), 수정주가 병합·감자 미반영 7칸의 그 달(D27), 배당 포함 가격(TR)을 쓸 때 TR 이상칸의 앞날~그날(D-06·U3)."""
+    A008080 2004-01~2013-09(D-05), 수정주가 병합·감자 미반영 7칸의 그 달(D27), 배당 포함 가격(TR)을 쓸 때 TR 이상칸의 앞날~그날(D-06·U3, 새 데이터로 다시 만든 목록).
+    병합미반영은 예전 7칸 그대로: 새 데이터에 판정 조건 ③(DataGuide 1개월대비수익률)이 없어 새 목록(3,582줄)은 조건이 빠진 후보일 뿐."""
     d = ADD10
     m = pd.read_csv(d / "수정주가_병합미반영_7칸.csv", encoding="utf-8-sig", parse_dates=["날짜(월말)"])
     t = [("A008080", "2004-01-01", "2013-09-30", "D-05")] + [(c, x.replace(day=1), x, "D27") for c, x in zip(m["코드"], m["날짜(월말)"])]
     if item == TR:
-        a = pd.read_csv(d / "수정주가TR_이상칸.csv", encoding="utf-8-sig")
+        a = pd.read_csv(새목록 / "수정주가TR_이상칸.csv", encoding="utf-8-sig")  # 같은 규칙으로 새 데이터에서 다시 만든 232칸(예전 107칸 모두 포함, `_검증/B2_목록다시.py`·`새목록/차이표.md`)
         t += [(c, x, y, "TR이상칸:" + k) for c, x, y, k in zip(a["코드"], a["앞_날짜"], a["날짜"], a["유형"])]
     return pd.DataFrame(t, columns=["코드", "시작", "끝", "근거"]).astype({"시작": "datetime64[ns]", "끝": "datetime64[ns]"})
 
