@@ -58,7 +58,9 @@ def 재무가능일(how):
         return f.assign(결산일=end, 가능일=end + pd.DateOffset(months=k))
     pub = pd.to_datetime(f["FP56000900"].astype("Int64").astype(str), format="%Y%m%d", errors="coerce")
     pub = pub.where(pub > end)
-    하루 = pd.Timedelta(days=0 if kind == "발표당일" else 1)  # '발표당일': 발표한 날부터(NH '발표 월의 월말' 리밸런싱이면 그 달 말에 반영, 03 진단용)
+    하루 = pd.Timedelta(days=0 if kind == "발표당일" else 1)  # '발표당일': 발표한 날부터(03 진단용)
+    if kind == "발표월말":  # NH(2018) 02 p.14·03 p.18 '분기/연간 재무제표가 발표되는 월의 월말에 반영': 발표한 달 1일부터(월말 리밸런싱이면 그 달 말에 씀, 2026-11-05)
+        return f.assign(결산일=end, 발표일=pub, 가능일=(pub.dt.to_period("M").dt.start_time).fillna(end + pd.Timedelta(days=k)))
     ok = end + pd.DateOffset(months=k) if kind == "결산후개월" else (pub + 하루).fillna(end + pd.Timedelta(days=k))
     return f.assign(결산일=end, 발표일=pub, 가능일=ok)
 
@@ -86,18 +88,20 @@ def 재무(t, how):
 
 
 @cache
-def 분기가능일():
-    """분기 행마다 쓸 수 있는 날 = 분기 보고서 발표일(FP56000900 분기) 다음 날. 발표일이 없거나 분기말보다 이르면 쓰지 않는다(분기는 대신할 일수 근거가 없어 빈칸)."""
+def 분기가능일(시점="다음날"):
+    """분기 행마다 쓸 수 있는 날 = 분기 보고서 발표일(FP56000900 분기) 다음 날. 발표일이 없거나 분기말보다 이르면 쓰지 않는다(분기는 대신할 일수 근거가 없어 빈칸).
+    시점="발표월말": 발표한 달 1일부터 = NH(2018) '발표되는 월의 월말에 반영'(월말 리밸런싱에서만 뜻이 맞음, 2026-11-05 2차 진단 4)."""
     f = 읽기.분기재무()
     pub = pd.to_datetime(f["FP56000900"].astype("Int64").astype(str), format="%Y%m%d", errors="coerce") if "FP56000900" in f else pd.Series(pd.NaT, f.index)
-    return f.assign(발표일=pub.where(pub > f["분기말"]), 가능일=pub.where(pub > f["분기말"]) + pd.Timedelta(days=1))
+    pub = pub.where(pub > f["분기말"])
+    return f.assign(발표일=pub, 가능일=pub.dt.to_period("M").dt.start_time if 시점 == "발표월말" else pub + pd.Timedelta(days=1))
 
 
-def 분기재무(t, 흐름="4분기합"):
+def 분기재무(t, 흐름="4분기합", 시점="다음날"):
     """그날 쓸 수 있는 분기 행으로 종목마다 한 줄(열 = 아이템코드, 천원). NH(2018) p.14·p.18 '분기/연간 재무제표가 발표되는 월의 월말에 반영'.
     흐름 항목(읽기.분기흐름): '4분기합' = 쓸 수 있는 가장 최근 4개 분기(연속: 첫 분기말과 마지막 분기말이 9개월 차이) 합, '최근분기x4' = 최근 분기 × 4.
     두 방식 모두 원문에 없음(민감도). 잔액 항목(읽기.분기잔액) = 최근 분기말 값. 분기말이 2년보다 오래된 행은 안 씀(연간과 같음)."""
-    f = 분기가능일()
+    f = 분기가능일(시점)
     f = f[(f["가능일"] <= t) & (f["분기말"] >= t - pd.DateOffset(years=2))].sort_values(["코드", "분기말"])
     끝 = f.groupby("코드").tail(1).set_index("코드")
     흐름열 = [c for c in 읽기.분기흐름 if c in f]
@@ -128,7 +132,7 @@ def 재료(t, cfg):
     for c, x, y in 읽기.쓰지말것(cfg["가격"])[["코드", "시작", "끝"]].itertuples(index=False):
         if c in p:
             p.loc[x:y, c] = np.nan
-    return dict(t=t, 다음=다음리밸런싱(t, cfg), 가격=cfg["가격"], codes=codes, fin=(분기재무(t, cfg["재무주기"][1]) if cfg.get("재무주기", ("연간",))[0] == "분기" else 재무(t, cfg["재무시점"])).reindex(codes),
+    return dict(t=t, 다음=다음리밸런싱(t, cfg), 가격=cfg["가격"], codes=codes, fin=(분기재무(t, cfg["재무주기"][1], "발표월말" if cfg["재무시점"][0] == "발표월말" else "다음날") if cfg.get("재무주기", ("연간",))[0] == "분기" else 재무(t, cfg["재무시점"])).reindex(codes),
                 mcap=읽기.일간(읽기.시총).loc[t, codes], ret=p.pct_change(fill_method=None).iloc[1:],
                 일년상장=읽기.상장중().loc[a:t].reindex(columns=codes, fill_value=False).all() & p.iloc[0].notna())
 
