@@ -22,5 +22,6 @@ print("  그중 마지막 거래일 당일:", int((다름["발표일"] == 다름
 for 이름, a, b, 달들 in [("02", "2002-03", "2018-05", range(1, 13)), ("03", "2002-03", "2018-09", (3, 6, 9, 12))]:
     x = 다름[(다름["달"] >= pd.Period(a, "M")) & (다름["달"] <= pd.Period(b, "M")) & 다름["달"].dt.month.isin(list(달들))]
     print(f"\n{이름} 기간·리밸런싱 달 안 (KOSPI·KOSDAQ 구분 없이 분기 파일 전 종목): {len(x)}행, 종목 {x['코드'].nunique()}개")
+    print(f"  그중 마지막 거래일 당일(지금 본문이 그날 종가에 씀): {int((x['발표일'] == x['그달마지막거래일']).sum())} / 그 뒤 같은 달 휴일(다음 리밸런싱부터): {int((x['발표일'] > x['그달마지막거래일']).sum())}")
     print(x.groupby(x["달"].dt.month).size().rename("달별 행 수").to_string())
     print(x.groupby(x["달"].dt.year).size().rename("해별 행 수").to_string())
