@@ -92,13 +92,13 @@ dd = pd.bdate_range("2009-01-01", "2011-12-31")
 y = lambda a, b, c: pd.Series(np.select([dd <= a, dd <= b], [1.0, 2.0], 3.0), dd)
 fin = pd.DataFrame({"A": y("2009-12-31", "2010-12-31", None), "B": y("2010-03-31", "2011-03-31", None), "C": y("2009-12-31", "2010-12-31", None)})
 ym = pd.DataFrame({"A": 12.0, "B": 3.0, "C": 3.0}, index=dd)
-옛 = 읽기.DATA, 읽기.공통끝
+옛 = 읽기.DATA, 읽기.공통끝, 읽기.변환캐시
 with tempfile.TemporaryDirectory() as tmp:
-    읽기.DATA, 읽기.공통끝 = Path(tmp), lambda: dd[-1]
+    읽기.DATA, 읽기.공통끝, 읽기.변환캐시 = Path(tmp), lambda: dd[-1], Path(tmp)  # 시험 폴더만 보게(저장소 캐시의 실제 파일 빼기)
     ym.rename_axis("날짜").to_parquet(Path(tmp) / "통합_일간_CP10002200_결산월.parquet")
     fin.rename_axis("날짜").to_parquet(Path(tmp) / "통합_일간_M000901001_자산.parquet")
     a = 읽기.연간재무().set_index(["코드", "회계연도"])["M000901001"]
-    읽기.DATA, 읽기.공통끝 = 옛
+    읽기.DATA, 읽기.공통끝, 읽기.변환캐시 = 옛
     읽기.일간.cache_clear(); 읽기.연간재무.cache_clear()
 assert a[("A", 2009)] == 1 and a[("A", 2010)] == 2 and a[("A", 2011)] == 3, a
 assert a[("B", 2008)] == 1 and a[("B", 2009)] == 1 and a[("B", 2010)] == 2, a  # 3월 결산: 2009-03 결산 = FY2008(첫 행은 데이터 전이라 확인 못 하고 그대로), 2011-03 결산 = FY2010

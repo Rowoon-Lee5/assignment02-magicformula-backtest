@@ -23,14 +23,14 @@ TR, 수정주가, 종가, 거래대금, 거래량, 시총, 주식수, 정지구�
 시장구분, 업종, WICS, 관리여부, 정지여부, 결산월, 발표일 = "CP10000300", "CP10001090", "CP10000600", "CP10001660", "CP10001650", "CP10002200", "FP56000900"
 
 
-분기캐시 = Path(__file__).resolve().parent.parent / "_캐시" / "분기"  # 분기 xlsx를 감독 변환기 함수로 바꾼 parquet(`_검증/분기_변환.py`, data 폴더에 안 씀)
+변환캐시 = Path(__file__).resolve().parent.parent / "_캐시" / "변환"  # data 폴더에 parquet가 없는 xlsx(분기 R40~, 결산 R32~)를 감독 변환기 함수로 바꾼 것(`_검증/추가_변환.py`, data 폴더에 안 씀)
 
 
 def 목록(pat, 분기=False):
     """분기=False: 결산(연간)·일반 파일만, True: '분기3M' 파일만(같은 아이템코드로 결산·분기 두 파일이 있음, 추가 지시 F 2026-11-04)."""
     fs = [f for f in DATA.glob(f"통합_일간_{pat}.parquet") if not f.name.endswith(".tmp.parquet") and ("_분기" in f.name) == 분기]  # 변환 중인 .tmp 파일은 안 봄
-    if 분기:  # data 폴더에 같은 파일이 있으면 그것, 없으면 저장소 캐시
-        fs += [f for f in 분기캐시.glob(f"통합_일간_{pat}.parquet") if not f.name.endswith(".tmp.parquet") and f.name not in {g.name for g in fs}]
+    # data 폴더에 같은 파일이 있으면 그것, 없으면 저장소 캐시
+    fs += [f for f in 변환캐시.glob(f"통합_일간_{pat}.parquet") if not f.name.endswith(".tmp.parquet") and ("_분기" in f.name) == 분기 and f.name not in {g.name for g in fs}]
     return fs
 
 
