@@ -59,8 +59,9 @@ def 재무가능일(how):
     pub = pd.to_datetime(f["FP56000900"].astype("Int64").astype(str), format="%Y%m%d", errors="coerce")
     pub = pub.where(pub > end)
     하루 = pd.Timedelta(days=0 if kind == "발표당일" else 1)  # '발표당일': 발표한 날부터(03 진단용)
-    if kind == "발표월말":  # NH(2018) 02 p.14·03 p.18 '분기/연간 재무제표가 발표되는 월의 월말에 반영': 발표한 달 1일부터(월말 리밸런싱이면 그 달 말에 씀, 2026-11-05)
-        return f.assign(결산일=end, 발표일=pub, 가능일=(pub.dt.to_period("M").dt.start_time).fillna(end + pd.Timedelta(days=k)))
+    if kind == "발표월말":  # NH(2018) 02 p.14·03 p.18 '분기/연간 재무제표가 발표되는 월의 월말에 반영': 발표한 날부터 → 월말 리밸런싱이면 그 달 마지막 거래일까지 발표분을 그 달 말에 씀.
+        # 마지막 거래일 뒤 같은 달 휴일(예: 토요일 3/31) 발표분은 다음 리밸런싱부터(그날 종가에는 알 수 없는 정보, 2026-11-05 항목 4 대조에서 고침)
+        return f.assign(결산일=end, 발표일=pub, 가능일=pub.fillna(end + pd.Timedelta(days=k)))
     ok = end + pd.DateOffset(months=k) if kind == "결산후개월" else (pub + 하루).fillna(end + pd.Timedelta(days=k))
     return f.assign(결산일=end, 발표일=pub, 가능일=ok)
 
@@ -90,11 +91,11 @@ def 재무(t, how):
 @cache
 def 분기가능일(시점="다음날"):
     """분기 행마다 쓸 수 있는 날 = 분기 보고서 발표일(FP56000900 분기) 다음 날. 발표일이 없거나 분기말보다 이르면 쓰지 않는다(분기는 대신할 일수 근거가 없어 빈칸).
-    시점="발표월말": 발표한 달 1일부터 = NH(2018) '발표되는 월의 월말에 반영'(월말 리밸런싱에서만 뜻이 맞음, 2026-11-05 2차 진단 4)."""
+    시점="발표월말": 발표한 날부터 = NH(2018) '발표되는 월의 월말에 반영'(월말 리밸런싱이면 그 달 마지막 거래일까지 발표분이 그 달 말에 들어감. 그 뒤 휴일 발표분은 다음 리밸런싱, 2026-11-05)."""
     f = 읽기.분기재무()
     pub = pd.to_datetime(f["FP56000900"].astype("Int64").astype(str), format="%Y%m%d", errors="coerce") if "FP56000900" in f else pd.Series(pd.NaT, f.index)
     pub = pub.where(pub > f["분기말"])
-    return f.assign(발표일=pub, 가능일=pub.dt.to_period("M").dt.start_time if 시점 == "발표월말" else pub + pd.Timedelta(days=1))
+    return f.assign(발표일=pub, 가능일=pub if 시점 == "발표월말" else pub + pd.Timedelta(days=1))
 
 
 def 분기재무(t, 흐름="4분기합", 시점="다음날"):
