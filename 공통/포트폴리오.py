@@ -159,7 +159,7 @@ def 고르기(sc, how):
         a = sc.sort_values(ascending=False).index
         return {"Q1": a[:n], "Q2": a[n:len(a) - n], "Q3": a[len(a) - n:]}
     if len(sc) < n:  # 0종목이거나 분위 수보다 적으면 빈 묶음(구간 수익률 빈칸, 감사 #11; 02 '최근 분기 × 4' 2002-03-29에 1종목뿐 → 5분위 못 나눔, 2026-11-04)
-        return {f"Q{i}": sc.index for i in range(1, n + 1)}
+        return {f"Q{i}": sc.index[:0] for i in range(1, n + 1)}
     q = pd.qcut(sc.rank(method="first", ascending=False), n, labels=[f"Q{i}" for i in range(1, n + 1)])
     return {g: sc.index[q == g] for g in q.cat.categories}
 
