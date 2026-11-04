@@ -103,7 +103,7 @@ def 구간(r, a, b):
 def 저장(R, F, 이름, 롱숏=(), 이상값=None):
     """요약표용: 월수익률(열 = (전략, 가중))과 요인, 이상값 = {열: 포.이상값보유 건수}, 만든 코드의 git 커밋(커밋 안 된 변경 파일 목록 포함)을 결과_월수익률/이름.pkl로 남긴다."""
     결과폴더.mkdir(exist_ok=True)
-    git = lambda *a: subprocess.run(["git", *a], cwd=결과폴더.parent, capture_output=True, text=True).stdout.strip()
+    git = lambda *a: subprocess.run(["git", *a], cwd=결과폴더.parent, capture_output=True, text=True, encoding="utf-8").stdout.strip()  # 한글 파일 이름(utf-8)을 cp949로 읽다 깨지지 않게
     pd.to_pickle(dict(R=R, F=F, 롱숏=list(롱숏), 이상값=dict(이상값 or {}), 커밋=git("rev-parse", "HEAD"), 변경=git("status", "--porcelain", "--", "공통", "따라하기", "연구")), 결과폴더 / f"{이름}.pkl")
 
 
