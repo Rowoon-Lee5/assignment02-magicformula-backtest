@@ -45,6 +45,9 @@ assert np.isclose(w.sum(), 1) and np.isclose(w.max(), 0.2), w
 # 고르기: 분위 Q1 = 점수 가장 높은 쪽
 g = 포.고르기(pd.Series(range(10), list("abcdefghij")), ("분위", 5))
 assert list(g["Q1"]) == ["i", "j"] and list(g["Q5"]) == ["a", "b"], g
+# 종목이 분위 수보다 적으면 모든 분위가 빈 묶음(감사 2 H1)
+g = 포.고르기(pd.Series([1.0, 2.0, 3.0], list("abc")), ("분위", 5))
+assert list(g) == ["Q1", "Q2", "Q3", "Q4", "Q5"] and all(len(x) == 0 for x in g.values()), g
 
 # 순위합산: 둘 다 1등인 종목이 최고
 v = pd.DataFrame({"x": [3, 2, 1], "y": [1, 2, 3]}, index=["p", "q", "r"])
