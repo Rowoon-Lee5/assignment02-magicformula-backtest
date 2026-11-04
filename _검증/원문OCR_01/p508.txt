@@ -1,0 +1,46 @@
+﻿Journal of the Korea Academia-Industrial
+cooperation Society
+V01. 24, No. 3 PP. 508-519, 2023
+https://doi.org/10.5762/KAIS.2023.24.3.508
+ISSN 1975-4701 / eISSN 2288-4688
+한국주식시장에서의 마법공식 투자전략 성과분석
+우동호1, 최흥식2*, 김선웅2
+1우호택스앤파트너스 2국민대학교 비즈니싀T전문대학원
+Magic Formula lnvestment Strategy Performance Analysis in the
+Korean Stock Market
+2
+Dong Ho W00 , Heung Sik Choi , Sun Woong Kim
+1
+W00 Ho Tax & Partners
+2
+Graduate SchooI of Business IT, Kookmin University
+요 약 과거부터 주식시장에서 초과수익률인 알파를 얻기 위한 학문적, 실증적 연구는 계속되어 왔다. 전통적인 가치투
+자의 연구 외에 Greenblatt의 마법공식과 같은 실증적인 투자전략도 존재하는데, 해외 연구들을 통해 마법공식이 통계
+적으로 유의한 알파를 창출해내는 것으로 나타났지만 한국시장에 적용한 연구는 없었다. 본 연구에서는 기존 마법공식에
+적용된 자본수익률 비율인 ROC(Return on CapitaI) 대신 GP/A(Gross Profit Per Assets)를 활용하여 개선된 마법공
+식을 만들고 2004년 4월부터 2022년 3월까지 한국시장에 마법공식과 개선된 마법공식의 투자성과를 분석하였다. 실증
+분석한 결과는 다음과 같다. 첫째, 벤치마크인 KOSPI 대비 높은 성괴를 나타냈지만 알파의 계수가 통계적으로 유의하지
+는 않았다. 둘째, 전체 종목을 시가총액 기준 5분위로 나눠 각 분위별로 분석한 결과 소형주인 1분위에서 3분위까지는
+뛰어난 투자성과 분만 아니라 위험을 통제한 상황에서도 통계적으로 유의한 알파 계수를 발견할 수 있었다. 또한 개선된
+마법공식은 모든 분석구간에서 기존의 마법공식 대비 뛰어난 수익률과 더 강한 알파의 통계적 유의성을 나타냈다.
+Abstract Academic and empirical studies have been conducted tO find alpha, the excess return Of the
+StOCk market. ln addition tO research on traditional value investing, there are alSO empirical investing
+strategies such as Greenblatt's magic formula. Overseas studies have revealed that a magic formula
+produces statistically significant alpha, but no investigation applied it tO a domestic market. ln this
+study, we used GP/A (Gross Profit Per Assets) instead of ROC (Return on Capital), which is the rate 0f
+return on capital applied tO the existing magic formula, tO create an improved magic formula, and this
+magic formula and the improved magic formula. The f0110\ⅵng results were obtained by our empirical
+analysis. First the improved magic formula had a better performance than the benchmark KOSPI, but
+the alpha coefficient was not statistically significant. Second, as a result Of dividing a11 stocks intO five
+quintiles based on market capitalization, we not only revealed excellent investment performance even
+under risk control, but alSO found statistically significant alpha coefficients ⅱ1 the lst tO 3rd quintiles
+Of small stocks. ln addition, the improved magic formula showed superior returns and higher alpha
+statistical significance compared tO the existing magic formula in a11 analysis sections.
+Keywords : Magic Formula, GP/A, lnefficient Market, Value lnvestment, Quantitative lnvestment
+*Corresponding Author : Heung Sik Choi(Kookmin Univ.)
+email: hschoi@kookmin.ac.kr
+Received January 12, 2023
+Accepted March 3, 2023
+Revised February 13, 2023
+PubIished March 31, 2023
+508
