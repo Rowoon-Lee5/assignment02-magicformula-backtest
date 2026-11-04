@@ -23,16 +23,23 @@ TR, 수정주가, 종가, 거래대금, 거래량, 시총, 주식수, 정지구�
 시장구분, 업종, WICS, 관리여부, 정지여부, 결산월, 발표일 = "CP10000300", "CP10001090", "CP10000600", "CP10001660", "CP10001650", "CP10002200", "FP56000900"
 
 
-def 목록(pat):
-    return [f for f in DATA.glob(f"통합_일간_{pat}.parquet") if not f.name.endswith(".tmp.parquet")]  # 변환 중인 .tmp 파일은 안 봄
+분기캐시 = Path(__file__).resolve().parent.parent / "_캐시" / "분기"  # 분기 xlsx를 감독 변환기 함수로 바꾼 parquet(`_검증/분기_변환.py`, data 폴더에 안 씀)
 
 
-def 있음(item):
-    return bool(목록(f"{item}_*"))
+def 목록(pat, 분기=False):
+    """분기=False: 결산(연간)·일반 파일만, True: '분기3M' 파일만(같은 아이템코드로 결산·분기 두 파일이 있음, 추가 지시 F 2026-11-04)."""
+    fs = [f for f in DATA.glob(f"통합_일간_{pat}.parquet") if not f.name.endswith(".tmp.parquet") and ("_분기" in f.name) == 분기]  # 변환 중인 .tmp 파일은 안 봄
+    if 분기:  # data 폴더에 같은 파일이 있으면 그것, 없으면 저장소 캐시
+        fs += [f for f in 분기캐시.glob(f"통합_일간_{pat}.parquet") if not f.name.endswith(".tmp.parquet") and f.name not in {g.name for g in fs}]
+    return fs
 
 
-def 파일(item):
-    f = 목록(f"{item}_*")
+def 있음(item, 분기=False):
+    return bool(목록(f"{item}_*", 분기))
+
+
+def 파일(item, 분기=False):
+    f = 목록(f"{item}_*", 분기)
     if not f:
         raise FileNotFoundError(f"{item} 파일이 {DATA}에 아직 없음 → 파일 오면 다시 실행")
     (f,) = f
@@ -119,6 +126,34 @@ def 연간재무():
         bad = ~np.isnan(a) & ~np.isnan(b) & (a != b)
         e[item], 검사[item] = np.where(bad, np.nan, a), int(bad.sum())
     return e.drop(columns="날짜")
+
+
+분기흐름 = ["M000908004", "M000904001", "M000909001", "M000906001", "M000701032"]  # 지배순이익·매출·영업CF·영업이익·EBITDA: 분기(3개월) 값 → 4분기 합 등
+분기잔액 = ["M000903003", "M000903001", "M000902001", "M000901001", "M000901030"]  # 자본(지배)·자본총계·부채·자산·현금: 분기말 값
+
+
+@cache
+def 분기재무():
+    """분기(3개월, Fiscal) 달력기준 일간 재무 → (코드, 분기말) 행. 값은 그 분기 동안 같고 분기 첫날 바뀐다(R40 삼성전자 확인).
+    분기말 = 결산월 이력(CP10002200)과 3개월 간격인 달(결산월, −3, −6, −9)의 마지막 영업일. 그날 값을 그 분기 값으로, 그 분기 첫 영업일 값과 다르면
+    믿을 수 없어 빈칸(연간재무와 같은 확인, 빈칸 수는 검사['분기:'+코드]). FP56000900(분기) = 그 분기 보고서 발표일. 받은 분기 파일만 열로 넣는다."""
+    m = 일간(결산월)
+    g = m.index.to_series().groupby(m.index.to_period("M"))
+    last, first = g.max(), g.min()
+    e = m.loc[last].apply(lambda x: pd.to_numeric(x.astype(object))).stack().rename("CP10002200").reset_index()
+    e.columns = ["날짜", "코드", "CP10002200"]
+    e = e[(e["날짜"].dt.month - e["CP10002200"]) % 3 == 0].sort_values(["코드", "날짜"]).reset_index(drop=True)
+    시작 = (e["날짜"].dt.to_period("M") - 2).map(first)
+    need = pd.DatetimeIndex(sorted(set(e["날짜"]) | set(시작.dropna())))
+    for item in [i for i in 분기흐름 + 분기잔액 + ["FP56000900"] if 있음(i, 분기=True)]:
+        t = pq.read_table(파일(item, 분기=True))
+        d = t.take(pd.Index(t.column("날짜").to_pandas()).get_indexer(need)).to_pandas().reindex(columns=m.columns)
+        assert d.index.equals(need), f"{item}: 분기 파일 날짜가 다름"
+        c, x = d.columns.get_indexer(e["코드"]), d.to_numpy(float)
+        a, b = x[d.index.get_indexer(e["날짜"]), c], x[d.index.get_indexer(시작), c]
+        bad = ~np.isnan(a) & ~np.isnan(b) & (a != b)
+        e[item], 검사["분기:" + item] = np.where(bad, np.nan, a), int(bad.sum())
+    return e.rename(columns={"날짜": "분기말"})
 
 
 @cache
