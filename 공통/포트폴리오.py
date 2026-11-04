@@ -239,8 +239,11 @@ def 보유(R, W, 비용, 전량=False, 회전=None):
         c = 거래비용(old, w[:0], 비용) + 거래비용(w[:0], w, 비용) if 전량 else 거래비용(old, w, 비용)
         if 회전 is not None:
             회전[t0] = w.sub(old, fill_value=0).clip(lower=0).sum()  # 한쪽 회전율 = 산 비중 합(처음 매수 = 1). 전량교체 비용과 별개
-        pr.iloc[0] = (1 - c) * (1 + pr.iloc[0]) - 1
-        old = g.iloc[-1] * w / (g.iloc[-1] * w).sum()
+        i = pr.first_valid_index()  # 첫 달이 빈칸(보유 종목 모두 값 없음)이면 값 있는 첫 달에 뺀다(한계 15번, 2026-11-04). 구간 내내 빈칸이면 비용도 없음
+        if i is not None:
+            pr.loc[i] = (1 - c) * (1 + pr.loc[i]) - 1
+        살아있음 = r.iloc[-1].notna()  # 마지막 달 수익률이 빈 종목(폐지 등)은 pr에서 이미 빠져 남은 종목에 다시 넣은 셈 → 다음 매도비용·회전율에서 뺀다(한계 21·40번, 2026-11-04)
+        old = (g.iloc[-1] * w)[살아있음] / (g.iloc[-1] * w)[살아있음].sum()
         out.append(pr)
     return pd.concat(out)
 

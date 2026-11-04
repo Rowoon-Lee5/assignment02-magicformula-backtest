@@ -22,6 +22,14 @@ W1 = {d[0]: pd.Series(1.0, ["A"]), d[1]: pd.Series(1.0, ["A"])}
 c1 = dict(수수료=0.001, 거래세=0.01, 슬리피지=0.002)
 assert np.isclose(포.보유(R1, W1, c1, 전량=True).iloc[1], -(0.013 + 0.003))
 
+# 폐지 종목 몫엔 매도비용 없음(한계 21·40번): A·B 반반, 2월 B 폐지(빈칸) → 3월 리밸런싱(A 100%)에서 팔 것은 A뿐 → 전량교체 비용 = A 매도 1 × 0.013 + 매수 1 × 0.003
+R2 = pd.DataFrame({"A": [np.nan, 0.0, 0.0, 0.0], "B": [np.nan, np.nan, np.nan, np.nan]}, index=d)
+assert np.isclose(포.보유(R2, {d[0]: pd.Series(0.5, ["A", "B"]), d[2]: pd.Series(1.0, ["A"])}, c1, 전량=True).loc[d[3]], -(0.013 + 0.003))
+# 첫 달 빈칸이면 비용은 값 있는 첫 달에(한계 15번): 2월 A 빈칸, 3월 0 → 3월에 매수비용 0.003
+R3 = pd.DataFrame({"A": [np.nan, np.nan, 0.0]}, index=d[:3])
+r = 포.보유(R3, {d[0]: pd.Series(1.0, ["A"])}, c1)
+assert np.isnan(r.loc[d[1]]) and np.isclose(r.loc[d[2]], -0.003), r
+
 # 월비용: 수익 0인 달마다 −0.2%
 assert np.allclose(포.보유(R1, {d[0]: pd.Series(1.0, ["A"])}, dict(수수료=0, 거래세=0, 슬리피지=0, 월비용=0.002)), -0.002)
 
