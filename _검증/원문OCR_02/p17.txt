@@ -1,0 +1,33 @@
+﻿www.nhqv.com
+3. 최신 데이터 사용에 따른 낼류 프리미엄 변화
+1) 최신 주가데이터 사통
+Fama & French의 3-Factor ModeI은 전년도 12월말 장부가와 주가로 계산한
+P/B 지표를 사용해 매년 6월말 종목을 선정한다. 따라서 다음해 리밸런싱 직전이
+되면 최대 18개월 이전의 데이터로 선정한 밸류 포트폴리오가 된다.
+3-Factor Model 방법으로 선정한 HML 포트폴리오는 여전히 밸류 프리미엄의 존
+재를 증명하고 있지만 최근 들어 데이터의 접근성이 현저히 개선된 만큼 최신 재무
+데이터를 이용할 경우 성과 개선도 가능할 것이다.
+실제 Asness and Franzzini (2013)에 따르면 3-Factor Model과 동일하게 전년도
+12월말 장부가치를 사용하고 주가를 현재 주가로 사용한 경우 성과가 개선됐다. 또
+한 매년 6월말 대신 매월말 주가 기준으로 HML 포트폴리오를 업데이트한 경우 더
+욱 성과가 좋아졌다. 특히 2008년 금융위기처럼 주가 변동성이 큰 시기에는 P/B
+지표도 급변하기 때문에 이에 따른 효과가 컸다(그림21, 22 참조).
+그림21. 최신 주가 데이터를 사용할 경우 HML 밸류 포트폴리오
+성과 개선 (글로벌 주식 대상)
+250%
+150%
+-50%
+-100%.
+Monthly, Current
+Annual, Lagged
+Annual, Current
+주 글로벌 주식 대상 HML대igh MinusLow) 벨류 포트폴리오 성과
+사료 Asness and Fran끠ni (2013)
+NH투자증권
+그림22. 최신 주가 데이터 사용할 경우 2008년 금융위기와
+같은 주가 변동성 확대 시기 이후 효과 큼
+10%
+-- Monthly, Current HML TotalReturn - Annual,Lagged HML TOtal Retum
+-*- Annual, Current HML TotalReturn -,- UMD To네 Return
+주 글로벌 주식 대상 HML대igh MinusLow) 포트폴리오 성과
+사료 Asness and Fran끠ni (2013)

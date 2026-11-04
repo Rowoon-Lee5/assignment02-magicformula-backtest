@@ -1,0 +1,47 @@
+﻿자산배분
+I. 버핏의 알파, *21fl(QuaIityl와 로우볼[Low VOII
+1.5개 팩터 중 결리티와 로우볼
+www.nhqv.com
+지난 7월 16일 발간 Korea Factor lnvesting 시리즈(1)에서 밝힌 바와 같이 과거
+종목 선택(Stock Selection)의 결과로 여겨졌던 액티브의 알파(a)는 다양한 팩터에
+의한 성과로 해석되고 있는 추세다. 장기적으로 시장을 Outperform하는 팩터로 5
+가지(OVaIue, @Size, OMomentum, OQuality, ㉭Lo₩ Volatility)를 꼽을 수 있
+다(그림1 참조).
+Frazzini, Kabiller, and Pedersen는 2013년 발표한 "Buffet's Alpha"라는 논문을
+통해 역사상 가장 높은 수익률을 올린 투자자 위런 버핏의 투자 성과를 팩터 관점
+에서 분석했다.
+그 결과 버핏의 투자 성과는 ㉦기업 가치 대비 주가가 싸고(밸류), ㉣주가변동성이
+낮으며(로우볼), ㉭재무건전성이 뛰어난 하이 퀄리티(퀄리티) 종목 선택이라는 3가
+지 팩터로 해석 가능했다. 또한 이러한 팩터 기반 포트폴리오로 버핏의 성과를 시
+스템적으로 복제 가능하다고 주장했다(다음페이지 그림2 참조).
+버핏의 알파 중, 퀄리티 팩터는 재무건전성이 높은 '하이 퀄리티대igh Quality)' 종
+목의 주가수익률이 장기적으로 시장을 Outperform하는 프리미엄으로 정의할 수
+있다. 로우볼 팩터는 주가변동성이 낮은 종목이 시장을 Outperform하는 프리미엄
+이다(다음페이지 표1 참조).
+1편의 밸류 팩터에 이어, 이번 보고서에서는 퀄리티와 로우볼 팩터의 특성과 한국
+주식시장의 퀄리티와 로우볼 팩터 프리미엄에 대해 분석했다.
+그림1. 팩터 프리미엄이 있는 5가지 팩터
+Premium in LOW
+Valuation
+stocks.
+Smaller cap
+stocks tend
+tO outperform.
+Lower volatility
+stocks tend tO
+generate a
+higher risl<-
+adjusted return.
+Quality
+compames are
+rewarded with
+stronger
+share prices.
+Stocks which
+have done well
+recently tend tO
+carry on d0ing well
+in the near term.
+사료 State Street G10bal Advisors
+NH투자증권
+2

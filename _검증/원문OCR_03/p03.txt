@@ -1,0 +1,37 @@
+﻿자산배분
+표1. 주요 팩터 정의
+팩터
+Value
+Low VoIatiIity
+Momentum
+Quality
+Dividend
+Size
+www.nhqv.com
+이익(Earnings), 장부가치(Book value), 현금흐름(Cash Flow), 매줄(Sales) 등 편더멛탈 대비 주가가 낮은 종목에 투사
+주가 변동성이 낮은 종목에 투자
+최근 주가 모멘텀이 큰 종목에 투사
+ROA, ROE, 부재비율 등의 지표를 이용해 ,하이 퀄리EI, 종목에 투자
+배당주(배당성장, 고배당)에 투사
+人l가종액 가중지수 대비 중, 소형주 비중을 높이는 전략
+사료 NH투사증권 리서치본부
+그림2. 밸류, 퀄리티, 로우볼 팩터로 버핏의 성과를 복제하는 포트폴리오 구현 가능
+&1%4鰍圁
+$10결예.cn
+S10,00
+SI』囟
+$410
+1976 1978 1%0
+Hathaway
+iftett•Styte Portf01i0
+0,쬬r회 5별(k (넣v활r하馝 1월 !기1쏘 vd.)
+1982
+1%4
+1輞
+1988
+1990
+1992 1″ 1996 19% 20㈌ 2예2 2″ 2006 2008 2010
+사료 Fra끠ni, Kabiller, and Pedersen (2013),
+NH투자증권
+"Buffet's AIpha", Working Paper, AQR Management
+3

@@ -1,0 +1,38 @@
+﻿www.nhqv.com
+4. 팩터 지수와 스마트 베타 ETF
+최근 패시브 투자의 확산과 ETF의 대중화로 인해 간단하게 팩터 투자를 구현할
+수 있는 ETF들도 인기를 끌고 있다.
+MSCI 등 주요 지수 제공업체들은 다양한 팩터 지수를 개발하고, ETF 운용사들은
+이들 지수를 추종하는 ETF를 출시하고 있다. 이들 ETF를 일반적으로 스마트 베타
+(Smart Beta) ETF라고 부른다.
+미국 시장에서는 스마트 베타 ETF가 전체 ETF 자산의 약 20% 이상을 차지할 정
+도로 성장했다.
+그림9. MSCI의 다양한 팩터 지수
+THE PYRAMID OF BETA: DIFFERENT METHODS TO BUILD FACTOR
+INDEXES
+Higher
+Exposure
+Higher
+Complexity
+• Lower
+lnvestability
+Pure
+Factors
+Optimized Factor
+lndexes
+High Exposure Factor lndexes
+High Capacity Factor lndexes
+Market Cap Benchmark lndexes
+사료 MSCI
+NH투자증권
+ExampIes 0f existing MSCI factor
+indexes based on different factor
+index construction methodologies:
+MSCI Diversified Multi
+Factor lndexes
+MSCI Enhanced Value
+lndexes
+MSCI Value
+Weighted lndexes
+MSCI ACWI
+7

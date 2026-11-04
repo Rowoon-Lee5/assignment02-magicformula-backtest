@@ -1,0 +1,57 @@
+﻿자산배분
+www.nhqv.com
+일반적으로 경기 사이클상 경기 침체기에 퀄리티와 로우볼 팩터의 성과가 양호한
+것으로 알려져 있다(그림8 참조). 또한 주식시장 변동성 상승기 퀄리티와 로우볼
+팩터는 공통적을 시장 해지 역할을 한다(그림9, 다음페이지 그림10 참조).
+종합하면, 퀄리티와 로우볼 팩터는 공통적으로 주식시장 하락기 포트폴리오 해지
+역할을 하는 디펜시브 팩터 전략의 특징을 갖는다.
+그림8. 경기 사이클에 따라서 각 국면별 주가수익률이 우수한 팩터
+Pro•cyclical
+Boom
+Positive
+1
+economic growth
+1
+Negative
+economic growth
+Defensive
+Pro•cyclical
+Recovery
+Value
+Momentum
+LOW Size
+사료 DWS, NH투사증권 리서치본부
+Slowdown
+Quality
+LOW volatility
+Recession
+Quality
+LOW volatility
+Value
+Momentum
+LOW Size
+그림9. 변동성 상승 시기 퀄리티 지수는 시장 대비 Outperform
+C97 12=100P)
+150
+140
+130
+120
+110
+100
+90
+80
+MSCI WorId Quality lndex/MSCI WorId lndex(좌)
+Ⅵ)((우)
+'97 '98 '99 '00 '01 '02 '03 '04 '05 '06 '07 '08 '09 '10 너1
+사료 Bloomberg, NH투사증권 리서치본부
+NH투자증권
+(리
+70
+60
+50
+40
+30
+20
+0
+'12 '13 '14 '15 '16 '17 '18
+8

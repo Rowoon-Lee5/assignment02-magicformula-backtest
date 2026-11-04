@@ -1,0 +1,79 @@
+﻿그림2. 팩터 투자의 역사
+1934
+Value lnvesting
+Graham & Dodd
+1960
+1930
+사료 DWS
+NH투자증권
+1963
+CAPMlSingle lndex MOdel
+Market Risk Factor
+Sharpe, Lintner & Mossin
+www.nhqv.com
+1992
+3-Factor Model
+Market Risk Factor, Value, Size, Fama & French
+1997
+4-Factor Model
+Market Risk, Value, Size, Momentum
+1981
+Size Factor
+Banz
+1990
+1982
+Value Factor
+Carhart
+2000
+1970
+1971
+1980
+1972
+LOW Volatility Factor
+Basu
+Haugen & Heins
+2015
+5-Factor Model
+Profitability, lnvestment
+Fama & French
+2010
+2000
+First Smart Beta ETF
+Arbitrage Pricing Theory
+Multifactor Model Ross
+그림3.90년대 이후 알파(AIpha)를 다양한 팩터(Factor) 프리미엄으로 설명하는 추세
+Alpha/
+ldiosyncratic
+Risk
+Active
+Returns
+Excess
+Market
+Beta
+1980s
+사료 Allianz G10baI lnvestors, MSCI
+Alpha/
+ldiosyncratic Risk
+Value
+Factor
+SmaII Cap
+Factor
+Excess
+Market
+Beta
+1990s
+Alpha/
+ldiosyncratic Risk
+Value
+factor
+SmaII Cap
+factor
+Momentum
+factor
+LOW VoIatiIity
+factor
+Excess
+Market
+Beta
+2000s
+3

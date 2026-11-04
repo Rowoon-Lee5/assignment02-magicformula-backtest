@@ -1,0 +1,29 @@
+﻿www.nhqv.com
+I. 팩터 프리미엄, 알파의 원전을 찾아서
+1. 팩터 투자[Factor Based lnvesting]의 역사
+투자의 궁극적인 목표는 시장 대비 꾸준한 초과수익이다.
+1963년 발표된 CAPM(Capital Asset Pricing Model)은 주식의 초과수익을 시장수
+익률 한 가지 팩터로 설명하고, 이에 따라 주식(Equity) 자산이 무위험 이자수익률
+대비 리스크 프리미엄을 갖는다고 해석한다. 시장수익률 외에 발생하는 초과수익,
+즉 알파는 개별종목의 리스크 프리미엄(ldiosyncratic Risk)으로 간주했다(그림1 참
+하지만 1993년 발표된 Fama-French 3-Factor 모rfl(Fama and French, 1993)에
+따르면 초과 수익률은 0시장수익률(베타) 외에 ㉣Ⅴalue(가치주), ㉭Size(중, 소형
+주 효과의 3 가지 요소로 설명된다(다음페이지 그림2, 3 참조).
+이는 장기적으로 밸류에이션이 낮은 밸류 주식과 시가총액이 작은 중, 소형주(Size)
+가 장기적으로 시장을 Outperform하며, 해당 주식은 밸류, 사이즈 프리미엄을 갖
+는다. 이후 발표된 4-Factor 모델에서는 @Momentum 팩터를, 5-Factor 모델에서
+@Quality 팩터가 추가됐다(다음페이지 그림2, 3 참조).
+결론적으로 팩터 투자는 장기적으로 시장 대비 초과수익을 창출하는 팩터 프리미
+엄(Factor Premium)에 대한 투자라고 할 수 있다.
+필자는 "Korea Factor lnvesting 시리지를 통해 한국 시장에서 주요 팩터 프리미
+엄 존재에 대해 실증적으로 검증해 보고, 현실적인 단일 팩터 및 멀티 팩터 포트폴
+리오 구현 방안을 제시하고자 한다.
+그림1. 자본자산결정모훼CapitaI Asset Pricing ModeI)
+Risk Free
+Rate
+사료 VaIuationApp
+NH투자증권
+Beta
+Excess
+Market Retum
+2

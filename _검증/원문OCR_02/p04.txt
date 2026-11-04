@@ -1,0 +1,72 @@
+﻿그림4. 기간별 발간 논문과 언급된 팩터 개수
+Publi$hed
+www.nhqv.com
+2. 주식 시장의 주요 팩터와 성과
+Fama-French 3-Factor Model 이후 다양한 논문에서 수많은 팩터들이 연구되어
+왔다. 이로 인해 일종의 “팩터 과잉" 상태에 있다고도 할 수 있다(그림4, 5 참조).
+따라서 장기적으로 다양한 시장에서 팩터 프리미엄이 검증된 기본적인 팩터들에 집
+중할 필요가 있다.
+현재 금융투자업계와 학계에서는 OValue, @Size, ㉭Momentum, OQuality, ㉭
+Low Volatility 등 5가지 팩터가 장기적으로 검증된 팩터 프리미엄(Factor
+Premium)을 갖고 있는 것으로 인정되고 있다. 5가지 팩터에 배당(Dividend)을 포
+함시키기도 한다(그림6 참조).
+Momentum 팩터는 최근 주가수익률이 좋았던 종목이 향후에도 시장을 이기는 추
+세추종 개념이며, Quality 팩터는 ROA가 높고, 부채비율이 낮은 등의 High Quality
+종목이 장기적으로 시장을 Outperform하는 현상이다. Low Volatility 팩터는 주가
+변동성이 낮은 종목이 장기적으로 시장 대비 초과수익을 거두는 저변동성 이상현상
+(Low Vol Anomaly)를 의미한다(다음페이지 표1 참조).
+00-04 05-09
+10-13
+그림5. 누적 발간 논문과 언급된 팩터 개수
+CumuIative numbe「 하 facto「s
+350
+300
+250
+200
+1 50
+100
+50
+0
+—Published papers
+-• 시| papers
+100
+# 0f POPers
+하 foctors
+0
+1960 70
+사료 나)℃r Management, Harvey 해
+NH투자증권
+80 90-9十 95-99
+(2014)
+1960 70
+60
+90
+(2014)
+2000
+10
+20
+사료 나)℃r Management, Harvey 해
+그림6. 팩터 프리미엄이 있는 5가지 팩터
+Premium in LOW
+Valuation
+stocks.
+Smaller cap
+stocks tend
+tO outperform.
+Lower volatility
+stocks tend to
+generate a
+higher risk-
+adjusted return.
+Quality
+compames are
+rewarded with
+stronger
+share prices.
+사료 State Street G10bal Advisors
+Stocks which
+have done well
+recently tend tO
+carry on doing well
+in the near term.
+4

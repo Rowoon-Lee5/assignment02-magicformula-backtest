@@ -1,0 +1,158 @@
+﻿표3. 주요 글로벌 투자(스마트 베타) 지수 방법론
+측정지표
+편입비중/
+리밸던싱
+팩터
+Value
+Quality
+Low VOI /
+Min VOI
+Momentum
+Value
+Quality
+Low VOI /
+Min VOI
+Momentum
+MSCI
+P/E P/B, EV/CFO
+ROE Debtt0 Equity, 5년 EPS 변동성
+Covariance Matri)(
+6개월, 12개월 주가 수익률 / 변동성
+동일가중
+최근 1개월 주가 수익률 제외
+125개 주식 人l가종액
+섹터 NeutraIize
+반기 리밸련싱
+125개 주식 人l가종액 * QuaIity 스코어
+섹터 NeutraIize
+반기 리밸련싱
+Min Variance 최적화
+(국가 상대비중, 섹터 상대비중,
+Barra Factor Exposure,
+반기 리벨련싱
+125개 주식 人l가종액
+스코어
+FTSE
+Cash Flow YieId, Earnings Yield, P/S
+ROA, Accruals, 종사산회전율, Leverage
+Ratio
+5년 주간 변동성
+Covariance Matri)(
+12개월 주가 수익률
+* Value 스코어
+Cash Flow YieId, Earnings Yield P/S
+Turnover)
+* Momentum
+섹터 비중 제한(+/-5%)
+반기 리벨련싱
+ROA, Accruals, 종사산회전율, Leverage
+Ratio
+5년 주간 변동성
+Min Variance 최적화
+(국가비중, 섹터비중, 포트폴리오 분산)
+반기 리벨련싱
+12개월 주가 수익률
+기소지수
+Russell 1000 Value lndex
+www.nhqv.com
+S&P
+P/B, P/E P/S
+ROE Accruals Ratio,
+타인사본의존도(FinanciaI
+Leverage)
+12개월 일간 변동성
+Covariance Matri)(
+12개월 주가 수익률
+(최근 2개월 제외)
+P/B P/E P/S
+ROE Accruals Ratio, Financial
+Leverage
+12개월 일간 변동성
+Min Variance 최적화
+(섹터H l중, Factor Exposure,
+Turnover)
+반기 리벨련싱
+12개월 주가 수익률
+(최근 2개월 제외)
+사료 MSCI, FTSE Russell, S&P, NH투사증권 리서치본부
+표4. 주요 미국 상장 팩터(스마트 베타) ETF
+전략
+Value
+Momentum
+Quality
+Size
+Low
+VoIatiIity
+Dividend
+Yield
+티커
+IWD US
+VTV US
+MTUM US
+FV US
+PDP US
+QUAL US
+RSP US
+l개 US
+IJRUS
+USMV US
+SPLV US
+VIG US
+VYM US
+ETF 명
+iShares Russell 1000 Value ETF
+Vanguard Value lndex Fund
+iShares MSCI USA Momentum Factor ETF
+First Trust Dorsey Wright Focus 5 ETF
+lnvesco DWA Momentum Portfolio
+iShares Edge MSCI USA Quality Factor ETF
+lnvesco S&P 500 EquaI Weight ETF
+iShares Core S&P Mid-Cap ETF
+iShares Core S&P SmaII-Cap ETF
+iShares Edge MSCI Min VOI USA ETF
+lnvesco S&P 500 Low VOIatiIity Portfolio
+Vanguard Dividend Appreciation lndex Fund
+Vanguard High Dividend YieId lndex Fund
+CRSP US Large Cap Value lndex
+MSCI USA Momentum lndex
+Dorsey Wright Focus 5 lndex
+Dorsey Wright Technical Leaders lndex
+MSCI USA SECTOR NEUTRAL Quality lndex
+S&P 500 Equal Weight lndex
+S&P Mid Cap lndex
+S&P SmaIICap 600 lndex
+MSCI USA Minimum VOIatiIity lndex
+S&P 500 Low Volatility lndex
+NASDAQ US Dividend Achievers SeIect lndex
+FTSE High Dividend YieId lndex Net TR US RIC
+종자산
+36,589.53
+63 854.24
+7 740.00
+2,585.22
+1 549.34
+4,675.05
+14 676 64
+45 247.58
+38,103 24
+14,195.57
+701149
+33 950 42
+28,172.32
+사료 Morningstar, NH투사증권 리서치본부
+NH투자증권
+종보수
+(0/0
+0.2
+0.06
+0.15
+0.64
+0.15
+04
+0.07
+0.07
+0.15
+025
+0.09
+0.08
+8

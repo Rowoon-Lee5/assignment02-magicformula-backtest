@@ -1,0 +1,66 @@
+﻿www.nhqv.com
+2. 측정 지표에 따른 낼류 프리미엄
+1) 밸류 측정 지표와 글로벌 주식 시장의 밸류 프리미엄
+미국에서도 Growth의 성과가 Value의 성과를 Outperform하는 현상이 지속되고
+있다(그림10 참조). 이에 대해 밸류 투자가 끝났다는 주장도 나온다. 최근 Growth
+의 우수한 성과는 상당부분 FANG(Facebook, Amazon, Netflix, G00힌e)주의 주가
+상승에 기인한다(표7 참조).
+Fama & French의 3-Factor Model에서 밸류 팩터의 성과를 의미하는 HML대igh
+Minus Low)는 P/B(Price Book Ratio)을 기준으로 종목을 선정한다. 이 영향으로
+밸류 지수나 종목 선정에 사용되는 측정 지표로서 P/B의 비중이 높은 편이다.
+미국 주식 시장에 P/B 지표를 활용한 밸류 투자의 성과는 거의 10년간 부진했다.
+반면 EV/EBITDA와 같은 지표를 사용할 경우 최근에도 양호한 성과를 기록했으
+며, 2010년 이후로는 P/FCF(Free Cash Flow) 지표를 사용할 경우 효과적이었다.
+따라서 소위 말하는 밸류 팩터의 부진은 사실상 P/B 지표의 부진이라 볼 수 있다
+(다음페이지 그림11 참조).
+그림10. S&P 500 舒owth지수가 VaIue 지수를 Outperform
+(2011 1.4=100P)
+표7. S&P 500 Growth 지수와 VaIue 지수 비중 상위 종목
+S&P 500 Growth 지수
+320
+270
+220
+170
+120
+70
+S&P 500 Value
+S&P 500 Growth
+'14.1
+'15.1
+Apple lnc
+Microsoft Corp
+Amazon.com lnc
+Facebook lnc A
+AIphabet lnc C
+AIphabet lnc A
+Visa lncA
+IT
+IT
+S&P 500 VaIue 지수
+Berkshire HathawayB 금융
+JP Chase&C0 금융
+사유소비재 Exxon M0bil Corp
+IT
+IT
+IT
+IT
+WeIIs Fargo & CO
+Chevron Corp
+AT&T lnc
+Verizon
+Communications lnc
+Unitedhealth Grouplnc 엘스케어 Citigroup lnc
+'16.1
+Home Depot lnc
+Boeing CO
+사유소비재 DowDuPont lnc.
+산업자1 Johnson & Johnson
+에너지
+에너지
+통신서비스
+통신서비스
+소재
+엘스케어
+사료 Bloomberg, NH 투사증권 리서치본부
+NH투자증권
+사료 S&P 500, NH 투사증권 리서치본부

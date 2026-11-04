@@ -1,0 +1,62 @@
+﻿www.nhqv.com
+II. 한국 시장의 낼류[VaIuel 프리미엄
+1. 낼류 프리미엄의 역사
+밸류 팩터는 편더멘탈 지표 대비 주가가 낮은 종목 투자를 통해 밸류 프리미엄을
+추구한다. 흔히 언급되는 가치투자의 근간이 밸류 프리미엄이며, 1934년 그레이엄/
+도드의 증권분석에서 시작되어 그 역사가 무척 길고, 다양한 연구를 통해 성과가
+입증됐다(표5 참조).
+또한 밸류 팩터는 여타 주요 팩터와 낮은 상관관계를 보이기 때문에 멀티 팩터 포
+트폴리오 구성에 있어 매우 중요한 팩터다(표6 참조).
+이에 한국 시장의 밸류 프리미엄을 다각적으로 점검했다.
+점검하고자 하는 주제는 1) 어떤 지표로 밸류를 측정할 것인가?, 2) 최신 데이터
+사통 효과, 리밸런싱 주기에 따른 영향, 3) 시기총액, 유동성에 따른 밸류 프리미엄
+차이, 4) 코스닥의 밸류 프리미엄 등이다.
+표5. 밸류 프리미엄에 대한 주요 연구
+소기 연구: One-Dimensional Description ofVaIue
+- Basu (1977)
+- Rosenburg, Reid, Lanstein (1985)
+2 세대 연구: Multi-Dimensional Description Of VaIue
+- Fama & French (1992)
+- Basu (1983)
+- Lakonish0k, ShIeifer, Vishny (1994)
+Fama & French 3 Factor Model 계승
+- High Minus LOW 대ML) Factor (1993)
+- Multi-Factor success with LSV portfolios (1995)
+사료 NH투사증권 리서치본부
+표6. 미국 주요 팩터 지수 상관관계
+팩터
+Value
+Low ⅴ이
+Momentum
+Quality
+Dividend
+Size
+Value
+1
+-0.19
+-0.63
+-0.59
+0.07
+Low ⅴ이
+1
+0
+0.78
+-0.03
+주 최근 5년간 미국 주요 ETF가 주종하는 팩터 지수의 S&P500 대비 월간 상대수익률의 상관관계를 계산
+Momentum
+1
+0.12
+032
+-0.03
+Quality
+1
+-0.23
+-0.01
+Dividend
+1
+022
+Size
+1
+사료 NH투사증권 리서치본부
+NH투자증권
+9

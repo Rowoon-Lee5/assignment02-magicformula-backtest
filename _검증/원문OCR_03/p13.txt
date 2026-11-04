@@ -1,0 +1,96 @@
+﻿자산배분
+표8. 한국과 미국에 상장된 주요 로우볼 ETF
+www.nhqv.com
+국가 터커/코드
+A174350
+A215620
+A236460
+A266550
+A267300
+A279540
+USMV
+미국
+SPLV
+펀드명
+TIGER 로우볼
+등국 S&P 로우볼
+ARIRANG 스마트베EI LowVOI
+ARIRANG 중형주서번동50
+TIGER 코스닥 150 로우볼
+KODEX 쇠소번동성
+iShares Edge MSCI Min VOI USA
+ETF
+Powershares S&P 500 Low
+VOIatiIity Portfolio
+기소지수
+FnGuide Low VOI 지수
+S&P Korea 서면동성 지수
+WISE 스마트베F-I LowVOL 지수
+FnGuide 중형주서번동50지수
+코스닥 150 서면동성
+KRX 쇠소번동성지수
+MSCI USA Minimum VOIatiIity lndex
+S&P 500 Low Volatility lndex
+순자산종액
+(억원, 백만달러)
+170.66
+138.74
+52.65
+205.87
+59.73
+89.61
+16,121 46
+7 253.83
+종보수
+(0/0
+040
+040
+0.35
+023
+040
+0.30
+0.15
+025
+'16.10
+연소대비
+수익률(%)
+사료 Morningstar, NH 투사증권 리서치본부
+그림15. 미국 주요 로우볼 팩터 ETF 성과 추이
+(2011 10.18=100P)
+240
+220
+200
+180
+160
+140
+120
+100
+80
+lnvesco S&P 500 LOW VoIatiIity ETF
+iShares MSCI USA Minimum VoIatiIity ETF
+'14.4
+'14.10
+'15.4
+'15.10
+'16.4
+'17.4
+-1489
+-12.09
+-15.52
+-16.6
+-1041
+-14.23
+5.07
+1.37
+'17.10
+최근1년
+수익률(%)
+-1086
+-11.36
+-1124
+925
+4.21
+'18.4
+너110 너24 너210 너3.4 너3.10
+사료 Morningstar, NH투사증권 리서치본부
+NH투자증권
