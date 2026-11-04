@@ -130,7 +130,7 @@ def 재료(t, cfg):
             p.loc[x:y, c] = np.nan
     return dict(t=t, 다음=다음리밸런싱(t, cfg), 가격=cfg["가격"], codes=codes, fin=(분기재무(t, cfg["재무주기"][1]) if cfg.get("재무주기", ("연간",))[0] == "분기" else 재무(t, cfg["재무시점"])).reindex(codes),
                 mcap=읽기.일간(읽기.시총).loc[t, codes], ret=p.pct_change(fill_method=None).iloc[1:],
-                일년상장=읽기.일간(읽기.시장구분).loc[a:t].reindex(columns=codes).isin(["KS", "KQ"]).all() & p.iloc[0].notna())
+                일년상장=읽기.상장중().loc[a:t].reindex(columns=codes, fill_value=False).all() & p.iloc[0].notna())
 
 
 def 거르기(t, cfg):
@@ -158,7 +158,7 @@ def 고르기(sc, how):
     if kind == "상하N":  # 위 n(Q1)·가운데(Q2)·아래 n(Q3): Novy-Marx(2010) p.21 '150 stocks with the highest … 150 … lowest'
         a = sc.sort_values(ascending=False).index
         return {"Q1": a[:n], "Q2": a[n:len(a) - n], "Q3": a[len(a) - n:]}
-    if sc.empty:  # 0종목이면 빈 묶음(구간 수익률 빈칸, 감사 #11)
+    if len(sc) < n:  # 0종목이거나 분위 수보다 적으면 빈 묶음(구간 수익률 빈칸, 감사 #11; 02 '최근 분기 × 4' 2002-03-29에 1종목뿐 → 5분위 못 나눔, 2026-11-04)
         return {f"Q{i}": sc.index for i in range(1, n + 1)}
     q = pd.qcut(sc.rank(method="first", ascending=False), n, labels=[f"Q{i}" for i in range(1, n + 1)])
     return {g: sc.index[q == g] for g in q.cat.categories}
