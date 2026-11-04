@@ -7806,11 +7806,11 @@ a.anchor-link {
 <p><strong>책 원문 미확인(책을 못 구함) — 정의는 책을 인용한 2차 자료, 2차 자료에 없는 설정은 우동호 설정을 따름.</strong>
 2차 자료(2026-11-05 2차 진단 7에서 웹 글자를 직접 받아 확인, 책 쪽수는 아무도 확인 못 함):</p>
 <ul>
-<li>intelliquant.ai/article/573(신마법공식 1.0): '모든 주식의 PBR, GP/A 순위 계산 2개 순위를 더한 통합 순위가 가장 높은 종목 30개 매수 연 1회 리밸런싱 테스트기간: 2002년 7월 ~ 2016년 6월', '할수있다 퀀트투자에서 테스트한 결과인 24.46%', '할수있다 퀀트투자에서는 Top 50의 수익률이 25.44%로 가장 높게'.</li>
+<li>intelliquant.ai/article/573(신마법공식 1.0): '신마법공식 1.0 (저PBR + 고GP/A) 기대 CAGR(Compound Annual Growth Rate), 연복리수익률 -&gt; 약 15 ~ 20% 이상 모든 주식의 PBR, GP/A 순위 계산 2개 순위를 더한 통합 순위가 가장 높은 종목 30개 매수 연 1회 리밸런싱 테스트기간: 2002년 7월 ~ 2016년 6월', '할수있다 퀀트투자에서 테스트한 결과인 24.46%', '할수있다 퀀트투자에서는 Top 50의 수익률이 25.44%로 가장 높게'.</li>
 <li>intelliquant.ai/article/578(신마법공식 2.0): '신마법공식 2.0은 신마법공식 1.0에 소형주 팩터만 추가한 것', '소형주(시가총액 하위 20%) 기업만 매수'.</li>
-<li>github sharebook-kr/quant_screener <code>02_new_magic_formula_v1.0/screener.py</code>: 12월 결산, <code>(gp/a &gt; 0) &amp; (pbr &gt; 0)</code>, GP/A 높은 순·PBR 낮은 순 순위 합이 작은 30. <code>03_…v2.0</code>은 시총 경계를 20번째 종목으로 잡는 버그가 있어 정의 근거로만 봄.</li>
+<li>github sharebook-kr/quant_screener <code>02_new_magic_formula_v1.0/screener.py</code>: 12월 결산, <code>(gp/a &gt; 0) &amp; (pbr &gt; 0)</code>, GP/A 높은 순·PBR 낮은 순 순위 합이 작은 30. <code>03_…v2.0</code>은 시총 경계를 <code>iloc[20]</code>(21번째 종목)으로 잡는 버그가 있어 시총 경계는 근거로 안 씀(전체 순위 뒤 시총으로 거르는 순서는 12절 K5).</li>
 <li>책 목차(교보 E000002997763, YES24 45504859): 10장 '신마법공식', GP/A는 9장. Novy-Marx(NBER w15940) pp.21-22는 7절.
-책의 숫자(연 24.46%, Top 50 25.44%)는 <strong>2차 인용, 원문 쪽 미확인</strong>이다. 기간 '2002년 7월 ~ 2016년 6월'이 책의 기간인지 글쓴이 시험 기간인지는 글로 구분되지 않는다.
+책의 숫자(연 24.46%, Top 50 25.44%)는 <strong>2차 인용, 원문 쪽 미확인</strong>이다. 기간 '2002년 7월 ~ 2016년 6월'이 책의 기간인지 글쓴이 시험 기간인지, 결과 수익률이 복리인지는 글에 직접 적혀 있지 않다(같은 목록 맨 앞에 '기대 CAGR …, 연복리수익률'이 있어 책 요약일 수 있음 → 12절 K4).
 예전 기록(2026-11-04): <code>마법공식_자료</code> PDF 전부에 '신마법'·'강환국' 0건, IBK 2020 리포트의 GPR은 매출총이익/(자산총계 − 현금 − 투자자산)이고 PBR과 묶지 않음.</li>
 </ul>
 </blockquote>
@@ -7852,7 +7852,7 @@ a.anchor-link {
 <td>2.0</td>
 <td>1.0에 소형주(시가총액 하위 20%)만 더함</td>
 <td>2차 자료(인텔리퀀트 578)</td>
-<td><code>제외</code> + <code>("지표있음", BP·GPA)</code> + <code>("시총분위", 1)</code>: 분위 모집단 = 두 지표가 있는 종목(2차 자료에 모집단 없음, 01 본문과 같은 방식으로 우리가 정함 → <code>_검증/임의값_근거.md</code>)</td>
+<td><code>제외</code> + <code>("지표있음", BP·GPA)</code> + <code>("시총분위", 1)</code>: 분위 모집단 = 두 지표가 있는 종목, 순위는 소형주 안에서(둘 다 2차 자료에 없음, 01 본문과 같은 방식으로 우리가 정함 → <code>_검증/임의값_근거.md</code>, 확인판 12절 K3·K5)</td>
 </tr>
 <tr>
 <td>나머지(리밸런싱 달·재무 시점·제외 업종·가중)</td>
@@ -10910,13 +10910,58 @@ OLS(보통최소제곱), NW(뉴이-웨스트: 자기상관·이분산을 감안�
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f22543a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="10.-%EC%9A%94%EC%95%BD%ED%91%9C%EC%9A%A9-%EC%A0%80%EC%9E%A5">10. 요약표용 저장<a class="anchor-link" href="#10.-%EC%9A%94%EC%95%BD%ED%91%9C%EC%9A%A9-%EC%A0%80%EC%9E%A5">¶</a></h2><p>4절 상위 30 포트폴리오(EW·VW)의 월수익률을 <code>결과_월수익률/</code>에 남긴다.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f38a8bce">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">R2</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">"KOSPI"</span><span class="p">)</span>
+<span class="n">R2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([</span><span class="nb">tuple</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">R2</span><span class="p">])</span>
+<span class="n">평가</span><span class="o">.</span><span class="n">저장</span><span class="p">(</span><span class="n">R2</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="s2">"04_신마법공식"</span><span class="p">,</span> <span class="n">이상값</span><span class="o">=</span><span class="p">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span> <span class="n">n</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">표</span><span class="p">[</span><span class="s2">"이상값 보유"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">"KOSPI"</span><span class="p">})</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">R2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>[('신마법공식', '동일'),
+ ('신마법공식', '시총'),
+ ('신마법공식2.0', '동일'),
+ ('신마법공식2.0', '시총'),
+ ('우동호IMF', '동일'),
+ ('우동호IMF', '시총')]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc43a23b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="12.-2%EC%B0%A8-%EC%A7%84%EB%8B%A8-7-(2026-11-05):-2%EC%B0%A8-%EC%9E%90%EB%A3%8C-%EB%8C%80%EC%A1%B0%EC%99%80-%ED%99%95%EC%9D%B8%ED%8C%90">12. 2차 진단 7 (2026-11-05): 2차 자료 대조와 확인판<a class="anchor-link" href="#12.-2%EC%B0%A8-%EC%A7%84%EB%8B%A8-7-(2026-11-05):-2%EC%B0%A8-%EC%9E%90%EB%A3%8C-%EB%8C%80%EC%A1%B0%EC%99%80-%ED%99%95%EC%9D%B8%ED%8C%90">¶</a></h2><p>2차 자료에 없는 칸(종목 수 외 값, 리밸런싱 달, 2.0 분위 모집단, 2차 자료 코드의 양수 조건)은 본문을 바꾸지 않고 확인판으로만 돌렸다. 판 목록은 돌리기 전에 정했고(진행기록 02:32) 돌린 판은 전부 적는다. 표는 <code>_검증/2차_07_신마법.py</code> 출력(<code>_검증/2차_07_신마법.csv</code>)을 그대로 읽는다.</p>
+<h2 id="12.-2%EC%B0%A8-%EC%A7%84%EB%8B%A8-7-(2026-11-05):-2%EC%B0%A8-%EC%9E%90%EB%A3%8C-%EB%8C%80%EC%A1%B0%EC%99%80-%ED%99%95%EC%9D%B8%ED%8C%90">12. 2차 진단 7 (2026-11-05): 2차 자료 대조와 확인판<a class="anchor-link" href="#12.-2%EC%B0%A8-%EC%A7%84%EB%8B%A8-7-(2026-11-05):-2%EC%B0%A8-%EC%9E%90%EB%A3%8C-%EB%8C%80%EC%A1%B0%EC%99%80-%ED%99%95%EC%9D%B8%ED%8C%90">¶</a></h2><p>2차 자료에 없는 칸(종목 수 외 값, 리밸런싱 달, 2.0 분위 모집단, 2차 자료 코드의 양수 조건)은 본문을 바꾸지 않고 확인판으로만 돌렸다. 판 9개는 진행기록 02:32 절에 적고 돌렸고, K5(순위 모집단)는 항목 7 독립 대조 뒤 더했다. 돌린 판은 전부 적는다. 해석은 <code>_검증/2차_07_신마법.md</code>. 표는 <code>_검증/2차_07_신마법.py</code> 출력(<code>_검증/2차_07_신마법.csv</code>)을 그대로 읽는다.</p>
 </div>
 </div>
 </div>
@@ -10925,7 +10970,7 @@ OLS(보통최소제곱), NW(뉴이-웨스트: 자기상관·이분산을 감안�
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">판7</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">평가</span><span class="o">.</span><span class="n">결과폴더</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"_검증"</span> <span class="o">/</span> <span class="s2">"2차_07_신마법.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">)</span>
@@ -10940,7 +10985,7 @@ OLS(보통최소제곱), NW(뉴이-웨스트: 자기상관·이분산을 감안�
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -11049,6 +11094,17 @@ OLS(보통최소제곱), NW(뉴이-웨스트: 자기상관·이분산을 감안�
 <td>30</td>
 </tr>
 <tr>
+<th>K5 2.0 순위는 소형주 거르기 전 전체에서</th>
+<th>전</th>
+<td>2004-05~2022-03</td>
+<td>216</td>
+<td>279.6592</td>
+<td>0.3678</td>
+<td>0.3615</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
 <th>K4 1.0 2002-07~2016-06 7월</th>
 <th>전</th>
 <td>2002-08~2016-06</td>
@@ -11073,51 +11129,6 @@ OLS(보통최소제곱), NW(뉴이-웨스트: 자기상관·이분산을 감안�
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f22543a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.-%EC%9A%94%EC%95%BD%ED%91%9C%EC%9A%A9-%EC%A0%80%EC%9E%A5">10. 요약표용 저장<a class="anchor-link" href="#10.-%EC%9A%94%EC%95%BD%ED%91%9C%EC%9A%A9-%EC%A0%80%EC%9E%A5">¶</a></h2><p>4절 상위 30 포트폴리오(EW·VW)의 월수익률을 <code>결과_월수익률/</code>에 남긴다.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f38a8bce">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">R2</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">"KOSPI"</span><span class="p">)</span>
-<span class="n">R2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([</span><span class="nb">tuple</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">R2</span><span class="p">])</span>
-<span class="n">평가</span><span class="o">.</span><span class="n">저장</span><span class="p">(</span><span class="n">R2</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="s2">"04_신마법공식"</span><span class="p">,</span> <span class="n">이상값</span><span class="o">=</span><span class="p">{</span><span class="nb">tuple</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span> <span class="n">n</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">표</span><span class="p">[</span><span class="s2">"이상값 보유"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">"KOSPI"</span><span class="p">})</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">R2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[('신마법공식', '동일'),
- ('신마법공식', '시총'),
- ('신마법공식2.0', '동일'),
- ('신마법공식2.0', '시총'),
- ('우동호IMF', '동일'),
- ('우동호IMF', '시총')]</pre>
 </div>
 </div>
 </div>
