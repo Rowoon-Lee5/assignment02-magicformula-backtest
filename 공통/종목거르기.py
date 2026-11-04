@@ -1,8 +1,10 @@
 """종목 거르기. 필터마다 함수 1개: (s, c, 옵션) → 남는 종목코드(Index).
 s = 포트폴리오.재료()가 만든 그날 자료, c = 지금까지 남은 종목. 값이 빈 종목은 그 필터에서 빠진다(빈칸은 빈칸)."""
+import numpy as np
 import pandas as pd
 
 import 데이터읽기 as 읽기
+import 지표
 
 
 def 그날(item, t, c):
@@ -59,7 +61,7 @@ def 결산월(s, c, 월=12):
 
 
 def 거래정지(s, c, 아이템=읽기.정지구분):
-    """일간 S410002600('거래정지') 또는 월간 CP10001650('정지')."""
+    """일간 S410002600('거래정지') 또는 일간 CP10001650('정지', 10,061일 파일)."""
     return c[~그날(아이템, s["t"], c).isin(["거래정지", "정지"])]
 
 
@@ -86,9 +88,16 @@ def 회전율(s, c, 하위=0.1):
     return c[turn > turn.quantile(하위)]
 
 
-def 거래대금(s, c, 하한=1e9):
-    """최근 20거래일 평균 거래대금(S410000900, 원) ≥ 하한(NH: 10억 원)."""
-    return c[최근20일(읽기.거래대금, s["t"], c).mean() >= 하한]
+def 거래대금(s, c, 하한=1e9, 창="20일"):
+    """평균 거래대금(S410000900, 원) ≥ 하한(NH: 10억 원). 창='20일': 최근 20거래일, '월': 기준일이 든 달의 거래일(NH p.26 '월평균 거래대금')."""
+    x = 최근20일(읽기.거래대금, s["t"], c) if 창 == "20일" else 읽기.일간(읽기.거래대금).loc[f"{s['t']:%Y-%m}":s["t"], c]
+    return c[x.mean() >= 하한]
+
+
+def 지표있음(s, c, 지표들):
+    """지표 값이 모두 있는 종목만(±inf는 없는 것으로 봄). Novy-Marx p.21 '500 largest … for which GP/A and B/M are both available'처럼 시총상위 앞에 둔다."""
+    v = pd.DataFrame({m: getattr(지표, m)(s).reindex(c) for m in 지표들}).replace([np.inf, -np.inf], np.nan)
+    return c[v.notna().all(axis=1).to_numpy()]
 
 
 def 시총상위(s, c, n=300):

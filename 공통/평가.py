@@ -1,7 +1,7 @@
 """성과 평가: 누적·연환산 수익률, 표준편차, 샤프, MDD(최대낙폭), 정보비율, CAPM·FF3·Carhart 알파(t는 OLS와 Newey-West).
 '초과평균'은 설명변수 없는 회귀 = 월평균 초과수익률과 그 t.
 타겟 페이퍼 성과표 지표(서브에이전트가 원문 PDF로 확인, 진행기록 2026-11-03 04:50): 우동호 외(2023) 표 2~7(p.514–516) = 누적·MDD·표준편차·샤프·정보비율·젠센·3요인·4요인 α(t)
-→ 위 칸들. Novy-Marx(2013, NBER w15940) 표 = 월평균 초과수익률·α·요인 적재값(β)·adj.-R² → '초과평균 α(월)'·'Carhart β:요인'·'Carhart adj R²' 칸."""
+→ 위 칸들. Novy-Marx(NBER w15940, 2010년 4월판) 표 = 월평균 초과수익률·α·요인 적재값(β)·adj.-R² → '초과평균 α(월)'·'Carhart β:요인'·'Carhart adj R²' 칸."""
 from pathlib import Path
 
 import matplotlib.pyplot as plt
