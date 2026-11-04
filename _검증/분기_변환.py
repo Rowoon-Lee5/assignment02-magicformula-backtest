@@ -13,7 +13,7 @@ sys.path.insert(0, str(TOOLS))
 from _to_parquet import read_rows, to_frame  # noqa: E402
 
 OUT.mkdir(parents=True, exist_ok=True)
-for f in sorted(SRC.glob("*_분기3M_I00P_일간_*.xlsx")):
+for f in sorted(x for x in SRC.glob("R*_분기3M_I00P_일간_*.xlsx") if not x.name.startswith("~$")):  # 엑셀 잠금 파일(~$...) 빼기
     name = f.name.split("_I00P_")[0]
     if list(DATA.glob(f"통합_일간_*_{name}.parquet")) or list(OUT.glob(f"통합_일간_*_{name}.parquet")):
         print("건너뜀(있음)", name, flush=True)

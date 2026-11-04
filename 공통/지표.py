@@ -1,6 +1,7 @@
 """지표마다 함수 1개: s → 종목별 값(Series). 공식대로 계산한 값 그대로(분모가 0 이하여도 손대지 않음).
 s["fin"] = 그날 쓸 수 있는 회계연도 재무(천원, 열=아이템코드), s["mcap"] = 시가총액(백만원), s["ret"] = 직전 12개월 일간수익률.
 비율 지표(PBR·PER·PSR·POCF·EV/EBITDA)는 적자·자본잠식 종목이 '싼 쪽'으로 줄 서지 않도록 역수(수익률 꼴)로 둔다 → 방향 '높게'."""
+import numpy as np
 import pandas as pd
 
 import 데이터읽기 as 읽기
@@ -32,6 +33,16 @@ def 기업가치(s):
 def EBIT(s):
     """우동호 외(2023) 3.2절 ②: 법인세차감전이익 + 이자비용."""
     return 값(s, 세전이익) + 값(s, 이자비용)
+
+
+def BP_장부원문_6개월(s):
+    """Novy-Marx(2010) 각주 3 장부가 = 자본 + 이연법인세 − 우선주: 자본총계(지배) + 이연법인세부채(M000911019) − 우선주자본금(M000903008),
+    시가는 6개월 전 시가총액(BP_6개월과 같음). 원문(PDF 13쪽 각주 3) 'plus deferred taxes, minus preferred stock, when available' → 이연법인세·우선주 값이 빈 종목은 그 항만 뺌(0으로 셈).
+    자본총계(지배)는 Compustat SEQ(우선주 포함 주주지분)에 가장 가까운 항목으로 고름(같은지는 확인 안 함). 두 항목 파일이 없으면 빈칸(04 진단용, 추가 지시 F)."""
+    if not {"M000911019", "M000903008"} <= set(s["fin"]):
+        return pd.Series(np.nan, s["codes"])
+    m = 읽기.일간(읽기.시총).loc[:s["t"] - pd.DateOffset(months=6)].iloc[-1].reindex(s["codes"])
+    return (값(s, 지배자본) + 값(s, "M000911019").fillna(0) - 값(s, "M000903008").fillna(0)) / (m * 1000)
 
 
 def EY(s):
