@@ -175,6 +175,9 @@ def 시총상한30(c, s, cfg):
     return 시총상한(c, s, {**cfg, "비중상한": 0.3})
 
 
+최소분산기록 = []  # 최소분산을 풀 때마다 (기준일, 종목 수, SLSQP 수렴 여부, 메시지). README 한계 '최소분산 수렴 미확인'(2026-11-04)
+
+
 def 최소분산(c, s, cfg, 개월=36):
     """공매도 없는 최소분산. 직전 36개월 월수익률(설정의 기준일 간격) 공분산을 Ledoit-Wolf로 수축.
     36개월 수익률이 다 있는 종목만 쓴다(나머지는 빠짐 — 편입 수는 보유 비중 > 0 종목 수로 확인)."""
@@ -184,8 +187,10 @@ def 최소분산(c, s, cfg, 개월=36):
     if len(g) <= 개월 or r.shape[1] < 2:
         return pd.Series(dtype=float)
     S, n = LedoitWolf().fit(r.to_numpy()).covariance_, r.shape[1]
-    w = minimize(lambda w: w @ S @ w, np.full(n, 1 / n), jac=lambda w: 2 * S @ w, bounds=[(0, 1)] * n,
-                 constraints={"type": "eq", "fun": lambda w: w.sum() - 1}, method="SLSQP").x.clip(0)
+    o = minimize(lambda w: w @ S @ w, np.full(n, 1 / n), jac=lambda w: 2 * S @ w, bounds=[(0, 1)] * n,
+                 constraints={"type": "eq", "fun": lambda w: w.sum() - 1}, method="SLSQP")
+    최소분산기록.append(dict(기준일=s["t"], 종목=n, 수렴=bool(o.success), 메시지=o.message))
+    w = o.x.clip(0)
     return pd.Series(w / w.sum(), r.columns)
 
 
