@@ -54,6 +54,12 @@ def BP(s):
     return 값(s, 지배자본) / (s["mcap"] * 1000)
 
 
+def BP_6개월(s):
+    """BP의 시가총액을 6개월 전(그날 또는 그 전 마지막 거래일) 값으로. Novy-Marx(2010) 각주 3 'lagged six months'(04 진단용)."""
+    m = 읽기.일간(읽기.시총).loc[:s["t"] - pd.DateOffset(months=6)].iloc[-1].reindex(s["codes"])
+    return 값(s, 지배자본) / (m * 1000)
+
+
 def EP(s):
     """PER 역수: 당기순이익(지배) / 시가총액."""
     return 값(s, 지배순이익) / (s["mcap"] * 1000)

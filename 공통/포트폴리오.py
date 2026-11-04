@@ -58,7 +58,8 @@ def 재무가능일(how):
         return f.assign(결산일=end, 가능일=end + pd.DateOffset(months=k))
     pub = pd.to_datetime(f["FP56000900"].astype("Int64").astype(str), format="%Y%m%d", errors="coerce")
     pub = pub.where(pub > end)
-    ok = end + pd.DateOffset(months=k) if kind == "결산후개월" else (pub + pd.Timedelta(days=1)).fillna(end + pd.Timedelta(days=k))
+    하루 = pd.Timedelta(days=0 if kind == "발표당일" else 1)  # '발표당일': 발표한 날부터(NH '발표 월의 월말' 리밸런싱이면 그 달 말에 반영, 03 진단용)
+    ok = end + pd.DateOffset(months=k) if kind == "결산후개월" else (pub + 하루).fillna(end + pd.Timedelta(days=k))
     return f.assign(결산일=end, 발표일=pub, 가능일=ok)
 
 
@@ -127,6 +128,9 @@ def 고르기(sc, how):
     kind, n = how
     if kind == "상위N":
         return {f"상위{n}": sc.nlargest(n).index}
+    if kind == "상하N":  # 위 n(Q1)·가운데(Q2)·아래 n(Q3): Novy-Marx(2010) p.21 '150 stocks with the highest … 150 … lowest'
+        a = sc.sort_values(ascending=False).index
+        return {"Q1": a[:n], "Q2": a[n:len(a) - n], "Q3": a[len(a) - n:]}
     if sc.empty:  # 0종목이면 빈 묶음(구간 수익률 빈칸, 감사 #11)
         return {f"Q{i}": sc.index for i in range(1, n + 1)}
     q = pd.qcut(sc.rank(method="first", ascending=False), n, labels=[f"Q{i}" for i in range(1, n + 1)])

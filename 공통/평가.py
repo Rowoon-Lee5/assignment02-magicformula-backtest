@@ -54,6 +54,25 @@ def 성과(r, F, 롱숏=False):
     return out
 
 
+def 샤프차이(a, b):
+    """두 월수익률의 (평균/표준편차) 차이 검정. Jobson·Korkie(1981) 식을 Memmel(2003)이 고친 식(두 원문 확인 안 함):
+    z = (SR_a − SR_b) / √{[2(1−ρ) + ½(SR_a² + SR_b² − 2·SR_a·SR_b·ρ²)] / T}. 같은 달만 쓴다. p = 양측 정규."""
+    from scipy.stats import norm
+    d = pd.concat([a, b], axis=1).dropna()
+    x, y = d.iloc[:, 0], d.iloc[:, 1]
+    sa, sb, r, T = x.mean() / x.std(), y.mean() / y.std(), x.corr(y), len(d)
+    z = (sa - sb) / np.sqrt((2 * (1 - r) + 0.5 * (sa ** 2 + sb ** 2 - 2 * sa * sb * r ** 2)) / T)
+    return pd.Series({"월수": T, "a": sa, "b": sb, "차이": sa - sb, "z": z, "p": 2 * norm.sf(abs(z))})
+
+
+def 평균차이(a, b):
+    """두 월수익률 차이(a − b)의 평균과 t(NW, 회귀()와 같은 시차), p(양측 정규)."""
+    from scipy.stats import norm
+    d = (a - b).dropna()
+    m, _, t, _, _ = 회귀(d, pd.DataFrame(index=d.index))
+    return pd.Series({"월수": len(d), "평균 차이(월)": m, "t(NW)": t, "p": 2 * norm.sf(abs(t))})
+
+
 def 성과표(R, F, 롱숏열=()):
     """R: 열마다 월수익률. 표 한 장(행=전략)."""
     return pd.DataFrame({k: 성과(R[k], F, k in 롱숏열) for k in R}).T

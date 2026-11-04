@@ -108,9 +108,14 @@ def 시총상위(s, c, n=300):
     return s["mcap"].reindex(c).nlargest(n).index
 
 
-def 시총분위(s, c, 분위, k=5):
-    """그날 시가총액 k분위 중 한 분위만(1 = 가장 작은 분위)."""
+def 시총분위(s, c, 분위, k=5, 기준="남은"):
+    """그날 시가총액 k분위 중 한 분위만(1 = 가장 작은 분위). 기준='남은': 앞 단계까지 남은 종목으로 나눔(기본),
+    '상장전체': 그날 가격 있는 KS·KQ 전 종목의 분위 경계로 남은 종목을 나눔(원문 p.510·514 '시가총액 기준 5분위'의 모집단이 적혀 있지 않아 민감도용)."""
     m = s["mcap"].reindex(c).dropna()
+    if 기준 == "상장전체":
+        a = s["mcap"].reindex(시장(s, s["codes"], ["KS", "KQ"])).dropna()
+        b = a.quantile([i / k for i in range(1, k)]).to_numpy()
+        return m.index[(np.searchsorted(b, m.to_numpy(), side="right") + 1) == 분위]
     q = pd.qcut(m.rank(method="first"), k, labels=range(1, k + 1))
     return m.index[q == 분위]
 
