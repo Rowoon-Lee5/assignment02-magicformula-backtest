@@ -1,7 +1,7 @@
 """추가 지시 F(2026-11-04) 분기(3개월) 재무 xlsx → parquet. 감독 변환기(data\\DataGuide_추가_202611\\_tools\\_to_parquet.py)의 읽기·검사 함수와
 독립 검사기(_audit\\a1_verify.py)를 그대로 쓰고, 저장만 저장소 안 `_캐시/분기/`에 한다(data 폴더에 쓰지 않음, 원본 xlsx는 읽기만).
 감독 변환 루프가 돌지 않아(14:2x 확인) 대신 바꾼다. 감독 루프처럼: 저장 잠금이 없고 마지막 수정 뒤 10분 지난 파일만, 이미 있으면 건너뜀.
-실행: python _검증/분기_변환.py (한 번에 한 파일씩 전부)"""
+실행: 3.11 python(python_calamine 있음) _검증/분기_변환.py (한 번에 한 파일씩 전부)"""
 import json, subprocess, sys, time
 from pathlib import Path
 
