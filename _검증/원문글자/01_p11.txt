@@ -1,0 +1,117 @@
+한국산학기술학회논문지 제24권 제3호, 2023
+518
+Accounting Association, Vol.27, No.2, pp.27-57, 2002.
+[8] B. Kim, P. Lee, “An Analysis on the Long-term Performance 
+of Value Investment Strategy in Korea”, Korean 
+Securities Association, Vol.35, No.3, pp.1-39, 2006.
+[9] H. Lee, H. Kam, “The Effects of Fundamental Variables 
+on Stock Returns – Evidence from Panel Data”, Korea 
+Academia-Industrial 
+cooperation 
+Society, 
+Vol.13, 
+No.3, pp.1035-1041, 2012.
+DOI: http://dx.doi.org/10.5762/KAIS.2012.13.3.1035 
+[10]
+S. Kwon, S. Park, Y. Song, “Accruals Quality and 
+Value Investing Strategy”, Korea Accounting Information 
+Association, Vol.32, No.3, pp.1-34, 2014.
+[11]
+S. Lee, “A Study on the Usefulness of Accounting 
+Information for the Predication of Medium and Small 
+Enterprises` Bankruptcy”, Korea Academia-Industrial 
+cooperation Society, Vol.9, No.5, pp.1460-1466, 2008.
+[12]
+Y. Song, Y. Lee, “A Study on the Measuring of Real 
+Estate Fund Performance in Korea”, Korean Association 
+for Housing Policy Studies, Vol.19, No.3, pp.49-75, 2011.
+[13]
+Sharpe, F. William, “Mutual Fund Performance”,  
+Journal of Business, Vol.39, No.2, pp.119-138, 1966.
+[14]
+J. L. Treynor, F. Black, “How to Use Security Analysis 
+to Improve Portfolio Selection”, The Journal of 
+Business, Vol.46, No.1, pp.66-86, 1973.
+[15]
+M. C. Jensen, “The Performance of Mutual Funds in 
+the 1945~1964”, Journal of Finance, Vol.23, No.2, 
+pp.389-416, 1967.
+DOI: https://doi.org/10.2139/ssrn.244153 
+[16]
+Banz, W. Rolf, “The Relationship between Return and 
+Market Value of Common Stocks”, The Journal of 
+Finance Economics, Vol.9, No.1, pp.3-18, 1981.
+DOI: https://doi.org/10.1016/0304-405x(81)90018-0 
+[17]
+S. Basu, “The Relationship between Earnings` Yield, 
+Market Value, and Return for NYSE Common Stocks: 
+Further Evidence”, The Journal of Finance Economics, 
+Vol.12, No.1, pp.129-156, 1983.
+DOI: https://doi.org/10.1016/0304-405x(83)90031-4 
+[18]
+B. Rosenberg, K. Reid, R. Lanstein, “Persuasive 
+Evidence of Market Inefficiency”, Journal of Portfolio 
+Management, Vol.11, No.1, pp.9-17, 1985.
+DOI: https://doi.org/10.1515/9781400829408-007 
+[19]
+E. F. Fama, K. R. French, “Common Risk Factors in 
+the Returns on Stocks and Bonds”, Journal of 
+Financial Economics, Vol.33, No.1, pp.3-56, 1993.
+DOI: https://doi.org/10.1016/0304-405x(93)90023-5 
+[20]
+M. M. Carhart, “On Persistence in Mutual Fund 
+Performance”, Journal of Finance, Vol.52, No.1, 
+pp.57-82, 1997.
+[21]
+G. S. Gupta, C. H. Khoon, S. Shahnon, “How Many 
+Securities Make a Diversified Portfolio in KLSE Stocks?”, 
+Asian Academy of Management Journal, Vol.6, No.1, 
+pp.63-79, 2001.
+[22]
+D. W. Blackburn, N. Cakici, “The Magic Formula: 
+Value, Profitability, and the Cross Section of Global 
+Stock Returns”, Journal of Investment Management, 
+Vol.19, No.2, pp.52-88, 2021.
+[23]
+I. Arif, E. Sumirat, “Implementation of Magic Formula 
+and Acquirer`s Multiple Stock Investment Strategy in 
+The Indonesia Stock Exchange”, International Journal 
+of Current Science Research and Review, Vol.5, 
+No.12, pp.4454-4467, 2022.
+DOI: https://ijcsrr.org/single-view/?id=8182&pid=8124 
+[24]
+S. Lee, C. Lee, J. Chu, “The Effect of Real Earnings 
+Management on Future Stock Price Crash Risk”, Korea 
+Business Review, Vol.46, No.1, pp.287-313, 2017.
+DOI: http://dx.doi.org/10.17287/kmr.2017.46.1.287 
+[25]
+S. Lee, “Stock Market Efficiency Based on Firm Size”, 
+Chungbuk National University, Vol.23, No.1, pp.19-32, 
+2010.
+[26]
+N. Kwark, “Asymmetric Effect of Stock Price Jump 
+Information by Size and Investor”, The Korean 
+Journal of Financial Management Association, Vol.37, 
+No.2, pp.1-42, 2000.
+[27]
+M. Son, H. Shin, “An Efficient Portfolio Selection 
+Methodology using DEA Approach”, Korea Academia- 
+Industrial 
+cooperation 
+Society, 
+Vol.13, 
+No.4, 
+pp.1551-1556, 2012.
+DOI: http://dx.doi.org/10.5762/KAIS.2012.13.4.1551 
+우 동 호(Dong Ho Woo)                 [정회원]
+• 2007년 2월 : 중앙대학교 경영학부 
+(경영학사)
+• 2015년 8월 : 아주대학교 경영학과 
+(경영학석사)
+• 2019년 2월 : 수원대학교 경영학과 
+(경영학박사)
+• 2022년 2월 : 국민대학교 소프트
+웨어융합대학원 (공학석사)
+• 2008년 6월 ~ 현재 : 우호택스앤파트너스 대표세무사
+<관심분야>
+트레이딩시스템, 계량분석

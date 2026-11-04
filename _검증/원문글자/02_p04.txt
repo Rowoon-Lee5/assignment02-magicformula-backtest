@@ -1,0 +1,29 @@
+4
+www.nhqv.com
+2. 주식시장의주요팩터와성과
+Fama-French 3-Factor Model 이후다양한논문에서수많은팩터들이연구되어
+왔다. 이로인해일종의“팩터과잉” 상태에있다고도할수있다(그림4, 5 참조). 
+따라서장기적으로다양한시장에서팩터프리미엄이검증된기본적인팩터들에집
+중할필요가있다.
+현재금융투자업계와학계에서는①Value, ②Size, ③Momentum, ④Quality, ⑤
+Low Volatility
+등
+5가지
+팩터가
+장기적으로
+검증된
+팩터
+프리미엄(Factor 
+Premium)을갖고있는것으로인정되고있다. 5가지팩터에배당(Dividend)을포
+함시키기도한다(그림6 참조).
+Momentum 팩터는최근주가수익률이좋았던종목이향후에도시장을이기는추
+세추종개념이며, Quality 팩터는ROA가높고, 부채비율이낮은등의High Quality 
+종목이장기적으로시장을Outperform하는현상이다. Low Volatility 팩터는주가
+변동성이낮은종목이장기적으로시장대비초과수익을거두는저변동성이상현상
+(Low Vol Anomaly)를의미한다(다음페이지표1 참조).
+그림4. 기간별발간논문과언급된팩터개수
+그림5. 누적발간논문과언급된팩터개수
+자료: Lyxor Management, Harvey et al. (2014)
+자료: Lyxor Management, Harvey et al. (2014)
+그림6. 팩터프리미엄이있는5가지팩터
+자료: State Street Global Advisors

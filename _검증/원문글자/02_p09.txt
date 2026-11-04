@@ -1,0 +1,63 @@
+9
+www.nhqv.com
+II. 한국시장의밸류(Value) 프리미엄
+1. 밸류프리미엄의역사
+밸류팩터는펀더멘탈지표대비주가가낮은종목투자를통해밸류프리미엄을
+추구한다. 흔히언급되는가치투자의근간이밸류프리미엄이며, 1934년그레이엄/
+도드의증권분석에서시작되어그역사가무척길고, 다양한연구를통해성과가
+입증됐다(표5 참조).
+또한밸류팩터는여타주요팩터와낮은상관관계를보이기때문에멀티팩터포
+트폴리오구성에있어매우중요한팩터다(표6 참조).
+이에한국시장의밸류프리미엄을다각적으로점검했다. 
+점검하고자하는주제는1) 어떤지표로밸류를측정할것인가?, 2) 최신데이터
+사용효과, 리밸런싱주기에따른영향, 3) 시가총액, 유동성에따른밸류프리미엄
+차이, 4) 코스닥의밸류프리미엄등이다.
+표5. 밸류프리미엄에대한주요연구
+초기연구: One-Dimensional Description of Value
+  - Basu (1977)
+  - Rosenburg, Reid, Lanstein (1985)
+2 세대연구: Multi-Dimensional Description of Value
+  - Fama & French (1992)
+  - Basu (1983)
+  - Lakonishok, Shleifer, Vishny (1994)
+Fama & French 3 Factor Model 계승
+  - High Minus Low (HML) Factor (1993)
+  - Multi-Factor success with LSV portfolios (1995)
+자료: NH 투자증권리서치본부
+표6. 미국주요팩터지수상관관계
+팩터
+Value
+Low Vol
+Momentum
+Quality
+Dividend
+Size
+Value
+1
+Low Vol
+-0.19
+1
+Momentum
+-0.63
+0.5
+1
+Quality
+-0.59
+0
+0.12
+1
+Dividend
+0.1
+0.78
+0.32
+-0.23
+1
+Size
+0.07
+-0.03
+-0.03
+-0.01
+0.22
+1
+주: 최근5 년간미국주요ETF 가추종하는팩터지수의S&P 500 대비월간상대수익률의상관관계를계산
+자료: NH 투자증권리서치본부

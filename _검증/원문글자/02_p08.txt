@@ -1,0 +1,156 @@
+8
+www.nhqv.com
+표3. 주요글로벌투자(스마트베타) 지수방법론
+팩터
+MSCI
+FTSE
+S&P
+측정지표
+Value
+P/E, P/B, EV/CFO
+Cash Flow Yield, Earnings Yield, P/S
+P/B, P/E, P/S
+Quality
+ROE, Debt to Equity, 5년EPS 변동성
+ROA, Accruals, 총자산회전율, Leverage 
+Ratio
+ROE, Accruals Ratio, 
+타인자본의존도(Financial 
+Leverage)
+Low Vol / 
+Min Vol
+Covariance Matrix
+5년주간변동성
+Covariance Matrix
+12개월일간변동성
+Covariance Matrix
+Momentum
+6개월, 12개월주가수익률/ 변동성
+동일가중
+최근1개월주가수익률제외
+12개월주가수익률
+12개월주가수익률
+(최근2개월제외)
+편입비중/
+리밸런싱
+Value
+125개주식시가총액* Value 스코어
+섹터Neutralize
+반기리밸런싱
+Cash Flow Yield, Earnings Yield, P/S
+P/B, P/E, P/S
+Quality
+125개주식시가총액* Quality 스코어
+섹터Neutralize
+반기리밸런싱
+ROA, Accruals, 총자산회전율, Leverage 
+Ratio
+ROE, Accruals Ratio, Financial 
+Leverage
+Low Vol / 
+Min Vol
+Min Variance 최적화
+(국가상대비중, 섹터상대비중,
+Barra Factor Exposure, Turnover)
+반기리밸런싱
+5년주간변동성
+Min Variance 최적화
+(국가비중, 섹터비중, 포트폴리오분산)
+반기리밸런싱
+12개월일간변동성
+Min Variance 최적화
+(섹터비중, Factor Exposure, 
+Turnover)
+반기리밸런싱
+Momentum
+125개주식시가총액* Momentum 
+스코어
+섹터비중제한(+/- 5%)
+반기리밸런싱
+12개월주가수익률
+12개월주가수익률
+(최근2개월제외)
+자료: MSCI, FTSE Russell, S&P, NH투자증권리서치본부
+표4. 주요미국상장팩터(스마트베타) ETF
+전략
+티커
+ETF 명
+기초지수
+총자산
+(USD mm)
+총보수
+(%)
+Value
+IWD US
+iShares Russell 1000 Value ETF
+Russell 1000 Value Index
+36,589.53
+0.2
+VTV US
+Vanguard Value Index Fund
+CRSP US Large Cap Value Index
+63,854.24
+0.06
+Momentum
+MTUM US
+iShares MSCI USA Momentum Factor ETF
+MSCI USA Momentum Index
+7,740.00
+0.15
+FV US
+First Trust Dorsey Wright Focus 5 ETF
+Dorsey Wright Focus 5 Index
+2,585.22
+0.3
+PDP US
+Invesco DWA Momentum Portfolio
+Dorsey Wright Technical Leaders Index
+1,549.34
+0.64
+Quality
+QUAL US
+iShares Edge MSCI USA Quality Factor ETF
+MSCI USA SECTOR NEUTRAL Quality Index
+4,675.05
+0.15
+Size
+RSP US
+Invesco S&P 500 Equal Weight ETF
+S&P 500 Equal Weight Index
+14,676.64
+0.4
+IJH US
+iShares Core S&P Mid-Cap ETF
+S&P Mid Cap Index
+45,247.58
+0.07
+IJR US
+iShares Core S&P Small-Cap ETF
+S&P SmallCap 600 Index
+38,103.24
+0.07
+Low 
+Volatility
+USMV US
+iShares Edge MSCI Min Vol USA ETF
+MSCI USA Minimum Volatility Index
+14,195.57
+0.15
+SPLV US
+Invesco S&P 500 Low Volatility Portfolio
+S&P 500 Low Volatility Index
+7,011.49
+0.25
+Dividend 
+Yield
+VIG US
+Vanguard Dividend Appreciation Index Fund
+NASDAQ US Dividend Achievers Select Index
+33,950.42
+0.09
+VYM US
+Vanguard High Dividend Yield Index Fund
+FTSE High Dividend Yield Index Net TR US RIC
+28,172.32
+0.08
+자료: Morningstar, NH투자증권리서치본부

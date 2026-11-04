@@ -1,0 +1,90 @@
+한국주식시장에서의 마법공식 투자전략 성과분석
+517
+성과를 나타냈으며 젠센의 알파뿐만 아니라 3요인 모형 
+및 4요인 모형 모두 1%수준에서 통계적으로 유의한 (+)
+의 알파계수 값을 나타냈다. 이러한 결과는 알파가 단지 
+소형주의 위험에 대한 보상이 아님을 나타낸다. 그리고 
+시가총액 중위권인 3분위에서는 마법공식과 개선된 마법
+공식 모두 젠센의 알파는 통계적으로 유의한 (+)의 계수 
+값을 나타냈지만 위험조정 초과수익률을 반영하는 3요인 
+모형과 4요인 모형의 알파에서는 개선된 마법공식만 통
+계적으로 유의한 (+)의 계수를 나타냈다. 
+그런데 시가총액 기준 1분위와 2분위의 경우 마법공
+식과 개선된 마법공식 모두에서, 그리고 3분위에서는 개
+선된 마법공식을 활용하여 통계적으로 유의한 알파를 창
+출해낼 수 있었던 것에 반해 대형주에 속하는 시가총액 
+4분위와 5분위의 알파 계수는 통계적으로 유의하지 않았
+으며, 심지어 4분위의 마법공식에서는 (-)의 알파 계수까
+지 나타났다. 이러한 현상은 대형주에 비하여 소형주에
+서는 상대적으로 비효율적인 시장현상이 나타난다고 해
+석할 수 있다. 대형주들은 애널리스트들의 분석 등으로 
+많은 정보에 노출되어 있고 기관들의 거래 대상이 되기 
+때문에 상대적으로 시장에 효율적으로 반응한다고 볼 수 
+있다. 반면 소형주들의 경우 애널리스트들의 분석 대상
+이 되는 경우는 거의 없으며 거래 규모가 작아 기관들의 
+거래대상에서 제외되므로 정보의 비대칭성과 비효율적인 
+시장현상이 존재한다고 볼 수 있다. 이로 인해 소형주 시
+장에서는 마법공식과 개선된 마법공식 모두 통계적으로 
+유의한 위험조정 초과수익을 창출해 낼 수 있다.
+또한 개선된 마법공식은 전체종목을 대상으로 분석한 
+결과뿐만 아니라 시가총액 1분위에서 5분위까지 구분한 
+분석 결과 모두에서 기존의 마법공식보다 뛰어난 성과 
+및 통계적 유의성을 나타냈다. 그러므로 Marx(2013)의 
+GP/A는 마법공식에서 사용하는 기존의 자본수익률 지
+표인 ROC를 대체할 수 있다고 판단할 수 있다.
+Blackburn and Cakici(2021)는 북미, 유럽, 일본 등
+에서 과거 데이터를 이용하여 마법공식 및 개선된 마법
+공식이 초과수익률을 얻을 수 있었음을 주장하였고, 기
+존의 마법공식보다 개선된 마법공식이 더 좋은 성과를 
+나타낼 수 있었음을 증명하였다. 이에 본 연구에서는 한
+국시장을 대상으로 마법공식을 처음으로 연구하였고 해
+외 선행연구와는 달리 전체시장에서는 마법공식과 개선
+된 마법공식 모두 통계적으로 유의한 알파를 나타내지는 
+못했지만 시가총액 기준, 소형주들을 통해 통계적으로 
+유의한 알파를 나타냄으로써 제한적으로나마 규모에 따
+른 비효율적인 시장현상을 발견하였다. 하지만 이러한 
+공헌 점에도 불구하고 다음과 같은 한계점이 있다.
+첫째, 시가총액 1분위와 2분위에 속한 소형주들의 경
+우 거래금액이 커질수록 유동성 문제로 거래비용이 늘어
+난다. 하지만 본 연구는 일괄적으로 추가 거래비용을 
+0.5%로 설정하였으므로 시가총액 하위 1분위 및 2분위
+의 백테스트 성과는 실제보다 과대평가되었을 수 있다.
+둘째, 개선된 마법공식은 마법공식에 비해 뛰어나지만 
+MDD가 KOSPI 대비 낮다고 볼 수 없다. 일반적으로 높
+은 MDD가 발생할 경우 투자를 지속하기 어려울 수 있
+으므로 이를 단독으로 활용하기 보다는 자산배분 전략의 
+한 축으로 활용하는 등 투자방법의 연구나 Son(2012)이 
+DEA(Data Envelopment Analysis)기법을 이용하여 기
+업 효율성 분석을 실시한 후 마코위츠 모형을 통해 포트
+폴리오를 구성한 것과 같이 기존의 포트폴리오 구성방법
+과 마법공식 혹은 개선된 마법공식을 함께 적용해 보는 
+추가연구도 필요해 보인다[27].
+또한 연구기간을 늘리고 시계열 구간을 잘게 쪼개어 
+분석한다면 시장의 효율성과 비효율성을 보다 구체적으
+로 발견할 수 있을 것이다.
+References
+[1] J. Greenblatt, “The Little Book that Beats the Market”,  
+pp. 138-144, John Wiley & Sons Inc., USA, 2006.
+[2] R. N. Marx, “The Other Side of Value: The Gross 
+Profitability Premium”, Journal of Financial Economics, 
+Vol.108, No.1, pp1-28, 2013.
+DOI: https://doi.org/10.1016/j.jfineco.2013.01.003 
+[3] E. F. Fama, K. French, “The Cross-Section of 
+Expected Stock Returns”, The Journal of Finance, 
+Vol.47, No.2, pp.427-466, 1992.
+DOI: https://doi.org/10.1111/j.1540-6261.1992.tb04398.x 
+[4] J. Lakonishok, A. Shleifer, R. W. Vishny, “Contrarian 
+Investment, Extrapolation, and Risk”, The Journal of 
+Finance, Vol.49, No.5, pp.1541-1578, 1994.
+DOI: https://doi.org/10.1111/j.1540-6261.1994.tb04772.x 
+[5] J. D. Piotroski, “Value Investing : The Use of Historical 
+Financial Statement Information to Separate Winners 
+from Losers”, Journal of Accounting Research, Vol.38,  
+pp.1-41, 2000.
+DOI: https://doi.org/10.2307/2672906 
+[6] H. Kam, “An Empirical Study on the Performance of 
+Contrarian Investment in Korea Stock Market”, 
+Korean Financial Management Association, Vol.16, 
+No.2,  pp.157-178, 1999.
+[7] B. Kim, “A Study on the Security Returns and Risks of 
+the Value Stocks in the Korean Stock Market”, Korean 

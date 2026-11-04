@@ -1,0 +1,21 @@
+3
+자산배분
+www.nhqv.com
+표1. 주요팩터정의
+팩터
+설명
+Value
+이익(Earnings), 장부가치(Book Value), 현금흐름(Cash Flow), 매출(Sales) 등펀더멘탈대비주가가낮은종목에투자
+Low Volatility
+주가변동성이낮은종목에투자
+Momentum
+최근주가모멘텀이큰종목에투자
+Quality
+ROA, ROE, 부채비율등의지표를이용해‘하이퀄리티’ 종목에투자
+Dividend
+배당주(배당성장, 고배당)에투자
+Size
+시가총액가중지수대비중, 소형주비중을높이는전략
+자료: NH투자증권리서치본부
+그림2. 밸류, 퀄리티, 로우볼팩터로버핏의성과를복제하는포트폴리오구현가능
+자료: Frazzini, Kabiller, and Pedersen (2013), “Buffet’s Alpha”, Working Paper, AQR Management

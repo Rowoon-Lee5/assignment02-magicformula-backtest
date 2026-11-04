@@ -54,8 +54,8 @@ A.to_csv(OUT / "01_진단_표본수.csv", encoding="utf-8-sig"); S.to_csv(OUT / 
 brow = {}
 결과B = {}
 for 이름, cfg in {"MF": 기본, "IMF": IMF}.items():
-    for 판, ex in {"남은 종목으로 나눔(기본)": [("시총분위", {"분위": 1})],
-                  "ROC·EY(또는 GPA·EY) 있는 종목으로 나눔": [("지표있음", {"지표들": [m[0] for m in cfg["지표"]]}), ("시총분위", {"분위": 1})],
+    for 판, ex in {"남은 종목으로 나눔(예전 본문)": [("시총분위", {"분위": 1})],
+                  "ROC·EY(또는 GPA·EY) 있는 종목으로 나눔(본문, 2026-11-05)": [("지표있음", {"지표들": [m[0] for m in cfg["지표"]]}), ("시총분위", {"분위": 1})],
                   "상장 전 종목 경계로 나눔": [("시총분위", {"분위": 1, "기준": "상장전체"})]}.items():
         o = 포.실행({**cfg, "제외": cfg["제외"] + ex})
         결과B[(이름, 판)] = o
@@ -63,7 +63,7 @@ for 이름, cfg in {"MF": 기본, "IMF": IMF}.items():
         brow[(이름, 판)] = {"누적": cum(r), "원문 누적": 원문Q1[이름], "종목 수(첫 해 편입)": int(o["기록"]["편입:상위30"].iloc[0])}
 B = pd.DataFrame(brow).T
 print("\n## B1. 시총 1분위 MF·IMF 누적(배) — 분위 모집단별\n", B.to_string())
-o = 결과B[("MF", "남은 종목으로 나눔(기본)")]
+o = 결과B[("MF", "ROC·EY(또는 GPA·EY) 있는 종목으로 나눔(본문, 2026-11-05)")]
 W = o["보유"][("동일", "상위30")]; R = o["종목수익률"]
 dates = sorted(W)
 yr_rows, contrib = [], []
@@ -76,7 +76,7 @@ Y = pd.DataFrame(yr_rows).set_index("연도")
 C = pd.concat(contrib, axis=1).stack().rename("기여").reset_index()
 C.columns = ["코드", "연도", "기여"]
 C["이름"] = 읽기.종목정보()["코드명"].reindex(C["코드"]).to_numpy()
-print("\n## B2. 1분위 MF(기본) 연도별\n", Y.round(4).to_string())
+print("\n## B2. 1분위 MF(본문 = 지표 자료 있는 종목으로 나눔) 연도별\n", Y.round(4).to_string())
 print("\n## B3. 1분위 MF 기여 큰 종목-연도 15(비중 × 1년 수익률)\n", C.nlargest(15, "기여").round(4).to_string())
 Y.to_csv(OUT / "01_진단_1분위연도.csv", encoding="utf-8-sig"); B.to_csv(OUT / "01_진단_1분위모집단.csv", encoding="utf-8-sig")
 

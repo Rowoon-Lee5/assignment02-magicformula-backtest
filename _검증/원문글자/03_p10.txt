@@ -1,0 +1,125 @@
+10
+자산배분
+www.nhqv.com
+4. 퀄리티, 로우볼지수와ETF
+①퀄리티투자ETF
+미국에상장된iShares Edge MSCI USA Quality Factor ETF(티커: QUAL)는미국
+퀄리티기업에투자하는ETF다. 해당ETF 내높은비중을차지하고있는Apple, 
+Johnson & Johnson, Mastercard, Visa, 3M, Nike 등미국의하이퀄리티기업에
+투자한다. KODEX MSCI퀄리티ETF에편입되어있는삼성전자, NAVER, LG생활
+건강, KT&G 등은대표적인한국의하이퀄리티기업이다(표4, 5 참조).
+Morningstar Wide Moat Focus Index를추종하는VanEck Vectors Morningstar 
+Wide Moat ETF(티커: Moat)은하이퀄리티종목가운데기업가치대비주가가싼
+종목을선정해동일가중으로투자한다. 일종의‘Quality +Value’ 멀티팩터전략으
+로버핏의전략을구현한ETF라고할수있다(그림11~ 13 참조).
+표4. 한국과미국에상장된주요퀄리티ETF
+국가
+티커/코드
+펀드명
+기초지수
+순자산총액
+총보수
+연초대비
+최근1 년
+(억원, 백만달러)
+(%)
+수익률(%)
+수익률(%)
+한국
+A222200
+ARIRANG 스마트베타Quality
+WISE 스마트베타QUALITY INDEX
+55.72
+0.35
+-9.66
+-1.6
+A244660
+KODEX 퀄리티PLUS
+FnGuide 퀄리티Plus 지수
+319.86
+0.30
+-3.66
+11.87
+A275300
+KODEX MSCI 퀄리티
+MSCI Korea IMI Quality Capped
+62.10
+0.30
+-14.51
+-4.14
+A227570
+TIGER 우량가치
+FnGuide 퀄리티밸류지수
+175.56
+0.40
+-5.7
+1.59
+미국
+QUAL
+iShares Edge MSCI USA Quality 
+Factor ETF
+MSCI USA SECTOR NEUTRAL 
+Quality Index
+6,914.62
+0.15
+9.17
+15.95
+MOAT
+VanEck Vectors Morningstar Wide 
+Moat ETF
+Morningstar Wide Moat Focus TR 
+USD
+1,567.52
+0.48
+9.17
+14.24
+자료: Morningstar, NH 투자증권리서치본부
+표5. 미국과한국퀄리티ETF 투자비중상위종목들
+iShares MSCI USA Quality Factor ETF
+KODEX MSCI 퀄리티ETF
+종목명
+비중(%)
+보유종목
+비중(%)
+APPLE INC
+5.32
+삼성전자
+22.18
+JOHNSON & JOHNSON
+4.56
+SK 하이닉스
+19.41
+MASTERCARD INC CLASS A
+4.40
+셀트리온
+9.53
+VISA INC CLASS A
+3.55
+NAVER
+8.36
+EXXON MOBIL CORP
+3.27
+LG 생활건강
+5.03
+ALTRIA GROUP INC
+3.07
+KT&G
+4.89
+NVIDIA CORP
+2.80
+삼성전자우
+3.23
+3M
+2.66
+엔씨소프트
+3.15
+NIKE INC CLASS B
+2.31
+LG
+2.77
+BLACKROCK INC
+2.21
+코웨이
+1.82
+주: 2018년10월4일기준
+자료: BlackRock, 삼성자산운용, NH투자증권리서치본부

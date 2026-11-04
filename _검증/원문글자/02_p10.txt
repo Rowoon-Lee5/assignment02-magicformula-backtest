@@ -1,0 +1,81 @@
+10
+www.nhqv.com
+2. 측정지표에따른밸류프리미엄
+1) 밸류측정지표와글로벌주식시장의밸류프리미엄
+미국에서도Growth의성과가Value의성과를Outperform하는현상이지속되고
+있다(그림10 참조). 이에대해밸류투자가끝났다는주장도나온다. 최근Growth
+의우수한성과는상당부분FANG(Facebook, Amazon, Netflix, Google)주의주가
+상승에기인한다(표7 참조).
+Fama & French의3-Factor Model에서밸류팩터의성과를의미하는HML(High 
+Minus Low)는P/B(Price Book Ratio)을기준으로종목을선정한다. 이영향으로
+밸류지수나종목선정에사용되는측정지표로서P/B의비중이높은편이다.
+미국주식시장에P/B 지표를활용한밸류투자의성과는거의10년간부진했다. 
+반면EV/EBITDA와같은지표를사용할경우최근에도양호한성과를기록했으
+며, 2010년이후로는P/FCF(Free Cash Flow) 지표를사용할경우효과적이었다. 
+따라서소위말하는밸류팩터의부진은사실상P/B 지표의부진이라볼수있다
+(다음페이지그림11 참조).
+그림10. S&P 500 Growth지수가Value 지수를Outperform
+표7. S&P 500 Growth 지수와Value 지수비중상위종목
+70
+120
+170
+220
+270
+320
+'11.1
+'12.1
+'13.1
+'14.1
+'15.1
+'16.1
+'17.1
+'18.1
+S&P 500 Value
+S&P 500 Growth
+(2011.1.4=100P)
+S&P 500 Growth 지수
+S&P 500 Value 지수
+종목명
+업종
+종목명
+업종
+Apple Inc.
+IT
+Berkshire Hathaway B 금융
+Microsoft Corp
+IT
+JP Morgan Chase & Co
+금융
+Amazon.com Inc
+자유소비재Exxon Mobil Corp
+에너지
+Facebook Inc A
+IT
+Wells Fargo & Co
+금융
+Alphabet Inc C
+IT
+Chevron Corp
+에너지
+Alphabet Inc A
+IT
+AT&T Inc
+통신서비스
+Visa Inc A
+IT
+Verizon
+Communications Inc
+통신서비스
+Unitedhealth Group Inc
+헬스케어
+Citigroup Inc
+금융
+Home Depot Inc
+자유소비재DowDuPont Inc.
+소재
+Boeing Co
+산업재
+Johnson & Johnson
+헬스케어
+자료: Bloomberg, NH 투자증권리서치본부
+자료: S&P 500, NH 투자증권리서치본부

@@ -1,0 +1,73 @@
+4
+자산배분
+www.nhqv.com
+2. 퀄리티, 로우볼팩터개요
+①퀄리티팩터의역사
+기업의재무건전성과주가수익률의상관관계에대한퀄리티팩터는최근까지다른
+팩터(밸류, 사이즈, 모멘텀등) 대비주목받지못했다. 잘알려지지않았으나퀄리
+티팩터는밸류팩터만큼이나역사가깊다. 가치투자의아버지벤자민그레이엄
+(Benjamin Graham)이하이퀄리티기업투자의중요성을깨달은선구자라할수
+있다.
+그레이엄이후1996년슬론교수가비현금이익(Accruals) 지표를통해비현금이익
+이낮은기업군이반대의기업군대비주가수익률이우수하다는것을밝혔다.
+이밖에Kozlov and Petajisto(2013), Assness, Frazzini and Pedersen(2013)은
+수익성(Profitability), 이익의질(Earnings Quality), 기업의안정성(Safety)과주가
+수익률과의상관관계에대해연구했다. Fama and French(2014)는3-Factor 
+Model(1993)에서수익성(Profitability)와투자(Investment)를추가한5-Factor 
+Model을발표해점차퀄리티가팩터로자리잡게되었다(표2 참조).
+표2. 퀄리티팩터에대한주요연구
+저자
+년도
+퀄리티지표
+주요내용
+Benjamin Graham
+1973
+Profitability,
+Earnings quality(stability)
+- 적절한규모의기업중재무적으로건전성, 이익안전성, 배당, 이익
+성장률이우수하고, 적절한밸류에이션(P/E, P/B)을가진기업투자
+Richard Sloan 
+1996
+Earnings quality
+- Accrual(이익중현금으로벌어들인이익이아닌나머지부분)
+Anomaly에대해연구
+- Low Accrual 기업이High Accrual 기업보다높은주가수익률을보임
+GMO white paper 
+2004
+Profitability,
+Stable Earnings,
+Low Debt
+- 퀄리티가높은기업들의주가변동성이낮은경향이있으며, 이
+영향으로저평가되어있을가능성이높음
+Robert Novy-Marx 
+2012
+Profitability
+- 수익성높은기업은밸류에이션이높음에도불구하고, 수익성낮은
+기업들보다주가수익률이높게나타남
+Max Kozlov and Antti Petajisto 
+2013
+Earnings Quality
+- 이익퀄리티가높은기업을매수하고, 이익퀄리티가낮은기업을
+매도하는전략의리스크프리미엄존재
+- 글로벌퀄리티포트폴리오는시장, 밸류, 소형주전력대비높은샤프
+비율을기록
+- 퀄리티팩터는밸류팩터와음의상관관계를보이며, 밸류투자를보완
+Clifford S. Asness, Andrea
+Frazzini, and Lasse H. Pedersen 
+2013
+Profitability, Growth, 
+Safety, Payout
+- 퀄리티주식을안전하고, 수익성이있고, 이익성장성을보유하고
+있으며잘관리되는기업으로정의
+- 퀄리티전략은미국및글로벌24개국주식시장에서IR(Information 
+Ratio) 1 이상을기록
+Eugene F. Fama, Kenneth R. 
+French 
+2014
+Quality and Profitability
+- 사이즈(size), 밸류(value), 수익성(profitability)과투자패턴(investment 
+pattern)
+- 2개의새팩터(Profitability, Investment) 추가할경우, ‘3팩터모델’보다
+평균수익률이높아짐
+- 단점: 새로운팩터를추가할경우밸류팩터에대한설명력이저하됨
+자료: MSCI, NH투자증권리서치본부

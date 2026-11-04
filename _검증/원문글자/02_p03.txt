@@ -1,0 +1,78 @@
+3
+www.nhqv.com
+그림2. 팩터투자의역사
+1992
+3-Factor Model
+Market Risk Factor, Value, Size, Fama & French
+1997
+4-Factor Model
+Market Risk, Value, Size, Momentum
+Carhart
+2015
+5-Factor Model
+Profitability, Investment
+Fama & French
+2000
+First Smart Beta ETF
+1982
+Value Factor
+Basu
+1981
+Size Factor
+Banz
+1972
+Low Volatility Factor
+Haugen & Heins
+1963
+CAPM/Single Index Model
+Market Risk Factor
+Sharpe, Lintner & Mossin
+1971
+Arbitrage Pricing Theory
+Multifactor Model Ross
+1934
+Value Investing
+Graham & Dodd
+1930
+1960
+1970
+1980
+1990
+2000
+2010
+자료: DWS
+그림3. 90년대이후알파(Alpha)를다양한팩터(Factor) 프리미엄으로설명하는추세
+Active
+Returns
+Alpha/
+Idiosyncratic 
+Risk
+Alpha/
+Idiosyncratic Risk
+Value
+Factor
+Small Cap
+Factor
+Alpha/
+Idiosyncratic Risk
+Momentum
+factor
+Low Volatility
+factor
+Small Cap
+factor
+Value
+factor
+Excess
+Market
+Beta
+Excess
+Market
+Beta
+Excess
+Market
+Beta
+1980s
+1990s
+2000s
+자료: Allianz Global Investors, MSCI
