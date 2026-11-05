@@ -135,6 +135,8 @@ def 요약(최소개월=24):
     rows = {}
     for f in sorted(결과폴더.glob("*.pkl")):
         d = pd.read_pickle(f)
+        if d["F"] is None:  # 따라하기 02·03은 원문에 없는 요인을 안 만듦(05:47-3) → 옮김 노트북이 결과_월수익률/요인/<같은 이름>.pkl 에 저장
+            d["F"] = pd.read_pickle(결과폴더 / "요인" / f.name)
         for k, r in d["R"].items():
             for g, (a, b) in 구간들.items():
                 x = 구간(r.dropna(), a, b)
