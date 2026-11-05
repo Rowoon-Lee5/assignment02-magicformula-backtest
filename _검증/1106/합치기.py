@@ -340,8 +340,24 @@ md("""## 1. 공통 함수 (저장소 `공통/` 모듈 6개, 글자 그대로)
      '    git = lambda *a: subprocess.run(["git", *a], cwd=결과폴더.parent, capture_output=True, text=True, encoding="utf-8").stdout.strip() if shutil.which("git") else ""  # 한글 파일 이름(utf-8)을 cp949로 읽다 깨지지 않게. (제출본에서 더함) git이 없는 컴퓨터면 빈칸(기록용 칸, 계산 안 씀)'),
     ('import subprocess\n', 'import shutil  # (제출본에서 더함) git 있는지 보기\nimport subprocess\n'),
 ]
+def 요인직접빼기(s, 파일):
+    """(추가 지시 06:53) 제출본에서만: 과제 공지 '요인은 직접 만들지 말 것' → 부르는 곳 0인 `원문요인`과 그것만 쓰는 보조(지표.시가총액·모멘텀11, 고르기 '상하비율')를 뺌. 저장소 공통/은 그대로."""
+    def 뺌(s, 처음, 끝):
+        i = s.index(처음)
+        j = s.index(끝, i)
+        기록.append(f"(제출본에서 뺌) 공통/{파일}.py: {처음.strip().splitlines()[0][:40]} … (요인 직접 구성, 부르는 곳 0)")
+        return s[:i] + s[j:]
+    if 파일 == "포트폴리오":
+        s = 뺌(s, "\n\ndef 원문요인(", "\n\n\ndef 큰수익률(")
+        s = 뺌(s, '    if kind == "상하비율":', "    if len(sc) < n:")
+    if 파일 == "지표":
+        s = 뺌(s, "# 우동호 외(2023) p.513 요인", "# 애널리스트 추정치")
+    return s
+
+
 for 파일, 별칭, 바꿀 in [("데이터읽기", "읽기", 경로), ("지표", "지표", []), ("종목거르기", "종목거르기", []), ("포트폴리오", "포", []), ("평가", "평가", 평가바꿈), ("점검", "점검", [])]:
     s = (REPO / "공통" / f"{파일}.py").read_text(encoding="utf-8")
+    s = 요인직접빼기(s, 파일)
     code(f"%%모듈 {파일} {별칭}\n" + 바꿈(s, 바꿀).rstrip("\n"), f"공통/{파일}.py")
 
 # ───────────── 2절 엑셀 → parquet (예전과 같음) ─────────────
