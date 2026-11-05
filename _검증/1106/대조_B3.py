@@ -28,9 +28,79 @@ a = ap.parse_args()
 REPO = a.저장소
 묶음이름 = {1: "01 우동호", 2: "02 NH 밸류", 3: "03 NH 퀄리티·로우볼", 4: "04 (+2차_07)", 5: "확장연구(비중·지표·순서·거래비용, 이로운·확장연구 파일)", 6: "기간별·요약표"}
 
-# 예전 대조 함수 가져오기
-s = (W / "대조_NW제외.py").read_text(encoding="utf-8")
-exec(s[s.index("NW칸 = re.compile"):s.index("sha = lambda")])  # 새이름·값줄·표대조·비교
+# ---- 예전 대조 함수: _제출작업\대조_NW제외.py의 'NW칸 = re.compile' ~ 'sha = lambda' 앞까지 글자 그대로 복사(추가 지시 05:26: 기존 스크립트 exec 금지) ----
+NW칸 = re.compile(r"t\(NW")
+새이름 = lambda c: re.sub(r"t\(NW\)", "t(OLS)", c) if isinstance(c, str) else c
+
+
+def 값줄(v):
+    return "빈칸" if np.ndim(v) == 0 and pd.isna(v) else str(v)
+
+
+def 표대조(a, b, 길):
+    """a = 어제, b = 새. 칸 이름마다."""
+    out = []
+    if isinstance(a, pd.Series):
+        a, b = a.to_frame(), b.to_frame()
+    if not a.index.equals(b.index):
+        out.append(f"{길}: 줄(index) 다름 — 어제 {len(a)}줄, 새 {len(b)}줄")
+        return out
+    ca, cb = list(a.columns), list(b.columns)
+    공통 = [c for c in ca if c in cb]
+    어제만, 새만 = [c for c in ca if c not in cb], [c for c in cb if c not in ca]
+    for c in 공통:
+        if not a[c].equals(b[c]):
+            x, y = a[c], b[c]
+            틀 = ~((x == y) | (x.isna() & y.isna()))
+            out.append(f"{길}: 칸 {c!r} 값 다름 {int(틀.sum())}줄")
+            out += [f"      줄 {k!r}: 어제 {값줄(x[k])} → 새 {값줄(y[k])}" for k in x.index[틀]]
+    if 어제만 or 새만:
+        out.append(f"{길}: 어제만 있는 칸 {len(어제만)}개 {어제만}")
+        out.append(f"{길}: 새로만 있는 칸 {len(새만)}개 {새만}")
+        for c in 새만:  # NW → OLS 이름 바꾼 칸: 값 전부
+            짝 = [o for o in 어제만 if 새이름(o) == c]
+            if 짝:
+                out.append(f"{길}: 칸 {짝[0]!r} → {c!r} (이름 바뀜, 값은 NW → OLS) 줄마다:")
+                out += [f"      줄 {k!r}: 어제 {값줄(a.at[k, 짝[0]])} → 새 {값줄(b.at[k, c])}" for k in b.index]
+        남은 = [c for c in 어제만 if 새이름(c) not in 새만 and not NW칸.search(str(c))]
+        if 남은:
+            out.append(f"{길}: !! NW가 아닌데 없어진 칸 {남은}")
+        덤 = [c for c in 새만 if not any(새이름(o) == c for o in 어제만)]
+        if 덤:
+            out.append(f"{길}: !! 어제 짝이 없는 새 칸 {덤}")
+    return out
+
+
+def 비교(a, b, 길=""):
+    if isinstance(a, dict) and isinstance(b, dict):
+        out = [f"{길}: 키 다름 {sorted(set(map(str, a)) ^ set(map(str, b)))}"] if set(a) != set(b) else []
+        for k in a:
+            if k in b and k not in ("커밋", "변경"):
+                out += 비교(a[k], b[k], f"{길}/{k}")
+        return out
+    if isinstance(a, (list, tuple)) and isinstance(b, (list, tuple)):
+        if len(a) != len(b):
+            return [f"{길}: 길이 {len(a)} ≠ {len(b)}"]
+        return sum((비교(x, y, f"{길}[{i}]") for i, (x, y) in enumerate(zip(a, b))), [])
+    if isinstance(a, (pd.DataFrame, pd.Series)):
+        if type(a) is not type(b):
+            return [f"{길}: 형식 다름"]
+        return [] if a.equals(b) else 표대조(a, b, 길)
+    try:
+        if isinstance(a, float) and isinstance(b, float) and np.isnan(a) and np.isnan(b):
+            return []
+        return [] if a == b or bool(np.all(a == b)) else [f"{길}: {a!r} ≠ {b!r}"]
+    except Exception:
+        return [] if repr(a) == repr(b) else [f"{길}: repr 다름"]
+# ---- 복사 끝 ----
+
+
+def 새파일(p):
+    """이미 있으면 덮어쓰지 않고 _2, _3 …(추가 지시 05:26)."""
+    q, i = p, 2
+    while q.exists():
+        q, i = p.with_name(f"{p.stem}_{i}{p.suffix}"), i + 1
+    return q
 _표대조 = 표대조
 
 
@@ -130,7 +200,7 @@ def 대조(n):
                 줄 += [f"\n### {k} — {이름}", pd.read_csv(f, encoding="utf-8-sig").to_string() if f else "(파일 없음)"]
     요약 = f"절{n} {묶음이름[n]}: (a) 값 다름 {다름a}·그림 다름 {그림a}·저장소 짝 없음 {len(없음)}·새에 없는 저장소 파일 {len(남)} / (b) 바뀜 {바뀜}·없어짐 {len(없어짐)}·생김 {len(생김)}"
     대조폴더.mkdir(parents=True, exist_ok=True)
-    (대조폴더 / f"절{n}.txt").write_text(f"요약: {요약}\n" + "\n".join(줄) + "\n", encoding="utf-8")
+    새파일(대조폴더 / f"절{n}.txt").write_text(f"요약: {요약}\n" + "\n".join(줄) + "\n", encoding="utf-8")
     print(f"썼음 {대조폴더 / f'절{n}.txt'} — {요약}")
 
 
@@ -141,7 +211,7 @@ def 합치기():
             f"새 = {a.새} / 저장소 = {REPO} / 어제 = {a.어제}", f"묶음 {len(있는)}/6개" + (f", 없는 묶음 {[n for n in 묶음이름 if not (대조폴더 / f'절{n}.txt').exists()]}" if len(있는) < 6 else ""), "",
             "## 요약"] + [g.splitlines()[0] for g in 글] + [""]
     출력.parent.mkdir(parents=True, exist_ok=True)
-    출력.write_text("\n".join(머리) + "\n" + "\n\n".join(글), encoding="utf-8")
+    새파일(출력).write_text("\n".join(머리) + "\n" + "\n\n".join(글), encoding="utf-8")
     print(f"합침 {출력} (절 {len(있는)}개)")
 
 

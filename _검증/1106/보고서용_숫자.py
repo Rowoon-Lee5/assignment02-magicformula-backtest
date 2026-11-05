@@ -11,6 +11,14 @@ from pathlib import Path
 
 import pandas as pd
 
+
+def 새파일(p):
+    """이미 있으면 덮어쓰지 않고 _2, _3 …(추가 지시 05:26)."""
+    q, i = p, 2
+    while q.exists():
+        q, i = p.with_name(f"{p.stem}_{i}{p.suffix}"), i + 1
+    return q
+
 ap = argparse.ArgumentParser()
 ap.add_argument("결과", type=Path)
 ap.add_argument("출력", type=Path)
@@ -200,7 +208,7 @@ def 조각쓰기(n):
     글 = [f"<!-- 쓴파일: {json.dumps(sorted(str(p.relative_to(a.결과)) for p in 쓴파일), ensure_ascii=False)} -->"]
     for 번호, 줄들 in 조각:
         글 += [f"<!-- 표: {번호} -->"] + 줄들
-    (조각폴더 / f"묶음{n}.md").write_text("\n".join(글), encoding="utf-8")
+    새파일(조각폴더 / f"묶음{n}.md").write_text("\n".join(글), encoding="utf-8")
     print(f"조각 {조각폴더 / f'묶음{n}.md'} (표 {sorted({b for b, _ in 조각})})")
 
 
@@ -232,7 +240,7 @@ def 합치기():
     남은 = [p for p in sorted(a.결과.rglob("*")) if p.is_file() and p.suffix in (".csv", ".pkl") and str(p.relative_to(a.결과)) not in 쓴]
     줄 += ["", "## 이 문서에 안 쓴 결과 파일(있는 그대로 둠)", ""] + ([f"- `{p.relative_to(a.결과)}`" for p in 남은] or ["(없음)"]) + [""]
     a.출력.parent.mkdir(parents=True, exist_ok=True)
-    a.출력.write_text("\n".join(줄), encoding="utf-8")
+    새파일(a.출력).write_text("\n".join(줄), encoding="utf-8")
     print(f"합침 {a.출력} ({len(줄)}줄, 조각 {len(있는)}개)")
 
 

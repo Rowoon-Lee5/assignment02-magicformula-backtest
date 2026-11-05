@@ -14,11 +14,19 @@ from pathlib import Path
 
 import nbformat as nbf
 
+
+def 새파일(p):
+    """이미 있으면 덮어쓰지 않고 _2, _3 …(추가 지시 05:26)."""
+    q, i = p, 2
+    while q.exists():
+        q, i = p.with_name(f"{p.stem}_{i}{p.suffix}"), i + 1
+    return q
+
 시험 = "--시험" in sys.argv
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 ROOT = REPO.parent  # 과제02
-OUT = HERE / "합치기_시험" / "과제02.ipynb" if 시험 else ROOT / "제출_원문대로" / "과제02.ipynb"
+OUT = 새파일(HERE / "합치기_시험" / "과제02.ipynb" if 시험 else ROOT / "제출_원문대로" / "과제02.ipynb")  # 이미 있으면 새 이름(추가 지시 05:26)
 DATA = ROOT / "제출_원문대로" / "data"
 OLD = ROOT / "제출" / "과제02.ipynb"
 꼬리 = "_시험" if 시험 else ""
@@ -499,13 +507,13 @@ for k in 키:
     줄.append(f"| {k} | {sum(a.values())} | {a['code']} | {a['markdown']} | {sum(b.values())} | {b['code']} | {b['markdown']} | {sum(b.values()) - sum(a.values()):+d} |")
 ta, tb = sum((v for v in 옛.values()), Counter()), sum((v for v in 새.values()), Counter())
 줄.append(f"| 합 | {sum(ta.values())} | {ta['code']} | {ta['markdown']} | {sum(tb.values())} | {tb['code']} | {tb['markdown']} | {sum(tb.values()) - sum(ta.values()):+d} |")
-(HERE / f"합치기_비교{꼬리}.md").write_text("\n".join(줄) + "\n", encoding="utf-8")
+새파일(HERE / f"합치기_비교{꼬리}.md").write_text("\n".join(줄) + "\n", encoding="utf-8")
 
 점검 = [f"합치기 점검{' (시험)' if 시험 else ''}: 출력 {OUT}", f"칸 {len(cells)}, 코드 {sum(c.cell_type == 'code' for c in cells)}, 저장소 커밋 {커밋} ({브랜치})",
         f"공통·따라하기·연구 커밋 안 된 변경:\n{변경 or '(없음)'}", f"7.5절 옮김 노트북: {옮김들 or '(없음)'}", "",
         f"## 고칠 것·확인할 것 {len(고칠)}개 (있으면 종료 코드 1)"] + 고칠 + ["", f"## 바꾼 것 {len(기록)}개"] + 기록 + \
        ["", "## 절마다 코드가 쓰는 결과 파일(글자로 쓴 이름만)"] + [f"{k}: {sorted(set(re.findall(파일식, chr(10).join(v))) & 쓴)}" for k, v in 절칸.items()]
-(HERE / f"합치기_점검{꼬리}.txt").write_text("\n".join(점검) + "\n", encoding="utf-8")
+새파일(HERE / f"합치기_점검{꼬리}.txt").write_text("\n".join(점검) + "\n", encoding="utf-8")
 print("\n".join(점검[:6]))
 print(f"고칠 것 {len(고칠)}개 → {HERE / f'합치기_점검{꼬리}.txt'}, 비교 → {HERE / f'합치기_비교{꼬리}.md'}")
 sys.exit(1 if 고칠 else 0)
