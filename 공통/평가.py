@@ -76,14 +76,14 @@ def 성과표(R, F, 롱숏열=()):
     return pd.DataFrame({k: 성과(R[k], F, k in 롱숏열) for k in R}).T
 
 
-def 누적그림(R, 제목, 로그=True, 퍼센트=False, 오른쪽=None):
+def 누적그림(R, 제목, 로그=True, 퍼센트=False, 오른쪽=None, 시작100=False):
     """누적수익률. 흑백으로도 구분되게 선 모양·표식을 다르게. 세로축은 로그(README 한계 '선형 축', 2026-11-04).
-    퍼센트=True: 원문 그림처럼 (누적 가치 − 1) × 100 %, 보통 축. 오른쪽 = {이름: 지수 값 Series}를 주면 오른쪽 축에 그 값을 그대로 그림(NH 그림 26·32 'KOSPI(우)')."""
+    퍼센트=True: 원문 그림처럼 (누적 가치 − 1) × 100 %, 보통 축. 시작100=True면 누적 가치 × 100 %(우동호 Fig. 1: 세 선이 약 100%에서 시작, 원문사양_01). 오른쪽 = {이름: 지수 값 Series}를 주면 오른쪽 축에 그 값을 그대로 그림(NH 그림 26·32 'KOSPI(우)')."""
     fig, ax = plt.subplots(figsize=(9, 4.5))
     styles = [(ls, mk) for mk in (None, "o", "s", "^", "x") for ls in ("-", "--", ":", "-.")]  # 20가지(선 9개 그림에서 둘이 겹치던 것, 결과 감사 LOW)
     for (ls, mk), k in zip(styles * (len(R.columns) // len(styles) + 1), R):  # 20개 넘으면 모양 반복(열은 빠지지 않음)
         w = (1 + R[k].dropna()).cumprod()
-        ax.plot((w - 1) * 100 if 퍼센트 else w, color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
+        ax.plot((w if 시작100 else w - 1) * 100 if 퍼센트 else w, color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
     if 퍼센트:
         ax.set(title=제목, ylabel="누적 수익률(%)")
     else:
