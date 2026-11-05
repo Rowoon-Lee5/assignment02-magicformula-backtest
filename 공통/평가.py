@@ -1,4 +1,4 @@
-"""성과 평가: 누적·연환산 수익률, 표준편차, 샤프, MDD(최대낙폭), 정보비율, CAPM·FF3·Carhart 알파(t는 OLS와 Newey-West, NW는 소표본 보정 판(n/(n−k))도 같이).
+"""성과 평가: 누적·연환산 수익률, 표준편차, 샤프, MDD(최대낙폭), 정보비율, CAPM·FF3·Carhart 알파(t는 OLS. 2026-11-06 회원 결정으로 Newey-West t를 뺌, 원문에 없었음).
 '초과평균'은 설명변수 없는 회귀 = 월평균 초과수익률과 그 t.
 타겟 페이퍼 성과표 지표(서브에이전트가 원문 PDF로 확인, 진행기록 2026-11-03 04:50): 우동호 외(2023) 표 2~7(p.514–516) = 누적·MDD·표준편차·샤프·정보비율·젠센·3요인·4요인 α(t)
 → 위 칸들. Novy-Marx(NBER w15940, 2010년 4월판) 표 = 월평균 초과수익률·α·요인 적재값(β)·adj.-R² → '초과평균 α(월)'·'Carhart β:요인'·'Carhart adj R²' 칸."""
@@ -27,15 +27,13 @@ def 요인(grid, cfg):
 
 
 def 회귀(y, X):
-    """알파(월)와 t(OLS), t(Newey-West, 시차 = floor(4(T/100)^(2/9))), t(NW 소표본 보정: 공분산 × n/(n−k), statsmodels use_correction), OLS 결과(β·adj R²용)."""
+    """알파(월)와 t(OLS), OLS 결과(β·adj R²용)."""
     d = X.assign(_y=y).dropna()
     Xc = sm.add_constant(d.drop(columns="_y"), has_constant="add")
-    m = sm.OLS(d["_y"], Xc)
-    L = int(4 * (len(d) / 100) ** (2 / 9))
-    ols, nw, nwc = m.fit(), m.fit(cov_type="HAC", cov_kwds={"maxlags": L}), m.fit(cov_type="HAC", cov_kwds={"maxlags": L, "use_correction": True})
+    ols = sm.OLS(d["_y"], Xc).fit()
     if ols.rsquared > 1 - 1e-10:  # 시장 자기 자신 회귀(잔차 ≈ 0): t는 계산 오차라 빈칸(결과 감사 LOW 2026-11-03)
-        return ols.params["const"], np.nan, np.nan, np.nan, ols
-    return ols.params["const"], ols.tvalues["const"], nw.tvalues["const"], nwc.tvalues["const"], ols
+        return ols.params["const"], np.nan, ols
+    return ols.params["const"], ols.tvalues["const"], ols
 
 
 def 성과(r, F, 롱숏=False):
@@ -49,7 +47,7 @@ def 성과(r, F, 롱숏=False):
            "표준편차(연)": r.std() * np.sqrt(12), "샤프": ex.mean() / ex.std() * np.sqrt(12),
            "MDD": (w / w.cummax().clip(lower=1) - 1).min(), "정보비율": a.mean() / a.std() * np.sqrt(12) if a.std() else np.nan}  # 시장 자신은 a = 0
     for name, cols in 모형.items():
-        out[f"{name} α(월)"], out[f"{name} t(OLS)"], out[f"{name} t(NW)"], out[f"{name} t(NW보정)"], ols = 회귀(ex, F[cols])
+        out[f"{name} α(월)"], out[f"{name} t(OLS)"], ols = 회귀(ex, F[cols])
     out |= {f"Carhart β:{c}": ols.params[c] for c in cols} | {"Carhart adj R²": ols.rsquared_adj}  # 마지막 모형(Carhart)의 적재값
     return out
 
@@ -66,11 +64,11 @@ def 샤프차이(a, b):
 
 
 def 평균차이(a, b):
-    """두 월수익률 차이(a − b)의 평균과 t(NW, 회귀()와 같은 시차), p(양측 정규)."""
+    """두 월수익률 차이(a − b)의 평균과 t(OLS: 상수항만 있는 회귀의 보통 t), p(양측 정규)."""
     from scipy.stats import norm
     d = (a - b).dropna()
-    m, _, t, _, _ = 회귀(d, pd.DataFrame(index=d.index))
-    return pd.Series({"월수": len(d), "평균 차이(월)": m, "t(NW)": t, "p": 2 * norm.sf(abs(t))})
+    m, t, _ = 회귀(d, pd.DataFrame(index=d.index))
+    return pd.Series({"월수": len(d), "평균 차이(월)": m, "t(OLS)": t, "p": 2 * norm.sf(abs(t))})
 
 
 def 성과표(R, F, 롱숏열=()):
@@ -78,16 +76,41 @@ def 성과표(R, F, 롱숏열=()):
     return pd.DataFrame({k: 성과(R[k], F, k in 롱숏열) for k in R}).T
 
 
-def 누적그림(R, 제목, 로그=True):
-    """누적수익률. 흑백으로도 구분되게 선 모양·표식을 다르게. 세로축은 로그(README 한계 '선형 축', 2026-11-04)."""
+def 누적그림(R, 제목, 로그=True, 퍼센트=False, 오른쪽=None):
+    """누적수익률. 흑백으로도 구분되게 선 모양·표식을 다르게. 세로축은 로그(README 한계 '선형 축', 2026-11-04).
+    퍼센트=True: 원문 그림처럼 (누적 가치 − 1) × 100 %, 보통 축. 오른쪽 = {이름: 지수 값 Series}를 주면 오른쪽 축에 그 값을 그대로 그림(NH 그림 26·32 'KOSPI(우)')."""
     fig, ax = plt.subplots(figsize=(9, 4.5))
     styles = [(ls, mk) for mk in (None, "o", "s", "^", "x") for ls in ("-", "--", ":", "-.")]  # 20가지(선 9개 그림에서 둘이 겹치던 것, 결과 감사 LOW)
     for (ls, mk), k in zip(styles * (len(R.columns) // len(styles) + 1), R):  # 20개 넘으면 모양 반복(열은 빠지지 않음)
-        ax.plot((1 + R[k].dropna()).cumprod(), color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
-    ax.set(title=제목, ylabel="누적 가치(시작=1, 로그 축)" if 로그 else "누적 가치(시작=1)", yscale="log" if 로그 else "linear")
-    ax.legend(fontsize=8, ncol=2)
+        w = (1 + R[k].dropna()).cumprod()
+        ax.plot((w - 1) * 100 if 퍼센트 else w, color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
+    if 퍼센트:
+        ax.set(title=제목, ylabel="누적 수익률(%)")
+    else:
+        ax.set(title=제목, ylabel="누적 가치(시작=1, 로그 축)" if 로그 else "누적 가치(시작=1)", yscale="log" if 로그 else "linear")
+    h, l = ax.get_legend_handles_labels()
+    if 오른쪽:
+        ax2 = ax.twinx()
+        for k, v in 오른쪽.items():
+            ax2.plot(v, color="gray", lw=0.8, alpha=0.7, label=f"{k}(우)")
+        ax2.set_ylabel("지수(우)")
+        h2, l2 = ax2.get_legend_handles_labels()
+        h, l = h + h2, l + l2
+    ax.legend(h, l, fontsize=8, ncol=2)
     ax.grid(alpha=0.3)
     return fig
+
+
+def 일간정의(r, 시장, 무위험일):
+    """우동호 외(2023) 표 2~7의 SD·Sharpe·IR·MDD를 원문 숫자가 나오는 정의로(원문에 정의 없음, KOSPI 원문 숫자로 역산 `_검증/01_정의역산.py`):
+    일간 수익률 r, SD = 일 표준편차 × √N(N = 전 기간 일 수), Sharpe = 일 초과수익 평균/표준편차 × √N, IR = (r − 시장) 평균/표준편차 × √N, MDD = 일간 가치의 최대 낙폭.
+    무위험일 = 그날 쓸 일 무위험수익률(직전 날 값을 씀)."""
+    r = r.dropna()
+    N, w = len(r), (1 + r).cumprod()
+    e = r - 무위험일.reindex(r.index)
+    a = r - 시장.reindex(r.index)
+    return {"일 수": N, "누적": w.iloc[-1] - 1, "MDD": (w / w.cummax().clip(lower=1) - 1).min(), "SD": r.std() * np.sqrt(N),
+            "Sharpe": e.mean() / e.std() * np.sqrt(N), "IR": a.mean() / a.std() * np.sqrt(N) if a.std() else 0.0}
 
 
 결과폴더 = Path(__file__).resolve().parent.parent / "결과_월수익률"
@@ -108,7 +131,7 @@ def 저장(R, F, 이름, 롱숏=(), 이상값=None):
 
 
 def 요약(최소개월=24):
-    """결과_월수익률의 모든 전략 × 가중 × 기간: 평균(월 초과수익)과 t(NW), 샤프, MDD, Carhart 알파와 t(NW), 이상값 보유(전 기간 건수, 저장 때 안 준 파일은 빈칸). 최소개월 미만 구간은 뺀다."""
+    """결과_월수익률의 모든 전략 × 가중 × 기간: 평균(월 초과수익)과 t(OLS), 샤프, MDD, Carhart 알파와 t(OLS), 이상값 보유(전 기간 건수, 저장 때 안 준 파일은 빈칸). 최소개월 미만 구간은 뺀다."""
     rows = {}
     for f in sorted(결과폴더.glob("*.pkl")):
         d = pd.read_pickle(f)
@@ -118,7 +141,7 @@ def 요약(최소개월=24):
                 if len(x) >= 최소개월:
                     o = 성과(x, d["F"], k in d["롱숏"])
                     rows[(f.stem, *k, g)] = {"보유 첫 달": f"{x.index[0] - pd.Timedelta(days=15):%Y-%m}", "보유 끝 달": f"{x.index[-1] - pd.Timedelta(days=15):%Y-%m}",
-                                             "개월": o["개월"], "평균(월 초과)": o["초과평균 α(월)"], "평균 t(NW)": o["초과평균 t(NW)"], "샤프": o["샤프"],
-                                             "MDD": o["MDD"], "Carhart α(월)": o["Carhart α(월)"], "α t(NW)": o["Carhart t(NW)"],
+                                             "개월": o["개월"], "평균(월 초과)": o["초과평균 α(월)"], "평균 t(OLS)": o["초과평균 t(OLS)"], "샤프": o["샤프"],
+                                             "MDD": o["MDD"], "Carhart α(월)": o["Carhart α(월)"], "α t(OLS)": o["Carhart t(OLS)"],
                                              "이상값 보유": d.get("이상값", {}).get(k, np.nan)}
     return pd.DataFrame(rows).T.rename_axis(["파일", "전략", "가중", "기간"])

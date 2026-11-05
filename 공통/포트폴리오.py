@@ -32,8 +32,10 @@ import 지표
 )
 
 # 우동호 외(2023) 재현 설정. 연구_틀의 비교 기준으로도 쓴다.
+# 재무연도 '직전년도': 원문 p.512 '직전년도에 공시된 재무제표', '2003년에서 2020년 결산자료' → 리밸런싱 해 t의 회계연도 t−1 결산만(없으면 그 종목은 그해 빠짐, 2026-11-06 원문대로 고침: 전에는 2년 안 가장 최근 행이라 FY t−2도 씀)
 우동호2023 = {**기본설정, "이름": "우동호2023_MF", "기간": ("2004-04", "2022-04"),
-              "제외": ["보통주", "금융업", "투자기구", ("결산월", {"월": 12}), "거래정지"], "무위험": "E11.02.003.008", "가격": 읽기.수정주가, "전량교체": True}
+              "제외": ["보통주", "금융업", "투자기구", ("결산월", {"월": 12}), "거래정지"], "무위험": "E11.02.003.008", "가격": 읽기.수정주가, "전량교체": True,
+              "재무연도": "직전년도"}
 
 
 def 기준일(cfg):
@@ -81,10 +83,15 @@ def 발표지연(키="CP10002200"):
     return pd.concat({**{g: 표(x) for g, x in d.groupby(구간, observed=False)}, "전체": 표(d)}, axis=1).T
 
 
-def 재무(t, how):
-    """그날 쓸 수 있는 가장 최근 회계연도 행(종목마다 한 행). ponytail: 결산일이 2년보다 오래된 행은 안 씀(묵은 값 막기)."""
+def 재무(t, how, 연도=None):
+    """그날 쓸 수 있는 가장 최근 회계연도 행(종목마다 한 행). 연도=None: 결산일이 2년보다 오래된 행은 안 씀(묵은 값 막기, ponytail).
+    연도='직전년도': 결산일이 t 전 해(t.year − 1)인 행만(우동호 p.512 '직전년도', Novy-Marx 각주 4 '다음 해 6월 말'). 연도='최근': 상한 없이 가장 최근."""
     f = 재무가능일(how)
-    f = f[(f["가능일"] <= t) & (f["결산일"] >= t - pd.DateOffset(years=2))]
+    f = f[f["가능일"] <= t]
+    if 연도 == "직전년도":
+        f = f[f["결산일"].dt.year == t.year - 1]
+    elif 연도 is None:
+        f = f[f["결산일"] >= t - pd.DateOffset(years=2)]
     return f.sort_values(["회계연도", "결산일"]).drop_duplicates("코드", keep="last").set_index("코드")  # F9: 같은 회계연도 두 결산월이면 늦은 결산일
 
 
@@ -117,6 +124,39 @@ def 분기재무(t, 흐름="4분기합", 시점="다음날"):
     return out.assign(회계연도=np.nan)  # 지표.값의 '빈칸으로 볼 칸'(회계연도 기준)은 분기에 안 씀
 
 
+@cache
+def 발표행():
+    """보고서마다 한 행: 분기 보고서(1·2·3분기, 분기 3개월 값) + 연간 사업보고서(결산 값). 각 행의 가능일 = 그 보고서 발표일(FP56000900).
+    결산월 분기는 분기 행 대신 연간 행(사업보고서가 발표하는 값). 발표일이 없거나 기간 끝보다 이른 보고서는 안 씀(대신할 일수 근거 없음)."""
+    q = 분기가능일("발표월말")
+    q = q[q["분기말"].dt.month != q["CP10002200"]].dropna(subset=["가능일"])
+    y = 재무가능일(("발표월말", 0)).dropna(subset=["발표일"]).rename(columns={"결산일": "분기말"})
+    cols = [c for c in 읽기.분기흐름 + 읽기.분기잔액 if c in q and c in y]
+    return pd.concat([q[["코드", "분기말", "가능일", "CP10002200", *cols]].assign(보고서="분기"),
+                      y[["코드", "분기말", "발표일", "CP10002200", "회계연도", *cols]].assign(가능일=lambda d: d["발표일"], 보고서="연간")], ignore_index=True)
+
+
+def 발표재무(t, 상한=None):
+    """NH(2018) 02 p.14·03 p.18 '주요 재무제표 수치는 분기/연간 재무제표가 발표되는 월의 월말에 반영', 02 p.26 '확정 재무데이터':
+    t까지 발표된 가장 최근 보고서(분기 또는 연간) 값 그대로(4분기 합·×4 같은 가공 없음, 회원 결정 2026-11-06). 같은 날 발표면 기간 끝이 늦은 보고서.
+    상한 = 년 수를 주면 기간 끝이 그보다 오래된 보고서는 안 씀(기본 없음)."""
+    f = 발표행()
+    f = f[f["가능일"] <= t]
+    if 상한:
+        f = f[f["분기말"] >= t - pd.DateOffset(years=상한)]
+    return f.sort_values(["가능일", "분기말"]).drop_duplicates("코드", keep="last").set_index("코드")
+
+
+def 재무표(t, cfg):
+    """설정의 재무주기대로 그날 쓸 재무(종목마다 한 행). ('발표값',) = 발표재무, ('분기', 흐름) = 분기재무, 그 밖 = 연간 재무()."""
+    kind = cfg.get("재무주기", ("연간",))
+    if kind[0] == "발표값":
+        return 발표재무(t, cfg.get("재무상한"))
+    if kind[0] == "분기":
+        return 분기재무(t, kind[1], "발표월말" if cfg["재무시점"][0] == "발표월말" else "다음날")
+    return 재무(t, cfg["재무시점"], cfg.get("재무연도"))
+
+
 def 다음리밸런싱(t, cfg):
     g = 기준일(cfg)
     return g[min(g.get_loc(t) + cfg["리밸런싱"], len(g) - 1)] if t in g else t
@@ -133,7 +173,7 @@ def 재료(t, cfg):
     for c, x, y in 읽기.쓰지말것(cfg["가격"])[["코드", "시작", "끝"]].itertuples(index=False):
         if c in p:
             p.loc[x:y, c] = np.nan
-    return dict(t=t, 다음=다음리밸런싱(t, cfg), 가격=cfg["가격"], codes=codes, fin=(분기재무(t, cfg["재무주기"][1], "발표월말" if cfg["재무시점"][0] == "발표월말" else "다음날") if cfg.get("재무주기", ("연간",))[0] == "분기" else 재무(t, cfg["재무시점"])).reindex(codes),
+    return dict(t=t, 다음=다음리밸런싱(t, cfg), 가격=cfg["가격"], codes=codes, fin=재무표(t, cfg).reindex(codes),
                 mcap=읽기.일간(읽기.시총).loc[t, codes], ret=p.pct_change(fill_method=None).iloc[1:],
                 일년상장=읽기.상장중().loc[a:t].reindex(columns=codes, fill_value=False).all() & p.iloc[0].notna())
 
@@ -163,6 +203,9 @@ def 고르기(sc, how):
     if kind == "상하N":  # 위 n(Q1)·가운데(Q2)·아래 n(Q3): Novy-Marx(2010) p.21 '150 stocks with the highest … 150 … lowest'
         a = sc.sort_values(ascending=False).index
         return {"Q1": a[:n], "Q2": a[n:len(a) - n], "Q3": a[len(a) - n:]}
+    if kind == "상하비율":  # 위 n 비율(Q1)·가운데(Q2)·아래 n 비율(Q3): 우동호 p.513 요인 '상위 30% … 하위 30%'(종목 수 × n을 반올림)
+        a, k = sc.sort_values(ascending=False).index, int(round(len(sc) * n))
+        return {"Q1": a[:k], "Q2": a[k:len(a) - k], "Q3": a[len(a) - k:]}
     if len(sc) < n:  # 0종목이거나 분위 수보다 적으면 빈 묶음(구간 수익률 빈칸, 감사 #11; 02 '최근 분기 × 4' 2002-03-29에 1종목뿐 → 5분위 못 나눔, 2026-11-04)
         return {f"Q{i}": sc.index[:0] for i in range(1, n + 1)}
     q = pd.qcut(sc.rank(method="first", ascending=False), n, labels=[f"Q{i}" for i in range(1, n + 1)])
@@ -312,6 +355,19 @@ def 실행(cfg):
     회전 = defaultdict(dict)
     수익률 = pd.DataFrame({k: 보유(R, w, cfg["거래비용"], cfg["전량교체"], 회전[k]) for k, w in W.items()})
     return dict(수익률=수익률, 기록=pd.DataFrame(기록).set_index("기준일"), 보유=W, 설정=cfg, 종목수익률=R, 회전율=pd.DataFrame(회전))
+
+
+def 원문요인(cfg, 비율=0.3, 비중="동일", 리밸런싱=1):
+    """우동호 외(2023) p.513 요인을 원문 문장대로 직접 만든다: SMB = 시가총액 하위 30% − 상위 30%, HML = 장부가치/시장가치 상위 30% − 하위 30%,
+    MOM = 과거 11개월 수익률 상위 30% − 하위 30%(2026-11-06, 전에는 DataGuide 2×3 요인지수).
+    원문에 없는 칸(기본값 = 가장 단순, 바꾼 영향은 `_검증/기본값_영향_20261106.md`): 표본 = 본문 거르기(cfg의 시장·제외), cfg 기준일마다(리밸런싱=1: 매달) 다시 나눔,
+    동일가중, 장부가치 = 지배자본(BP), 재무 = 가능일이 지난 가장 최근 회계연도(상한 없음), 비용 0. 각 요인의 지표가 없는 종목은 그 요인에서만 빠짐.
+    돌려주는 것: 기준일 간 요인 수익률(열 SMB·HML·MOM)."""
+    c = {**cfg, "리밸런싱": 리밸런싱, "고르기": ("상하비율", 비율), "비중": [비중], "거래비용": dict(수수료=0, 거래세=0, 슬리피지=0), "전량교체": False, "재무연도": "최근",
+         "전략들": {"SMB": dict(지표=[("시가총액", "낮게")], 합산="순위합산"), "HML": dict(지표=[("BP", "높게")], 합산="순위합산"),
+                  "MOM": dict(지표=[("모멘텀11", "높게")], 합산="순위합산")}}
+    R = 실행(c)["수익률"]
+    return pd.DataFrame({k: R[(k, 비중, "Q1")] - R[(k, 비중, "Q3")] for k in ("SMB", "HML", "MOM")})
 
 
 def 큰수익률(R, 하한=3):

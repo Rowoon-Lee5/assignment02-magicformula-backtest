@@ -168,3 +168,40 @@ def 일년상장(s):
 def 변동성(s):
     """NH(2018-10): 직전 12개월 일간수익률 표준편차. 원문에 최소 관측 기준이 없어 12개월 내내 상장된 종목만. 기간 안 빈칸은 빼고 계산."""
     return s["ret"].std().where(일년상장(s))
+
+
+def 변동성_창(s, 개월=12, 주기="일"):
+    """NH(2018-10) p.23 그림 33·34: 직전 '개월' 동안 일간('일')·주간('주', 금요일 끝)·월간('월', 월말) 수익률 표준편차.
+    변동성()과 같은 규칙: 창 내내 시장구분이 코스피·코스닥이고 창 첫날 상장 가격이 있는 종목만, '쓰지 말 것' 칸은 빈칸. 개월=12·주기='일'이면 변동성()과 같은 값."""
+    t, c = s["t"], s["codes"]
+    a = t - pd.DateOffset(months=개월)
+    p = 읽기.상장가격(s["가격"]).loc[a:t, c].copy()
+    for k, x, y in 읽기.쓰지말것(s["가격"])[["코드", "시작", "끝"]].itertuples(index=False):
+        if k in p:
+            p.loc[x:y, k] = np.nan
+    ok = 읽기.상장중().loc[a:t].reindex(columns=c, fill_value=False).all() & p.iloc[0].notna()
+    if 주기 != "일":
+        p = p.resample({"주": "W-FRI", "월": "ME"}[주기]).last()
+    return p.pct_change(fill_method=None).iloc[1:].std().where(ok)
+
+
+# 우동호 외(2023) p.513 요인(원문대로 직접 만듦, 포트폴리오.원문요인)
+def 시가총액(s):
+    """SMB용: 그날 시가총액(백만원). '낮게' = 소형이 Q1."""
+    return s["mcap"]
+
+
+def 모멘텀11(s):
+    """MOM용: 과거 11개월 수익률 = 그날 가격 / 11개월 전(그날 또는 그 전 마지막 거래일) 가격 − 1(우동호 p.513 '과거 11개월 동안 수익률', 건너뛰는 달은 원문에 없어 안 둠)."""
+    p = 읽기.상장가격(s["가격"]).loc[:s["t"], s["codes"]]
+    return p.iloc[-1] / p.loc[:s["t"] - pd.DateOffset(months=11)].iloc[-1] - 1
+
+
+# 애널리스트 추정치(NH 2018-07 p.19 그림 25·26)
+def EP_선행(s):
+    """12개월 선행 E/P = 12개월 선행 EPS / 수정주가. 12개월 선행 EPS = FY1 × (12 − m)/12 + FY2 × m/12, m = 그날의 월(12월 결산 기준, FY1은 1월 초에 그해로 바뀜:
+    삼성전자 2015-01-08 확인). 추정치는 DataGuide '최근 3개월' 컨센서스(원문 '애널리스트의 최근 3개월 EPS 추정치'). FY1·FY2 중 하나라도 없으면 빈칸."""
+    t, c = s["t"], s["codes"]
+    f1, f2 = (읽기.컨센서스(k).loc[:t].iloc[-1].reindex(c) for k in ("EPS_FY1", "EPS_FY2"))
+    m = t.month
+    return (f1 * (12 - m) / 12 + f2 * m / 12) / 읽기.일간(읽기.수정주가).loc[:t].iloc[-1].reindex(c)

@@ -193,6 +193,23 @@ def 무위험(item):
     return s.rename_axis(None) / 1200
 
 
+@cache
+def 국고3년일간():
+    """X02 E11.02.011.001 국고채 3년 일간(연 %, 원본 xlsx 그대로). 우동호 외(2023) p.513 무위험 '3년 만기 국고채 수익률'의 일간 판(01 일간 정의용)."""
+    x = pd.read_excel(next(XLSX.glob("X02_*.xlsx")), header=None)
+    return pd.Series(x.iloc[14:, 1].astype(float).to_numpy(), pd.to_datetime(x.iloc[14:, 0])).dropna()
+
+
+컨센서스파일 = {"EPS_FY1": "FM30011505_R17", "EPS_FY2": "FM30011505_R18", "추정기관수_FY1": "FM30012910_R19"}  # 같은 아이템코드(FM30011505)가 FY1·FY2 두 파일이라 R번호로 고름
+
+
+@cache
+def 컨센서스(이름):
+    """애널리스트 추정치 일간(DataGuide 컨센서스, 최근 3개월 추정치. EPS는 지배주주 기준, 원/주, 수정 주식 수 기준). 행=날짜, 열=종목코드. 값은 그대로."""
+    (f,) = 목록(f"{컨센서스파일[이름]}_*")
+    return pq.read_table(f).to_pandas().loc[:공통끝()]
+
+
 def 지수표(f, 코드행, 시작행):
     x = pd.read_excel(f, header=None)
     lv = x.columns[1:][x.iloc[코드행 + 3, 1:].eq("I31000040F").to_numpy()]  # 아이템코드 = 코드 3행 아래, 종가지수만
