@@ -42,7 +42,8 @@ def BP_장부원문_6개월(s):
     if not {"M000911019", "M000903008"} <= set(s["fin"]):
         return pd.Series(np.nan, s["codes"])
     m = 읽기.일간(읽기.시총).loc[:s["t"] - pd.DateOffset(months=6)].iloc[-1].reindex(s["codes"])
-    return (값(s, 지배자본) + 값(s, "M000911019").fillna(0) - 값(s, "M000903008").fillna(0)) / (m * 1000)
+    eq = 값(s, 지배자본).fillna(값(s, 자산) - 값(s, 부채))  # 각주 3 'SEQ … or else … or else total assets minus total liabilities (AT - LT)'(중간 CEQ+PSTX는 대응 항목 없어 건너뜀, 2026-11-06)
+    return (eq + 값(s, "M000911019").fillna(0) - 값(s, "M000903008").fillna(0)) / (m * 1000)
 
 
 def EY(s):
