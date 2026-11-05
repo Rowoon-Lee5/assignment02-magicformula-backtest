@@ -38,7 +38,7 @@ def EBIT(s):
 def BP_장부원문_6개월(s):
     """Novy-Marx(2010) 각주 3 장부가 = 자본 + 이연법인세 − 우선주: 자본총계(지배) + 이연법인세부채(M000911019) − 우선주자본금(M000903008),
     시가는 6개월 전 시가총액(BP_6개월과 같음). 원문(PDF 13쪽 각주 3) 'plus deferred taxes, minus preferred stock, when available' → 이연법인세·우선주 값이 빈 종목은 그 항만 뺌(0으로 셈).
-    자본총계(지배)는 Compustat SEQ(우선주 포함 주주지분)에 가장 가까운 항목으로 고름(같은지는 확인 안 함). 두 항목 파일이 없으면 빈칸(04 진단용, 추가 지시 F)."""
+    자본총계(지배)는 Compustat SEQ(우선주 포함 주주지분)에 가장 가까운 항목으로 고름(같은지는 확인 안 함). 자본(지배)이 빈 종목은 AT − LT(각주 3 마지막 단계). 두 항목 파일이 없으면 빈칸."""
     if not {"M000911019", "M000903008"} <= set(s["fin"]):
         return pd.Series(np.nan, s["codes"])
     m = 읽기.일간(읽기.시총).loc[:s["t"] - pd.DateOffset(months=6)].iloc[-1].reindex(s["codes"])
