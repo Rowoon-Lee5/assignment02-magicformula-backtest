@@ -123,6 +123,8 @@ def 성과표(번호, f, 제목, 시장추가=False):
         return
     try:
         d = pd.read_pickle(f)
+        if d["F"] is None:  # 따라하기 02·03: 요인은 옮김 노트북이 결과_월수익률/요인/<같은 이름>.pkl 에(평가.요약과 같은 규칙)
+            d["F"] = pd.read_pickle(f.parent / "요인" / f.name)
         표 = {이름(k): 평가.성과(d["R"][k], d["F"], k in d["롱숏"]) for k in d["R"]}
         if 시장추가 and "시장" in d["F"]:
             표["KOSPI(F '시장' 열 = 이 노트북 설정의 시장지수)"] = 평가.성과(d["F"]["시장"].reindex(d["R"].dropna(how="all").index), d["F"])

@@ -63,7 +63,7 @@ def 재무가능일(how):
     pub = pub.where(pub > end)
     하루 = pd.Timedelta(days=0 if kind == "발표당일" else 1)  # '발표당일': 발표한 날부터(03 진단용)
     if kind == "발표월말":  # NH(2018) 02 p.14·03 p.18 '분기/연간 재무제표가 발표되는 월의 월말에 반영': 발표한 날부터 → 월말 리밸런싱이면 그 달 마지막 거래일까지 발표분을 그 달 말에 씀.
-        # 마지막 거래일 뒤 같은 달 휴일(예: 토요일 3/31) 발표분은 다음 리밸런싱부터(그날 종가에는 알 수 없는 정보, 2026-11-05 항목 4 대조에서 고침)
+        # 가능일 = 발표일(달 안 비교는 쓰는 쪽이 함). 02·03은 발표재무()가 t가 든 달력 달 발표분까지 씀(마지막 거래일 뒤 휴일 발표분 포함 = 최대 2일 미래 정보, V03 HIGH-1 2026-11-06)
         return f.assign(결산일=end, 발표일=pub, 가능일=pub.fillna(end + pd.Timedelta(days=k)))
     ok = end + pd.DateOffset(months=k) if kind == "결산후개월" else (pub + 하루).fillna(end + pd.Timedelta(days=k))
     return f.assign(결산일=end, 발표일=pub, 가능일=ok)
