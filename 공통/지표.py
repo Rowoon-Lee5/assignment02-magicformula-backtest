@@ -194,13 +194,15 @@ def 시가총액(s):
 
 def 모멘텀11(s):
     """MOM용: 과거 11개월 수익률 = 그날 가격 / 11개월 전(그날 또는 그 전 마지막 거래일) 가격 − 1(우동호 p.513 '과거 11개월 동안 수익률', 건너뛰는 달은 원문에 없어 안 둠).
-    '쓰지 말 것' 칸(읽기.쓰지말것)은 빈칸으로 본다(변동성_창과 같은 규칙, F01 제안 2026-11-06)."""
+    창(11개월 전 ~ 그날) 안에 '쓰지 말 것' 칸(읽기.쓰지말것: 병합·감자 미반영 등 가격이 틀린 날)이 하루라도 있으면 그 종목은 빈칸(기본 ①: 계산이 안 되면 뺌, V01 2026-11-06)."""
     a = s["t"] - pd.DateOffset(months=11)
-    p = 읽기.상장가격(s["가격"]).loc[a - pd.DateOffset(days=31):s["t"], s["codes"]].copy()  # 11개월 전 앞 한 달만 더(그 전 마지막 거래일 찾기용)
+    p = 읽기.상장가격(s["가격"]).loc[a - pd.DateOffset(days=31):s["t"], s["codes"]]  # 11개월 전 앞 한 달만 더(그 전 마지막 거래일 찾기용)
+    r = p.iloc[-1] / p.loc[:a].iloc[-1] - 1
+    w = p.index[p.index.get_indexer([p.loc[:a].index[-1]])[0]:]  # 실제로 쓴 창
     for k, x, y in 읽기.쓰지말것(s["가격"])[["코드", "시작", "끝"]].itertuples(index=False):
-        if k in p:
-            p.loc[x:y, k] = np.nan
-    return p.iloc[-1] / p.loc[:a].iloc[-1] - 1
+        if k in r.index and len(w[(w >= x) & (w <= y)]):
+            r[k] = np.nan
+    return r
 
 
 # 애널리스트 추정치(NH 2018-07 p.19 그림 25·26)

@@ -10,9 +10,9 @@ nb = json.loads((root / "따라하기" / "04_신마법공식.ipynb").read_text(e
 칸 = {c["id"]: "".join(c["source"]) for c in nb["cells"]}
 g = {"display": print}
 T = time.time()
-for i in sys.argv[1:] or ["ef7481c1", "72e15d0a", "1162853b", "4b7c0e21", "4b7c0e22"]:
+for i in sys.argv[1:] or ["ef7481c1", "72e15d0a", "1162853b", "4b7c0e21", "4b7c0e22", "4b7c0e23", "4b7c0e24"]:
     print(f"===== {i}  {time.time() - T:.0f}초")
     exec(칸[i], g)
-    if i in ("4b7c0e21", "4b7c0e22"):
-        print(g["NM대조" if i == "4b7c0e21" else "NM문장"].to_string())
+    if i in ("4b7c0e21", "4b7c0e22", "4b7c0e23"):
+        print(g[{"4b7c0e21": "NM대조", "4b7c0e22": "NM문장", "4b7c0e23": "판정"}[i]].to_string())
 print(f"끝 {time.time() - T:.0f}초")

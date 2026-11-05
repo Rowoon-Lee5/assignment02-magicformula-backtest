@@ -85,7 +85,7 @@ def 누적그림(R, 제목, 로그=True, 퍼센트=False, 오른쪽=None, 시작
         w = (1 + R[k].dropna()).cumprod()
         ax.plot((w if 시작100 else w - 1) * 100 if 퍼센트 else w, color="black" if ls == "-" else "dimgray", ls=ls, marker=mk, markevery=6, ms=4, lw=1.2, label=str(k))
     if 퍼센트:
-        ax.set(title=제목, ylabel="누적 수익률(%)")
+        ax.set(title=제목, ylabel="누적 가치(%, 시작=100)" if 시작100 else "누적 수익률(%)")
     else:
         ax.set(title=제목, ylabel="누적 가치(시작=1, 로그 축)" if 로그 else "누적 가치(시작=1)", yscale="log" if 로그 else "linear")
     h, l = ax.get_legend_handles_labels()
